@@ -979,14 +979,18 @@
   "trust": {
     "eyebrow": "Trust & credentials",
     "title": "Licensed, insured, and recognised",
-    "desc": "Aardvark Safaris Tanzania is a locally owned operator in Arusha — licensed, insured, and rated 5.0 on TripAdvisor.",
+    "swipeHint": "Swipe to see all credentials",
     "licenseName": "Licensed operator",
+    "licenseTag": "Tanzania registered",
     "licenseDesc": "Registered Tanzania safari operator with insured vehicles and professional driver-guides.",
     "tatoName": "TATO member",
+    "tatoTag": "Tour operators assoc.",
     "tatoDesc": "Member of the Tanzania Association of Tour Operators (TATO).",
     "insuredName": "Travel protection",
+    "insuredTag": "Fully insured trips",
     "insuredDesc": "We arrange comprehensive travel insurance options and emergency evacuation cover for every journey.",
-    "taName": "TripAdvisor excellence",
+    "taName": "TripAdvisor",
+    "taTag": "5.0 · 21 reviews",
     "taDesc": "5.0 rating on TripAdvisor — 21 verified guest reviews (May 2026)."
   },
   "booking": {

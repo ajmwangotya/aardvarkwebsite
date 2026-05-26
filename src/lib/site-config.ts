@@ -78,15 +78,34 @@ export const BOOKING = {
 } as const;
 
 export const TRUST_CREDENTIALS = [
-  { id: "license", nameKey: "trust.licenseName", descKey: "trust.licenseDesc", href: "/about" },
+  {
+    id: "license",
+    nameKey: "trust.licenseName",
+    tagKey: "trust.licenseTag",
+    descKey: "trust.licenseDesc",
+    href: "/about",
+  },
   {
     id: "tato",
     nameKey: "trust.tatoName",
+    tagKey: "trust.tatoTag",
     descKey: "trust.tatoDesc",
     href: "https://www.tato.co.tz/",
   },
-  { id: "insured", nameKey: "trust.insuredName", descKey: "trust.insuredDesc", href: "/faq" },
-  { id: "tripadvisor", nameKey: "trust.taName", descKey: "trust.taDesc", href: SITE.tripAdvisor },
+  {
+    id: "insured",
+    nameKey: "trust.insuredName",
+    tagKey: "trust.insuredTag",
+    descKey: "trust.insuredDesc",
+    href: "/faq",
+  },
+  {
+    id: "tripadvisor",
+    nameKey: "trust.taName",
+    tagKey: "trust.taTag",
+    descKey: "trust.taDesc",
+    href: SITE.tripAdvisor,
+  },
 ] as const;
 
 export const COMPANY_STATS = [

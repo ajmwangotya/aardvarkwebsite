@@ -217,13 +217,13 @@ function HomePage() {
           style={{ opacity }}
           className="hero-content relative z-10 flex h-full w-full flex-col justify-end px-4 pb-[max(5.5rem,calc(4.25rem+env(safe-area-inset-bottom,0px)))] pt-[max(6.5rem,calc(5rem+env(safe-area-inset-top,0px)))] text-center text-bone sm:px-6 sm:pb-12 md:justify-center md:px-8 md:pb-12 md:pt-[calc(4.5rem+env(safe-area-inset-top))]"
         >
-          <div className="hero-content-inner mx-auto flex w-full max-w-[22rem] flex-col items-center gap-0 md:max-w-5xl md:gap-0">
+          <div className="hero-content-inner mx-auto flex w-full max-w-[min(100%,26rem)] flex-col items-center md:max-w-5xl md:gap-8">
             <p
-              className="hero-eyebrow order-1 text-[0.65rem] font-medium uppercase leading-snug tracking-[0.2em] text-gold drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] sm:text-[0.65rem] md:flex md:items-center md:gap-3 md:tracking-[0.5em]"
+              className="hero-eyebrow order-1 text-[0.62rem] font-medium uppercase leading-relaxed tracking-[0.16em] text-gold drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] sm:text-[0.65rem] md:flex md:items-center md:gap-3 md:tracking-[0.45em]"
               aria-live="polite"
             >
               <span className="hidden h-px w-10 bg-gold md:inline-block" aria-hidden />
-              <span className="block px-1">{t("home.heroEyebrow")}</span>
+              <span className="block text-balance px-1">{t("home.heroEyebrow")}</span>
               <span className="hidden h-px w-10 bg-gold md:inline-block" aria-hidden />
             </p>
 
@@ -234,7 +234,7 @@ function HomePage() {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -20, filter: "blur(6px)" }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="hero-title order-2 mt-3 font-serif text-[clamp(1.75rem,7.5vw,4rem)] leading-[1.1] tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.55)] sm:mt-4 md:mt-8 md:text-[clamp(2.5rem,6vw,7rem)] md:leading-[1.08]"
+                className="hero-title order-2 font-serif text-[clamp(1.85rem,7vw,4rem)] leading-[1.12] tracking-tight text-balance drop-shadow-[0_4px_24px_rgba(0,0,0,0.55)] md:text-[clamp(2.5rem,6vw,7rem)] md:leading-[1.06]"
               >
                 {current.title.split(" ").slice(0, -1).join(" ")}{" "}
                 <span className="shimmer-text italic">{current.title.split(" ").slice(-1)}</span>
@@ -248,7 +248,7 @@ function HomePage() {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -8, filter: "blur(4px)" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="hero-subtitle order-3 mt-2 max-w-[20rem] font-serif text-[1.05rem] leading-relaxed text-bone/95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)] sm:mt-3 sm:max-w-md sm:text-lg md:mt-6 md:max-w-2xl md:text-[clamp(1rem,2vw,1.5rem)]"
+                className="hero-subtitle order-3 max-w-[22rem] font-serif text-base leading-[1.55] text-bone/90 text-balance drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)] sm:max-w-md sm:text-lg md:max-w-2xl md:text-[clamp(1.05rem,2vw,1.45rem)] md:leading-[1.5]"
               >
                 {current.subtitle}
               </motion.p>
@@ -258,7 +258,7 @@ function HomePage() {
               initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="hero-actions order-4 mt-5 flex w-full flex-col gap-3 sm:mt-8 md:mt-12 md:w-auto md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-5"
+              className="hero-actions order-4 flex w-full flex-col gap-3 md:mt-2 md:w-auto md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-5"
             >
               <Link to="/plan-trip" className="btn-fill w-full justify-center md:w-auto">
                 <Calendar className="h-8 w-8 shrink-0 md:h-7 md:w-7" strokeWidth={2} aria-hidden />
@@ -295,19 +295,18 @@ function HomePage() {
               initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.8 }}
-              className="hero-trust order-5 mt-5 flex w-full flex-col items-center gap-2 border-t border-bone/15 pt-4 text-[0.65rem] uppercase tracking-[0.14em] text-bone/85 sm:mt-6 md:mt-16 md:flex-row md:flex-wrap md:justify-center md:gap-x-10 md:border-0 md:pt-0 md:text-[0.65rem] md:tracking-[0.4em]"
+              className="hero-trust order-5 flex w-full flex-col items-center gap-3 text-[0.62rem] uppercase tracking-[0.12em] text-bone/80 md:mt-2 md:flex-row md:flex-wrap md:justify-center md:gap-x-8 md:text-[0.65rem] md:tracking-[0.28em]"
             >
               <a
                 href={SITE.tripAdvisor}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex max-w-full items-center justify-center gap-1.5 text-center leading-snug transition-colors hover:text-gold active:text-gold"
+                className="inline-flex max-w-full items-center justify-center gap-1.5 text-center leading-relaxed transition-colors hover:text-gold active:text-gold"
               >
                 <Star className="h-3.5 w-3.5 shrink-0 fill-gold text-gold" aria-hidden />
                 <span>{t("home.tripAdvisorLine", { rating: TRIPADVISOR.rating, count: TRIPADVISOR.reviewCount })}</span>
               </a>
-              <span className="text-center leading-snug text-bone/75 md:text-bone/90">{t("home.trustJourneys")}</span>
-              <span className="hidden text-bone/75 md:inline">{t("home.trustLocal")}</span>
+              <span className="hidden text-bone/75 md:inline md:leading-relaxed">{t("home.trustLocal")}</span>
             </motion.div>
           </div>
         </motion.div>
