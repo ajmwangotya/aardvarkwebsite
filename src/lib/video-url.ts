@@ -2,6 +2,7 @@
  * Resolve brand film URLs from env (CDN) or local /public/videos for dev.
  *
  * Production: set VITE_VIDEO_CDN_BASE (and optional per-file overrides) in Vercel / Cloudflare.
+ * Overrides may be a full MP4 URL or a YouTube watch link — see docs/EXTERNAL-VIDEOS.md.
  * Local: leave unset — videos load from public/videos/*.mp4 on disk.
  */
 

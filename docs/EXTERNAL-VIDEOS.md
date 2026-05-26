@@ -60,6 +60,41 @@ After this, `git push` is fast (code only).
 
 ---
 
+## YouTube (easiest for large files)
+
+Upload each film to **YouTube** (can be **Unlisted** so it does not appear in search). Then set env vars to the watch URL — no MP4 hosting needed.
+
+Create `.env` in the project root (or set in Vercel / Cloudflare):
+
+```env
+# Home hero background (Aardvark Wild)
+VITE_VIDEO_WILD_REEL=https://www.youtube.com/watch?v=YOUR_VIDEO_ID
+
+# “Watch the Film” modal on the homepage
+VITE_VIDEO_FEATURE_FILM=https://www.youtube.com/watch?v=YOUR_VIDEO_ID
+
+# Uganda destination page
+VITE_VIDEO_GORILLA=https://www.youtube.com/watch?v=YOUR_VIDEO_ID
+```
+
+Restart `npm run dev` after changing `.env`.
+
+| Where it plays | Env variable |
+|----------------|--------------|
+| Home hero (autoplay, muted, loop) | `VITE_VIDEO_WILD_REEL` |
+| Home “Watch the Film” popup | `VITE_VIDEO_FEATURE_FILM` |
+| About page reel | Uses `wildReel` — same as hero unless you change code |
+| Uganda destination | `VITE_VIDEO_GORILLA` |
+
+**Tips**
+
+- Use **Unlisted** uploads; the site only embeds — viewers need the link or your site.
+- Hero autoplay requires the video to allow embedding (default on YouTube).
+- YouTube may show a small logo; for a fully custom hero with no branding, use a compressed MP4 on R2/CDN instead.
+- You can mix sources: e.g. hero from YouTube, feature film from CDN.
+
+---
+
 ## Other hosts (same env pattern)
 
 | Provider | Set `VITE_VIDEO_CDN_BASE` to |

@@ -969,6 +969,18 @@ html:has(#site-mobile-nav-toggle:checked) .mobile-nav-icon-close {
   }
 }
 
+/* Hero background slideshow — keep crossfade visible even when reduced-motion is on */
+.hero-slideshow__slide {
+  will-change: opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slideshow__slide {
+    transition-duration: 400ms !important;
+    transition-property: opacity !important;
+  }
+}
+
 @media (max-width: 767px) {
   .hero-content-inner {
     gap: 1.25rem;
@@ -1040,10 +1052,7 @@ html:has(#site-mobile-nav-toggle:checked) .mobile-nav-icon-close {
   .shimmer-text,
   .itin-mobile-shine,
   .float-gentle,
-  .pulse-glow {
-    animation: none !important;
-  }
-
+  .pulse-glow,
   .card-hover-lift:hover,
   .card-hover-lift:active {
     transform: none;
@@ -1058,13 +1067,15 @@ html:has(#site-mobile-nav-toggle:checked) .mobile-nav-icon-close {
   .shimmer-text,
   .itin-mobile-shine,
   .float-gentle,
-  .pulse-glow {
-    animation: none !important;
-  }
-
+  .pulse-glow,
   .card-hover-lift:hover,
   .card-hover-lift:active {
     transform: none;
+  }
+
+  .hero-slideshow__slide {
+    transition-duration: 400ms !important;
+    transition-property: opacity !important;
   }
 
   *,

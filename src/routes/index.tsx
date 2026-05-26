@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -11,13 +11,12 @@ import { FeaturedJourneys } from "@/components/sections/featured-journeys";
 import { FeaturedPackages } from "@/components/sections/featured-packages";
 import { TrustCredentials } from "@/components/sections/trust-credentials";
 import { HomeStartHere } from "@/components/sections/home-start-here";
+import { HeroVideoBackground } from "@/components/sections/hero-video-background";
 import { MigrationCalendar } from "@/components/sections/migration-calendar";
 import { SectionDivider } from "@/components/layout/section-divider";
 import { buildPageHead } from "@/lib/seo";
 import { SITE, TRIPADVISOR, pageTitle } from "@/lib/site-config";
 import { Reveal, stagger, fadeUp, blurIn, ParallaxSection } from "@/components/motion";
-import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
-import { OptimizedImage } from "@/components/media/optimized-image";
 import { ArrowRight, Calendar, Shield, Sparkles, Heart, MapPin, Play, Star } from "lucide-react";
 import heroNdutu1 from "@/assets/heroes/hero-ndutu-1.jpg";
 import heroNdutu2 from "@/assets/heroes/hero-ndutu-2.jpg";
@@ -74,43 +73,19 @@ function HomePage() {
     }[]
   ).map((d) => ({ ...d, img: countryImages[d.slug as keyof typeof countryImages] ?? migration }));
 
-  const heroSlidesRaw = t("home.heroSlides", { returnObjects: true });
-  const heroSlidesI18n = Array.isArray(heroSlidesRaw)
-    ? (heroSlidesRaw as { title: string; subtitle: string }[])
-    : [];
-  const heroSlideStatic = [
-    { kw: "Serengeti", img: heroNdutu5 },
-    { kw: "Tarangire", img: heroNdutu1 },
-    { kw: "Empakaai", img: heroNdutu6 },
-    { kw: "Ndutu", img: heroNdutu2 },
-    { kw: "Lake Ndutu", img: heroNdutu3 },
-    { kw: "Serengeti", img: heroNdutu4 },
-    { kw: "Zanzibar", img: heroNdutu7 },
-  ] as const;
-  const heroSlides = heroSlidesI18n
-    .map((s, i) => ({ ...s, ...heroSlideStatic[i] }))
-    .filter((s): s is typeof s & { img: string } => Boolean(s.img));
-  const heroSlidesSafe =
-    heroSlides.length > 0
-      ? heroSlides
-      : [{ title: "Safari", subtitle: "", kw: "Serengeti", img: heroNdutu5 }];
-
   const reasonsData = (t("home.reasons", { returnObjects: true }) as { title: string; desc: string }[]).slice(0, 4);
   const reasons = reasonsData.map((r, i) => ({ ...r, icon: reasonIcons[i] }));
   const heroRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
+  const [pauseHeroVideo, setPauseHeroVideo] = useState(false);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], reduceMotion ? ["0%", "0%"] : ["0%", "20%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
-  const heroSlidesVisible = isMobile ? heroSlidesSafe.slice(0, 2) : heroSlidesSafe;
-
-  const [slide, setSlide] = useState(0);
   const [hoveredItin, setHoveredItin] = useState<number | null>(null);
   const [filmOpen, setFilmOpen] = useState(false);
   const [filmDataAck, setFilmDataAck] = useState(false);
-  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     const mobile = window.matchMedia("(max-width: 767px)");
@@ -118,6 +93,7 @@ function HomePage() {
     const update = () => {
       setIsMobile(mobile.matches);
       setReduceMotion(mobile.matches || motion.matches);
+      setPauseHeroVideo(motion.matches);
     };
     update();
     mobile.addEventListener("change", update);
@@ -128,26 +104,6 @@ function HomePage() {
     };
   }, []);
 
-  useEffect(() => {
-    if (slide >= heroSlidesVisible.length) setSlide(0);
-  }, [heroSlidesVisible.length, slide]);
-
-  /** Preload next hero frame only (avoids downloading all 7 full-size JPGs at once). */
-  useEffect(() => {
-    const next = heroSlidesVisible[(slide + 1) % heroSlidesVisible.length];
-    if (!next?.img) return;
-    const img = new Image();
-    img.src = next.img;
-  }, [slide, heroSlidesVisible]);
-
-  useEffect(() => {
-    if (isMobile || heroSlidesVisible.length < 2) return;
-    const id = setInterval(() => setSlide((s) => (s + 1) % heroSlidesVisible.length), 4200);
-    return () => clearInterval(id);
-  }, [isMobile, heroSlidesVisible.length]);
-
-  const current = heroSlidesVisible[slide] ?? heroSlidesVisible[0];
-
   return (
     <div className="bg-background text-foreground">
       <SiteHeader light />
@@ -157,102 +113,57 @@ function HomePage() {
         ref={heroRef}
         className="hero-section relative h-[88dvh] min-h-[420px] w-full overflow-hidden sm:min-h-[500px] sm:h-[90dvh] md:min-h-[720px] md:h-[100svh]"
       >
-        <motion.div style={{ y }} className="absolute inset-0">
-          <motion.div
-            key={slide}
-            initial={false}
-            animate={{ opacity: 1, scale: reduceMotion ? 1 : 1.04 }}
-            transition={{
-              opacity: { duration: 0.5, ease: "easeInOut" },
-              scale: reduceMotion ? { duration: 0 } : { duration: 5, ease: "linear" },
-            }}
-            className="absolute inset-0 h-[115%] w-full"
-          >
-            <OptimizedImage
-              src={current.img}
-              alt={`${current.title} — ${current.kw} safari scene`}
-              priority={slide === 0}
-              sizes="100vw"
-              width={1920}
-              height={1080}
-              className="h-full w-full object-cover object-[center_38%] md:object-center"
-            />
-          </motion.div>
+        <motion.div style={{ y }} className="absolute inset-0 z-0 h-[115%] w-full">
+          <HeroVideoBackground
+            src={SITE_VIDEOS.wildReel}
+            poster={heroNdutu5}
+            paused={pauseHeroVideo}
+          />
         </motion.div>
 
-        {/* Cinematic overlay — keeps text crisply readable */}
-        <div className="absolute inset-0 bg-ink/35" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/25 to-ink/85 md:from-ink/60 md:via-ink/20 md:to-ink/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.55)_100%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/95 via-ink/50 to-transparent md:hidden" />
-
-        {/* Vertical side rail */}
-        <div className="absolute left-6 top-1/2 z-10 hidden -translate-y-1/2 md:block">
-          <div className="flex flex-col items-center gap-4">
-            {heroSlidesVisible.map((s, i) => (
-              <button
-                key={`${s.kw}-rail`}
-                onClick={() => setSlide(i)}
-                className="group flex items-center gap-3"
-              >
-                <span
-                  className={`h-px transition-all duration-500 ${
-                    i === slide ? "w-12 bg-gold" : "w-6 bg-bone/40 group-hover:bg-bone/70"
-                  }`}
-                />
-                <span
-                  className={`text-[0.6rem] uppercase tracking-[0.4em] transition-colors ${
-                    i === slide ? "text-gold" : "text-bone/50 group-hover:text-bone"
-                  }`}
-                >
-                  {String(i + 1).padStart(2, "0")} {s.kw}
-                </span>
-              </button>
-            ))}
-          </div>
+        {/* Cinematic overlay — dark ink + warm gold tint (matches brand hero look) */}
+        <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden>
+          <div className="absolute inset-0 bg-ink/35" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/25 to-ink/85 md:from-ink/60 md:via-ink/20 md:to-ink/80" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.55)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(196,155,70,0.14)_0%,transparent_58%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/95 via-ink/50 to-transparent md:hidden" />
         </div>
 
-        {/* Hero copy — mobile: stacked block above sticky bar; desktop: centred */}
+        {/* Hero copy — mobile: glass panel above sticky bar; desktop: centred */}
         <motion.div
           style={{ opacity }}
-          className="hero-content relative z-10 flex h-full w-full flex-col justify-end px-4 pb-[max(5.5rem,calc(4.25rem+env(safe-area-inset-bottom,0px)))] pt-[max(6.5rem,calc(5rem+env(safe-area-inset-top,0px)))] text-center text-bone sm:px-6 sm:pb-12 md:justify-center md:px-8 md:pb-12 md:pt-[calc(4.5rem+env(safe-area-inset-top))]"
+          className="hero-content relative z-10 flex h-full w-full flex-col justify-end px-0 pb-[max(5.25rem,calc(4rem+env(safe-area-inset-bottom,0px)))] pt-[max(6.5rem,calc(5rem+env(safe-area-inset-top,0px)))] text-center text-bone sm:pb-12 md:justify-center md:px-8 md:pb-12 md:pt-[calc(4.5rem+env(safe-area-inset-top))]"
         >
-          <div className="hero-content-inner mx-auto flex w-full max-w-[min(100%,26rem)] flex-col items-center md:max-w-5xl md:gap-8">
+          <div className="hero-copy-panel hero-content-inner mx-auto flex w-full max-w-[min(100%,28rem)] flex-col items-center px-5 sm:px-6 md:max-w-5xl md:gap-8 md:px-0">
             <p
-              className="hero-eyebrow order-1 text-[0.62rem] font-medium uppercase leading-relaxed tracking-[0.16em] text-gold drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] sm:text-[0.65rem] md:flex md:items-center md:gap-3 md:tracking-[0.45em]"
+              className="hero-eyebrow order-1 font-sans text-[0.65rem] font-medium uppercase leading-snug tracking-[0.22em] text-gold sm:text-[0.65rem] md:flex md:items-center md:gap-3 md:bg-transparent md:px-0 md:py-0 md:tracking-[0.45em]"
               aria-live="polite"
             >
               <span className="hidden h-px w-10 bg-gold md:inline-block" aria-hidden />
-              <span className="block text-balance px-1">{t("home.heroEyebrow")}</span>
+              <span className="block text-balance">{t("home.heroEyebrow")}</span>
               <span className="hidden h-px w-10 bg-gold md:inline-block" aria-hidden />
             </p>
 
-            <AnimatePresence mode="wait">
-              <motion.h1
-                key={current.title}
-                initial={false}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, y: -20, filter: "blur(6px)" }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="hero-title order-2 font-serif text-[clamp(1.85rem,7vw,4rem)] leading-[1.12] tracking-tight text-balance drop-shadow-[0_4px_24px_rgba(0,0,0,0.55)] md:text-[clamp(2.5rem,6vw,7rem)] md:leading-[1.06]"
-              >
-                {current.title.split(" ").slice(0, -1).join(" ")}{" "}
-                <span className="shimmer-text italic">{current.title.split(" ").slice(-1)}</span>
-              </motion.h1>
-            </AnimatePresence>
+            <motion.h1
+              initial={false}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="hero-title order-2 font-serif text-[clamp(2rem,8.25vw,4rem)] font-medium leading-[1.06] tracking-[-0.02em] text-balance text-bone md:text-[clamp(2.5rem,6vw,7rem)] md:font-normal md:leading-[1.06] md:tracking-tight"
+            >
+              <Trans i18nKey="home.dreamTitle" components={{ i: <span className="hero-accent shimmer-text italic" /> }} />
+            </motion.h1>
 
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={current.subtitle}
-                initial={false}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, y: -8, filter: "blur(4px)" }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="hero-subtitle order-3 max-w-[22rem] font-serif text-base leading-[1.55] text-bone/90 text-balance drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)] sm:max-w-md sm:text-lg md:max-w-2xl md:text-[clamp(1.05rem,2vw,1.45rem)] md:leading-[1.5]"
-              >
-                {current.subtitle}
-              </motion.p>
-            </AnimatePresence>
+            <span className="hero-rule order-3 md:hidden" aria-hidden />
+
+            <motion.p
+              initial={false}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="hero-subtitle order-4 max-w-[24rem] font-sans text-[0.9375rem] font-normal leading-[1.5] tracking-[0.01em] text-bone/95 text-balance sm:max-w-md sm:text-base md:order-3 md:max-w-2xl md:font-serif md:text-[clamp(1.05rem,2vw,1.45rem)] md:leading-[1.5] md:text-bone/90"
+            >
+              <Trans i18nKey="home.welcomeTitle" components={{ i: <span className="hero-accent-inline italic" /> }} />
+            </motion.p>
 
             <motion.div
               initial={false}
