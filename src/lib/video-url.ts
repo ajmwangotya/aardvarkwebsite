@@ -6,8 +6,8 @@
  * Local: leave unset — videos load from public/videos/*.mp4 on disk.
  */
 
-/** Public R2 bucket — films live at /videos/*.mp4 (see docs/EXTERNAL-VIDEOS.md). */
-const PRODUCTION_VIDEO_CDN = "https://pub-63bf513aa48e4a83a4da0d27b2e2d577.r2.dev";
+/** Public media CDN (R2 custom domain) — films at /videos/*.mp4 (see docs/EXTERNAL-VIDEOS.md). */
+const PRODUCTION_VIDEO_CDN = "https://media.aardvarktanzania.com";
 
 const CDN_BASE = (
   (import.meta.env.VITE_VIDEO_CDN_BASE as string | undefined)?.trim() ||

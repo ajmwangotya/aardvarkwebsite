@@ -1,14 +1,14 @@
 import { videoUrl } from "@/lib/video-url";
 
 /** Brand films — URLs from CDN env in production, /public/videos locally. See docs/EXTERNAL-VIDEOS.md */
-const RAW_FOOTAGE = "aardvark-raw-footage.mp4" as const;
+const WATCH_FILM = "aardvark-film.mp4" as const;
 
 export const SITE_VIDEOS = {
-  /** Hero “Watch the Film” play button → R2 /videos/aardvark-raw-footage.mp4 */
-  watchFilm: videoUrl(RAW_FOOTAGE),
+  /** Hero “Watch the Film” play button → media.aardvarktanzania.com/videos/aardvark-film.mp4 */
+  watchFilm: videoUrl(WATCH_FILM),
   watchFilmPoster: "/og-default.jpg",
   /** @deprecated Use watchFilm — kept for any legacy imports */
-  featureFilm: videoUrl(RAW_FOOTAGE),
+  featureFilm: videoUrl(WATCH_FILM),
   featureFilmPoster: "/og-default.jpg",
   /** Brand / field reel — About page */
   wildReel: videoUrl("aardvark-wild.mp4"),
