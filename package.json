@@ -1,7 +1,10 @@
 {
   "name": "aardvark-safari-dreams",
   "private": true,
-  "sideEffects": false,
+  "sideEffects": [
+    "src/server.ts",
+    "src/lib/error-capture.ts"
+  ],
   "type": "module",
   "engines": {
     "node": ">=22"
@@ -10,6 +13,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "deploy": "vite build && wrangler deploy",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",

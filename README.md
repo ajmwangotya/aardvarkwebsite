@@ -19,6 +19,7 @@ Open the URL shown in the terminal (often `http://localhost:8080`).
 |---------|---------|
 | `npm run dev` | Local development server |
 | `npm run build` | Production build |
+| `npm run deploy` | Build then deploy to Cloudflare Workers |
 | `npm run preview` | Preview production build |
 | `npm run lint` | ESLint |
 | `npm run test` | Enquiry form schema tests |
@@ -34,7 +35,15 @@ See [docs/PROJECT-STRUCTURE.md](docs/PROJECT-STRUCTURE.md) for the full folder g
 
 - **Images:** `src/assets/` (organized by type)
 - **Videos:** Not in Git — use `public/videos/` locally and a CDN in production ([docs/EXTERNAL-VIDEOS.md](docs/EXTERNAL-VIDEOS.md))
-- **Deploy:** Cloudflare Workers / Vercel (see `wrangler.jsonc`, `vercel.json`)
+- **Deploy:** Cloudflare Workers (see `wrangler.jsonc`) or Vercel (`vercel.json`)
+
+### Cloudflare Workers Builds
+
+TanStack Start must be compiled with Vite before Wrangler deploys. In the Cloudflare dashboard (**Workers → your project → Settings → Builds**), set:
+
+- **Deploy command:** `bun run deploy` (or `npm run deploy`)
+
+Do **not** use `npx wrangler deploy` alone — it skips the Vite build and fails on TanStack virtual modules.
 
 ## Environment
 
