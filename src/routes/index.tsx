@@ -121,21 +121,21 @@ function HomePage() {
           />
         </motion.div>
 
-        {/* Cinematic overlay — dark ink + warm gold tint (matches brand hero look) */}
+        {/* Cinematic overlay — lighter on mobile so the film stays visible */}
         <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden>
-          <div className="absolute inset-0 bg-ink/35" />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/25 to-ink/85 md:from-ink/60 md:via-ink/20 md:to-ink/80" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.55)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(196,155,70,0.14)_0%,transparent_58%)]" />
-          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/95 via-ink/50 to-transparent md:hidden" />
+          <div className="absolute inset-0 bg-ink/15 md:bg-ink/35" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-transparent to-ink/50 md:from-ink/60 md:via-ink/20 md:to-ink/80" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.28)_100%)] md:bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.55)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(196,155,70,0.12)_0%,transparent_58%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-[18%] bg-gradient-to-t from-ink/55 via-ink/15 to-transparent md:hidden" />
         </div>
 
-        {/* Hero copy — mobile: glass panel above sticky bar; desktop: centred */}
+        {/* Hero copy — mobile: compact glass card; desktop: centred */}
         <motion.div
           style={{ opacity }}
-          className="hero-content relative z-10 flex h-full w-full flex-col justify-end px-0 pb-[max(5.25rem,calc(4rem+env(safe-area-inset-bottom,0px)))] pt-[max(6.5rem,calc(5rem+env(safe-area-inset-top,0px)))] text-center text-bone sm:pb-12 md:justify-center md:px-8 md:pb-12 md:pt-[calc(4.5rem+env(safe-area-inset-top))]"
+          className="hero-content relative z-10 flex h-full w-full flex-col justify-end px-4 pb-[max(5.25rem,calc(4rem+env(safe-area-inset-bottom,0px)))] pt-[max(5rem,calc(4rem+env(safe-area-inset-top,0px)))] text-center text-bone sm:px-6 sm:pb-12 md:justify-center md:px-8 md:pb-12 md:pt-[calc(4.5rem+env(safe-area-inset-top))]"
         >
-          <div className="hero-copy-panel hero-content-inner mx-auto flex w-full max-w-[min(100%,28rem)] flex-col items-center px-5 sm:px-6 md:max-w-5xl md:gap-8 md:px-0">
+          <div className="hero-copy-panel hero-content-inner mx-auto flex w-full max-w-[min(100%,22.5rem)] flex-col items-center px-4 py-4 sm:max-w-md sm:px-5 sm:py-5 md:max-w-5xl md:gap-8 md:p-0">
             <p
               className="hero-eyebrow order-1 font-sans text-[0.65rem] font-medium uppercase leading-snug tracking-[0.22em] text-gold sm:text-[0.65rem] md:flex md:items-center md:gap-3 md:bg-transparent md:px-0 md:py-0 md:tracking-[0.45em]"
               aria-live="polite"
@@ -169,7 +169,7 @@ function HomePage() {
               initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="hero-actions order-4 flex w-full flex-col gap-3 md:mt-2 md:w-auto md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-5"
+              className="hero-actions order-5 flex w-full flex-col gap-3 md:order-4 md:mt-2 md:w-auto md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-5"
             >
               <Link to="/plan-trip" className="btn-fill w-full justify-center md:w-auto">
                 <Calendar className="h-8 w-8 shrink-0 md:h-7 md:w-7" strokeWidth={2} aria-hidden />
@@ -206,7 +206,7 @@ function HomePage() {
               initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.8 }}
-              className="hero-trust order-5 flex w-full flex-col items-center gap-3 text-[0.62rem] uppercase tracking-[0.12em] text-bone/80 md:mt-2 md:flex-row md:flex-wrap md:justify-center md:gap-x-8 md:text-[0.65rem] md:tracking-[0.28em]"
+              className="hero-trust order-6 flex w-full flex-col items-center gap-3 font-sans text-[0.6875rem] uppercase tracking-[0.14em] text-bone/85 md:order-5 md:mt-2 md:flex-row md:flex-wrap md:justify-center md:gap-x-8 md:text-[0.65rem] md:tracking-[0.28em] md:text-bone/80"
             >
               <a
                 href={SITE.tripAdvisor}
