@@ -1,0 +1,16 @@
+# Aardvark Safaris Tanzania
+
+> Privately guided safaris in Tanzania and across East Africa — luxury tented camps, Great Migration, Kilimanjaro treks, Zanzibar, and tailor-made itineraries built around conservation and community.
+
+## Pages
+
+- [Home](/): Overview of Aardvark Safaris Tanzania and signature journeys.
+- [About](/about): Our story, team, and commitment to ethical tourism.
+- [Destinations](/destinations): National parks and regions across Tanzania, Kenya, Uganda, Rwanda and Southern Africa.
+- [Itineraries](/itineraries): Signature trips from 1-day excursions to 12-day expeditions.
+- [Experiences](/experiences): Game drives, walking safaris, balloon flights, and cultural encounters.
+- [Camps & Lodges](/camps): Hand-picked luxury camps and lodges.
+- [Blog](/blog): Stories, guides and dispatches from the Tanzanian wild.
+- [Plan a Trip](/plan-trip): Request a free, no-obligation tailor-made quote.
+- [FAQ](/faq): Migration timing, visas, health, payments, and cancellation policy.
+- [Contact](/contact): Get in touch with our Arusha-based team.

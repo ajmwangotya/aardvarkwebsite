@@ -1,0 +1,2259 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Chi siamo",
+    "destinations": "Destinazioni",
+    "packages": "Pacchetti Safari",
+    "viewAllCountries": "Tutti i paesi",
+    "planTrip": "Viaggio su misura",
+    "blog": "Blog",
+    "contact": "Contatti",
+    "bookNow": "Prenota ora",
+    "itineraries": "Itinerari",
+    "navigation": "Navigazione",
+    "faq": "FAQ"
+  },
+  "destinations": {
+    "serengeti": "Parco Nazionale del Serengeti",
+    "ngorongoro": "Cratere di Ngorongoro",
+    "tarangire": "Parco Nazionale di Tarangire",
+    "manyara": "Lago Manyara",
+    "kilimanjaro": "Monte Kilimangiaro",
+    "zanzibar": "Isola di Zanzibar"
+  },
+  "planMenu": {
+    "plan": "Pianifica un viaggio",
+    "itineraries": "Itinerari",
+    "experiences": "Esperienze",
+    "camps": "Campi e Lodge"
+  },
+  "footer": {
+    "beginStory": "Inizia la tua storia",
+    "ready": "Pronto per la natura selvaggia?",
+    "planSafari": "Organizza il tuo Safari",
+    "tagline": "Siamo specializzati in servizi safari personalizzati e affidabili. Trekking, Safari e Vacanze al Mare — viaggi guidati privatamente nel cuore della Tanzania e oltre.",
+    "explore": "Esplora",
+    "journal": "Diario",
+    "contact": "Contatti",
+    "dispatch": "Il Dispaccio",
+    "dispatchDesc": "Storie mensili dalla savana — avvistamenti, campi segreti e idee di viaggio.",
+    "emailPlaceholder": "tua@email.com",
+    "join": "Iscriviti",
+    "rights": "© {{year}} {{legalName}}",
+    "privacy": "Privacy",
+    "terms": "Termini",
+    "purpose": "Avventura con uno scopo",
+    "camps": "Camps & lodges",
+    "newsletterDone": "You're on the list — thank you.",
+    "newsletterError": "Could not subscribe. Try again or contact us.",
+    "regionAfrica": "Africa",
+    "regionNA": "North America",
+    "taLine": "{{rating}} · TripAdvisor · {{count}} reviews"
+  },
+  "home": {
+    "scroll": "Scorri",
+    "weHaveItAll": "Abbiamo tutto",
+    "dreamTitle": "Il tuo safari da <i>sogno</i>, creato su misura",
+    "reliable": "Siamo specializzati in servizi safari personalizzati e affidabili — Trekking, Safari e Vacanze al Mare.",
+    "expertCopy": "AARDVARK SAFARIS è stato fondato sulla convinzione che il turismo naturalistico sia essenziale per preservare e valorizzare il patrimonio faunistico e culturale della Tanzania. La nostra missione è offrire ai visitatori esperienze uniche capaci di trasformare la loro visione del mondo. La invitiamo a unirsi a noi per un'avventura irripetibile e indimenticabile.",
+    "letUsPlan": "Pianifichiamo noi",
+    "aboutUs": "Chi siamo",
+    "greatMigration": "La Grande Migrazione",
+    "migrationQuote": "\"Due milioni di zoccoli si muovono come uno.<br/>Noi ci muoviamo con loro.\"",
+    "nationalParks": "Parchi Nazionali",
+    "iconicTitle": "Destinazioni <i>iconiche</i>",
+    "iconicDesc": "Viva gli iconici parchi nazionali della Tanzania con le nostre guide esperte — dalle vaste pianure del Serengeti all'imponente Cratere di Ngorongoro.",
+    "allDestinations": "Tutte le destinazioni",
+    "whyChoose": "Perché sceglierci",
+    "signature": "Safari esclusivi",
+    "tailorTitle": "Viaggi <i>su misura</i>",
+    "tailorDesc": "Percorsi creati a mano attraverso i teatri più selvaggi della Tanzania — tocchi per esplorare.",
+    "allItineraries": "Tutti gli itinerari",
+    "explore": "Esplora",
+    "activities": "Attività",
+    "activitiesTitle": "Un mondo di escursioni <i>straordinarie</i>",
+    "activitiesDesc": "Dai safari iconici del Serengeti al mozzafiato Cratere di Ngorongoro — esperienze curate per momenti indimenticabili.",
+    "tailorMade": "Viaggio su misura",
+    "ctaTitle": "Crea il tuo viaggio <i>su misura</i>",
+    "ctaDesc": "I nostri specialisti sono pronti ad assisterLa in ogni fase. Inizi a pianificare la Sua avventura da sogno con un preventivo gratuito e senza impegno.",
+    "planTrip": "Pianifica un viaggio",
+    "contactUs": "Contattaci",
+    "heroEyebrow": "Specializzati in servizi safari personalizzati e affidabili",
+    "watchFilm": "Guarda il Film",
+    "trustJourneys": "5.0 · 21 TripAdvisor reviews",
+    "trustLocal": "Locale · A conduzione familiare",
+    "whyChooseTitle": "Perché scegliere <i>Aardvark Safari</i>",
+    "whyChooseDesc": "I nostri servizi sono non solo completamente affidabili e sicuri, ma anche personalizzati per soddisfare le Sue esigenze e preferenze. Con noi, può pianificare la Sua vacanza in tutta tranquillità!",
+    "mapEyebrow": "Sulla mappa",
+    "mapTitle": "Dove vive il <i>selvaggio</i>",
+    "mapDesc": "Dalle pianure del Serengeti alle coste di Zanzibar — esplori i luoghi che rendono la Tanzania indimenticabile.",
+    "day_one": "{{count}} Giorno",
+    "day_other": "{{count}} Giorni",
+    "itinerary": "Itinerario",
+    "tanzaniaEa": "Tanzania · Africa Orientale",
+    "destTags": {
+      "nationalPark": "Parco Nazionale",
+      "crater": "Cratere",
+      "mountain": "Montagna",
+      "island": "Isola"
+    },
+    "reasons": [
+      {
+        "title": "Consulenti Locali",
+        "desc": "Esperti in Tanzania per un'esperienza autentica."
+      },
+      {
+        "title": "Safari Privati",
+        "desc": "Veicoli dedicati e guide esperte."
+      },
+      {
+        "title": "Esperienza Garantita",
+        "desc": "Safari indimenticabili, ogni volta."
+      },
+      {
+        "title": "Servizio Personalizzato",
+        "desc": "Dalla prenotazione all'assistenza in loco."
+      },
+      {
+        "title": "Rapidi e Cordiali",
+        "desc": "Team di supporto veloce e disponibile."
+      },
+      {
+        "title": "Esperti della Tanzania",
+        "desc": "Specialisti dedicati alla fauna tanzaniana."
+      },
+      {
+        "title": "Turismo Etico",
+        "desc": "Impegnati in pratiche di viaggio sostenibili."
+      },
+      {
+        "title": "Sostegno alla Comunità",
+        "desc": "Arricchiamo attivamente le comunità locali."
+      }
+    ],
+    "activityLabels": {
+      "safaris": "Safari",
+      "trekking": "Trekking",
+      "beach": "Spiaggia",
+      "nationalParks": "Parchi Nazionali",
+      "islands": "Isole",
+      "zanzibar": "Zanzibar",
+      "excursions": "Escursioni",
+      "mountains": "Montagne"
+    },
+    "aMileAhead": "Un passo avanti",
+    "inTheField": "Sul campo",
+    "dayOnSafariTitle": "Una giornata in <i>safari</i>",
+    "peterBeardQuote": "\"Un paradiso accarezzato dalla luce e dall'aria.\" — Peter Beard",
+    "directorQuote": "I nostri servizi sono non solo completamente affidabili e sicuri, ma anche personalizzati per soddisfare le Sue esigenze e preferenze. Con noi, può pianificare la Sua vacanza in tutta tranquillità.",
+    "directorQuoteAttr": "— Augustine Mwangotya, Direttore Esecutivo",
+    "schedule": [
+      {
+        "time": "05:30",
+        "title": "Game drive all'alba",
+        "body": "Tè, caffè e spuntini prima della colazione, mentre il sole sorge sulla savana."
+      },
+      {
+        "time": "09:00",
+        "title": "Colazione nella savana",
+        "body": "Una ricca colazione all'inglese o un incantevole picnic all'ombra delle acacie."
+      },
+      {
+        "time": "12:00",
+        "title": "Paesaggi viventi",
+        "body": "Dal ghepardo all'elefante — ogni avvistamento trasforma il paesaggio in una storia."
+      },
+      {
+        "time": "16:30",
+        "title": "Aperitivo al tramonto",
+        "body": "Un game drive pomeridiano verso una serena serata nell'ora dorata."
+      },
+      {
+        "time": "20:00",
+        "title": "Falò e riposo",
+        "body": "Cena, racconti accanto al fuoco e il brivido lontano del ruggito di un leone."
+      }
+    ],
+    "heroSlides": [
+      {
+        "title": "Intorno al fuoco",
+        "subtitle": "Storie condivise sotto un manto di stelle."
+      },
+      {
+        "title": "Scontro di giganti",
+        "subtitle": "Due tori misurano le loro forze nella pianura."
+      },
+      {
+        "title": "Nel cratere",
+        "subtitle": "A piedi, discendendo in un mondo nascosto."
+      },
+      {
+        "title": "Sotto il Baobab",
+        "subtitle": "Una madre e il suo cucciolo nell'ombra screziata."
+      },
+      {
+        "title": "Ali e zoccoli",
+        "subtitle": "Gli gnu guadano tra una nebbia di fenicotteri."
+      },
+      {
+        "title": "Occhi tra i rami",
+        "subtitle": "Un leopardo riposa nella luce del pomeriggio."
+      },
+      {
+        "title": "Vele al tramonto",
+        "subtitle": "Un dhow scivola sulle acque turchesi al largo dell'isola delle spezie."
+      }
+    ],
+    "destAlt": {
+      "tanzania": "Tanzania safari — Serengeti plains and northern circuit wildlife",
+      "kenya": "Kenya safari — Maasai Mara savannah and wildlife",
+      "uganda": "Uganda safari — rainforest and mountain gorilla habitat",
+      "rwanda": "Rwanda safari — Volcanoes National Park and lush highlands",
+      "zanzibar": "Zanzibar — turquoise Indian Ocean coast and Stone Town",
+      "serengeti": "Serengeti National Park — Great Migration and open plains"
+    }
+  },
+  "about": {
+    "eyebrow": "Chi siamo",
+    "heroTitle": "Avventura con <i>uno scopo</i>. Viaggia in modo sostenibile.",
+    "missionP1": "AARDVARK SAFARIS è stato fondato sulla convinzione che il turismo naturalistico sia essenziale per preservare e valorizzare il patrimonio faunistico e culturale della Tanzania. La nostra missione è offrire ai visitatori esperienze uniche capaci di trasformare la loro visione del mondo.",
+    "missionP2": "La invitiamo a unirsi a noi per un'avventura irripetibile e indimenticabile. Il nostro team di Aardvark Safaris è composto da personale altamente qualificato e professionale che ama sinceramente il proprio lavoro. Ogni membro del nostro team porta con sé un talento e un background diverso, rendendoci un'azienda versatile e di grande esperienza.",
+    "missionP3": "Aardvark Safaris segue personalmente ogni cliente dall'inizio alla fine, offrendoLe un'esperienza personale e senza pensieri. Qualunque cosa La attragga verso lo splendore paesaggistico della Tanzania, abbiamo l'esperienza diretta per organizzare la Sua spedizione africana irripetibile. Ciascuno dei nostri itinerari può essere completamente personalizzato, tenendo conto dei Suoi specifici interessi e requisiti.",
+    "missionP4": "Disponiamo di un concierge e consulente di viaggio negli Stati Uniti, pronto a rispondere a qualsiasi Sua domanda!",
+    "directorEyebrow": "Parola del Direttore",
+    "directorGreeting": "Cari <i>amici</i>,",
+    "directorP1": "È un grande piacere essere al Suo servizio. Siamo un'azienda locale e a conduzione familiare con sede ad Arusha, in Tanzania. Il nostro team esperto di guide safari, con oltre 30 anni di esperienza complessiva, ci dà l'onore di offrire esperienze indimenticabili, avventure, ospitalità e momenti speciali. Un vero privilegio.",
+    "directorP2": "Ci impegniamo affinché i nostri ospiti partano felici, consapevoli di aver fatto una differenza positiva e di aver riscoperto il proprio posto nel mondo e nella natura. Crediamo nella responsabilità a lungo termine di fare del bene e di conservare i luoghi più belli del pianeta, poiché queste aree sono di tutti e di nessuno — conservarle è il nostro impegno come esseri umani.",
+    "directorP3": "Grazie per la Sua generosità nel dedicare del tempo a conoscere meglio i nostri prodotti safari nell'Africa Orientale e oltre. Speriamo che questo sia l'inizio di un viaggio per Lei e per noi, insieme.",
+    "directorSignoff": "Cordiali saluti,",
+    "directorName": "Augustine Mwangotya",
+    "directorRole": "Direttore Esecutivo",
+    "valuesEyebrow": "Cosa ci rende speciali",
+    "valuesTitle": "Cosa guida <i>ogni viaggio</i>",
+    "values": [
+      {
+        "title": "Servizio Personalizzato",
+        "desc": "I nostri servizi sono non solo completamente affidabili e sicuri, ma anche personalizzati per soddisfare le Sue esigenze e preferenze. Con noi, può pianificare la Sua vacanza in tutta tranquillità!"
+      },
+      {
+        "title": "Team Safari Esperto",
+        "desc": "Le nostre guide sono esperte della flora e della fauna della Tanzania e offrono approfondimenti informativi ed esperienze safari personalizzate. Formate secondo i protocolli più aggiornati nella gestione dei visitatori, gestiscono tutta la logistica in modo impeccabile."
+      },
+      {
+        "title": "Impegno per la Conservazione",
+        "desc": "Crediamo nella responsabilità a lungo termine di fare del bene e di conservare i luoghi più belli del pianeta, poiché queste aree sono di tutti — conservarle è il nostro impegno come esseri umani."
+      },
+      {
+        "title": "Avventure su Misura",
+        "desc": "Ciascuno dei nostri itinerari può essere completamente personalizzato, tenendo conto dei Suoi specifici interessi e requisiti. Non esistono due safari uguali."
+      }
+    ],
+    "teamEyebrow": "Il Suo Team Safari",
+    "teamTitle": "Le persone dietro il Suo <i>viaggio</i>",
+    "teamDesc": "I direttori e le guide di Aardvark Safaris in Tanzania sono professionisti dedicati con una vasta esperienza nei safari naturalistici. Molti hanno trascorso l'intera carriera con noi, diplomandosi in diversi corsi di formazione turistica e presso il College of Wildlife Management. Le nostre guide sono esperte della flora e fauna della Tanzania e offrono approfondimenti informativi ed esperienze safari personalizzate. Con la loro profonda conoscenza dell'ecologia africana, della storia e del folklore locale, le nostre guide assicurano un'esperienza safari ricca e indimenticabile.",
+    "team": [
+      {
+        "name": "Augustine Mwangotya",
+        "role": "Direttore Esecutivo e Fondatore",
+        "bio": "Augustine Mwangotya, fondatore di Aardvark Safaris, è cresciuto vicino al Monte Kilimangiaro e ha studiato gestione della fauna selvatica in Tanzania. Ha lavorato per il Tanzania Wildlife Department e come autista-guida per importanti tour operator. Augustine ha conseguito un Master presso Prescott College con una tesi sulla conservazione comunitaria. Ha guidato safari per organizzazioni come National Geographic e la Jane Goodall Institute. Augustine è rinomato per le sue conoscenze, la sua capacità narrativa e la sua competenza logistica. È inoltre un filantropo e sostiene centri per orfani ad Arusha, in Tanzania."
+      },
+      {
+        "name": "Walt Anderson",
+        "role": "Rappresentante USA e Naturalista",
+        "bio": "Walt Anderson è stato Professore di Studi Ambientali per 27 anni presso Prescott College in Arizona, occupandosi di storia naturale, ecologia, gestione della fauna selvatica, conservazione, ecoturismo, arte naturalistica e fotografia. È Artista Firmatario di Artists for Conservation e i suoi dipinti naturalistici hanno ottenuto riconoscimenti. Naturalista esperto apprezzato per il suo entusiasmo e il suo umorismo, dal suo primo safari in Africa Orientale nel 1979 è stato un'abile guida e interprete della fauna della regione. È stato presidente fondatore del consiglio di amministrazione del Biocultural Conservation Institute. Recentemente ritiratosi dalla guida dei safari, Anderson rappresenta Aardvark Tanzania negli Stati Uniti e facilita l'organizzazione dei safari."
+      },
+      {
+        "name": "Deborah Mrema",
+        "role": "Specialista Marketing e Customer Experience",
+        "bio": "Con una conoscenza diretta del Safari Africano maturata vivendo e lavorando in Africa Orientale, Deborah e il suo team Le promettono un'esperienza irripetibile nelle destinazioni più scenografiche e meravigliose dell'Africa. Al centro di ogni avventura che sceglierà di vivere con Aardvark Safaris, Lei dà vita e significato all'esperienza. Lasci a noi il compito di assicurare che sia un tesoro per tutta la vita!"
+      }
+    ],
+    "ctaTitle": "Viaggi con <i>noi</i>",
+    "ctaDesc": "Lasci che i nostri specialisti creino un viaggio unico, pensato esclusivamente per Lei.",
+    "ctaButton": "Pianifica un viaggio"
+  },
+  "contact": {
+    "eyebrow": "Contatti",
+    "heroTitle": "Organizziamo qualcosa di <i>indimenticabile</i>",
+    "africa": "Africa",
+    "northAmerica": "Nord America",
+    "phone": "Telefono",
+    "email": "Email",
+    "office": "Ufficio",
+    "formName": "Il Suo nome",
+    "formEmail": "Email",
+    "formSubject": "Oggetto",
+    "formMessage": "Ci racconti del Suo safari da sogno",
+    "sendMessage": "Invia messaggio",
+    "sent": "Inviato — La contatteremo presto"
+  },
+  "experiences": {
+    "eyebrow": "Esperienze",
+    "heroTitle": "Momenti che <i>cambiano</i> la vita",
+    "addToSafari": "Aggiungi al mio safari",
+    "items": [
+      {
+        "title": "La Grande Migrazione",
+        "desc": "In prima fila mentre due milioni di gnu attraversano il fiume Mara."
+      },
+      {
+        "title": "Game Drive Privati",
+        "desc": "Fuoristrada personalizzati, guide esperte e giornate senza fretta nella natura."
+      },
+      {
+        "title": "Safari a Piedi",
+        "desc": "Seguire le tracce degli animali a piedi con ranger armati — il modo originale di fare safari."
+      },
+      {
+        "title": "Mongolfiera",
+        "desc": "Voli all'alba sopra il Serengeti, conclusi con una colazione con champagne nella savana."
+      },
+      {
+        "title": "Cene nella Savana",
+        "desc": "Cene a lume di candela sotto le acacie, con la Via Lattea sopra di noi."
+      },
+      {
+        "title": "Incontri Culturali",
+        "desc": "Visite autentiche e rispettose alle comunità Maasai e Hadzabe."
+      }
+    ],
+    "craftsEyebrow": "Artigianato e Arte Locale",
+    "craftsTitle": "Il patrimonio <i>artigianale</i> della Tanzania",
+    "crafts": [
+      {
+        "title": "Tanzanite",
+        "desc": "Questa rara gemma blu-violetta si trova solo in Tanzania, rendendola un souvenir prezioso per i visitatori."
+      },
+      {
+        "title": "Ceramica",
+        "desc": "La ceramica artigianale riflette le tradizioni artistiche della Tanzania, con disegni unici e colori vivaci."
+      },
+      {
+        "title": "Tessitura",
+        "desc": "Le tecniche tradizionali di tessitura tanzaniane producono splendidi tessuti, tra cui cesti, tappeti e capi d'abbigliamento."
+      },
+      {
+        "title": "Perline Maasai",
+        "desc": "L'intricato lavoro di perline del popolo Maasai mette in mostra il loro patrimonio culturale e la loro maestria artigianale."
+      }
+    ],
+    "cuisineEyebrow": "Cucina Tanzaniana",
+    "cuisineTitle": "I sapori della <i>Tanzania</i>",
+    "cuisineDesc": "La cucina tanzaniana offre un ricco mosaico di sapori influenzati dagli ingredienti locali e dalle tradizioni culturali. Ecco alcune delizie da assaggiare durante una visita in Tanzania.",
+    "cuisine": [
+      {
+        "title": "Ugali",
+        "desc": "Un piatto base preparato con farina di mais e acqua, cotto fino a ottenere una consistenza simile alla polenta. Viene spesso servito con stufati di carne o verdure ed è un pasto abbondante e soddisfacente."
+      },
+      {
+        "title": "Nyama Choma",
+        "desc": "Carne alla griglia, tipicamente capra, manzo o pollo, condita con spezie e cotta su fuoco vivo. È un piatto molto diffuso, apprezzato nelle occasioni conviviali e nei ristoranti di tutta la Tanzania."
+      },
+      {
+        "title": "Pilau",
+        "desc": "Riso profumato cotto con spezie come cannella, cardamomo, chiodi di garofano e cumino, insieme alla carne. Un piatto aromatico e ricco di sapori che riflette l'influenza indiana sulla cucina tanzaniana."
+      },
+      {
+        "title": "Chapati",
+        "desc": "Pane piatto sottile e non lievitato preparato con farina di frumento, olio e acqua. Si gusta spesso come contorno o spuntino, servito con carne, verdure o fagioli."
+      }
+    ],
+    "whenEyebrow": "Quando visitare",
+    "whenTitle": "Il periodo migliore per <i>viaggiare</i>",
+    "whenDesc": "Il periodo migliore per viaggiare in Tanzania dipende dai Suoi interessi specifici e dalle attività che desidera svolgere. Che cerchi incontri con la fauna selvatica, avventure in montagna, immersione culturale o semplicemente una rilassante vacanza al mare, la Tanzania offre qualcosa per ogni viaggiatore durante tutto l'anno.",
+    "seasons": [
+      {
+        "title": "Stagione secca (giugno – ottobre)",
+        "items": [
+          "Il periodo migliore per l'osservazione della fauna — gli animali si radunano attorno ai fiumi e alle pozze d'acqua.",
+          "Cieli limpidi e condizioni asciutte lo rendono il periodo preferito per scalare il Monte Kilimangiaro."
+        ]
+      },
+      {
+        "title": "Stagione verde (novembre – maggio)",
+        "items": [
+          "Ideale per il birdwatching — gli uccelli migratori arrivano in Tanzania in questo periodo.",
+          "Meno turisti rispetto alla stagione secca — esperienze più tranquille e convenienti.",
+          "Vegetazione lussureggiante e paesaggi splendidi nei parchi del nord.",
+          "Opportunità fotografiche uniche con colori vivaci e formazioni nuvolose spettacolari."
+        ]
+      },
+      {
+        "title": "Stagioni intermedie (marzo–maggio e novembre)",
+        "items": [
+          "Un equilibrio tra stagione secca e verde, con meno turisti.",
+          "I prezzi di alloggi e tour possono essere più competitivi.",
+          "Temperature più fresche offrono condizioni confortevoli per le attività all'aperto."
+        ]
+      }
+    ],
+    "airportsEyebrow": "Come arrivare",
+    "airportsTitle": "<i>Aeroporti</i> e Accesso",
+    "airports": [
+      {
+        "code": "JRO",
+        "name": "Kilimanjaro International Airport",
+        "desc": "L'aeroporto principale più vicino per Serengeti, Tarangire e Ngorongoro. I visitatori si collegano con voli interni verso le piste all'interno o nei pressi del Serengeti (Seronera o Kogatende)."
+      },
+      {
+        "code": "DAR",
+        "name": "Julius Nyerere International Airport",
+        "desc": "Porta d'accesso al Parco Nazionale di Nyerere (Riserva di Selous) e al Parco Nazionale di Ruaha nel sud della Tanzania."
+      },
+      {
+        "code": "ARK",
+        "name": "Arusha Airport",
+        "desc": "Comodo per il Parco Nazionale di Arusha, il Monte Meru, il Parco di Manyara e quello di Tarangire."
+      },
+      {
+        "code": "ZNZ",
+        "name": "Zanzibar International Airport",
+        "desc": "Per visitare Zanzibar e per voli di collegamento attraverso la Tanzania dai circuiti del nord o del sud."
+      }
+    ]
+  },
+  "destPage": {
+    "eyebrow": "Destinazioni",
+    "heroTitle": "I luoghi <i>selvaggi</i> e iconici della Tanzania — e oltre",
+    "heroDesc": "Esplori i parchi, le montagne e le isole della Tanzania — e prolunghi il Suo viaggio attraverso l'Africa Orientale e Meridionale.",
+    "groups": [
+      {
+        "eyebrow": "Parchi Nazionali",
+        "title": "Il cuore selvaggio della Tanzania",
+        "items": [
+          {
+            "name": "Serengeti",
+            "desc": "Pianure sconfinate e la Grande Migrazione."
+          },
+          {
+            "name": "Ngorongoro",
+            "desc": "La più alta concentrazione di fauna in Africa, dentro una caldera vulcanica."
+          },
+          {
+            "name": "Tarangire",
+            "desc": "Baobab e le più grandi mandrie di elefanti del nord della Tanzania."
+          },
+          {
+            "name": "Arusha NP",
+            "desc": "Le pendici del Monte Meru, laghi e foresta lussureggiante."
+          },
+          {
+            "name": "Lake Manyara",
+            "desc": "Leoni arrampicatori e fenicotteri della Rift Valley."
+          },
+          {
+            "name": "Ruaha",
+            "desc": "Selvaggio, remoto e ricco di predatori."
+          },
+          {
+            "name": "Selous",
+            "desc": "Una delle più grandi riserve faunistiche del continente."
+          }
+        ]
+      },
+      {
+        "eyebrow": "Montagne",
+        "title": "Il tetto dell'Africa",
+        "items": [
+          {
+            "name": "Kilimanjaro",
+            "desc": "La vetta più alta dell'Africa — 5.895 m attraverso cinque zone ecologiche."
+          },
+          {
+            "name": "Meru",
+            "desc": "La seconda vetta della Tanzania — selvaggia e raramente scalata."
+          }
+        ]
+      },
+      {
+        "eyebrow": "Isole",
+        "title": "Costa delle spezie",
+        "items": [
+          {
+            "name": "Zanzibar",
+            "desc": "Stone Town, acque turchesi e spiagge di sabbia bianca."
+          },
+          {
+            "name": "Pemba",
+            "desc": "L'isola verde — immersioni, dhow e tranquillità."
+          },
+          {
+            "name": "Mafia",
+            "desc": "Squali balena e un parco marino al largo della costa meridionale."
+          }
+        ]
+      },
+      {
+        "eyebrow": "Altri Paesi",
+        "title": "Oltre la Tanzania",
+        "items": [
+          {
+            "name": "Kenya",
+            "desc": "La Maasai Mara e l'altra metà della migrazione."
+          },
+          {
+            "name": "Uganda",
+            "desc": "Gorilla di montagna e la sorgente del Nilo."
+          },
+          {
+            "name": "Rwanda",
+            "desc": "Trekking tra i gorilla nei vulcani Virunga."
+          },
+          {
+            "name": "Botswana",
+            "desc": "Il Delta dell'Okavango e il lungofiume del Chobe."
+          },
+          {
+            "name": "Zimbabwe",
+            "desc": "Le Cascate Vittoria e l'entroterra selvaggio di Hwange."
+          },
+          {
+            "name": "South Africa",
+            "desc": "Città del Capo, Kruger e la Garden Route."
+          }
+        ]
+      }
+    ],
+    "parksTitle": "Key parks & reserves"
+  },
+  "camps": {
+    "eyebrow": "Campi e Lodge",
+    "heroTitle": "Unici nel carattere, <i>senza compromessi</i> nel lusso",
+    "items": [
+      {
+        "name": "Serengeti Northern Camp",
+        "region": "Serengeti settentrionale",
+        "desc": "Campo tendato mobile che segue la migrazione lungo il fiume Mara."
+      },
+      {
+        "name": "Ngorongoro Lodge",
+        "region": "Cratere di Ngorongoro",
+        "desc": "Vista sul bordo del cratere, caminetti e game drive all'alba nella caldera."
+      },
+      {
+        "name": "Tarangire Tented Camp",
+        "region": "Fiume Tarangire",
+        "desc": "Tende safari classiche sotto antichi baobab, osservando gli elefanti bere al fiume."
+      },
+      {
+        "name": "Manyara Treehouse",
+        "region": "Lago Manyara",
+        "desc": "Rifugio su palafitte nella foresta di acque sotterranee."
+      },
+      {
+        "name": "Selous Wilderness",
+        "region": "Riserva di Selous",
+        "desc": "Campo remoto nel cuore di una delle più grandi riserve dell'Africa."
+      },
+      {
+        "name": "Mount Meru Retreat",
+        "region": "Arusha",
+        "desc": "Ritiro in una piantagione di caffè — la cornice perfetta prima e dopo il safari."
+      }
+    ]
+  },
+  "blog": {
+    "theJournal": "Il Diario",
+    "heroTitle": "Dispacci dal <i>mondo selvaggio.</i>",
+    "heroDesc": "Appunti dal campo, guide e storie mai raccontate — scritti dalle nostre guide, naturalisti e viaggiatori che conoscono la Tanzania come le proprie tasche.",
+    "featured": "In evidenza",
+    "editorsPick": "Scelta della redazione 2026",
+    "headGuide": "Guida Principale",
+    "readStory": "Leggi la storia",
+    "readMore": "Leggi di più",
+    "searchPlaceholder": "Cerca storie…",
+    "trending": "Di tendenza",
+    "theDispatch": "Il Dispaccio",
+    "dispatchTitle": "Una lettera dalla savana, ogni mese.",
+    "dispatchDesc": "Storie, avvistamenti e qualche consiglio su campi segreti.",
+    "joinBtn": "Iscriviti",
+    "topics": "Argomenti",
+    "noResults": "Nessuna storia corrisponde alla ricerca.",
+    "readAll": "Leggi tutte le recensioni su Tripadvisor",
+    "backToJournal": "← Torna al Diario",
+    "close": "Chiudi",
+    "categories": {
+      "all": "Tutti",
+      "guides": "Guide",
+      "wildlife": "Fauna",
+      "culture": "Cultura",
+      "trekking": "Trekking",
+      "experiences": "Esperienze",
+      "travelTips": "Consigli di viaggio"
+    },
+    "topicTags": [
+      "Migrazione",
+      "Big Five",
+      "Cratere",
+      "Fotografia",
+      "Luna di miele",
+      "Famiglia",
+      "Birdwatching",
+      "Conservazione"
+    ],
+    "posts": [
+      {
+        "slug": "great-migration-timing",
+        "title": "Quando vedere la Grande Migrazione",
+        "read": "8 min",
+        "category": "Guide",
+        "excerpt": "Una guida mese per mese — dove si trovano le mandrie, dove attendono i predatori e come programmare la visita per gli attraversamenti del fiume.",
+        "body": [
+          "La Grande Migrazione non è un singolo evento — è un ciclo vitale che dura tutto l'anno, un percorso circolare di 800 chilometri tra il Serengeti meridionale della Tanzania e la Maasai Mara del Kenya. Sapere dove si trovano le mandrie in ogni dato mese fa la differenza tra osservare mille gnu al pascolo e assistere a un attraversamento del fiume con centomila animali.",
+          "Da fine gennaio a marzo, le mandrie si radunano nelle pianure erbose intorno a Ndutu e nel Serengeti meridionale. È la stagione della nascita dei cuccioli — circa 8.000 vitelli nascono ogni giorno per circa tre settimane. I predatori sono ovunque: ghepardi nelle pianure aperte, leoni nelle paludi, iene ai margini. Per chi visita per la prima volta e per i fotografi, questo è probabilmente il periodo più gratificante dell'anno.",
+          "Aprile e maggio portano le grandi piogge e le mandrie iniziano a spostarsi verso nord e ovest, in direzione del Corridoio Occidentale. La folla si dirada, i prezzi calano e il paesaggio si tinge di un verde elettrico. Entro giugno e inizio luglio, le colonne raggiungono il fiume Grumeti — il primo grande attraversamento dell'anno, meno famoso del Mara ma comunque spettacolare, con enormi coccodrilli in agguato nelle acque basse.",
+          "Da luglio a ottobre è alta stagione, e per un buon motivo. Le mandrie si addentrano nel Serengeti settentrionale e iniziano ad attraversare il fiume Mara, spesso avanti e indietro più volte. Gli attraversamenti sono imprevedibili: si può attendere un giorno intero invano, oppure imbattersi in ventimila gnu che si tuffano nell'acqua pochi minuti dopo l'arrivo. Prevediamo sempre un minimo di tre notti nel nord per gli ospiti che desiderano vivere questo momento.",
+          "A novembre, le piogge brevi richiamano le mandrie verso sud. A dicembre si ritrovano sparse nel Serengeti orientale e di nuovo nei territori di nascita — e il ciclo ricomincia. Il nostro consiglio: scelga la fase che più La entusiasma e costruisca il viaggio attorno a quella. Non esiste un mese sbagliato — solo ricompense diverse."
+        ]
+      },
+      {
+        "slug": "tarangire-tuskers",
+        "title": "Dietro l'Obiettivo: i Grandi Elefanti di Tarangire",
+        "read": "6 min",
+        "category": "Fauna",
+        "excerpt": "Fotografare i giganti — e perché gli elefanti di Tarangire sono diversi da tutti gli altri.",
+        "body": [
+          "Tarangire ospita una delle più grandi concentrazioni di elefanti dell'Africa Orientale e, aspetto cruciale, uno degli ultimi rifugi dei veri grandi elefanti con zanne che sfiorano il suolo. Decenni di attenta protezione hanno permesso a questo patrimonio genetico di sopravvivere qui, mentre altrove è in gran parte scomparso.",
+          "La stagione secca, da luglio a ottobre, è quando accade la magia. Man mano che le aree circostanti si prosciugano, le mandrie convergono verso il fiume Tarangire. Abbiamo contato trecento elefanti in un'unica ansa del fiume, intenti a bere e a bagnarsi nella polvere nella luce dorata del pomeriggio.",
+          "Per la fotografia, posizionarsi in basso è fondamentale. Portare l'obiettivo quasi a livello del suolo e scattare in controluce nell'ultima ora prima del tramonto — la polvere sollevata dalla mandria crea un'aureola. Uno zoom 100–400 mm è l'ideale: abbastanza lungo per i ritratti, abbastanza ampio per i gruppi familiari.",
+          "Comportamenti da osservare: le matriarche che guidano la mandria all'acqua in fila indiana, i tori che si sfidano languidamente nell'acqua bassa, e i piccoli che corrono tra le zampe degli adulti. Pazienza e silenzio sono essenziali — gli elefanti di Tarangire sono rilassati in presenza dei veicoli, ma premieranno l'immobilità con un'intimità straordinaria."
+        ]
+      },
+      {
+        "slug": "first-timer-guide",
+        "title": "Guida per chi visita la Tanzania per la prima volta",
+        "read": "10 min",
+        "category": "Consigli di viaggio",
+        "excerpt": "Visti, vaccinazioni, bagagli — tutto ciò che serve sapere prima del primo safari.",
+        "body": [
+          "Organizzare un safari in Tanzania può sembrare impegnativo, ma le informazioni essenziali sono semplici. La maggior parte delle nazionalità può richiedere un e-visa online prima del viaggio, oppure ottenere il visto all'arrivo negli aeroporti del Kilimangiaro o di Dar es Salaam. La vaccinazione contro la febbre gialla è obbligatoria solo per chi proviene da un Paese a rischio di trasmissione; consigliamo sempre di consultare un centro di medicina del viaggiatore 6–8 settimane prima della partenza.",
+          "La profilassi antimalarica è prassi standard — la maggior parte degli ospiti utilizza Malarone o doxiciclina. Portare maniche lunghe e pantaloni in colori neutri (evitare blu e nero, che attirano le mosche tse-tse in alcune zone). Gli strati sono fondamentali: le mattine sul bordo del cratere possono sfiorare lo zero, mentre i pomeriggi nelle pianure superano i 30°C.",
+          "I limiti di bagaglio sui voli interni sono in genere 15 kg in borse morbide. Forniamo una lista degli oggetti da portare alla conferma della prenotazione, ma in sintesi: due pantaloni, tre camicie, un pile, un antivento, scarpe da camminata robuste, sandali, cappello da sole, occhiali da sole, crema solare e un piccolo zaino da giorno. Macchina fotografica, binocolo e una lampada frontale completano il kit.",
+          "La mancia è d'uso e molto apprezzata — guide, personale dei campi e portatori ne dipendono. Forniamo un documento chiaro con le linee guida per evitare sorprese. Lo scellino tanzaniano è utile per piccoli acquisti, ma i dollari americani (banconote integre, successive al 2009) sono accettati quasi ovunque.",
+          "Soprattutto: lasci spazio nel Suo itinerario per non fare nulla. I migliori momenti di un safari non sono mai in programma."
+        ]
+      },
+      {
+        "slug": "kilimanjaro-routes",
+        "title": "Scalare il Kilimangiaro: le vie a confronto",
+        "read": "12 min",
+        "category": "Trekking",
+        "excerpt": "Marangu, Machame, Lemosho, Northern Circuit — scegliere la strada giusta per Uhuru Peak.",
+        "body": [
+          "Il Kilimangiaro ha sette vie consolidate, ma quattro concentrano quasi tutti i raggiungimenti della vetta. Scegliere bene è il fattore più importante per arrivare a Uhuru Peak — molto più della forma fisica o dell'attrezzatura.",
+          "Marangu (5–6 giorni) è la classica \"via della Coca-Cola\" con alloggio in rifugi. È la più economica e l'unica con posti letto, ma l'itinerario breve concede poco tempo per l'acclimatamento — le percentuali di successo si aggirano intorno al 50%. La consigliamo raramente.",
+          "Machame (6–7 giorni) è più panoramica, più impegnativa e molto più frequentata. La via segue un profilo \"sali in alto, dormi in basso\" che favorisce l'acclimatamento. Le percentuali di successo salgono al 75–85% nella versione di 7 giorni. È la nostra raccomandazione standard per escursionisti in buona forma con tempi stretti.",
+          "Lemosho (7–8 giorni) parte da ovest ed è ampiamente considerata la via più bella. Più tranquilla della Machame, con un eccellente acclimatamento e percentuali di successo superiori al 90% nella versione di 8 giorni. Se ha il tempo, questa è la scelta migliore.",
+          "Il Northern Circuit (9 giorni) è la via più lunga e recente, che aggira i versanti settentrionali che pochissimi escursionisti hanno la fortuna di vedere. Il tasso di successo supera il 95%. È la nostra scelta per chi desidera le massime probabilità di raggiungere il tetto dell'Africa e apprezza la solitudine.",
+          "Qualunque via scelga, si alleni con escursioni con zaino appesantito per almeno tre mesi, si prenda il Suo tempo e ascolti le guide. La montagna è paziente — sia paziente con lei."
+        ]
+      },
+      {
+        "slug": "balloon-serengeti",
+        "title": "In mongolfiera sul Serengeti all'alba",
+        "read": "5 min",
+        "category": "Esperienze",
+        "excerpt": "Librarsi silenziosamente sopra le pianure al sorgere del sole — una prospettiva che pochi conosceranno.",
+        "body": [
+          "Siamo nella cesta prima dell'alba, i bruciatori sibilano sopra di noi, le pianure ancora violacee nella penombra. In pochi minuti il Serengeti si allontana sotto di noi e il mondo diventa silenzioso, tranne il vento.",
+          "Da trecento metri di altezza, la migrazione sembra un fiume che scorre lentamente. Si percepisce la struttura del territorio — i kopje, le anse dei fiumi, le macchie di bosco — in un modo che nessun game drive può offrire. Leoni su una preda, elefanti in marcia in gruppi familiari, giraffe che brucano le chiome degli alberi: tutto visibile allo stesso tempo, in un unico sguardo.",
+          "Il volo dura circa un'ora. L'atterraggio è dolce, di solito nelle pianure aperte, dove una colazione con champagne è allestita sotto un'acacia. È un lusso — ma per le coppie in luna di miele, i fotografi e chiunque celebri un momento speciale, è il tipo di ricordo che dà significato a un intero viaggio.",
+          "Prenotare con anticipo è essenziale. Solo pochi palloni operano nel Serengeti centrale e l'alta stagione si riempie con mesi di anticipo."
+        ]
+      },
+      {
+        "slug": "maasai-encounters",
+        "title": "Incontri culturali con i Maasai",
+        "read": "7 min",
+        "category": "Cultura",
+        "excerpt": "Come collaboriamo con le comunità locali per esperienze autentiche e rispettose.",
+        "body": [
+          "La \"visita culturale\" si è guadagnata una cattiva reputazione, e a ragione. Troppi operatori propongono un modello transazionale: i turisti arrivano, si scattano foto, si paga un compenso, tutti tornano a casa. La comunità viene trattata come uno sfondo. Noi abbiamo trascorso anni a costruire qualcosa di diverso.",
+          "Le nostre comunità partner si trovano ai confini della Ngorongoro Conservation Area e nella zona di Loliondo. Le visite sono organizzate attraverso fondazioni gestite dalle comunità stesse, senza intermediari. La quota per visitatore va direttamente a scuole, progetti idrici e cooperative femminili, e la comunità decide cosa condividere e cosa no.",
+          "Ciò che gli ospiti fanno concretamente varia da comunità a comunità. Si può camminare con un anziano Maasai imparando a leggere la savana, sedersi con le donne a creare perline, o partecipare a una benedizione del bestiame. Non ci sono danze preparate — solo ciò che sta accadendo quel giorno.",
+          "Regole per la fotografia: chiedere sempre il permesso, ogni volta. Un sorriso sincero e un momento di conversazione apriranno più porte di qualsiasi mancia. Molti anziani preferiranno non essere fotografati, e questo desiderio è assolutamente non negoziabile.",
+          "I Maasai non sono un museo. Sono una società viva, in evoluzione, con telefoni cellulari, studenti universitari e squadre di calcio. Il privilegio di una visita è l'occasione di incontrarli per come sono realmente."
+        ]
+      },
+      {
+        "slug": "seronera-leopards",
+        "title": "Sulle tracce dei leopardi a Seronera",
+        "read": "6 min",
+        "category": "Fauna",
+        "excerpt": "Perché i kopje granitici del Serengeti centrale sono la capitale dei leopardi in Africa.",
+        "body": [
+          "La valle di Seronera, nel Serengeti centrale, vanta la più alta densità di leopardi di tutta l'Africa. Il motivo è la geografia: una rete di fiumi perenni fiancheggiati da alberi salsiccia e fichi offre ombra, copertura per le imboscate e nascondigli diurni in quota. Se si desidera vedere un leopardo, è qui che bisogna venire.",
+          "Partiamo prima dell'alba. I leopardi sono più attivi nel fresco del mattino e di nuovo all'ultima luce. Le nostre guide conoscono i singoli felini per nome — la femmina con la piega nella coda, il grande maschio territoriale con l'orecchio intaccato — e percorriamo lentamente i corridoi fluviali, scrutando ogni ramo orizzontale.",
+          "Prestare attenzione ai richiami d'allarme delle impala, al chiacchiericcio delle scimmie vervet e ai volteggi degli avvoltoi. Una preda issata su un albero può trattenere un leopardo nello stesso punto per due giorni. Una volta localizzato, attendiamo. Un leopardo addormentato finirà per stiracchiarsi, sbadigliare e scendere — e quel momento silenzioso di movimento sarà la fotografia del viaggio.",
+          "L'etichetta è importante: mantenere le distanze, spegnere il motore, non accerchiare l'animale. Altri veicoli arriveranno, ma una guida attenta può di solito trovare un'angolazione più tranquilla."
+        ]
+      },
+      {
+        "slug": "northern-camp",
+        "title": "All'interno del nostro Northern Camp",
+        "read": "5 min",
+        "category": "Esperienze",
+        "excerpt": "Lusso tendato fatto bene — una sera tranquilla con le mandrie che sfilano all'orizzonte.",
+        "body": [
+          "Il nostro campo stagionale nel Serengeti settentrionale sorge su una bassa cresta sopra il fiume Mara. È una struttura contenuta — otto tende, nessun recinto elettrico, nessuna piscina. Ciò che offre è il silenzio, una vista ininterrotta sui punti di attraversamento e uno staff che conosce ogni ospite per nome entro un'ora dall'arrivo.",
+          "Ogni tenda è in tela su una piattaforma rialzata in legno pregiato: letto king-size, bagno privato con doccia, un tavolo da scrittura e una veranda privata. L'energia solare alimenta l'illuminazione; l'acqua calda proviene da un boiler a legna riscaldato due volte al giorno. L'obiettivo è il comfort senza isolamento dal luogo.",
+          "La sera inizia con un aperitivo sulla cresta — gin, tonica, un vassoio di biltong e il sole che tramonta dietro la scarpata. La cena è di tre portate attorno a un lungo tavolo conviviale, poi caffè accanto al fuoco mentre una guida ripercorre gli avvistamenti del giorno.",
+          "Spostiamo il campo ogni stagione per seguire le mandrie. Se visiterà ad agosto o settembre, la Sua tenda potrebbe trovarsi a un chilometro da un attraversamento del fiume. Non c'è sostituto per questa vicinanza."
+        ]
+      },
+      {
+        "slug": "safari-food",
+        "title": "Cosa si mangia in safari",
+        "read": "4 min",
+        "category": "Consigli di viaggio",
+        "excerpt": "Colazioni nella savana, aperitivi al tramonto e la sorprendente raffinatezza della cucina nei campi.",
+        "body": [
+          "La cucina nei campi in Tanzania ha fatto molta strada dallo stereotipo dello stufato in scatola. La maggior parte dei nostri campi partner impiega chef qualificati, coltiva le proprie erbe aromatiche e organizza rifornimenti quotidiani per frutta e verdura fresca. Aspettatevi tre pasti completi al giorno, più una bevanda calda servita in tenda al risveglio.",
+          "La colazione nella savana è una tradizione da vivere almeno una volta: un tavolo pieghevole, lino bianco, frutta fresca, uova calde e bacon, tutto allestito sotto un'acacia dopo il game drive mattutino. Il caffè non avrà mai un sapore migliore.",
+          "Il pranzo è solitamente un leggero buffet al campo — insalate, affettati, un piatto caldo, pane fresco. Molti ospiti si ritirano per un riposo pomeridiano fino al game drive del tardo pomeriggio.",
+          "L'aperitivo al tramonto è un rituale sacro. Un thermos di gin, olive, il sole che tramonta sulle pianure. La cena segue: tre portate, spesso a lume di candela, quasi sempre sotto le stelle.",
+          "Le esigenze alimentari sono gestite con cura — menu vegetariano, vegano, senza glutine, kosher e halal possono essere preparati con preavviso. Basta comunicarlo al momento della prenotazione e le cucine faranno il resto."
+        ]
+      }
+    ]
+  },
+  "planTripPage": {
+    "eyebrow": "Pianifica un viaggio",
+    "heroTitle": "La Sua Tanzania <i>su misura</i> La aspetta",
+    "heroDesc": "Ci racconti i Suoi sogni e creeremo una proposta gratuita e senza impegno — ogni itinerario è modellato esclusivamente sui Suoi interessi.",
+    "fullName": "Nome completo",
+    "email": "Email",
+    "phone": "Telefono",
+    "country": "Paese",
+    "travelDates": "Date di viaggio",
+    "travelDatesPlaceholder": "Mese approssimativo o periodo",
+    "travelers": "Viaggiatori",
+    "travelersPlaceholder": "es. 2 adulti",
+    "interests": "Interessi",
+    "tellUsMore": "Ci racconti di più",
+    "tellUsMorePlaceholder": "Condivida il Suo viaggio da sogno — qualsiasi dettaglio ci aiuterà.",
+    "submit": "Invia la mia richiesta",
+    "submitted": "Grazie — La contatteremo presto",
+    "interestOptions": [
+      "Game Drive Big Five",
+      "Grande Migrazione",
+      "Trekking sul Kilimangiaro",
+      "Incontri Culturali",
+      "Spiaggia a Zanzibar",
+      "Luna di miele",
+      "Safari in famiglia",
+      "Fotografia"
+    ]
+  },
+  "itinerariesPage": {
+    "eyebrow": "Itinerari",
+    "heroTitle": "Viaggi <i>esclusivi</i>",
+    "heroDesc": "Safari su misura attraverso Tanzania, Africa Meridionale e Zanzibar. Ogni viaggio è completamente personalizzabile — richieda un preventivo gratuito.",
+    "all": "Tutti",
+    "tanzania": "Tanzania",
+    "southernAfrica": "Africa Meridionale",
+    "zanzibar": "Zanzibar",
+    "days": "Giorni",
+    "nights": "Notti",
+    "requestQuote": "Richieda un preventivo gratuito →",
+    "items": [
+      {
+        "title": "Migrazione nel Serengeti Settentrionale",
+        "route": "Arusha · Tarangire · Ngorongoro · Serengeti",
+        "desc": "Segua le mandrie attraverso il Serengeti settentrionale mentre attraversano il Mara."
+      },
+      {
+        "title": "Meraviglie Naturalistiche della Tanzania",
+        "route": "Arusha · Tarangire · Ngorongoro · Serengeti",
+        "desc": "Il classico circuito del nord, approfondito — con più tempo per incontri lenti e autentici."
+      },
+      {
+        "title": "Safari Classico del Circuito Nord",
+        "route": "Arusha · Tarangire · Ngorongoro · Serengeti · Estensione: Uganda",
+        "desc": "I luoghi imperdibili della Tanzania, con ritmi sapienti — e un'estensione opzionale in Uganda."
+      },
+      {
+        "title": "Circuito Nord — Kilimangiaro",
+        "route": "Mti Mkubwa · Shira · Moir · Buffalo · School Hut · Uhuru Peak",
+        "desc": "La via più lunga, più panoramica e con il più alto tasso di successo verso la vetta del Kili."
+      },
+      {
+        "title": "Tanzania Iconica",
+        "route": "Tarangire · Ngorongoro · Serengeti",
+        "desc": "Una fuga rapida attraverso i tre parchi più iconici della Tanzania."
+      },
+      {
+        "title": "Cratere e Savana",
+        "route": "Ngorongoro · Serengeti",
+        "desc": "Un breve safari tanzaniano concentrato sul Cratere e sul Serengeti meridionale."
+      },
+      {
+        "title": "Fuga Breve",
+        "route": "Tarangire · Ngorongoro",
+        "desc": "Un safari nel fine settimana per viaggiatori con poco tempo."
+      },
+      {
+        "title": "Escursione Giornaliera — Ngorongoro",
+        "route": "Discesa di un giorno nel Cratere",
+        "desc": "Esplori le meraviglie del Ngorongoro in una sola giornata indimenticabile."
+      },
+      {
+        "title": "Migrazione nel Serengeti Meridionale e Zanzibar",
+        "route": "Serengeti Kusini · Namiri · Nyerere · Zanzibar",
+        "desc": "La stagione dei cuccioli nel Serengeti meridionale, il selvaggio Nyerere e un'estensione balneare sull'isola delle spezie."
+      },
+      {
+        "title": "Estensione Parco Nazionale di Mkomazi",
+        "route": "Arusha · Mkomazi · Arusha",
+        "desc": "Fuori dai sentieri battuti: rinoceronti, licaoni e la quieta natura selvaggia di Mkomazi."
+      },
+      {
+        "title": "Estensione Uganda — Gorilla e Scimpanzé",
+        "route": "Entebbe · Mabamba · Bwindi · Queen Elizabeth NP",
+        "desc": "Tracci i gorilla di montagna a Bwindi, cerchi il becco a scarpa e segua gli scimpanzé nella Gola di Kyambura."
+      },
+      {
+        "title": "Città del Capo, Cascate Vittoria e Botswana",
+        "route": "Cape Town · Victoria Falls · Chobe · Hwange · Okavango Delta",
+        "desc": "Un'epica spedizione nell'Africa Meridionale tra Città del Capo, le Cascate Vittoria e il circuito faunistico del Botswana."
+      },
+      {
+        "title": "Delta dell'Okavango, Moremi e Cascate Vittoria",
+        "route": "Moremi Game Reserve · Okavango Delta · Victoria Falls",
+        "desc": "Un viaggio immersivo nell'Africa Meridionale attraverso il Delta e Moremi fino alle cascate fragorose."
+      },
+      {
+        "title": "Fuga a Zanzibar",
+        "route": "Stone Town · Costa Nord",
+        "desc": "Un rilassante soggiorno di cinque notti sull'isola delle spezie."
+      },
+      {
+        "title": "Evasione a Zanzibar",
+        "route": "Cultura · Avventura · Relax",
+        "desc": "Una perfetta fuga di cinque giorni tra cultura, avventura e spiaggia."
+      },
+      {
+        "title": "Zanzibar Essenziale",
+        "route": "Fuga culturale e costiera",
+        "desc": "Tre notti per assaporare Stone Town e la costa turchese."
+      }
+    ],
+    "extra": {
+      "okavangoDelta": {
+        "title": "Okavango Delta, Moremi & Victoria Falls",
+        "route": "Moremi Game Reserve · Okavango Delta · Victoria Falls",
+        "desc": "An immersive Southern African journey through the Delta and Moremi to the thundering falls."
+      }
+    }
+  },
+  "reviews": {
+    "eyebrow": "Storie degli Ospiti",
+    "title": "Amati dai viaggiatori, <i>affidabili</i> in tutto il mondo",
+    "verified": "Verificata",
+    "basedOn": "21 verified TripAdvisor reviews",
+    "readOnTripadvisor": "Leggi su Tripadvisor →",
+    "readAll": "Leggi tutte le recensioni su Tripadvisor",
+    "items": [
+      {
+        "name": "NA N",
+        "location": "TripAdvisor · July 2025",
+        "trip": "13-day Tanzania",
+        "date": "July 2025",
+        "title": "High calibre operators",
+        "body": "Aardvark Safari Tanzania Ltd were by far the calmest and most respectful operators everywhere we went. Complete respect Augustine for the way you and your team were with the wildlife. The choice of accommodation and locations were perfect too. This company is high calibre and we will definitely return to travel with them again."
+      },
+      {
+        "name": "Terri M",
+        "location": "Boulder City, NV",
+        "trip": "Group safari",
+        "date": "January 2024",
+        "title": "Cannot say enough good things",
+        "body": "I cannot say enough good things about this company. They took amazingly good care of our group and were so well-informed we could not stump them. Also the guides were all fun to be with. We witnessed so much and such beautiful wildlife that we were thrilled every day, as well as well fed and cared for."
+      },
+      {
+        "name": "MaineacFamilyof4",
+        "location": "TripAdvisor · January 2024",
+        "trip": "3-week Tanzania incl. Kilimanjaro",
+        "date": "January 2024",
+        "title": "The safari with Gus was astounding",
+        "body": "The safari with Gus was astounding. His knowledge of the animals and environment was absolutely encyclopedic, and kept us all interested and fully engaged with our safari. I'm fastidious about safety, and found his expert driving and our vehicle were excellent. Their attention to details was incredible."
+      },
+      {
+        "name": "Escape43797514328",
+        "location": "Couples · Uganda",
+        "trip": "Primate safari",
+        "date": "September 2023",
+        "title": "Our third safari with Aardvark",
+        "body": "Our primate safari to Uganda organised by Aardvark safari's was superb. This was our third safari organised by Aardvark. Aardvark organised 2 gorilla treks, 4 chimpanzee treks in three different locations, boat safaris and jeep safaris. Uganda is stunning and exceeded our expectations."
+      },
+      {
+        "name": "Doug P",
+        "location": "Flagstaff, AZ",
+        "trip": "24-day Tanzania & Uganda",
+        "date": "July 2022",
+        "title": "Exceeded every expectation",
+        "body": "Augustine and his company Aardvark Safaris exceeded my expectations in every way. From listening and customizing the trip to our interests, to the incredible knowledge bank of Augustine. If you want to book a safe, elegant, resourceful safari where you are treated like a king, look no further."
+      }
+    ],
+    "subdesc": "Verified Tripadvisor reviews from guests who have travelled with us — detailed, honest, and independently published.",
+    "ranking": "#5 of 19 tours in Arusha National Park"
+  },
+  "lang": {
+    "label": "Lingua",
+    "en": "English",
+    "it": "Italiano",
+    "es": "Español",
+    "de": "Deutsch",
+    "fr": "Français"
+  },
+  "video": {
+    "play": "Play video",
+    "pause": "Pause video"
+  },
+  "officeHours": {
+    "blocks": [
+      {
+        "label": "Arusha, Tanzania (EAT)",
+        "weekday": "Monday–Friday · 8:00 AM – 8:00 PM",
+        "weekend": "Saturday–Sunday · 9:00 AM – 5:00 PM"
+      },
+      {
+        "label": "United States — Walt Anderson (MST)",
+        "weekday": "Monday–Friday · 8:00 AM – 5:00 PM"
+      }
+    ],
+    "whatsapp": "WhatsApp & email · 7 days — typically answered within a few hours during office times",
+    "note": "All times are local. Messages sent outside these hours are answered at the start of the next session."
+  },
+  "forms": {
+    "sla": "We reply within 24 hours — often the same business day (Mon–Fri 8:00–20:00 EAT). Messages go to",
+    "sending": "Sending…",
+    "emailFallback": "Send by email instead"
+  },
+  "cookie": {
+    "title": "Cookie preferences",
+    "message": "We use essential cookies and optional analytics to improve this site. See our",
+    "essential": "Essential only",
+    "accept": "Accept analytics"
+  },
+  "whatsapp": {
+    "aria": "Chat on WhatsApp",
+    "prefill": "Hello Aardvark Safaris — I'd like to plan a safari. "
+  },
+  "mobileCta": {
+    "aria": "Quick contact actions",
+    "bookNow": "Book now",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "getQuote": "Get quote",
+    "trustShort": "Reply within 24 hours",
+    "trust": "TripAdvisor {{rating}} — reply within 24 hours",
+    "whatsappInstead": "Or message us on WhatsApp"
+  },
+  "trust": {
+    "eyebrow": "Trust & credentials",
+    "title": "Licensed, insured, and recognised",
+    "desc": "Aardvark Safaris Tanzania is a locally owned operator in Arusha — licensed, insured, and rated 5.0 on TripAdvisor.",
+    "licenseName": "Licensed operator",
+    "licenseDesc": "Registered Tanzania safari operator with insured vehicles and professional driver-guides.",
+    "tatoName": "TATO member",
+    "tatoDesc": "Member of the Tanzania Association of Tour Operators (TATO).",
+    "insuredName": "Travel protection",
+    "insuredDesc": "We arrange comprehensive travel insurance options and emergency evacuation cover for every journey.",
+    "taName": "TripAdvisor excellence",
+    "taDesc": "5.0 rating on TripAdvisor — 21 verified guest reviews (May 2026)."
+  },
+  "booking": {
+    "sectionTitle": "How booking works",
+    "sectionDesc": "Three simple steps from first enquiry to confirmed dates. Deposits: 20% for group trips, 30% for customised itineraries. Balance due 90 days before departure.",
+    "step1Title": "Send your enquiry",
+    "step1Desc": "Use the form below, phone, WhatsApp, or email — we respond within 24 hours.",
+    "step2Title": "Receive your proposal",
+    "step2Desc": "A personalised, day-by-day itinerary tailored to your interests and travel dates.",
+    "step3Title": "Confirm with a deposit",
+    "step3Desc": "A deposit secures your dates; the balance is due 90 days before departure."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "heroTitle": "Safari <i>questions</i> answered",
+    "heroDesc": "Migration timing, gorilla permits, visas, health, packing, payments, and our cancellation policy — from the Aardvark team in Arusha.",
+    "bookingTitle": "How booking works",
+    "ctaDesc": "Still have questions? Our specialists are happy to help.",
+    "items": [
+      {
+        "q": "When is the best time to see the Great Migration?",
+        "a": "The migration is an annual cycle, so there is always action in the Serengeti. January–February is calving season in the south near Ndutu. June–July the herds move through the western Serengeti and cross the Grumeti River. July–October is when the famous Mara River crossings happen in the north. November–December sees the herds return south. We tailor your itinerary to whichever phase interests you most."
+      },
+      {
+        "q": "How far in advance do I need to book gorilla permits?",
+        "a": "Gorilla trekking permits for Bwindi Impenetrable Forest (Uganda) are limited and in high demand. We recommend booking at least 3–6 months in advance, and up to a year ahead for peak months (June–September). Contact us early and we will handle permit allocation on your behalf."
+      },
+      {
+        "q": "Do I need a visa for Tanzania / Uganda?",
+        "a": "Most nationalities including US and UK citizens require a visa for Tanzania, Uganda, and Rwanda. Tanzania offers an e-visa online before travel. Uganda visas can be obtained on arrival or online. We provide detailed, up-to-date visa guidance tailored to your nationality upon booking — requirements change, so always verify with the relevant embassy."
+      },
+      {
+        "q": "What vaccinations and health precautions do I need?",
+        "a": "Malaria prophylaxis is strongly recommended for Tanzania and Uganda — consult your doctor or a travel health clinic. Yellow fever vaccination is required if arriving from a yellow fever country and is recommended for Uganda. Other common recommendations include hepatitis A, typhoid, and tetanus. Always consult a qualified travel health professional at least 6–8 weeks before departure."
+      },
+      {
+        "q": "What is included in the safari price?",
+        "a": "Our safari prices include a 4WD vehicle with pop-up roof, experienced English-speaking driver-guide, all accommodation and meals per the itinerary, national park entrance fees, mineral water on game drives, government taxes, and Flying Doctor Society emergency evacuation membership. International flights, visas, travel insurance, tips, and personal items are not included."
+      },
+      {
+        "q": "What currencies and payment methods do you accept?",
+        "a": "We accept payment in USD, EUR, and GBP. Bank wire transfer is our primary payment method for deposits and balances. Please contact us and we will confirm current payment options including whether card payment is available."
+      },
+      {
+        "q": "What is your cancellation policy?",
+        "a": "Cancellations 90+ days before departure incur a USD 500 per person fee. 89–60 days: 20% of total tour rate. 59–30 days: 50%. 29 days or fewer: 100% forfeiture. We strongly recommend trip cancellation insurance. In some cases we can hold your deposit as a credit note for a future trip."
+      },
+      {
+        "q": "Is Tanzania / Uganda safe for travellers?",
+        "a": "Tanzania is one of Africa's most stable and safe tourism destinations. Our vehicles are equipped with radios and first aid kits, our guides are trained in visitor management, and all guests are enrolled in the Flying Doctor Society for emergency evacuation. We monitor conditions continuously and communicate any relevant updates before and during your trip."
+      },
+      {
+        "q": "Are your safaris suitable for families with children?",
+        "a": "Yes — we design family safaris regularly. We recommend children be at least 6 years old for game drives. Gorilla trekking requires participants to be at least 15 years old. Kilimanjaro climbs are typically suitable for fit teenagers aged 14+. Tell us the ages of your children and we will tailor an appropriate itinerary."
+      },
+      {
+        "q": "Can solo travellers join a group safari?",
+        "a": "Absolutely. We operate both group departures and private, customised itineraries for solo travellers. A single supplement applies for solo room occupancy on some tours. Contact us and we will advise on the best option — including whether joining an existing group departure makes sense for your dates."
+      },
+      {
+        "q": "What should I pack for a safari?",
+        "a": "Lightweight neutral-coloured clothing (khaki, olive, tan — avoid white and bright colours); a good sun hat; sunscreen; insect repellent; comfortable walking shoes or boots; a light fleece or jacket for early mornings; binoculars; and a camera with a telephoto lens if possible. We provide a detailed packing list on booking."
+      },
+      {
+        "q": "What are the tipping guidelines?",
+        "a": "Tipping is an important show of appreciation for your guides and lodge staff. General guidance: driver-guide USD 15–20 per person per day; lodge staff USD 5–10 per person per day. These are guidelines — tip according to the quality of service you receive. We provide specific recommendations for each trip."
+      }
+    ]
+  },
+  "migration": {
+    "eyebrow": "Great Migration",
+    "title": "Where are the herds this month?",
+    "desc": "The migration moves in a year-long circle. Select a month to see where we typically position camps and game drives.",
+    "monthPicker": "Migration month",
+    "readGuide": "Migration timing & safari FAQ →",
+    "months": {
+      "jan": "Jan",
+      "feb": "Feb",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "jun": "Jun",
+      "jul": "Jul",
+      "aug": "Aug",
+      "sep": "Sep",
+      "oct": "Oct",
+      "nov": "Nov",
+      "dec": "Dec"
+    },
+    "locations": {
+      "ndutu": "Southern Serengeti & Ndutu — calving plains",
+      "west": "Western Corridor & Grumeti",
+      "grumeti": "Grumeti River crossings",
+      "north": "Northern Serengeti",
+      "mara": "Mara River & Maasai Mara",
+      "east": "Eastern Serengeti",
+      "south": "Southern plains — herds returning"
+    },
+    "highlights": {
+      "calving": "Calving season: thousands of wildebeest calves born daily — predators at their peak.",
+      "predators": "Peak predator activity on the short-grass plains.",
+      "rains": "Long rains — lush landscapes, fewer crowds, excellent value.",
+      "green": "Emerald plains and dispersed herds moving north-west.",
+      "river": "First major river crossings at Grumeti — enormous crocodiles.",
+      "crossing": "Mara River crossings — the migration's most dramatic phase.",
+      "return": "Herds drift south as the short rains begin.",
+      "shortRains": "Short rains pull herds toward the eastern Serengeti."
+    }
+  },
+  "safariDetail": {
+    "tailorMadeItinerary": "Tailor-Made Itinerary",
+    "routeMap": "Route Map",
+    "yourJourney": "Your <i>journey</i>",
+    "mapDesc": "A bird's-eye view of every stop on this safari.",
+    "dayByDay": "Day to Day <i>Itinerary</i>",
+    "dayLabel": "Day {{num}}",
+    "bookingTips": "Booking Tips",
+    "tipAdvance": "Book your safari and accommodations well in advance to ensure availability, especially during peak seasons.",
+    "tipAdvanceTitle": "Advance Planning:",
+    "tipCustomize": "Work with Aardvark Safari specialists to tailor your itinerary to your specific interests and preferences.",
+    "tipCustomizeTitle": "Customizing Itineraries:",
+    "tipInsurance": "Ensure you have comprehensive insurance covering luxury travel and special activities.",
+    "tipInsuranceTitle": "Travel Insurance:",
+    "indicativePrice": "Indicative price",
+    "bestSeason": "Best season",
+    "included": "What's included",
+    "excluded": "Not included",
+    "tripHighlights": "Trip highlights",
+    "tailorTour": "Tailor-make your tour",
+    "requestQuote": "Request a <i>free quote</i>",
+    "quoteDesc": "Tell us about your dream {{safari}} adventure — we'll respond within 24 hours with a fully personalized proposal.",
+    "formName": "Name",
+    "formMobile": "Mobile",
+    "formEmail": "Email",
+    "formCountry": "Country",
+    "formTravelDate": "Travel date",
+    "formDepartureDate": "Departure date",
+    "formAdults": "Adults travelling",
+    "formKids": "Kids travelling",
+    "optionalActivities": "Optional activities",
+    "formMessage": "Message",
+    "submit": "Send my inquiry",
+    "submitted": "Thank you — we'll be in touch within 24 hours",
+    "notFoundTitle": "Safari not found",
+    "notFoundDesc": "The itinerary you're looking for doesn't exist.",
+    "viewAll": "View all itineraries",
+    "backToItineraries": "Back to itineraries",
+    "activities": [
+      "Balloon Safari",
+      "Maasai Village Visit",
+      "Night Game Drive (Tarangire / Lake Manyara)",
+      "Ngorongoro Crater Rim Walk",
+      "Olduvai Gorge & Museum",
+      "Datoga & Hadzabe Tribe",
+      "Mto wa Mbu Cultural Tour",
+      "Coffee Tour",
+      "Kilimanjaro Day Hike",
+      "Empakai Crater Hike",
+      "Oldonyo Lengai Hike"
+    ]
+  },
+  "featuredJourneys": {
+    "eyebrow": "Official tour brochures",
+    "title": "Signature journeys from our catalogue",
+    "desc": "These itineraries are drawn directly from Aardvark's published tour brochures — full day-by-day detail and transparent pricing guides for your planning.",
+    "from": "From",
+    "explore": "Full itinerary",
+    "allItineraries": "All itineraries →"
+  },
+  "guestNotes": {
+    "eyebrow": "From the Guest Book",
+    "title": "Words left <i>in the bush</i>",
+    "desc": "After each journey, many guests leave a few lines in our camp guest book — handwritten notes we treasure. Below are faithful transcriptions; scan originals can be added as we digitise each page.",
+    "footer": "Have your own story? We would love to hear from you after your safari."
+  },
+  "packagesPage": {
+    "eyebrow": "Safari Packages",
+    "heroTitle": "Packages & <i>experiences</i>",
+    "heroDesc": "Clearly organised journeys — luxury and mid-range safaris, honeymoons, family adventures, migration, gorilla trekking, Kilimanjaro, and beach combos. Every package includes duration, itinerary, accommodation, activities, inclusions, pricing guidance, and an inquiry form.",
+    "viewDetails": "View package",
+    "back": "All packages",
+    "itineraryLabel": "Itinerary",
+    "accommodationLabel": "Accommodation",
+    "activitiesLabel": "Activities",
+    "inclusionsLabel": "Inclusions",
+    "exclusionsLabel": "Exclusions",
+    "pricingLabel": "Pricing guide",
+    "fullItinerary": "View full day-by-day itinerary",
+    "inquiryTitle": "Request a <i>quote</i>",
+    "inquiryDesc": "Tell us your travel dates and group size — we respond within 24 hours with a personalised proposal.",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Your questions or preferences",
+    "formSubmit": "Send inquiry",
+    "formSent": "Thank you — we'll be in touch",
+    "ctaTitle": "Not sure which <i>package</i>?",
+    "ctaDesc": "Our specialists will recommend the perfect match for your dates, budget, and interests.",
+    "ctaButton": "Plan a custom trip",
+    "categories": {
+      "luxury-safaris": {
+        "eyebrow": "Luxury",
+        "title": "Luxury Safaris",
+        "desc": "Exclusive camps, private guides, and seamless logistics for discerning travellers."
+      },
+      "mid-range-safaris": {
+        "eyebrow": "Mid-Range",
+        "title": "Mid-Range Safaris",
+        "desc": "Outstanding wildlife and comfort at exceptional value — private vehicles throughout."
+      },
+      "honeymoon-safaris": {
+        "eyebrow": "Honeymoon",
+        "title": "Honeymoon Safaris",
+        "desc": "Romantic bush dinners, private camps, and beach finales on Zanzibar."
+      },
+      "family-adventures": {
+        "eyebrow": "Family",
+        "title": "Family Adventures",
+        "desc": "Paced for all ages — engaging guides, safe lodges, and unforgettable wildlife."
+      },
+      "migration-safaris": {
+        "eyebrow": "Migration",
+        "title": "Migration Safaris",
+        "desc": "Timed for river crossings, calving season, and the herds' great circuit."
+      },
+      "gorilla-trekking": {
+        "eyebrow": "Gorillas",
+        "title": "Gorilla Trekking",
+        "desc": "Mountain gorillas in Uganda and Rwanda — permits and logistics handled."
+      },
+      "beach-safari-combos": {
+        "eyebrow": "Beach + Bush",
+        "title": "Beach & Safari Combos",
+        "desc": "Savannah first, turquoise waters after — the classic East Africa finale."
+      },
+      "kilimanjaro-climbs": {
+        "eyebrow": "Kilimanjaro",
+        "title": "Mount Kilimanjaro Climbs",
+        "desc": "Summit Uhuru Peak with expert guides and proven acclimatisation routes."
+      },
+      "cultural-tours": {
+        "eyebrow": "Culture",
+        "title": "Cultural Tours",
+        "desc": "Maasai, Hadzabe, Datoga, and community partnerships done respectfully."
+      }
+    },
+    "items": {
+      "serengetiLuxuryMigration": {
+        "title": "Serengeti Northern Migration — Luxury",
+        "summary": "Twelve days through Tarangire, Ngorongoro, and the northern Serengeti with premium camps.",
+        "duration": "12 Days / 11 Nights",
+        "itinerary": "Arusha · Tarangire (night drive) · Lake Manyara · Ngorongoro Crater · five nights northern Serengeti · Olduvai Gorge · return Arusha.",
+        "accommodation": "Kichuguu Camp, Ngorongoro Sopa Lodge, Pamoja Tented Lodge, Mara Mara Kati Kati — or equivalent luxury properties.",
+        "activities": [
+          "Daily private game drives",
+          "Optional night drive in Tarangire",
+          "Ngorongoro crater descent",
+          "Olduvai Gorge museum visit"
+        ],
+        "inclusions": [
+          "Private 4×4 and guide",
+          "Park fees",
+          "Accommodation and meals as per itinerary",
+          "Airport transfers"
+        ],
+        "exclusions": [
+          "International flights",
+          "Visas",
+          "Travel insurance",
+          "Tips and personal expenses",
+          "Balloon safari (optional)"
+        ],
+        "pricingGuide": "From USD 8,500–12,000 per person sharing (season and camp selection affect final quote). Contact us for a detailed proposal."
+      },
+      "wildlifeWondersLuxury": {
+        "title": "Wildlife Wonders of Tanzania — Luxury",
+        "summary": "Eleven-day northern circuit with extra crater time and extended Serengeti.",
+        "duration": "11 Days / 10 Nights",
+        "itinerary": "Arusha · Tarangire · Ngorongoro rim & Empakaai hike · Serengeti central and north · cultural stop in Arusha.",
+        "accommodation": "Lion's Paw Camp, Ngorongoro Sopa, Serengeti tented camps.",
+        "activities": [
+          "Empakaai crater forest walk",
+          "Extended Serengeti predator tracking",
+          "Cultural Heritage Center visit"
+        ],
+        "inclusions": [
+          "Private guide and vehicle",
+          "Park and conservation fees",
+          "Lodging and meals",
+          "Ground transfers"
+        ],
+        "exclusions": [
+          "Flights",
+          "Insurance",
+          "Alcoholic beverages where not included",
+          "Optional activities"
+        ],
+        "pricingGuide": "From USD 7,800–11,500 per person sharing. We tailor camp tier to your budget."
+      },
+      "classicNorthernMid": {
+        "title": "Classic Northern Circuit — Mid-Range",
+        "summary": "Ten-day safari covering Arusha NP, Tarangire, Ngorongoro, and Serengeti.",
+        "duration": "10 Days / 9 Nights",
+        "itinerary": "Includes Hadzabe morning visit, Datoga settlement, Olduvai, and optional Uganda extension.",
+        "accommodation": "Mount Meru Hotel, Simba Tented Camp, Seronera and Ndutu Kati Kati camps.",
+        "activities": [
+          "Hadzabe hunter-gatherer experience",
+          "Maasai village visit",
+          "Full-day crater game drive"
+        ],
+        "inclusions": [
+          "Safari vehicle",
+          "Professional guide",
+          "Most meals and accommodation",
+          "Park fees"
+        ],
+        "exclusions": [
+          "International airfare",
+          "Visa fees",
+          "Tips",
+          "Uganda extension costs"
+        ],
+        "pricingGuide": "From USD 4,200–6,500 per person sharing — excellent value for a comprehensive circuit."
+      },
+      "iconicTanzaniaMid": {
+        "title": "Iconic Tanzania — Mid-Range",
+        "summary": "Four-day express through Tarangire, Ngorongoro, and central Serengeti.",
+        "duration": "4 Days / 3 Nights",
+        "itinerary": "Quick northern circuit ideal for add-ons or short visits.",
+        "accommodation": "Comfortable lodges and tented camps near each park.",
+        "activities": [
+          "Three full game-drive days",
+          "Crater descent",
+          "Serengeti plains"
+        ],
+        "inclusions": [
+          "Transport",
+          "Guide",
+          "Park fees",
+          "Accommodation"
+        ],
+        "exclusions": [
+          "Flights to Arusha",
+          "Insurance",
+          "Meals not listed"
+        ],
+        "pricingGuide": "From USD 1,800–2,800 per person sharing."
+      },
+      "serengetiZanzibarHoneymoon": {
+        "title": "Serengeti & Zanzibar Honeymoon",
+        "summary": "Southern Serengeti calving, Nyerere wilderness, and Hyatt Zanzibar finale.",
+        "duration": "8+ Days (beach extension optional)",
+        "itinerary": "Fly-in Serengeti Kusini · Namiri cats · Nyerere boat safaris · Stone Town and north coast.",
+        "accommodation": "Serengeti Kusini, Namiri Camp, Sand Rivers Lodge, Hyatt Zanzibar.",
+        "activities": [
+          "Private game drives",
+          "Boat safari on the Rufiji",
+          "Stone Town spice tour",
+          "Beach relaxation"
+        ],
+        "inclusions": [
+          "Internal flights where listed",
+          "Lodging",
+          "Meals on safari",
+          "Guide services"
+        ],
+        "exclusions": [
+          "International flights",
+          "Spa and premium beverages",
+          "Optional excursions"
+        ],
+        "pricingGuide": "From USD 6,500–10,000 per couple depending on season and room category."
+      },
+      "craterRomance": {
+        "title": "Crater & Savannah Romance",
+        "summary": "Short luxury escape — Ngorongoro and Serengeti intimacy.",
+        "duration": "3 Days / 2 Nights",
+        "itinerary": "Crater rim overnight · full crater day · Serengeti extension optional.",
+        "accommodation": "Boutique crater-rim lodge and Serengeti tented camp.",
+        "activities": [
+          "Private crater descent",
+          "Sundowners on the rim"
+        ],
+        "inclusions": [
+          "Private vehicle",
+          "Guide",
+          "Park fees",
+          "Accommodation"
+        ],
+        "exclusions": [
+          "Flights",
+          "Tips",
+          "Optional balloon"
+        ],
+        "pricingGuide": "From USD 2,400–3,800 per couple."
+      },
+      "familyNorthern": {
+        "title": "Family Northern Circuit",
+        "summary": "Eleven-day paced safari ideal for children — engaging guides and safe lodges.",
+        "duration": "11 Days / 10 Nights",
+        "itinerary": "Same route as Wildlife Wonders with family-friendly timing and activities.",
+        "accommodation": "Family rooms and camps with flexible meal times.",
+        "activities": [
+          "Shorter drive days",
+          "Bush breakfasts",
+          "Cultural visits suitable for kids"
+        ],
+        "inclusions": [
+          "Private family vehicle",
+          "Guide trained for families",
+          "Accommodation",
+          "Park fees"
+        ],
+        "exclusions": [
+          "Flights",
+          "Insurance",
+          "Extra activities"
+        ],
+        "pricingGuide": "From USD 3,800–5,500 per adult; children discounted — ask for a family quote."
+      },
+      "quickFamily": {
+        "title": "Quick Family Escape",
+        "summary": "Weekend Tarangire and Ngorongoro — perfect for school holidays.",
+        "duration": "2 Days / 1 Night",
+        "itinerary": "Crater rim · crater floor game drive · return Arusha.",
+        "accommodation": "Family-friendly crater lodge.",
+        "activities": [
+          "Half-day crater tour",
+          "Wildlife checklist for kids"
+        ],
+        "inclusions": [
+          "Vehicle",
+          "Guide",
+          "Park fees",
+          "One night lodging"
+        ],
+        "exclusions": [
+          "Meals not specified",
+          "Tips"
+        ],
+        "pricingGuide": "From USD 900–1,400 per adult sharing."
+      },
+      "northernMigration": {
+        "title": "Northern Migration Safari",
+        "summary": "Twelve days positioned for Mara River crossings.",
+        "duration": "12 Days / 11 Nights",
+        "itinerary": "Full northern circuit culminating in northern Serengeti migration zones.",
+        "accommodation": "Luxury tented camps near Mara River crossing points.",
+        "activities": [
+          "Migration tracking",
+          "River crossing stake-outs",
+          "Night drive Tarangire"
+        ],
+        "inclusions": [
+          "All standard safari inclusions"
+        ],
+        "exclusions": [
+          "International travel",
+          "Insurance",
+          "Balloon optional"
+        ],
+        "pricingGuide": "From USD 8,000–12,500 per person — peak season Jul–Oct priced higher."
+      },
+      "southernCalving": {
+        "title": "Southern Calving Season",
+        "summary": "Witness birthing season on the short-grass plains.",
+        "duration": "8 Days + optional Zanzibar",
+        "itinerary": "Serengeti Kusini · Namiri · Nyerere · optional beach.",
+        "accommodation": "Seasonal camps in southern and central Serengeti.",
+        "activities": [
+          "Calving ground game drives",
+          "Predator action",
+          "Boat safari"
+        ],
+        "inclusions": [
+          "Safari logistics",
+          "Internal flights as per itinerary"
+        ],
+        "exclusions": [
+          "Beach extension extras",
+          "Tips"
+        ],
+        "pricingGuide": "From USD 5,500–8,500 per person Jan–Mar."
+      },
+      "ugandaGorilla": {
+        "title": "Uganda Gorilla & Wildlife Extension",
+        "summary": "Six-day Uganda add-on after Tanzania — gorillas, Shoebill, chimps.",
+        "duration": "6 Days / 5 Nights",
+        "itinerary": "Entebbe · Mabamba · Bwindi gorilla trek · Queen Elizabeth · Kampala.",
+        "accommodation": "Lake Victoria Serena, Igongo, Mweya Safari Lodge.",
+        "activities": [
+          "Gorilla trekking",
+          "Kazinga Channel cruise",
+          "Chimp tracking Kyambura"
+        ],
+        "inclusions": [
+          "Gorilla permit coordination",
+          "Ground transport",
+          "Lodging",
+          "Guide"
+        ],
+        "exclusions": [
+          "Gorilla permit fee (quoted separately)",
+          "Flights Tanzania–Uganda",
+          "Tips"
+        ],
+        "pricingGuide": "Permits ~USD 800; land package from USD 3,200 per person plus permits."
+      },
+      "rwandaGorilla": {
+        "title": "Rwanda Gorilla Trek",
+        "summary": "Compact Volcanoes National Park gorilla experience.",
+        "duration": "4 Days / 3 Nights",
+        "itinerary": "Kigali · Volcanoes NP trek · optional Akagera or departure.",
+        "accommodation": "Volcanoes area lodge and Kigali hotel.",
+        "activities": [
+          "Mountain gorilla trek",
+          "Kigali city tour optional"
+        ],
+        "inclusions": [
+          "Permit assistance",
+          "Transfers",
+          "Accommodation",
+          "Guide"
+        ],
+        "exclusions": [
+          "Gorilla permit (~USD 1,500)",
+          "International flights",
+          "Tips"
+        ],
+        "pricingGuide": "Land package from USD 2,800 per person plus permit."
+      },
+      "safariBeachCombo": {
+        "title": "Safari & Beach Combo",
+        "summary": "Bush and turquoise waters — Serengeti, Nyerere, and Zanzibar.",
+        "duration": "8+ Days",
+        "itinerary": "Southern/central safari · fly to Zanzibar · Stone Town and beach.",
+        "accommodation": "Safari camps plus beach resort.",
+        "activities": [
+          "Game drives",
+          "Boat safari",
+          "Snorkelling",
+          "Spice tour"
+        ],
+        "inclusions": [
+          "Internal flights",
+          "Safari and beach lodging"
+        ],
+        "exclusions": [
+          "International airfare",
+          "Premium excursions"
+        ],
+        "pricingGuide": "From USD 5,800–9,500 per person sharing."
+      },
+      "kiliNorthern": {
+        "title": "Kilimanjaro — Northern Circuit Route",
+        "summary": "Highest success-rate route with scenic northern slopes.",
+        "duration": "10 Days / 9 Nights on mountain",
+        "itinerary": "Lemosho approach · Northern Circuit · Uhuru summit · Mweka descent.",
+        "accommodation": "Mountain huts and camps; Arusha hotel bookends.",
+        "activities": [
+          "Summit trek",
+          "Acclimatisation hikes",
+          "Optional safari add-on"
+        ],
+        "inclusions": [
+          "Mountain crew",
+          "Park fees",
+          "Camping equipment",
+          "Meals on mountain"
+        ],
+        "exclusions": [
+          "International flights",
+          "Personal gear",
+          "Tips for crew",
+          "Safari extension"
+        ],
+        "pricingGuide": "From USD 3,500–5,200 per person depending on group size and hotel tier."
+      },
+      "culturalNorthern": {
+        "title": "Cultural Northern Circuit",
+        "summary": "Safari plus deep cultural immersion — Hadzabe, Datoga, Maasai.",
+        "duration": "10 Days / 9 Nights",
+        "itinerary": "Classic circuit with extended community time.",
+        "accommodation": "Mix of lodges and community-adjacent camps.",
+        "activities": [
+          "Hadzabe dawn hunt follow",
+          "Datoga metalwork",
+          "Maasai village partnership visit"
+        ],
+        "inclusions": [
+          "Community fees",
+          "Guide",
+          "Vehicle",
+          "Standard inclusions"
+        ],
+        "exclusions": [
+          "Personal purchases",
+          "Flights",
+          "Tips"
+        ],
+        "pricingGuide": "From USD 4,500–6,800 per person sharing."
+      },
+      "maasaiHadzabe": {
+        "title": "Maasai & Hadzabe Encounter",
+        "summary": "Four-day safari emphasising living cultures.",
+        "duration": "4 Days / 3 Nights",
+        "itinerary": "Tarangire · cultural extensions · Ngorongoro · Serengeti.",
+        "accommodation": "Comfortable camps with community partnerships.",
+        "activities": [
+          "Hadzabe experience",
+          "Maasai guided walk",
+          "Game drives"
+        ],
+        "inclusions": [
+          "Cultural fees",
+          "Guide",
+          "Transport",
+          "Lodging"
+        ],
+        "exclusions": [
+          "Flights",
+          "Insurance",
+          "Tips"
+        ],
+        "pricingGuide": "From USD 2,000–3,200 per person sharing."
+      },
+      "northernTanzaniaWildlife": {
+        "title": "Northern Tanzania Wildlife Safari",
+        "summary": "Nine-day Tarangire, Serengeti & Ngorongoro — migration season focus from our official brochure.",
+        "duration": "9 Days / 8 Nights",
+        "itinerary": "Gran Melia Arusha · Tarangire Safari Lodge · Kubu Kubu · Lion's Paw crater rim.",
+        "accommodation": "Excellent lodges and tented camps as per brochure.",
+        "activities": [
+          "Optional Tarangire night drive",
+          "Full crater day",
+          "Serengeti game drives"
+        ],
+        "inclusions": [
+          "4×4 vehicle",
+          "Guide",
+          "Park fees",
+          "Accommodation per itinerary"
+        ],
+        "exclusions": [
+          "International flights",
+          "Tips",
+          "Optional activities"
+        ],
+        "pricingGuide": "From USD 9,067 per person (brochure rate — land safari)."
+      },
+      "ugandaGorillasChimps7": {
+        "title": "7-Day Gorillas & Chimps Trek",
+        "summary": "Kigali-based circuit with one or two gorilla treks, chimps, and Kazinga cruise.",
+        "duration": "7 Days / 6 Nights",
+        "itinerary": "Kigali · Bwindi · Queen Elizabeth · Kigali.",
+        "accommodation": "Buhoma Community Haven · Park View Safari Lodge.",
+        "activities": [
+          "Gorilla trekking",
+          "Batwa visits",
+          "Chimp tracking",
+          "Boat cruise"
+        ],
+        "inclusions": [
+          "4×4 transport",
+          "Guide",
+          "Lodging",
+          "Permits per option selected"
+        ],
+        "exclusions": [
+          "International flights",
+          "Alcohol",
+          "Tips"
+        ],
+        "pricingGuide": "From USD 3,700–4,500 per person depending on gorilla trek options."
+      },
+      "ugandaHoliday8": {
+        "title": "8-Day Uganda Holiday — Luxury",
+        "summary": "Super-luxury Entebbe start: shoebill, dual gorilla treks, Mweya Safari Lodge.",
+        "duration": "8 Days / 7 Nights",
+        "itinerary": "Lake Victoria Serena · Silverback Lodge · Mweya Safari Lodge.",
+        "accommodation": "Super-luxury lodges, meals inclusive.",
+        "activities": [
+          "Mabamba shoebill",
+          "Two gorilla treks",
+          "Tree-climbing lions",
+          "Kazinga boat"
+        ],
+        "inclusions": [
+          "Permits",
+          "Open-roof 4×4",
+          "All lodge meals",
+          "Park fees"
+        ],
+        "exclusions": [
+          "Flights",
+          "Tips",
+          "Personal items"
+        ],
+        "pricingGuide": "From USD 6,250 per person (2 travellers) · USD 7,000 solo."
+      },
+      "zanzibarExtension4": {
+        "title": "4-Day Zanzibar Extension",
+        "summary": "Post-safari beach extension — Stone Town, spices, Jozani, Mnemba snorkelling.",
+        "duration": "4 Days / 3 Nights",
+        "itinerary": "Fly Arusha–Zanzibar · Essque Zalu · Park Hyatt Stone Town.",
+        "accommodation": "Essque Zalu Beach Resort · Park Hyatt lunch day 1.",
+        "activities": [
+          "Stone Town tour",
+          "Prison Island",
+          "Spice farm",
+          "Mnemba Atoll"
+        ],
+        "inclusions": [
+          "Domestic flight",
+          "Transfers",
+          "Excursion lunches",
+          "Entry fees"
+        ],
+        "exclusions": [
+          "International flights",
+          "Tips",
+          "Hotel beverages"
+        ],
+        "pricingGuide": "From USD 3,255 per person (brochure rate)."
+      }
+    }
+  },
+  "notFound": {
+    "message": "Page not found",
+    "home": "Return home"
+  },
+  "featuredPackages": {
+    "eyebrow": "Safari packages",
+    "title": "Popular <i>packages</i>",
+    "desc": "Curated journeys with clear pricing guides — luxury and mid-range safaris, migration, gorillas, Kilimanjaro, and beach combos.",
+    "viewAll": "All packages →",
+    "viewPackage": "View package"
+  },
+  "safarisContent": {
+    "serengeti-northern-migration": {
+      "title": "Serengeti Northern Migration",
+      "duration": "12 Days / 11 Nights",
+      "intro": "The northern part of Tanzania is renowned for its stunning landscapes and rich wildlife experiences. This region encompasses several world-famous parks and conservation areas. Here are some luxurious sample itineraries focused on the northern circuit, combining iconic destinations with high-end accommodations and exclusive experiences.",
+      "route": "Arusha · Tarangire · Ngorongoro · Serengeti",
+      "days": [
+        {
+          "title": "DAY 1:Karibu! Safari begins!",
+          "body": "A representative from Aardvark Safaris Tanzania will meet and greet you as soon as you arrive at Kilimanjaro International Airport and take you to the Mt. Meru Hotel, for your overnight. Arusha, nestled in the shadow of majestic Mount Meru, is a dynamic, fast- growing town and a famed embarkation point for Tanzania safaris. Because of its altitude (roughly 4,600 feet above sea level), Arusha is blessed with a pleasant climate, perfect for the coffee plantations that surround it."
+        },
+        {
+          "title": "DAY 2 &3: Tarangire National Park",
+          "body": "Staying two nights at the amazing Kichuguu Camp, built in 2017 and rated Excel- lent on TripAdvisor. You’ll love the service, the food, the surrounding wildness, the eco- friendly design. Here we will have the rare opportunity to do a night game drive, a privi- lege that few safari goers can get today. We’ll look for nocturnal mammals that few see (for example, civet, genet, African porcupine, maybe even the odd aardvark) and preda- tors during their most-active periods. Lions and leopards at night are completely differ- ent from the snoozing animals to be found in mid-day. We feel that a night drive could well be among the finest highlights of your entire safari. Kichuguu Camp"
+        },
+        {
+          "title": "DAY 4: Driving to Lake Manyara.",
+          "body": "This small but productive park includes the western wall of the Great Rift Valley and lies at 3,150-feet altitude. It is noted for its high elephant population and tree-climbing lions. Flamingos, pelicans, storks, and hippos inhabit the lakeshore; which is surrounded by groundwater forest, with fig, palm, tama- rind, and baobab trees hosting blue and vervet monkeys, baboons, hornbills, and much more. We may encounter bushbucks, waterbucks, giraffes (some surprisingly dark), im- pala, perhaps even a monitor lizard. Over- night: Ngorongoro Sopa Lodge"
+        },
+        {
+          "title": "DAY 5: Ngorongoro Crater.",
+          "body": "Brace yourself for a trip back into the Pleistocene! Today we’ll explore one of the world’s largest calderas, 10-11 miles in diameter and 2500 feet deep. This diverse ecosystem of forests, swamps, grasslands, and lakes supports lion, cheetah, serval, hyena, three kinds of jackal, zebra, rhino, hippo, elephant, and thousands of antelopes, including the massive eland. Because poaching is not a problem here, rare black rhinos and elephants with enormous tusks are present. It’s also a birding hotspot. Walt has recorded over 100 species of birds in a day even when most of our time has been watching big mammals! Ngorongoro Sopa Lodge."
+        },
+        {
+          "title": "DAY 6 - 10 : Serengeti National Park.",
+          "body": "Five full days in the fabled Serengeti, one of the most productive and important wildlife areas in the world. With its vast rolling plains, dramatic outcrops of Precambrian rocks (kopjes), flat-topped acacias, crocodile- and hippo-inhabited rivers lined with riverine gallery forests, and huge herds of animals, the Serengeti is about the ultimate in “wild Africa.” The famous “Great Migration” of wildebeest, zebra, and oth- er grazing herbivores is one of the last mass movements of animals still taking place on earth. We could not be here at a better time of year! There is a lot of history here—both human and animal—and you will be enriched and informed by our guides. We’ll spend our first night at Pamoja Tented Lodge (or equivalent) in the central Serengeti, which is noted for leopards, hippo pools, and the Maasai Kopjes. Then we’ll proceed north for three nights at Mara Mara Kati Kati Tented Camp, which should be close to the heart of the migration, and we will venture to some areas of extraordinary beauty where large predators thrive. With good luck, we hope to see the herds undertaking the treacherous crossing of the Mara River. Camping in the Serengeti surrounded by the exotic sounds of wild Africa is truly an in-tents experience!"
+        },
+        {
+          "title": "DAY 11: Serengeti, Oldupai Gorge, Crater Highlands.",
+          "body": "After our final breakfast in the Serengeti, we’ll drive across the plains, ascending again into the high- lands of the Ngorongoro Conservation Area, a World Heritage Site dedicated to the peaceful union of pastoralism, conservation of natural resources, and responsible tourism. We will stop to visit Oldupai (or Olduvai) Gorge, world-renowned for the discoveries of early hominids made by archaeologists Mary and Louis Leakey. We will visit the wonderful museum here and, if time permits, explore the gorge where the discoveries were made."
+        },
+        {
+          "title": "DAY 12: Arusha.",
+          "body": "Today we drive back to Arusha for a visit to the Cultural Heritage Center (wonderful wildlife art gallery and excellent shopping, including for precious Tanzanite jewelry), a scrumptious buffet lunch, and some time to rest and prepare for your trip home that evening or for continuation to Mkomazi National Park for those doing the extension. Day rooms or overnight at Mt. Meru Hotel., depending on your plans."
+        }
+      ],
+      "fromPrice": "From USD 8,500 pp",
+      "priceNote": "Sharing basis, luxury camps, season-dependent — request a detailed quote.",
+      "bestSeason": "Jul–Oct for Mara River crossings; Jan–Mar for southern calving",
+      "included": [
+        "Private 4×4 and professional guide",
+        "Park and conservation fees",
+        "Accommodation and meals per itinerary",
+        "Airport transfers in Tanzania"
+      ],
+      "excluded": [
+        "International flights",
+        "Visas and vaccinations",
+        "Travel insurance",
+        "Tips and personal expenses",
+        "Optional balloon safari"
+      ]
+    },
+    "wildlife-wonders-of-tanzania": {
+      "title": "Wildlife Wonders of Tanzania",
+      "duration": "11 Days / 10 Nights",
+      "intro": "The northern part of Tanzania is renowned for its stunning landscapes and rich wildlife experiences. This region encompasses several world-famous parks and conservation areas. Here are some luxurious sample itineraries focused on the northern circuit, combining iconic destinations with high-end accommodations and exclusive experiences.",
+      "route": "Arusha · Tarangire · Ngorongoro · Serengeti",
+      "days": [
+        {
+          "title": "DAY 1: Arusha, Tanzania.",
+          "body": "Soon as you arrive at Kilimanjaro International Airport and take you to Mt. Meru Hotel, whose gardens attract the colorful birds that East Africa is famous for. Arusha, nestled in the shadow of majestic Mount Meru, Arusha is a dynamic, fast-growing town and a famed embarkation point for Tanzania safaris. Because of its altitude (roughly 4,600 feet above sea level), Arusha is blessed with a pleasant climate, perfect for the coffee plantations that surround it."
+        },
+        {
+          "title": "DAY 2: Tarangire National Park. South of Arusha is Tarangire National Park.",
+          "body": "Tarangire park in the dry season is second only to Ngorongoro Crater in its concentrations of large wildlife. Its permanent water sources attract thousands of elephant, giraffe,wildebeest, zebra, gazelle, buffalo, eland, impala, hartebeest, oryx, and warthog, as well as uncommon species such as gerenu k and two species of kudu. These, in turn, attract the predators: lion, leopard, cheetah, and hyena. There are also the small critters (e.g., mongooses, hyraxes, squirrels) and incredible birds. The diverse landscape has open plains, stands of magnificent baobab trees, riverine fore st, acacia parkland, scrub-woodlands, and wetlands. It is truly one of the best areas for birding and for mammal-watching in northern Tanzania."
+        },
+        {
+          "title": "DAY 3: We have a final morning game drive in Tarangire",
+          "body": "It will be hard to say good-bye to this fabulous park. We will then drive to the Ngorongoro Crater National Park, a World Heritage Site, and settle into our quarters at lovely Lion’s Paw Camp. On the north rim. The views of the crater from here are stunning, and birdlife is special. Under the lichen-draped Acacia lehai trees, we will see wildflowers, including the Lion’s Paw, so attractive to scintillating sunbirds. Three nights at elegant Lion’s Paw Camp This small but productive park includes the western wall of the Great Rift Valley and lies at 3,150-feet altitude. It is noted for its high elephant population and tree-climbing lions. Flamingos, pelicans, storks, and hippos inhabit the lakeshore; which is surrounded by groundwater forest, with fig, palm, tama- rind, and baobab trees hosting blue and vervet monkeys, baboons, hornbills, and much more. We may encounter bushbucks, waterbucks, giraffes (some surprisingly dark), im- pala, perhaps even a monitor lizard. Over- night: Ngorongoro Sopa Lodge"
+        },
+        {
+          "title": "DAY 4 & 5: Ngorongoro Crater.",
+          "body": "Ngorongoro is one of the world’s largest calderas, 10-11 miles in diameter and 2500 feet deep. This diverse ecosystem of forests, swamps, grasslands, and lakes supports lion, cheetah, serval, hyena, jackals, zebra, rhino, hippo, elephant, and thousands of antelopes, including the massive eland. Because poaching is not a problem here, rare black rhinos and elephants with enormous tusks are present. It’s also a birding hotspot, and we are here when Eurasian migrants supplement the diverse resident species. We will spend all day exploring the crater and marveling at its wildlife. The next morning, we’ll visit Empakaai Crater, where we’ll hike through lush forest down to a jewel-like lake to observe birds, butterflies, flowers, and whatever else we can find. It’s a rare opportunity to walk (with an armed guard) in wild Africa! Optional return into the crater in the afternoon. Brace yourself for a trip back into the Pleistocene! Today we’ll explore one of the world’s largest calderas, 10-11 miles in diameter and 2500 feet deep. This diverse ecosystem of forests, swamps, grasslands, and lakes supports lion, cheetah, serval, hyena, three kinds of jackal, zebra, rhino, hippo, elephant, and thousands of antelopes, including the massive eland. Because poaching is not a problem here, rare black rhinos and elephants with enormous tusks are present. It’s also a birding hotspot. Walt has recorded over 100 species of birds in a day even when most of our time has been watching big mammals! Ngorongoro Sopa Lodge."
+        },
+        {
+          "title": "DAY 6 - 10 : Serengeti National Park.",
+          "body": "Five full days in the fabled Serengeti, one of the most productive and important wildlife areas in the world. With its vast rolling plains, dramatic outcrops of Precambrian rocks (kopjes), flat-topped acacias, crocodile- and hippo-inhabited rivers lined with riverine gallery forests, and huge herds of animals, the Serengeti is about the ultimate in “wild Africa.” The famous “Great Migration” of wildebeest, zebra, and oth- er grazing herbivores is one of the last mass movements of animals still taking place on earth. We could not be here at a better time of year! There is a lot of history here—both human and animal—and you will be enriched and informed by our guides. We’ll spend our first night at Pamoja Tented Lodge (or equivalent) in the central Serengeti, which is noted for leopards, hippo pools, and the Maasai Kopjes. Then we’ll proceed north for three nights at Mara Mara Kati Kati Tented Camp, which should be close to the heart of the migration, and we will venture to some areas of extraordinary beauty where large predators thrive. With good luck, we hope to see the herds undertaking the treacherous crossing of the Mara River. Camping in the Serengeti surrounded by the exotic sounds of wild Africa is truly an in-tents experience!"
+        },
+        {
+          "title": "DAY 11: Serengeti, Oldupai Gorge, Crater Highlands.",
+          "body": "Today we return to Arusha for a visit to the Cultural Heritage Center, lunch. Day rooms at Mt. Meru Hotel. Evening transfer to the airport for those flying out and the begin- ning of hours of reflection on our amazing experiences."
+        },
+        {
+          "title": "DAY 11 : Arusha.",
+          "body": "Today we drive back to Arusha for a visit to the Cultural Heritage Center (wonderful wildlife art gallery and excellent shopping, including for precious Tanzanite jewelry), a scrumptious buffet lunch, and some time to rest and prepare for your trip home that evening or for continuation to Mkomazi National Park for those doing the extension. Day rooms or overnight at Mt. Meru Hotel., depending on your plans."
+        }
+      ]
+    },
+    "classic-northern-circuit-safari": {
+      "title": "Classic Northern Circuit Safari",
+      "duration": "10 Days / 9 Nights",
+      "intro": "The northern part of Tanzania is renowned for its stunning landscapes and rich wildlife experiences. This region encompasses several world-famous parks and conservation areas. Here are some luxurious sample itineraries focused on the northern circuit, combining iconic destinations with high-end accommodations and exclusive experiences.",
+      "route": "Arusha · Tarangire · Ngorongoro · Serengeti · Extension: Uganda",
+      "days": [
+        {
+          "title": "DAY 1: Arusha, Tanzania. Safari begins!",
+          "body": "Karibu! A representative from Aardvark Safaris will meet and greet you as soon as you arrive at Kilimanjaro Inter- national Airport and take you to Mount Meru Hotel, a 4-star hotel in gardens that attract the colorful birds that East Africa is famous for. Arusha, nestled in the shadow of majestic Mount Meru, is a dynamic, fast-growing town and a famed embarkation point for Tanzania safaris. Because of its altitude (roughly 4,600 feet above sea level), Arusha is blessed with a pleasant climate, perfect for the coffee plantations that surround it."
+        },
+        {
+          "title": "DAY 2: Arusha National Park.",
+          "body": "We will drive through elegant, sometimes moody with mist, mon- tane forest, watching carefully for baboons and monkeys (including the spectacular Black- &-White Colobus), various forest antelopes, African buffalo, and dozens of species of birds. We will walk to the rim of the Ngurdoto Crater, more accurately a caldera or vol- canic collapse feature. We will scan the caldera floor for wildlife and watch the skies for birds of prey or other aerial masters. From the rim forest, we will proceed through wood- lands and past lakes and marshes, watching for giraffes, waterbucks, kingfishers, and much more. On former lava (volcanic mudflow) deposits are the Momela Lakes, alkaline havens for multitudes of waterbirds, including flamingos, ducks and geese, shorebirds, storks, and ibises. Many visitors to Tanzania head directly to the savannah parks and miss the lush, green beauty and special wildlife of this park, a naturalist’s favorite. In the even- ing, we’ll return to Mount Meru Hotel for a delightful dinner and for a short briefing on details for the next day."
+        },
+        {
+          "title": "DAY3: Tarangire National Park.",
+          "body": "South of Arusha is Tarangire National Park. Augus- tine, our co-leader, did his Master’s Degree through Prescott College studying community -based conservation in two villages on a wildlife corridor between two national parks. Tarangire park in the dry season is second only to Ngorongoro Crater in its concentrations of large wildlife. Its permanent water sources attract thousands of elephant, giraffe, wil- debeest, zebra, gazelle, buffalo, eland, impala, hartebeest, oryx, and warthog, as well as uncommon species such as gerenuk and two species of kudu. These, in turn, attract the predators: lion, leopard, cheetah, and hyena. There are also the small critters (e.g., mon- gooses, hyraxes, squirrels) and incredible birds. The diverse landscape has open plains, stands of magnificent baobab trees, riverine forest, acacia parkland, scrub-woodlands, and wetlands. Overnights at the lovely Simba Tented Camp near Lake Burunge, which sometimes has thousands of flamingos. As is always the case, we will have “friendly” birds and mammals, habituated to human presence, at our camps and lodges."
+        },
+        {
+          "title": "DAY 4: Early morning visit to a Hadzabe camp.",
+          "body": "The Hadza are true hunter-gatherers, and an early start will give us the best chances to follow them in their daily rhythms, to inter- act with and learn a bit about their hunting and gathering traditions. If time permits, we will visit a Datoga settlement. The Datoga, originally pastoralists similar in many traditions to the Maasai, migrated into this area about 300 years ago, no doubt dis- placing some of the Mbulu or Iraqw people who arrived a few thousand years ago. Most of the Datoga today are farmers specializing in onion plantations, and some are superb metal smiths who make the arrows for the Hadza. Overnight: Ngorongoro Sopa Lodge perched on the rim of amazing Ngorongoro Crater."
+        },
+        {
+          "title": "DAY5: Ngorongoro Crater.",
+          "body": "Brace yourself for a trip back into the Pleistocene! Today we’ll explore one of the world’s largest calderas, 10-11 miles in diam- eter and 2500 feet deep. This diverse ecosystem of forests, swamps, grasslands, and lakes supports lion, cheetah, serval, hyena, several kinds of jackal, zeb- ra, rhino, hippo, elephant, and thousands of antelopes. Because poaching is not a problem here, rare black rhinos and elephants with enormous tusks are present. Ngorongoro Sopa Lodge."
+        },
+        {
+          "title": "DAY 6 & 7: Serengeti National Park.",
+          "body": "We’ll spend five days in the Serengeti, one of the world’s most important wildlife areas, known for its vast plains, rock outcrops, acacias, rivers, and large animal herds. The trip is timed for the wildebeest and zebra birthing season, attracting predators like lions and cheetahs. Birdwatching will be exceptional, with over 50 species of diurnal birds of prey. We’ll explore the central Serengeti at Seronera Kati Kati Tented Camp, known for leopards and hippo pools, and stay three nights at Ndutu Kati Kati Tented Camp, near the migration heart and large predators. Lake Ndutu offers excellent birdwatching. Camping will provide an immersive experience in the Serengeti’s natural beauty."
+        },
+        {
+          "title": "DAY 8: Serengeti, Oldupai Gorge, Crater Highlands.",
+          "body": "After our final breakfast in the Serengeti, we’ll drive east across the plains, ascending again into the highlands of the Ngorongoro Conservation Area, a World Heritage Site dedicated to the peaceful union of pastoralism, conservation of natural resources, and responsible tourism. We will stop to visit Oldupai (or Olduvai) Gorge, world-renowned for the discoveries of early hominids made by archaeologists Mary and Louis Leakey. We will visit the small museum here and explore the gorge where the discoveries were made. For many people, a visit to Oldupai is a pilgrimage to one of the world’s greatest archeo- logical sites, a place where we can vicariously connect with our distant ancestors. We may also visit a Maasai Village. Thereafter, we will drive out of the park to relax at the Ngoron- goro Farm House, whose lovely gardens provide scrumptious produce for this oasis and for some of the remote tented camps. Tonight we will share highlights of the safari as we prepare tomorrow to depart from Arusha."
+        },
+        {
+          "title": "DAY 9: Arusha.",
+          "body": "Today we return to Arusha for visit to the Cultural Heritage Center. lunch, and an optional visit to the St Lucia Hospice and Orphanage for victims of HIV/AIDS that was founded by Augustine’s heroic wife, Winfrida. Day rooms at Mount Meru Hotel. Evening transfer to the airport for those fly- ing out of country and the beginning of hours of reflection on our amazing experiences. Those extending to Uganda will have another night at the Mt. Meru Hotel."
+        },
+        {
+          "title": "DAY 10: Arusha, Tanzania.",
+          "body": "As the Tanzania safari closes, the Uganda one begins. Continuing participants will enjoy our fine dinner at Mt. Meru Hotel anticipating the adventure ahead in the land of Mountain Gorillas, Chimpanzees, and spectacular birds and mammals. . . . Kampala, Uganda. Folks doing only the Uganda trip will arrive at Entebbe Airport and transfer to the Lake Victoria Serena Resort for overnight and breakfast."
+        }
+      ]
+    },
+    "exploring-cape-town-victoria-falls-botswana-wildlife-safari-circuit": {
+      "title": "Cape Town, Victoria Falls & Botswana Wildlife Circuit",
+      "duration": "12 Days / 11 Nights",
+      "intro": "The northern part of Tanzania is renowned for its stunning landscapes and rich wildlife experiences. This region encompasses several world-famous parks and conservation areas. Here are some luxurious sample itineraries focused on the northern circuit, combining iconic destinations with high-end accommodations and exclusive experiences.",
+      "route": "Victoria Falls · Chobe · Hwange · Okavango Delta",
+      "days": [
+        {
+          "title": "DAY 1:Karibu! Safari begins!",
+          "body": "A representative from Aardvark Safaris Tanzania will meet and greet you as soon as you arrive at Kilimanjaro International Airport and take you to the Mt. Meru Hotel, for your overnight. Arusha, nestled in the shadow of majestic Mount Meru, is a dynamic, fast- growing town and a famed embarkation point for Tanzania safaris. Because of its altitude (roughly 4,600 feet above sea level), Arusha is blessed with a pleasant climate, perfect for the coffee plantations that surround it."
+        },
+        {
+          "title": "DAY 2 &3: Tarangire National Park",
+          "body": "Staying two nights at the amazing Kichuguu Camp, built in 2017 and rated Excel- lent on TripAdvisor. You’ll love the service, the food, the surrounding wildness, the eco- friendly design. Here we will have the rare opportunity to do a night game drive, a privi- lege that few safari goers can get today. We’ll look for nocturnal mammals that few see (for example, civet, genet, African porcupine, maybe even the odd aardvark) and preda- tors during their most-active periods. Lions and leopards at night are completely differ- ent from the snoozing animals to be found in mid-day. We feel that a night drive could well be among the finest highlights of your entire safari. Kichuguu Camp"
+        },
+        {
+          "title": "DAY 4: Driving to Lake Manyara.",
+          "body": "This small but productive park includes the western wall of the Great Rift Valley and lies at 3,150-feet altitude. It is noted for its high elephant population and tree-climbing lions. Flamingos, pelicans, storks, and hippos inhabit the lakeshore; which is surrounded by groundwater forest, with fig, palm, tama- rind, and baobab trees hosting blue and vervet monkeys, baboons, hornbills, and much more. We may encounter bushbucks, waterbucks, giraffes (some surprisingly dark), im- pala, perhaps even a monitor lizard. Over- night: Ngorongoro Sopa Lodge"
+        },
+        {
+          "title": "DAY 5: Ngorongoro Crater.",
+          "body": "Brace yourself for a trip back into the Pleistocene! Today we’ll explore one of the world’s largest calderas, 10-11 miles in diameter and 2500 feet deep. This diverse ecosystem of forests, swamps, grasslands, and lakes supports lion, cheetah, serval, hyena, three kinds of jackal, zebra, rhino, hippo, elephant, and thousands of antelopes, including the massive eland. Because poaching is not a problem here, rare black rhinos and elephants with enormous tusks are present. It’s also a birding hotspot. Walt has recorded over 100 species of birds in a day even when most of our time has been watching big mammals! Ngorongoro Sopa Lodge."
+        },
+        {
+          "title": "DAY 6 - 10 : Serengeti National Park.",
+          "body": "Five full days in the fabled Serengeti, one of the most productive and important wildlife areas in the world. With its vast rolling plains, dramatic outcrops of Precambrian rocks (kopjes), flat-topped acacias, crocodile- and hippo-inhabited rivers lined with riverine gallery forests, and huge herds of animals, the Serengeti is about the ultimate in “wild Africa.” The famous “Great Migration” of wildebeest, zebra, and oth- er grazing herbivores is one of the last mass movements of animals still taking place on earth. We could not be here at a better time of year! There is a lot of history here—both human and animal—and you will be enriched and informed by our guides. We’ll spend our first night at Pamoja Tented Lodge (or equivalent) in the central Serengeti, which is noted for leopards, hippo pools, and the Maasai Kopjes. Then we’ll proceed north for three nights at Mara Mara Kati Kati Tented Camp, which should be close to the heart of the migration, and we will venture to some areas of extraordinary beauty where large predators thrive. With good luck, we hope to see the herds undertaking the treacherous crossing of the Mara River. Camping in the Serengeti surrounded by the exotic sounds of wild Africa is truly an in-tents experience!"
+        },
+        {
+          "title": "DAY 11: Serengeti, Oldupai Gorge, Crater Highlands.",
+          "body": "After our final breakfast in the Serengeti, we’ll drive across the plains, ascending again into the high- lands of the Ngorongoro Conservation Area, a World Heritage Site dedicated to the peaceful union of pastoralism, conservation of natural resources, and responsible tourism. We will stop to visit Oldupai (or Olduvai) Gorge, world-renowned for the discoveries of early hominids made by archaeologists Mary and Louis Leakey. We will visit the wonderful museum here and, if time permits, explore the gorge where the discoveries were made."
+        },
+        {
+          "title": "DAY 12: Arusha.",
+          "body": "Today we drive back to Arusha for a visit to the Cultural Heritage Center (wonderful wildlife art gallery and excellent shopping, including for precious Tanzanite jewelry), a scrumptious buffet lunch, and some time to rest and prepare for your trip home that evening or for continuation to Mkomazi National Park for those doing the extension. Day rooms or overnight at Mt. Meru Hotel., depending on your plans."
+        }
+      ]
+    },
+    "northern-circuit-route": {
+      "title": "Northern Circuit Route",
+      "duration": "10 Days / 9 Nights",
+      "intro": "Mount Kilimanjaro is an iconic landmark in Tanzania and Africa’s highest mountain, rising approximately 5,895 meters (19,341 feet) above sea level. It’s known as a “freestanding” mountain due to its isolated prominence, unlike most mountains, which are part of larger ranges. Here’s an overview of the mountain and what makes it unique:",
+      "route": "Mti Mkubwa · Shira · Moir · Buffalo · School Hut · Uhuru Peak",
+      "days": [
+        {
+          "title": "DAY 1: Arrive Kilimanjaro Airport (JRO) Tanzania.",
+          "body": "Elevation: 9,498 ft Hiking Time: 3-4 hoursDistance: 7 km | 4 miles Habitat: Rain Forest. Upon arrival at Kilimanjaro International Airport (JRO), you will be met outside customs area by a driver guide holding a sign board written clearly your booking name and drive to Arusha for overnight at ARUSHA SERENA LODGE."
+        },
+        {
+          "title": "DAY 2: Mti Mkubwa (Big tree Camp)",
+          "body": "Elevation: 9,498 ft Hiking Time: 3-4 hours Distance: 7 km | 4 miles Habitat: Rain Forest. We depart Moshi for Londorossi Gate, which takes about 4 hours, where you will complete entry formalities. Then drive to the Lemosho trailhead. Upon arrival at trailhead, we begin hiking through undisturbed forest which winds to the first camp site. Dinner and overnight at MTI MKUBWA (BIGTREE CAMP)."
+        },
+        {
+          "title": "DAY 3: Shira 1 Camp",
+          "body": "Elevation: 11,500 ft Hiking Time: 5-6 hours Distance: 8 km | 5 miles Habitat: Heather or moorland. We continue on the trail leading out of the rain forest and into a savannah of tall grasses, heather and volcanic rock draped with lichen beards. As we ascend through the lush rolling hills and cross several streams, we reach the Shira Ridge before dropping gently down to Shira 1 Camp. Here we catch our first glimpse of Kibo across the plateau. Dinner and overnight at SHIRA 1 Camp"
+        },
+        {
+          "title": "DAY 4: Shira 2 Camp",
+          "body": "Elevation: 12,500 ft Hiking Time: 3-4 hours Distance: 10 km | 4 miles Habitat: HeatherWe explore the Shira Plateau. It is a gentle walk east on moorland meadows towards Shira 2 Camp. The heath zone displays abundant wildflowers and unique Senecio trees. Dinner and overnight at SHIRA 2 CAMP."
+        },
+        {
+          "title": "DAY 5 : Moir Hut",
+          "body": "Elevation: 13,580 ft Hiking Time: 7 hours Distance: 7 km | 4 miles Habitat: Alpine Desert We continue to the east up a ridge and then head southeast to Lava Tower for lunch – a 300ft tall volcanic rock formation at the elevation of 15,190ft. Then we divert from the main trail to Moir Hut, a little used site on the base of Lent Hills. A variety of walks are available on Lent Hills making this an excellent acclimatization opportunity. Shira Plateau is one of the highest plateaus on earth. Dinner and overnight at MOIR HUT"
+        },
+        {
+          "title": "DAY 6: Buffalo Camp",
+          "body": "Elevation: 13,200 ft Hiking Time: 5-7 hours Distance: 12 km | 7 miles Habitat: Alpine DesertWe trek out of Moir Valley with a moderately steep climb, then hike to the summit of Lent Hills before returning to the main trail. The path crosses a rock field and gently undulates before reaching Buffalo Camp. This section of the trail offers great views across the plains that lie north of Kilimanjaro and stretch out to the Kenyan/Tanzanian border. Dinner and overnight at BUFALO CAMP."
+        },
+        {
+          "title": "DAY 7: Third Cave",
+          "body": "Elevation: 12,700 ft Hiking Time: 5-7 hoursDistance: 8 km | 5 milesHabitat: Heather As we head up Buffalo Ridge, the terrain becomes increasingly sparse. This route is rarely travelled and we will enjoy its mountain wilderness feel. We trek through remote valleys on to the northern slopes of Kilimanjaro until we arrive at Third Cave. Dinner and Overnight at THIRD CAVE."
+        },
+        {
+          "title": "DAY 8: School Hut",
+          "body": "Elevation: 15,600 ft Hiking Time: 4-5 hours Distance: 5 km | 3 miles Habitat: Alpine Desert We climb steadily up and over the “Saddle,” which sits between Kibo and Mawenzi. We continue on to our camp, School Hut. Once here we rest, enjoy an early dinner to prepare for the summit day."
+        },
+        {
+          "title": "DAY 9: Uhuru Peak to Mweka Camp",
+          "body": "Elevation: 19,341 ft to 10,065 ft Hiking Time: 13 hours Habitat: Arctic to Rain forest Very early in the morning (around midnight), we begin our push to the summit. This is the most mentally and physically challenging portion of the trek. The wind and cold at this elevation and time of day can be extreme. We ascend in the darkness for several hours while taking frequent, but short, breaks. At Gilman’s point (18,600 ft), you will be rewarded with the most magnificent sunrise you are ever likely to see coming over Mawenzi Peak. Finally, we arrive at Uhuru Peak- the highest point on Mount Kilimanjaro and the continent of Africa. From the summit, we now make our descent continuing straight down to the Mweka Hut camp site, stopping at Barafu for lunch. The trail is very rocky and can be quite hard on the knees; trekking poles are helpful. Mweka Camp is situated in the upper forest and mist or rain can be expected in the late afternoon. Later in the evening, we enjoy our last dinner on the mountain and a well-earned sleep."
+        },
+        {
+          "title": "DAY 10: Mweka Gate",
+          "body": "Elevation: 5,380 ft Hiking Time: 3-4 hours Distance: 10 km | 6 miles Habitat: Rain Forest. On our last day, we continue the descent to Mweka Gate and collect the summit certificates. At lower elevations, it can be wet and muddy. From the gate, we continue another hour to Mweka Village. A vehicle will meet us at Mweka Village to drive us back to the hotel in Arusha and overnight at ARUSHA SERENA LODGE."
+        }
+      ]
+    },
+    "iconic-tanzania": {
+      "title": "Iconic Tanzania: Quick Escape to Tarangire, Ngorongoro & Serengeti",
+      "duration": "4 Days / 3 Nights",
+      "intro": "The northern part of Tanzania is renowned for its stunning landscapes and rich wildlife experiences. This region encompasses several world-famous parks and conservation areas. Here are some luxurious sample itineraries focused on the northern circuit, combining iconic destinations with high-end accommodations and exclusive experiences.",
+      "route": "Tarangire · Ngorongoro · Serengeti",
+      "days": [
+        {
+          "title": "Day 1: Arrival & Tarangire National Park",
+          "body": "Morning: Depart from Arusha and drive to Tarangire National Park, known for its iconic baobab trees and large elephant herds. Afternoon: Enjoy a game drive, spotting diverse wildlife like zebras, wildebeest, and lions near the Tarangire River. Evening: Overnight at a lodge or camp near Tarangire."
+        },
+        {
+          "title": "Day 2: Ngorongoro Crater Exploration",
+          "body": "Morning: Head to Ngorongoro Conservation Area and descend into the world-famous Ngorongoro Crater. Afternoon: Explore the lush crater floor on a game drive, where you may see the Big Five—lions, elephants, rhinos, buffalo, and leopards. Evening: Overnight at a lodge or camp on the rim of the crater."
+        },
+        {
+          "title": "Day 3: Serengeti National Park (Central)",
+          "body": "Morning: Drive from Ngorongoro to the Serengeti, passing through the highlands with scenic views of the savannah. Afternoon: Enjoy a game drive in the central Serengeti, observing vast herds, predators, and diverse birdlife. Evening: Overnight at a lodge or tented camp in the central Serengeti."
+        },
+        {
+          "title": "Day 4: Serengeti & Return to Arusha",
+          "body": "Morning: Early morning game drive in the Serengeti, capturing the sunrise and spotting active predators. Midday: Start the journey back to Arusha, with an optional flight for those seeking a faster return. Evening: Arrive in Arusha for onward travel or departure."
+        }
+      ]
+    },
+    "crater-savannah": {
+      "title": "Crater Savannah",
+      "duration": "",
+      "intro": "",
+      "route": "Ngorongoro · Serengeti",
+      "days": [
+        {
+          "title": "Day 1: Arrival & Tarangire National Park",
+          "body": "Morning: Depart from Arusha and drive to Tarangire National Park, renowned for its ancient baobab trees and large elephant herds. Afternoon: Enjoy a game drive along the Tarangire River, spotting wildlife such as zebras, wildebeest, lions, and various bird species. Evening: Overnight at a lodge or camp near Tarangire."
+        },
+        {
+          "title": "Day 2: Tarangire National Park & ​​Transfer to Ngorongoro",
+          "body": "Morning: Start the day with a game drive in Tarangire, capturing more of the park’s unique wildlife and scenic landscapes. Afternoon: Depart for the Ngorongoro Conservation Area, enjoying scenic views along the way. Evening: Overnight at a lodge or camp on the rim of Ngorongoro Crater, preparing for an early descent into the crater the following day."
+        }
+      ]
+    },
+    "quick-escape": {
+      "title": "Quick Escape",
+      "duration": "",
+      "intro": "",
+      "route": "Tarangire · Ngorongoro",
+      "days": [
+        {
+          "title": "Day 1: Arrival & Transfer to Ngorongoro Conservation Area",
+          "body": "Morning: Depart from Arusha and enjoy a scenic drive to the Ngorongoro Conservation Area. Afternoon: Arrive at the Ngorongoro Crater rim, where you’ll have time to take in the breathtaking views from above and perhaps enjoy a short nature walk in the surrounding area. Evening: Overnight at a lodge or camp on the crater rim, with an early start planned for the next day."
+        },
+        {
+          "title": "Day 2: Ngorongoro Crater Exploration & Return to Arusha",
+          "body": "Morning: Descend into the Ngorongoro Crater for a half-day game drive on the crater floor, where you may spot the Big Five, along with hippos, zebras, flamingos, and a range of other wildlife in this diverse habitat. Afternoon: After a picnic lunch, begin your journey back to Arusha with memories of an unforgettable crater experience. Evening: Arrive in Arusha for onward travel or departure."
+        }
+      ]
+    },
+    "day-tour": {
+      "title": "Day Tour",
+      "duration": "",
+      "intro": "",
+      "route": "One-day descent into the Crater",
+      "days": [
+        {
+          "title": "DAY 1:Karibu! Safari begins!",
+          "body": "A representative from Aardvark Safaris Tanzania will meet and greet you as soon as you arrive at Kilimanjaro International Airport and take you to the Mt. Meru Hotel, for your overnight. Arusha, nestled in the shadow of majestic Mount Meru, is a dynamic, fast- growing town and a famed embarkation point for Tanzania safaris. Because of its altitude (roughly 4,600 feet above sea level), Arusha is blessed with a pleasant climate, perfect for the coffee plantations that surround it."
+        }
+      ]
+    },
+    "serengeti-southern-migration-zanzibar": {
+      "title": "Serengeti Southern Migration & Zanzibar Beach Holiday",
+      "duration": "8 Days + Optional Zanzibar Extension",
+      "intro": "Combine the southern Serengeti's calving season and the wild beauty of Nyerere National Park with a relaxing beach extension on the spice island of Zanzibar.",
+      "route": "Arusha · Serengeti Kusini · Namiri · Nyerere · Zanzibar",
+      "days": [
+        {
+          "title": "DAY 1: Arusha",
+          "body": "Arrive at Kilimanjaro International Airport, met by your Aardvark representative and transferred to Legendary Lodge for overnight."
+        },
+        {
+          "title": "DAY 2: Fly to Serengeti",
+          "body": "Fly into the southern Serengeti. Overnight at Serengeti Kusini, in the heart of the southern shortgrass plains and the calving grounds of the great migration."
+        },
+        {
+          "title": "DAYS 3 & 4: Serengeti Kusini",
+          "body": "Two full days exploring the southern Serengeti — vast herds of wildebeest and zebra, attendant predators, and exceptional birdlife on the open plains."
+        },
+        {
+          "title": "DAY 5: Drive to East Central Serengeti",
+          "body": "Transfer to East Central Serengeti and check in at Namiri Camp, an area renowned for big cats — particularly cheetah."
+        },
+        {
+          "title": "DAY 6: East Central Serengeti",
+          "body": "A full day of game-viewing from Namiri Camp, with lions, leopards and cheetah at the heart of the experience."
+        },
+        {
+          "title": "DAY 7: Fly to Nyerere National Park",
+          "body": "Fly south to Nyerere (formerly Selous), Africa's largest game reserve. Overnight at Sand Rivers Lodge on the Rufiji River."
+        },
+        {
+          "title": "DAY 8: Nyerere National Park",
+          "body": "Game drives, boat safaris on the Rufiji and walking safaris from Sand Rivers Lodge — Nyerere at its very best."
+        },
+        {
+          "title": "ZANZIBAR · DAY 1: Fly to Zanzibar",
+          "body": "Fly across to the spice island. Transfer and overnight at the Hyatt Zanzibar in Stone Town."
+        },
+        {
+          "title": "ZANZIBAR · DAY 2: Excursions in Zanzibar",
+          "body": "Spice tour, Stone Town heritage walk, or simply unwind on the turquoise coast. Overnight at Hyatt Zanzibar."
+        }
+      ]
+    },
+    "mkomazi-extension": {
+      "title": "Mkomazi National Park Extension",
+      "duration": "4 Days / 3 Nights",
+      "intro": "An off-the-beaten-track extension into Mkomazi National Park, home to the Mkomazi Rhino Sanctuary and African Wild Dog reintroduction project — a quiet, uncrowded alternative to Tanzania's famous parks.",
+      "route": "Arusha · Mkomazi · Arusha",
+      "days": [
+        {
+          "title": "DAY 1: Drive to Mkomazi",
+          "body": "Drive east from Arusha to Mkomazi and begin to experience the wildlife of Mkomazi National Park. Settle into camp this evening."
+        },
+        {
+          "title": "DAY 2: Explore Mkomazi National Park",
+          "body": "A full day of exploration and discovery in the park, including a visit to the rhino and wild dog projects. With a small group you'll have great flexibility in what you do."
+        },
+        {
+          "title": "DAY 3: Uncharted Territory",
+          "body": "Exploring uncharted territory by day, spotting gerenuk, kudu, and many more game animals."
+        },
+        {
+          "title": "DAY 4: Day in Arusha & Departure",
+          "body": "Drive back to Arusha with options for a relaxing day in town before flying out that night."
+        }
+      ]
+    },
+    "uganda-extension": {
+      "title": "Uganda Extension — Gorillas, Chimpanzees & Shoebill",
+      "duration": "6 Days / 5 Nights",
+      "intro": "A natural extension to any Tanzania safari: track mountain gorillas in Bwindi, search for the prehistoric Shoebill in Mabamba's papyrus swamps, and trek chimpanzees in the primate capital of the world.",
+      "route": "Entebbe · Mabamba · Mbarara · Bwindi · Queen Elizabeth NP · Kampala",
+      "days": [
+        {
+          "title": "DAY 1: Flight to Uganda",
+          "body": "Met by our Aardvark representative on arrival in Entebbe and transferred to the Lake Victoria Serena Resort, whose gardens of indigenous plants attract butterflies and resident and migratory birds — Splendid Starling, Pied and Woodland Kingfishers, Black-headed Gonolek and more."
+        },
+        {
+          "title": "DAY 2: Kampala to Mabamba Bay – Mbarara",
+          "body": "After breakfast, proceed to Mabamba Bay on Lake Victoria where papyrus swamps support over 260 bird species, including the rare Shoebill. Enter the swamps by boat with local guides to look for Shoebill, Palm-nut Vulture, jaçanas, Pygmy Goose, Goliath Heron and more. Continue to Mbarara, arriving in late evening. Igongo Cultural Center Hotel. Transit time 4–5 hours."
+        },
+        {
+          "title": "DAY 3: Gorilla Tracking in Bwindi Forest",
+          "body": "An early breakfast and briefing at park HQ, then venture into the steep, often muddy Bwindi forest in search of a habituated group of mountain gorillas. It may take 2–8 hours to reach the gorillas, after which you have a glorious hour of observation and photography. Gorilla tourism provides funds that aid in their conservation."
+        },
+        {
+          "title": "DAY 4: Bwindi to Queen Elizabeth National Park",
+          "body": "Drive to Queen Elizabeth National Park, pausing for a short game drive in the Ishasha Sector, well-known for tree-climbing lions. Afternoon boat cruise on the Kazinga Channel — crocs, hippos, waterbucks, Uganda kob, elephants, buffalo, plus flamingoes, herons, ibises, storks, pelicans, the African Fish Eagle and more. Mweya Safari Lodge."
+        },
+        {
+          "title": "DAY 5: Game Drive & Chimpanzee Trekking",
+          "body": "Early game drive on the Kasenyi plains for elephant, leopard, lion, buffalo, warthog and Uganda kob. Afternoon chimpanzee tracking in the Kyambura Gorge — chimps, L'Hoest monkey, black-and-white colobus, red-tailed monkey, olive baboon and more. Mweya Safari Lodge."
+        },
+        {
+          "title": "DAY 6: Return to Kampala",
+          "body": "After breakfast, head back through scenic Uganda countryside to Kampala / Entebbe Airport, with a warm lunch along the way. Connect with international flights or overnight in the area. Transit time 6–7 hours depending on stops."
+        }
+      ]
+    },
+    "northern-tanzania-wildlife-safari": {
+      "title": "Northern Tanzania Wildlife Safari",
+      "duration": "9 Days / 8 Nights",
+      "intro": "The Great Migration of the Serengeti is one of the world's most spectacular wildlife phenomena. This safari concentrates on wildlife-rich Tarangire, Serengeti, and Ngorongoro so you spend more time observing and less time travelling — with expert leadership that turns sightings into stories.",
+      "route": "Arusha · Tarangire · Serengeti · Ngorongoro · Arusha",
+      "days": [
+        {
+          "title": "DAY 1: Karibu! Safari begins",
+          "body": "Meet at Kilimanjaro International Airport (JRO) and transfer to Gran Melia Hotel in Arusha. Nestled below Mount Meru at roughly 4,600 ft, Arusha enjoys a pleasant climate — the classic embarkation point for northern Tanzania safaris."
+        },
+        {
+          "title": "DAY 2: Arusha to Tarangire National Park",
+          "body": "After breakfast, drive to Tarangire — in the dry season second only to Ngorongoro for concentrations of wildlife. Permanent water draws elephant, giraffe, wildebeest, zebra, predators, and exceptional birdlife across baobab-studded landscapes. Optional night game drive for nocturnal species."
+        },
+        {
+          "title": "DAY 3: Full day in Tarangire",
+          "body": "A full day inside Tarangire National Park. Dinner and overnight at Tarangire Safari Lodge."
+        },
+        {
+          "title": "DAYS 4–5: Tarangire to Serengeti National Park",
+          "body": "Three full days in the fabled Serengeti — rolling plains, kopjes, riverine forest, and vast herds. Time to observe behaviour, not just tick species. Your guide enriches every encounter with context on ecology and history. Dinner and overnight at Kubu Kubu Tented Lodge."
+        },
+        {
+          "title": "DAY 6: Serengeti to Ngorongoro Highlands",
+          "body": "After an early breakfast, game drive en route to Ngorongoro Conservation Area. Overnight at Lion's Paw on the crater rim."
+        },
+        {
+          "title": "DAY 7: Ngorongoro Crater full-day game drive",
+          "body": "Explore one of the world's largest calderas — forests, swamps, grasslands, and lakes supporting lion, cheetah, rhino, elephant, and thousands of antelope. Rare black rhino and big-tusked elephants are highlights. Overnight at Lion's Paw."
+        },
+        {
+          "title": "DAY 8: Ngorongoro Highlands to Arusha",
+          "body": "After breakfast, depart for Arusha and Mount Meru Hotel for overnight."
+        },
+        {
+          "title": "DAY 9: Departure",
+          "body": "After lunch, transfer to the airport for your onward flight home."
+        }
+      ],
+      "highlights": [
+        "Great Migration focus",
+        "Tarangire night drive",
+        "Ngorongoro Crater",
+        "Expert naturalist guiding"
+      ],
+      "fromPrice": "USD 9,067",
+      "priceNote": "Per person · land safari only (excludes international flights)"
+    },
+    "uganda-gorillas-chimps-7-day": {
+      "title": "7-Day Uganda Gorillas & Chimps Trek",
+      "duration": "7 Days / 6 Nights",
+      "intro": "A primate-rich circuit through Rwanda and Uganda: mountain gorillas in Bwindi (one or two treks), chimpanzees in Queen Elizabeth, tree-climbing lions in Ishasha, and cultural time with Batwa communities — in comfortable 4×4 Land Cruisers with an English-speaking Ugandan guide.",
+      "route": "Kigali · Bwindi · Queen Elizabeth NP · Kigali",
+      "days": [
+        {
+          "title": "DAY 1: Arrive Kigali",
+          "body": "Welcome at Kigali International Airport, transfer to Kigali Des Mille Collines Hotel overlooking the city. Briefing and warm welcome."
+        },
+        {
+          "title": "DAY 2: Kigali to Bwindi",
+          "body": "After breakfast, transfer via the Katuna border to northern Bwindi Impenetrable National Park. Hot lunch en route. Dinner and briefing at Buhoma Community Haven Lodge."
+        },
+        {
+          "title": "DAY 3: First gorilla trekking",
+          "body": "Full gorilla trek in Bwindi with park rangers. Certificate on success. Afternoon Batwa community visit — Luke's Batwa Project. Overnight Buhoma Community Haven Lodge."
+        },
+        {
+          "title": "DAY 4: Second gorilla trek or birding",
+          "body": "Second trek with a different gorilla family, or optional birding along the Buhoma Valley with a senior local birder. Batwa visit with Joseph's Hope Foundation. Overnight Buhoma Community Haven Lodge."
+        },
+        {
+          "title": "DAY 5: Bwindi to Queen Elizabeth NP",
+          "body": "Transfer via Ishasha sector searching for tree-climbing lions. Check in at Park View Safari Lodge. Evening game drive."
+        },
+        {
+          "title": "DAY 6: Chimps & Kazinga boat cruise",
+          "body": "Morning chimp tracking in Kyambura Gorge or Kalinzu Forest. Afternoon two-hour boat cruise on Kazinga Channel — hippos, crocs, elephants, and rich birdlife. Park View Safari Lodge."
+        },
+        {
+          "title": "DAY 7: Return to Kigali & depart",
+          "body": "Leisurely breakfast, border formalities, lunch in Kigali, and airport drop-off."
+        }
+      ],
+      "highlights": [
+        "Two gorilla treks",
+        "Chimp tracking",
+        "Tree-climbing lions",
+        "Batwa community"
+      ],
+      "fromPrice": "USD 4,500",
+      "priceNote": "From per person (dual gorilla trek option) · Kigali start"
+    },
+    "uganda-holiday-8-day": {
+      "title": "8-Day Uganda Holiday Tour",
+      "duration": "8 Days / 7 Nights",
+      "intro": "A super-luxury Uganda holiday from Entebbe: shoebill birding on Lake Victoria, the Equator, two gorilla treks in Bwindi, tree-climbing lions, chimpanzees, and a sunset boat on the Kazinga Channel — with open-roof 4×4 transport and top-tier lodge accommodation throughout.",
+      "route": "Entebbe · Mabamba · Bwindi · Queen Elizabeth NP · Entebbe",
+      "days": [
+        {
+          "title": "DAY 1: Arrive Entebbe",
+          "body": "Meet and greet at Entebbe Airport. Transfer to Lake Victoria Serena Resort (approx. 30 minutes)."
+        },
+        {
+          "title": "DAY 2: Mabamba shoebill & drive to Mbarara",
+          "body": "Early start for Mabamba shoebill birding by boat. Continue past the Uganda Equator with hot lunch at Equator Coffee Point. Overnight Ingongo Cultural Hotel."
+        },
+        {
+          "title": "DAY 3: Drive to Bwindi",
+          "body": "Relaxed breakfast, then drive south to Bwindi. Hot lunch en route. Overnight Silverback Safari Lodge."
+        },
+        {
+          "title": "DAY 4: First gorilla trek",
+          "body": "Early briefing at Buhoma, porter support, full gorilla trekking experience with picnic lunch. Optional afternoon community walk. Silverback Safari Lodge."
+        },
+        {
+          "title": "DAY 5: Second gorilla trek",
+          "body": "Second trek with a different gorilla family group. Picnic lunch and optional community walk. Silverback Safari Lodge."
+        },
+        {
+          "title": "DAY 6: Queen Elizabeth via Ishasha",
+          "body": "Leisurely breakfast, drive through Ishasha for tree-climbing lions and birding. Hot lunch at Mweya Safari Lodge. Optional evening game drive. Overnight Mweya Safari Lodge."
+        },
+        {
+          "title": "DAY 7: Chimps & Kazinga channel",
+          "body": "Light breakfast, chimp tracking in Kalinzu Forest. Afternoon guided boat cruise on Kazinga Channel with birding. Mweya Safari Lodge."
+        },
+        {
+          "title": "DAY 8: Return to Entebbe",
+          "body": "Relaxed breakfast and scenic drive to Entebbe for your international departure (domestic flight option available from Mweya)."
+        }
+      ],
+      "highlights": [
+        "Shoebill at Mabamba",
+        "Dual gorilla permits",
+        "Mweya Safari Lodge",
+        "Chimps & boat cruise"
+      ],
+      "fromPrice": "USD 6,250",
+      "priceNote": "Per person (2 travellers) · super-luxury lodges, meals inclusive"
+    },
+    "zanzibar-extension-4-day": {
+      "title": "4-Day Zanzibar Extension",
+      "duration": "4 Days / 3 Nights",
+      "intro": "The perfect beach finale after a mainland safari: fly from Arusha to Zanzibar for Stone Town heritage, Prison Island tortoises, spice farms, Jozani Forest's red colobus monkeys, and a full day at Mnemba Atoll — with Essque Zalu Beach Resort and Park Hyatt Stone Town.",
+      "route": "Arusha · Zanzibar · Stone Town · Mnemba · Departure",
+      "days": [
+        {
+          "title": "DAY 1: Arusha to Zanzibar & Stone Town",
+          "body": "Fly to Zanzibar. Meet Aardvark representative at Abeid Amani Karume International Airport. Lunch at Park Hyatt, guided Stone Town tour (House of Wonders, Old Fort, Sultan's Palace, markets). Prison Island boat trip for giant Aldabra tortoises. Overnight Essque Zalu Resort."
+        },
+        {
+          "title": "DAY 2: Spice tour & Jozani Forest",
+          "body": "Morning spice farm tour — sample fresh cloves, vanilla, and nutmeg. Visit Jozani Forest for rare Zanzibar red colobus monkeys. Sunset stroll on Nungwi Beach. Overnight Essque Zalu Beach Resort."
+        },
+        {
+          "title": "DAY 3: Mnemba Atoll",
+          "body": "Full-day excursion to Mnemba Island — snorkel vibrant coral reefs among green turtles, snapper, Moorish idols, and more. Return for dinner at Essque Zalu."
+        },
+        {
+          "title": "DAY 4: Departure",
+          "body": "Breakfast and airport transfer for your flight home. Includes one night in Arusha (Olerai Lodge or Mount Meru Hotel) plus airport transfer before the Zanzibar leg."
+        }
+      ],
+      "highlights": [
+        "Stone Town UNESCO tour",
+        "Spice farm",
+        "Jozani red colobus",
+        "Mnemba snorkelling"
+      ],
+      "fromPrice": "USD 3,255",
+      "priceNote": "Per person · includes domestic flight Arusha–Zanzibar"
+    }
+  }
+}
