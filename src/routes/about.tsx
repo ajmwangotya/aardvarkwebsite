@@ -1,21 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { GuestNotesSection } from "@/components/guest-notes-section";
-import { CinematicVideoSection } from "@/components/cinematic-video-section";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { GuestNotesSection } from "@/components/sections/guest-notes-section";
+import { CinematicVideoSection } from "@/components/sections/cinematic-video-section";
 import { SITE_VIDEOS } from "@/data/site-videos";
 import { Reveal, stagger, fadeUp, blurIn, flipIn, slideRight, ParallaxSection, CountUp } from "@/components/motion";
 import { COMPANY_STATS, pageTitle, SITE, TRIPADVISOR } from "@/lib/site-config";
 import { ArrowRight, Star } from "lucide-react";
 import { buildPageHead } from "@/lib/seo";
-import maasai from "@/assets/maasai.jpg";
-import acacia from "@/assets/acacia.jpg";
-import walking from "@/assets/walking.jpg";
-import augustinePhoto from "@/assets/team-augustine.jpg";
-import waltPhoto from "@/assets/team-walt.jpg";
-import deborahPhoto from "@/assets/team-deborah.jpg";
+import maasai from "@/assets/editorial/maasai.jpg";
+import acacia from "@/assets/editorial/acacia.jpg";
+import walking from "@/assets/editorial/walking.jpg";
+import augustinePhoto from "@/assets/team/team-augustine.jpg";
+import waltPhoto from "@/assets/team/team-walt.jpg";
+import deborahPhoto from "@/assets/team/team-deborah.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () =>

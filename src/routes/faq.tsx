@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Trans, useTranslation } from "react-i18next";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { BookingSteps } from "@/components/booking-steps";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { BookingSteps } from "@/components/sections/booking-steps";
 import { Reveal } from "@/components/motion";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";

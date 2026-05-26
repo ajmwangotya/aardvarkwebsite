@@ -3,7 +3,7 @@ import { ITINERARY_CATALOG, type ItineraryCatalogRow } from "@/data/itinerary-ca
 import { getPackage } from "@/data/packages";
 import { getLocalizedSafari } from "@/lib/localized-safari";
 import { getPackageImage, safariThumbImages, zanzibarBeach, destChobeElephants } from "@/data/destination-images";
-import migration from "@/assets/migration.jpg";
+import migration from "@/assets/editorial/migration.jpg";
 
 export type ItineraryListItem = ItineraryCatalogRow & {
   title: string;

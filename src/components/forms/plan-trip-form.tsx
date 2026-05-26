@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useId, useState, type Dispatch, type SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
 import { Check } from "lucide-react";
-import { FormSecurity, isSubmitBlockedByTurnstile } from "@/components/form-security";
+import { FormSecurity, isSubmitBlockedByTurnstile } from "@/components/forms/form-security";
 import { submitEnquiry } from "@/lib/submit-enquiry";
 import type { EnquiryPayload } from "@/lib/enquiry-schema";
 import { useIsMobile } from "@/hooks/use-mobile";

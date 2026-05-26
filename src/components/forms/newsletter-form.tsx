@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FormSecurity, isSubmitBlockedByTurnstile } from "@/components/form-security";
+import { FormSecurity, isSubmitBlockedByTurnstile } from "@/components/forms/form-security";
 import { submitEnquiry } from "@/lib/submit-enquiry";
 
 type NewsletterFormProps = {

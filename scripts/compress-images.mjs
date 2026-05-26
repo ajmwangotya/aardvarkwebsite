@@ -11,6 +11,7 @@ import sharp from "sharp";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const assetsDir = path.join(root, "src", "assets");
+const ASSET_SUBDIRS = ["", "brand", "heroes", "destinations", "editorial", "team"];
 
 const dryRun = process.argv.includes("--dry-run");
 const maxWidth = Number(process.argv.find((a) => a.startsWith("--max-width="))?.split("=")[1] ?? 1920);
@@ -76,7 +77,15 @@ async function compressFile(filePath) {
 }
 
 async function main() {
-  const files = await walk(assetsDir);
+  const files = [];
+  for (const sub of ASSET_SUBDIRS) {
+    const dir = sub ? path.join(assetsDir, sub) : assetsDir;
+    try {
+      files.push(...(await walk(dir)));
+    } catch {
+      /* optional subfolder */
+    }
+  }
   let totalBefore = 0;
   let totalAfter = 0;
   let changed = 0;

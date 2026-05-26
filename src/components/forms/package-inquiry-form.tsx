@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { FormSecurity, isSubmitBlockedByTurnstile } from "@/components/form-security";
+import { FormSecurity, isSubmitBlockedByTurnstile } from "@/components/forms/form-security";
 import { submitEnquiry } from "@/lib/submit-enquiry";
 import type { EnquiryPayload } from "@/lib/enquiry-schema";
-import { FormSlaNote } from "@/components/form-sla-note";
+import { FormSlaNote } from "@/components/forms/form-sla-note";
 
 type PackageInquiryFormProps = {
   packageTitle: string;

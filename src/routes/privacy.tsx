@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Trans, useTranslation } from "react-i18next";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { Reveal, blurIn } from "@/components/motion";
-import { LegalSections } from "@/components/legal-sections";
+import { LegalSections } from "@/components/sections/legal-sections";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
 

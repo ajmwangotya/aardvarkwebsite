@@ -16,12 +16,12 @@ import appCss from "../styles.css?url";
 import i18n from "@/lib/i18n";
 import { parseLangParam } from "@/lib/i18n-instance";
 import type { RouterContext } from "@/router";
-import { WhatsAppFloat } from "@/components/whatsapp-float";
-import { MobileCtaBar } from "@/components/mobile-cta-bar";
-import { CookieConsent } from "@/components/cookie-consent";
+import { WhatsAppFloat } from "@/components/layout/whatsapp-float";
+import { MobileCtaBar } from "@/components/layout/mobile-cta-bar";
+import { CookieConsent } from "@/components/layout/cookie-consent";
 import { useTranslation } from "react-i18next";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { SITE, TRIPADVISOR, absoluteUrl, ogImageUrl, hreflangLinks } from "@/lib/site-config";
 
 const rootSearchSchema = z.object({

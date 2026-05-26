@@ -23,8 +23,9 @@ dist-ssr
 # Raw photo dump (assets already copied into src/assets)
 wetransfer__dsc1010-jpeg_2026-05-17_1737/
 
-# Source brochure PDF (30MB+; not used by the live site build)
+# Source brochure PDFs (not used by the live site build)
 aardvark safariprofileV14.pdf
+docs/reference/*.pdf
 
 # Brand films — host on CDN (see docs/EXTERNAL-VIDEOS.md)
 public/videos/*.mp4
@@ -43,9 +44,6 @@ public/videos/*.mp4
 *.njsproj
 *.sln
 *.sw?
-
-# Original client photo delivery (copied into src/assets)
-wetransfer__dsc1010-jpeg_2026-05-17_1737/
 
 # npm is the package manager for this repo
 bun.lock

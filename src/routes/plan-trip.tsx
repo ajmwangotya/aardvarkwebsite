@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Trans, useTranslation } from "react-i18next";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { FormSlaNote } from "@/components/form-sla-note";
-import { BookingSteps } from "@/components/booking-steps";
-import { PlanTripForm } from "@/components/plan-trip-form";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { FormSlaNote } from "@/components/forms/form-sla-note";
+import { BookingSteps } from "@/components/sections/booking-steps";
+import { PlanTripForm } from "@/components/forms/plan-trip-form";
 import { Reveal } from "@/components/motion";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle, whatsappUrl } from "@/lib/site-config";

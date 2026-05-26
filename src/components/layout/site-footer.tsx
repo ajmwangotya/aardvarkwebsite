@@ -2,8 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import logoUrl from "@/assets/aardvark-logo.svg";
-import { NewsletterForm } from "@/components/newsletter-form";
+import logoUrl from "@/assets/brand/aardvark-logo.svg";
+import { NewsletterForm } from "@/components/forms/newsletter-form";
 import { SITE, TRIPADVISOR, currentYear } from "@/lib/site-config";
 
 const socials = [

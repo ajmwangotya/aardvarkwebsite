@@ -1,14 +1,14 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { Reveal, fadeUp } from "@/components/motion";
 import { COUNTRY_SLUGS, isCountrySlug } from "@/data/countries";
 import { circuitAnchor, type CircuitSlug } from "@/data/circuits";
 import { countryImages } from "@/data/destination-images";
-import migration from "@/assets/migration.jpg";
-import { CinematicVideoSection } from "@/components/cinematic-video-section";
+import migration from "@/assets/editorial/migration.jpg";
+import { CinematicVideoSection } from "@/components/sections/cinematic-video-section";
 import { SITE_VIDEOS } from "@/data/site-videos";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";

@@ -6,7 +6,7 @@ import { FEATURED_PACKAGE_SLUGS } from "@/data/featured-packages";
 import { getPackage } from "@/data/packages";
 import { getPackageImage } from "@/data/destination-images";
 import { Reveal, fadeUp } from "@/components/motion";
-import { OptimizedImage } from "@/components/optimized-image";
+import { OptimizedImage } from "@/components/media/optimized-image";
 
 export function FeaturedPackages({ className = "" }: { className?: string }) {
   const { t } = useTranslation();

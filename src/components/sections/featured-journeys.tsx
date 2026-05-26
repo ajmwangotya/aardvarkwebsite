@@ -4,10 +4,10 @@ import { ArrowRight, FileText } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { FEATURED_BROCHURE_SLUGS } from "@/data/featured-brochures";
 import { getLocalizedSafari } from "@/lib/localized-safari";
-import { OptimizedImage } from "@/components/optimized-image";
+import { OptimizedImage } from "@/components/media/optimized-image";
 import { Reveal, fadeUp } from "@/components/motion";
 import { safariThumbImages } from "@/data/destination-images";
-import migration from "@/assets/migration.jpg";
+import migration from "@/assets/editorial/migration.jpg";
 
 const regionStyle: Record<string, string> = {
   Tanzania: "border-gold/40 bg-gold/10 text-ink",

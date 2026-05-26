@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { Reveal, fadeUp } from "@/components/motion";
 import { PACKAGE_CATEGORIES, getPackagesByCategory } from "@/data/packages";
 import { getPackageImage, packageCategoryImages } from "@/data/destination-images";
-import { OptimizedImage } from "@/components/optimized-image";
+import { OptimizedImage } from "@/components/media/optimized-image";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
 

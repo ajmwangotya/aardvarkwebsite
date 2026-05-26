@@ -4,20 +4,20 @@ import { pageTitle } from "@/lib/site-config";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { NewsletterForm } from "@/components/newsletter-form";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { NewsletterForm } from "@/components/forms/newsletter-form";
 import { Reveal, stagger, fadeUp } from "@/components/motion";
 import { ArrowRight, Clock, Search, BookOpen, TrendingUp } from "lucide-react";
-import migration from "@/assets/migration.jpg";
-import elephants from "@/assets/elephants.jpg";
-import walking from "@/assets/walking.jpg";
-import balloon from "@/assets/balloon.jpg";
-import acacia from "@/assets/acacia.jpg";
-import maasai from "@/assets/maasai.jpg";
-import leopard from "@/assets/leopard.jpg";
-import camp1 from "@/assets/camp-1.jpg";
-import dining from "@/assets/dining.jpg";
+import migration from "@/assets/editorial/migration.jpg";
+import elephants from "@/assets/editorial/elephants.jpg";
+import walking from "@/assets/editorial/walking.jpg";
+import balloon from "@/assets/editorial/balloon.jpg";
+import acacia from "@/assets/editorial/acacia.jpg";
+import maasai from "@/assets/editorial/maasai.jpg";
+import leopard from "@/assets/editorial/leopard.jpg";
+import camp1 from "@/assets/editorial/camp-1.jpg";
+import dining from "@/assets/editorial/dining.jpg";
 
 export const Route = createFileRoute("/blog")({
   head: () =>

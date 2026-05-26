@@ -1,21 +1,21 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { Reveal } from "@/components/motion";
 import { BLOG_POST_META, isBlogSlug } from "@/data/blog";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
 import { Clock, ArrowLeft } from "lucide-react";
-import migration from "@/assets/migration.jpg";
-import elephants from "@/assets/elephants.jpg";
-import acacia from "@/assets/acacia.jpg";
-import walking from "@/assets/walking.jpg";
-import balloon from "@/assets/balloon.jpg";
-import maasai from "@/assets/maasai.jpg";
-import leopard from "@/assets/leopard.jpg";
-import camp1 from "@/assets/camp-1.jpg";
-import dining from "@/assets/dining.jpg";
+import migration from "@/assets/editorial/migration.jpg";
+import elephants from "@/assets/editorial/elephants.jpg";
+import acacia from "@/assets/editorial/acacia.jpg";
+import walking from "@/assets/editorial/walking.jpg";
+import balloon from "@/assets/editorial/balloon.jpg";
+import maasai from "@/assets/editorial/maasai.jpg";
+import leopard from "@/assets/editorial/leopard.jpg";
+import camp1 from "@/assets/editorial/camp-1.jpg";
+import dining from "@/assets/editorial/dining.jpg";
 
 const postImages = [migration, elephants, acacia, walking, balloon, maasai, leopard, camp1, dining];
 

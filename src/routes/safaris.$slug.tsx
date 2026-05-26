@@ -2,24 +2,24 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { Reveal } from "@/components/motion";
 import { getSafari, safaris } from "@/data/safaris";
 import { getLocalizedSafari } from "@/lib/localized-safari";
 import { buildPageHead } from "@/lib/seo";
 import { SITE, pageTitle } from "@/lib/site-config";
 import { tFromContext } from "@/lib/route-i18n";
-import { OptimizedImage } from "@/components/optimized-image";
-import { FormSecurity, isSubmitBlockedByTurnstile } from "@/components/form-security";
+import { OptimizedImage } from "@/components/media/optimized-image";
+import { FormSecurity, isSubmitBlockedByTurnstile } from "@/components/forms/form-security";
 import { submitEnquiry } from "@/lib/submit-enquiry";
 import type { EnquiryPayload } from "@/lib/enquiry-schema";
-import { FormSlaNote } from "@/components/form-sla-note";
-import { SafariMap } from "@/components/safari-map";
+import { FormSlaNote } from "@/components/forms/form-sla-note";
+import { SafariMap } from "@/components/maps/safari-map";
 import { safariThumbImages } from "@/data/destination-images";
-import migration from "@/assets/migration.jpg";
-import acacia from "@/assets/acacia.jpg";
-import maasai from "@/assets/maasai.jpg";
+import migration from "@/assets/editorial/migration.jpg";
+import acacia from "@/assets/editorial/acacia.jpg";
+import maasai from "@/assets/editorial/maasai.jpg";
 
 export const Route = createFileRoute("/safaris/$slug")({
   loader: ({ params, context }) => {

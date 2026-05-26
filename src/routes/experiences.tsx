@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { Reveal, stagger, fadeUp, blurIn, flipIn, slideRight, ParallaxSection } from "@/components/motion";
 import { Sun, Cloud, Leaf, Plane } from "lucide-react";
 import { experienceImages } from "@/data/destination-images";
-import migration from "@/assets/migration.jpg";
+import migration from "@/assets/editorial/migration.jpg";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
 

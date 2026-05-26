@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import logoUrl from "@/assets/aardvark-logo.svg";
-import { LanguageSwitcher } from "@/components/language-switcher";
-import { MobileNavMenu } from "@/components/mobile-nav-menu";
+import logoUrl from "@/assets/brand/aardvark-logo.svg";
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import { MobileNavMenu } from "@/components/layout/mobile-nav-menu";
 import { SITE, TRIPADVISOR } from "@/lib/site-config";
 
 type NavItem =

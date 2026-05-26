@@ -20,6 +20,7 @@
     "upload-videos": "node scripts/upload-videos.mjs",
     "untrack-videos": "node scripts/untrack-videos.mjs",
     "compress-images": "node scripts/compress-images.mjs",
+    "organize-project": "node scripts/reorganize-project.mjs",
     "audit": "npm audit --audit-level=moderate",
     "test": "node --import tsx --test src/lib/enquiry-schema.test.ts"
   },

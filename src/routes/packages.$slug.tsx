@@ -1,15 +1,15 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Trans, useTranslation } from "react-i18next";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { PackageInquiryForm } from "@/components/package-inquiry-form";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { PackageInquiryForm } from "@/components/forms/package-inquiry-form";
 import { Reveal } from "@/components/motion";
 import { getPackage } from "@/data/packages";
 import { getSafari } from "@/data/safaris";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
 import { getPackageImage } from "@/data/destination-images";
-import { OptimizedImage } from "@/components/optimized-image";
+import { OptimizedImage } from "@/components/media/optimized-image";
 import { tFromContext } from "@/lib/route-i18n";
 
 export const Route = createFileRoute("/packages/$slug")({
