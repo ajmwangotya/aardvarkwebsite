@@ -78,10 +78,10 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
 
   const navItems: NavItem[] = [
     { href: "/", label: t("nav.home") },
+    { href: "/about", label: t("nav.about") },
     { href: "/packages", label: t("nav.packages"), highlight: true },
     { label: t("nav.destinations"), children: destinations, key: "destinations" },
     { href: "/itineraries", label: t("nav.itineraries") },
-    { href: "/about", label: t("nav.about") },
     { label: t("nav.planTrip"), children: planTrip, key: "plan" },
     { href: "/faq", label: t("nav.faq") },
     { href: "/blog", label: t("nav.blog") },
@@ -90,6 +90,7 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
 
   const mobileNavLinks: MobileNavLink[] = [
     { href: "/", label: t("nav.home") },
+    { href: "/about", label: t("nav.about") },
     { href: "/packages", label: t("nav.packages"), highlight: true },
     { href: "/destinations", label: t("nav.destinations") },
     ...countries.map((c) => ({
@@ -98,7 +99,6 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
       indent: true,
     })),
     { href: "/itineraries", label: t("nav.itineraries") },
-    { href: "/about", label: t("nav.about") },
     { href: "/plan-trip", label: t("nav.planTrip") },
     { href: "/experiences", label: t("planMenu.experiences") },
     { href: "/camps", label: t("planMenu.camps") },
@@ -165,7 +165,9 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
         </a>
 
         <nav
-          className="pointer-events-auto hidden min-w-0 items-center justify-center gap-6 md:flex lg:gap-8"
+          className={`pointer-events-auto hidden min-w-0 flex-1 items-center justify-center md:flex ${
+            solid ? "gap-5 lg:gap-7" : "header-nav-on-hero gap-2 lg:gap-3.5"
+          }`}
           aria-label={t("nav.navigation")}
         >
             {navItems.map((item) => {
@@ -185,7 +187,7 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
                       onClick={() => setOpenDrop((k) => (k === item.key ? null : item.key))}
                     >
                       {item.label}
-                      <ChevronDown className={`h-3 w-3 ${isOpen ? "rotate-180" : ""}`} />
+                      <ChevronDown className={`nav-link-chevron h-2.5 w-2.5 shrink-0 ${isOpen ? "rotate-180" : ""}`} />
                     </button>
                     <AnimatePresence>
                       {isOpen && (

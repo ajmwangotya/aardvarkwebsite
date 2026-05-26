@@ -409,6 +409,37 @@
   .nav-link:hover::after,
   .nav-link[data-status="active"]::after { transform: scaleX(1); transform-origin: left; }
   .nav-link[data-status="active"] { color: var(--color-gold); }
+
+  /* Transparent header over hero — tighter nav so all links fit */
+  @media (min-width: 768px) {
+    .header-nav-on-hero .nav-link {
+      font-size: 0.625rem;
+      letter-spacing: 0.07em;
+      padding: 0.25rem 0;
+      white-space: nowrap;
+    }
+
+    .header-nav-on-hero .nav-link-chevron {
+      width: 0.625rem;
+      height: 0.625rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .header-nav-on-hero .nav-link {
+      font-size: 0.6875rem;
+      letter-spacing: 0.09em;
+      padding: 0.3rem 0;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .header-nav-on-hero .nav-link {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+    }
+  }
+
   .gradient-text {
     background: var(--gradient-sun);
     -webkit-background-clip: text;
@@ -1119,12 +1150,6 @@ html:has(#site-mobile-nav-toggle:checked) .mobile-nav-icon-close {
   }
 }
 
-@media (max-width: 639px) {
-  .nav-link {
-    font-size: 0.8rem;
-    padding: 0.6rem 0;
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .shimmer-text,
