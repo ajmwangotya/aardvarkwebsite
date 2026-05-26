@@ -71,6 +71,7 @@ function CountryDestinationPage() {
       {slug === "uganda" && (
         <CinematicVideoSection
           src={SITE_VIDEOS.gorillaUganda}
+          poster={SITE_VIDEOS.gorillaUgandaPoster}
           eyebrowKey={`${base}.filmEyebrow`}
           titleKey={`${base}.filmTitle`}
           descKey={`${base}.filmDesc`}

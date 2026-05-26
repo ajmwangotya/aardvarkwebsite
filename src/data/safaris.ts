@@ -191,32 +191,48 @@ export const safaris: Safari[] = [
     "route": "Victoria Falls · Chobe · Hwange · Okavango Delta",
     "days": [
       {
-        "title": "DAY 1:Karibu! Safari begins!",
-        "body": "A representative from Aardvark Safaris Tanzania will meet and greet you as soon as you arrive at Kilimanjaro International Airport and take you to the Mt. Meru Hotel, for your overnight. Arusha, nestled in the shadow of majestic Mount Meru, is a dynamic, fast- growing town and a famed embarkation point for Tanzania safaris. Because of its altitude (roughly 4,600 feet above sea level), Arusha is blessed with a pleasant climate, perfect for the coffee plantations that surround it."
+        "title": "Day 1–2: Cape Town",
+        "body": "Arrive in Cape Town and settle into your hotel at the foot of Table Mountain. Explore the V&A Waterfront, optional cable car to the summit, and the Cape Peninsula — Chapman’s Peak, Boulders Beach penguins, and Cape Point where two oceans meet. Winelands tasting or Robben Island can be woven in depending on your interests."
       },
       {
-        "title": "DAY 2 &3: Tarangire National Park",
-        "body": "Staying two nights at the amazing Kichuguu Camp, built in 2017 and rated Excel- lent on TripAdvisor. You’ll love the service, the food, the surrounding wildness, the eco- friendly design. Here we will have the rare opportunity to do a night game drive, a privi- lege that few safari goers can get today. We’ll look for nocturnal mammals that few see (for example, civet, genet, African porcupine, maybe even the odd aardvark) and preda- tors during their most-active periods. Lions and leopards at night are completely differ- ent from the snoozing animals to be found in mid-day. We feel that a night drive could well be among the finest highlights of your entire safari. Kichuguu Camp"
+        "title": "Day 3: Cape Town to Victoria Falls",
+        "body": "Fly north to Livingstone (Zambia) or Victoria Falls (Zimbabwe). On arrival, transfer to your lodge near the falls. Optional sunset cruise on the Zambezi, with hippos, crocodiles, and abundant birdlife along the riverbanks."
       },
       {
-        "title": "DAY 4: Driving to Lake Manyara.",
-        "body": "This small but productive park includes the western wall of the Great Rift Valley and lies at 3,150-feet altitude. It is noted for its high elephant population and tree-climbing lions. Flamingos, pelicans, storks, and hippos inhabit the lakeshore; which is surrounded by groundwater forest, with fig, palm, tama- rind, and baobab trees hosting blue and vervet monkeys, baboons, hornbills, and much more. We may encounter bushbucks, waterbucks, giraffes (some surprisingly dark), im- pala, perhaps even a monitor lizard. Over- night: Ngorongoro Sopa Lodge"
+        "title": "Day 4: Victoria Falls",
+        "body": "A full day at Mosi-oa-Tunya — the Smoke that Thunders. Walk the rainforest trails facing the main falls, feel the spray on the bridge, and choose optional activities such as a helicopter flight over the gorge or a visit to Livingstone Island. Evening at leisure."
       },
       {
-        "title": "DAY 5: Ngorongoro Crater.",
-        "body": "Brace yourself for a trip back into the Pleistocene! Today we’ll explore one of the world’s largest calderas, 10-11 miles in diameter and 2500 feet deep. This diverse ecosystem of forests, swamps, grasslands, and lakes supports lion, cheetah, serval, hyena, three kinds of jackal, zebra, rhino, hippo, elephant, and thousands of antelopes, including the massive eland. Because poaching is not a problem here, rare black rhinos and elephants with enormous tusks are present. It’s also a birding hotspot. Walt has recorded over 100 species of birds in a day even when most of our time has been watching big mammals! Ngorongoro Sopa Lodge."
+        "title": "Day 5: Victoria Falls to Chobe",
+        "body": "Cross into Botswana for Chobe National Park, famous for one of Africa’s largest elephant populations. Afternoon boat safari on the Chobe River — elephants swimming, buffalo on the banks, and prolific waterbirds at close range."
       },
       {
-        "title": "DAY 6 - 10 : Serengeti National Park.",
-        "body": "Five full days in the fabled Serengeti, one of the most productive and important wildlife areas in the world. With its vast rolling plains, dramatic outcrops of Precambrian rocks (kopjes), flat-topped acacias, crocodile- and hippo-inhabited rivers lined with riverine gallery forests, and huge herds of animals, the Serengeti is about the ultimate in “wild Africa.” The famous “Great Migration” of wildebeest, zebra, and oth- er grazing herbivores is one of the last mass movements of animals still taking place on earth. We could not be here at a better time of year! There is a lot of history here—both human and animal—and you will be enriched and informed by our guides. We’ll spend our first night at Pamoja Tented Lodge (or equivalent) in the central Serengeti, which is noted for leopards, hippo pools, and the Maasai Kopjes. Then we’ll proceed north for three nights at Mara Mara Kati Kati Tented Camp, which should be close to the heart of the migration, and we will venture to some areas of extraordinary beauty where large predators thrive. With good luck, we hope to see the herds undertaking the treacherous crossing of the Mara River. Camping in the Serengeti surrounded by the exotic sounds of wild Africa is truly an in-tents experience!"
+        "title": "Day 6: Chobe National Park",
+        "body": "Morning and afternoon game drives in Chobe’s riverfront sector. Lion, leopard, and wild dog are possible; elephant herds are almost guaranteed. Return to your lodge for sundowners overlooking the river."
       },
       {
-        "title": "DAY 11: Serengeti, Oldupai Gorge, Crater Highlands.",
-        "body": "After our final breakfast in the Serengeti, we’ll drive across the plains, ascending again into the high- lands of the Ngorongoro Conservation Area, a World Heritage Site dedicated to the peaceful union of pastoralism, conservation of natural resources, and responsible tourism. We will stop to visit Oldupai (or Olduvai) Gorge, world-renowned for the discoveries of early hominids made by archaeologists Mary and Louis Leakey. We will visit the wonderful museum here and, if time permits, explore the gorge where the discoveries were made."
+        "title": "Day 7: Chobe to Hwange",
+        "body": "Travel to Hwange National Park in western Zimbabwe. Hwange’s mix of teak woodland and open vleis supports strong populations of elephant, buffalo, zebra, and predators — including excellent wild dog viewing in season."
       },
       {
-        "title": "DAY 12: Arusha.",
-        "body": "Today we drive back to Arusha for a visit to the Cultural Heritage Center (wonderful wildlife art gallery and excellent shopping, including for precious Tanzanite jewelry), a scrumptious buffet lunch, and some time to rest and prepare for your trip home that evening or for continuation to Mkomazi National Park for those doing the extension. Day rooms or overnight at Mt. Meru Hotel., depending on your plans."
+        "title": "Day 8: Hwange National Park",
+        "body": "Full day exploring Hwange on game drives and at waterholes. The park’s pumped pans attract wildlife in the dry season and make for memorable photography. Overnight at a lodge or tented camp in the park."
+      },
+      {
+        "title": "Day 9: Hwange to Okavango Delta",
+        "body": "Fly or drive to the Okavango Delta — a UNESCO wetland of channels, lagoons, and palm islands. Settle into your camp and enjoy a late-afternoon mokoro (dugout canoe) or motorboat excursion into the channels."
+      },
+      {
+        "title": "Day 10: Okavango Delta",
+        "body": "A full day in the delta: mokoro glides through papyrus, walks with armed guides on forested islands, and game drives on higher ground for elephant, red lechwe, and predators. Birding is exceptional — from Pel’s fishing owl to African skimmer."
+      },
+      {
+        "title": "Day 11: Okavango Delta",
+        "body": "Second delta day to explore a different habitat or repeat your favourite activity. Many camps offer catch-and-release fishing, scenic helicopter flights, or village visits. Sundowners in the bush as the day cools."
+      },
+      {
+        "title": "Day 12: Departure",
+        "body": "Morning activity if time allows, then transfer to Maun or Kasane for your onward flight. Extensions to Cape Town, Tanzania, or Zanzibar can be arranged through Aardvark Safaris."
       }
     ],
     "waypoints": [

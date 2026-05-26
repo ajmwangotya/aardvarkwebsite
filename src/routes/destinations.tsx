@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -233,14 +232,10 @@ function DestinationsPage() {
               <h2 className="mt-4 font-serif text-4xl md:text-5xl">{g.title}</h2>
             </Reveal>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {g.items.map((p, i) => (
-                <motion.div
+              {g.items.map((p) => (
+                <div
                   key={p.name}
                   id={destSlug(p.name)}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
                   className="scroll-mt-32"
                 >
                   <div className="group block">
@@ -253,7 +248,7 @@ function DestinationsPage() {
                     </div>
                     {p.desc && <p className="mt-3 text-sm text-muted-foreground">{p.desc}</p>}
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

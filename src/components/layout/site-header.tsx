@@ -11,6 +11,7 @@ import {
   type MobileNavLink,
 } from "@/components/layout/mobile-nav-menu";
 import { SITE, TRIPADVISOR } from "@/lib/site-config";
+import { NavHrefLink } from "@/lib/nav-href";
 
 type NavItem =
   | { href: string; label: string; highlight?: boolean }
@@ -176,17 +177,23 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
                 return (
                   <div
                     key={item.key}
-                    className="relative"
+                    className="relative flex items-center"
                     onMouseEnter={() => setOpenDrop(item.key)}
                     onMouseLeave={() => setOpenDrop(null)}
                   >
-                    <button
-                      type="button"
-                      className={`nav-link flex items-center gap-1 ${solid ? "text-foreground" : "text-bone"} hover:text-primary`}
-                      aria-expanded={isOpen}
-                      onClick={() => setOpenDrop((k) => (k === item.key ? null : item.key))}
+                    <Link
+                      to={item.key === "destinations" ? "/destinations" : "/plan-trip"}
+                      className={`nav-link ${solid ? "text-foreground" : "text-bone"} hover:text-primary`}
                     >
                       {item.label}
+                    </Link>
+                    <button
+                      type="button"
+                      className={`nav-link flex items-center px-1 ${solid ? "text-foreground" : "text-bone"} hover:text-primary`}
+                      aria-expanded={isOpen}
+                      aria-label={`${item.label} menu`}
+                      onClick={() => setOpenDrop((k) => (k === item.key ? null : item.key))}
+                    >
                       <ChevronDown className={`nav-link-chevron h-2.5 w-2.5 shrink-0 ${isOpen ? "rotate-180" : ""}`} />
                     </button>
                     <AnimatePresence>
@@ -198,14 +205,14 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
                           className="absolute left-1/2 top-full z-[110] mt-3 w-72 -translate-x-1/2 border border-border bg-card p-2 shadow-xl"
                         >
                           {item.children.map((c) => (
-                            <a
+                            <NavHrefLink
                               key={c.href}
                               href={c.href}
                               className="block px-4 py-3 text-sm text-foreground/80 hover:bg-secondary hover:text-primary"
                               onClick={() => setOpenDrop(null)}
                             >
                               {c.label}
-                            </a>
+                            </NavHrefLink>
                           ))}
                         </motion.div>
                       )}

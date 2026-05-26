@@ -23,7 +23,7 @@ export const SITE = {
   formsEmail: "info@aardvarktanzania.com",
   emailAfrica: "info@aardvarktanzania.com",
   /** US representative (Walt Anderson) */
-  emailNA: "usa@aardvarktanzania.com",
+  emailNA: "waltandersonafc@gmail.com",
   emailNAPersonal: "waltandersonafc@gmail.com",
   emailNALabel: "Walt Anderson — US Representative",
   enquiryEmail: "info@aardvarktanzania.com",

@@ -13,6 +13,23 @@ export type ItineraryListItem = ItineraryCatalogRow & {
   linkTo: { to: "/safaris/$slug"; params: { slug: string } } | { to: "/packages/$slug"; params: { slug: string } } | { to: "/plan-trip" };
 };
 
+type ItineraryCopy = { title: string; route: string; desc: string };
+
+function isCopyObject(value: unknown): value is ItineraryCopy {
+  return (
+    value !== null &&
+    typeof value === "object" &&
+    !Array.isArray(value) &&
+    "title" in value &&
+    typeof (value as ItineraryCopy).title === "string"
+  );
+}
+
+function itineraryCopies(t: TFunction): ItineraryCopy[] {
+  const raw = t("itinerariesPage.items", { returnObjects: true });
+  return Array.isArray(raw) ? raw.filter(isCopyObject) : [];
+}
+
 function catalogImage(row: ItineraryCatalogRow): string {
   if (row.safariSlug && safariThumbImages[row.safariSlug]) return safariThumbImages[row.safariSlug];
   if (row.packageSlug) {
@@ -25,48 +42,49 @@ function catalogImage(row: ItineraryCatalogRow): string {
 }
 
 export function buildItineraryListItems(t: TFunction): ItineraryListItem[] {
-  return ITINERARY_CATALOG.map((row) => {
-    let title = "";
-    let route = "";
-    let desc = "";
+  const copies = itineraryCopies(t);
+
+  return ITINERARY_CATALOG.map((row, index) => {
+    const fallback = copies[index];
+    let title = fallback?.title?.trim() ?? "";
+    let route = fallback?.route?.trim() ?? "";
+    let desc = fallback?.desc?.trim() ?? "";
     let linkTo: ItineraryListItem["linkTo"] = { to: "/plan-trip" };
 
     if (row.safariSlug) {
       const safari = getLocalizedSafari(row.safariSlug, t);
       if (safari) {
-        title = safari.title;
-        route = safari.route;
+        title = safari.title || title;
+        route = safari.route || route;
         const intro = safari.intro.trim();
         desc =
           intro.length > 200
             ? `${intro.slice(0, 197)}…`
             : intro.length > 0
               ? intro
-              : `${safari.route} — ${safari.duration}`;
+              : desc || `${safari.route} — ${safari.duration}`;
         linkTo = { to: "/safaris/$slug", params: { slug: row.safariSlug } };
       }
     } else if (row.packageSlug) {
       const pkg = getPackage(row.packageSlug);
       if (pkg) {
-        const item = t(`packagesPage.items.${pkg.i18nKey}`, { returnObjects: true }) as {
-          title: string;
-          summary: string;
-          duration: string;
-        };
-        title = item.title;
-        route = item.duration;
-        desc = item.summary;
+        const item = t(`packagesPage.items.${pkg.i18nKey}`, { returnObjects: true });
+        if (item && typeof item === "object" && !Array.isArray(item)) {
+          const pkgItem = item as { title?: string; summary?: string; duration?: string };
+          title = pkgItem.title?.trim() || title;
+          route = pkgItem.duration?.trim() || route;
+          desc = pkgItem.summary?.trim() || desc;
+        }
         linkTo = { to: "/packages/$slug", params: { slug: row.packageSlug } };
       }
     } else if (row.extraKey) {
-      const extra = t(`itinerariesPage.extra.${row.extraKey}`, { returnObjects: true }) as {
-        title: string;
-        route: string;
-        desc: string;
-      };
-      title = extra.title;
-      route = extra.route;
-      desc = extra.desc;
+      const extra = t(`itinerariesPage.extra.${row.extraKey}`, { returnObjects: true });
+      if (extra && typeof extra === "object" && !Array.isArray(extra)) {
+        const e = extra as { title?: string; route?: string; desc?: string };
+        title = e.title?.trim() || title;
+        route = e.route?.trim() || route;
+        desc = e.desc?.trim() || desc;
+      }
     }
 
     return {

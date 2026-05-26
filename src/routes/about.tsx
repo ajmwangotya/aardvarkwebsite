@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { GuestNotesSection } from "@/components/sections/guest-notes-section";
 import { CinematicVideoSection } from "@/components/sections/cinematic-video-section";
 import { SITE_VIDEOS } from "@/data/site-videos";
-import { Reveal, stagger, fadeUp, blurIn, slideRight, ParallaxSection, CountUp } from "@/components/motion";
+import { Reveal, blurIn, slideRight, ParallaxSection, CountUp } from "@/components/motion";
+import { asObjectArray } from "@/lib/utils";
 import { COMPANY_STATS, pageTitle, SITE, TRIPADVISOR } from "@/lib/site-config";
 import { ArrowRight, Star } from "lucide-react";
 import { buildPageHead } from "@/lib/seo";
@@ -31,8 +31,8 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   const { t } = useTranslation();
 
-  const values = t("about.values", { returnObjects: true }) as { title: string; desc: string }[];
-  const teamData = t("about.team", { returnObjects: true }) as { name: string; role: string; bio: string }[];
+  const values = asObjectArray<{ title: string; desc: string }>(t("about.values", { returnObjects: true }));
+  const teamData = asObjectArray<{ name: string; role: string; bio: string }>(t("about.team", { returnObjects: true }));
 
   const photos = [augustinePhoto, waltPhoto, deborahPhoto];
   const initials = ["AM", "WA", "DM"];
@@ -127,28 +127,18 @@ function AboutPage() {
           </Reveal>
         </div>
 
-        <motion.div
-          initial={false}
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}
-          className="mt-12 grid grid-cols-2 gap-4 sm:mt-16 sm:gap-6 md:grid-cols-4"
-        >
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:mt-16 sm:gap-6 md:grid-cols-4">
           {COMPANY_STATS.map((s) => (
-            <motion.div
-              key={s.labelKey}
-              variants={fadeUp}
-              className="gold-border-glow border border-ink/10 p-4 text-center sm:p-6"
-            >
+            <div key={s.labelKey} className="gold-border-glow border border-ink/10 p-4 text-center sm:p-6">
               <div className="font-serif text-[clamp(1.75rem,6vw,3rem)] shimmer-text">
                 <CountUp end={s.end} suffix={s.suffix} duration={2.5} />
               </div>
               <div className="mt-2 text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground sm:text-xs sm:tracking-[0.3em]">
                 {t(s.labelKey)}
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </section>
 
       <section id="our-story" className="mx-auto max-w-[1400px] scroll-mt-28 px-5 pb-16 sm:px-6 sm:pb-24 md:px-12 md:scroll-mt-36">
@@ -184,6 +174,7 @@ function AboutPage() {
 
       <CinematicVideoSection
         src={SITE_VIDEOS.wildReel}
+        poster={SITE_VIDEOS.wildReelPoster}
         eyebrowKey="about.filmEyebrow"
         titleKey="about.filmTitle"
         descKey="about.filmDesc"
@@ -205,17 +196,11 @@ function AboutPage() {
                 <p>{t("about.directorP2")}</p>
                 <p>{t("about.directorP3")}</p>
               </div>
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="mt-8 border-l-2 border-gold pl-6"
-              >
+              <div className="mt-8 border-l-2 border-gold pl-6">
                 <p className="font-serif text-lg shimmer-text">{t("about.directorSignoff")}</p>
                 <p className="mt-2 font-serif text-xl text-bone">{t("about.directorName")}</p>
                 <p className="text-sm uppercase tracking-[0.2em] text-bone/60">{t("about.directorRole")}</p>
-              </motion.div>
+              </div>
             </Reveal>
             <Reveal variants={slideRight} delay={0.2} className="md:col-span-4 flex items-center">
               <div className="relative group">
@@ -272,26 +257,19 @@ function AboutPage() {
               <Trans i18nKey="about.valuesTitle" components={{ i: <span className="gradient-text italic" /> }} />
             </h2>
           </Reveal>
-          <motion.div
-            initial={false}
-            whileInView="show"
-            viewport={{ once: true, amount: 0.12, margin: "-40px" }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } } }}
-            className="mt-10 grid gap-4 sm:mt-16 sm:gap-px sm:bg-border md:grid-cols-2"
-          >
+          <div className="mt-10 grid gap-4 sm:mt-16 sm:gap-px sm:bg-border md:grid-cols-2">
             {values.map((v, i) => (
-              <motion.div
+              <div
                 key={v.title}
-                variants={fadeUp}
                 className="rounded-sm border border-border bg-card p-6 sm:rounded-none sm:border-0 sm:p-10 group gold-border-glow cursor-default"
               >
                 <div className="text-[0.6rem] uppercase tracking-[0.4em] text-gold/40 transition-colors group-hover:text-gold">{String(i + 1).padStart(2, "0")}</div>
                 <h3 className="mt-3 font-serif text-3xl transition-colors duration-300 group-hover:text-[var(--gold)]">{v.title}</h3>
                 <span className="mt-4 mb-4 block h-px w-10 bg-gold transition-all duration-500 group-hover:w-20" />
                 <p className="leading-relaxed text-muted-foreground">{v.desc}</p>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -316,15 +294,9 @@ function AboutPage() {
           </p>
         </Reveal>
 
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.2 } } }}
-          className="mt-16 grid gap-10 md:grid-cols-3"
-        >
+        <div className="mt-16 grid gap-10 md:grid-cols-3">
           {team.map((m) => (
-            <motion.article key={m.name} variants={fadeUp} className="group card-hover-lift">
+            <article key={m.name} className="group card-hover-lift">
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-muted">
                 {m.photo ? (
                   <img
@@ -348,9 +320,9 @@ function AboutPage() {
               <p className="mt-1 text-sm uppercase tracking-[0.2em] text-muted-foreground">{m.role}</p>
               <div className="h-px w-0 bg-gold transition-all duration-500 mt-3 group-hover:w-16" />
               <p className="mt-4 leading-relaxed text-muted-foreground">{m.bio}</p>
-            </motion.article>
+            </article>
           ))}
-        </motion.div>
+        </div>
       </section>
 
       <GuestNotesSection />
@@ -368,14 +340,9 @@ function AboutPage() {
           <p className="mx-auto mt-6 max-w-xl text-bone/80">
             {t("about.ctaDesc")}
           </p>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-          >
-            <Link to="/plan-trip" className="btn-fill mt-8">{t("about.ctaButton")}</Link>
-          </motion.div>
+          <Link to="/plan-trip" className="btn-fill mt-8">
+            {t("about.ctaButton")}
+          </Link>
         </Reveal>
       </section>
 

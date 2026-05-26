@@ -14,10 +14,10 @@ const outDir = join(root, "public", "videos");
 
 /** Source filename (case-insensitive match) → destination in public/videos */
 const MAP = [
+  { match: /raw\s*footage/i, dest: "aardvark-raw-footage.mp4" },
   { match: /aadv?ark\s*wild/i, dest: "aardvark-wild.mp4" },
   { match: /gorilla.*uganda|uganda.*gorilla/i, dest: "gorilla-uganda.mp4" },
   { match: /aadv?ark\s*film/i, dest: "aardvark-film.mp4" },
-  { match: /raw\s*footage/i, dest: "aardvark-film.mp4" },
 ];
 
 async function main() {

@@ -2,6 +2,7 @@ import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site-config";
+import { NavHrefLink, closeMobileNav } from "@/lib/nav-href";
 
 export const MOBILE_NAV_TOGGLE_ID = "site-mobile-nav-toggle";
 
@@ -74,8 +75,9 @@ export function MobileNavPanel({ links }: { links: MobileNavLink[] }) {
             <ul>
               {navLinks.map((link) => (
                 <li key={`${link.href}-${link.label}`}>
-                  <a
+                  <NavHrefLink
                     href={link.href}
+                    onClick={closeMobileNav}
                     className={cn(
                       "mobile-nav-link",
                       link.indent && "mobile-nav-link--indent",
@@ -83,7 +85,7 @@ export function MobileNavPanel({ links }: { links: MobileNavLink[] }) {
                     )}
                   >
                     {link.label}
-                  </a>
+                  </NavHrefLink>
                 </li>
               ))}
             </ul>

@@ -18,7 +18,7 @@ import { MigrationCalendar } from "@/components/sections/migration-calendar";
 import { SectionDivider } from "@/components/layout/section-divider";
 import { buildPageHead } from "@/lib/seo";
 import { SITE, TRIPADVISOR, pageTitle } from "@/lib/site-config";
-import { Reveal, stagger, fadeUp, blurIn, ParallaxSection } from "@/components/motion";
+import { Reveal, blurIn, ParallaxSection } from "@/components/motion";
 import { ArrowRight, Calendar, Shield, Sparkles, Heart, MapPin, Play, Star } from "lucide-react";
 import heroNdutu1 from "@/assets/heroes/hero-ndutu-1.jpg";
 import heroNdutu2 from "@/assets/heroes/hero-ndutu-2.jpg";
@@ -340,15 +340,9 @@ function HomePage() {
           </div>
         </Reveal>
 
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={stagger}
-          className="mt-10 grid gap-4 sm:mt-16 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3"
-        >
+        <div className="mt-10 grid gap-4 sm:mt-16 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {destinations.map((d, i) => (
-            <motion.div key={d.name} variants={fadeUp}>
+            <div key={d.name}>
               <Link to="/destinations/$slug" params={{ slug: d.countrySlug }} className="group relative block overflow-hidden card-hover-lift">
                 <div className="relative aspect-[4/5] overflow-hidden bg-muted">
                   <img
@@ -377,9 +371,9 @@ function HomePage() {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </section>
 
       {/* WHY CHOOSE */}

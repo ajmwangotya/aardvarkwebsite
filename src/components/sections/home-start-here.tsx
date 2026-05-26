@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 import { Reveal } from "@/components/motion";
 
 const paths = [
-  { key: "plan", href: "/plan-trip", icon: Calendar, primary: true },
-  { key: "packages", href: "/packages", icon: Compass, primary: false },
-  { key: "destinations", href: "/destinations", icon: MapPin, primary: false },
+  { key: "plan", to: "/plan-trip" as const, icon: Calendar, primary: true },
+  { key: "packages", to: "/packages" as const, icon: Compass, primary: false },
+  { key: "destinations", to: "/destinations" as const, icon: MapPin, primary: false },
 ] as const;
 
 export function HomeStartHere() {
@@ -24,11 +24,11 @@ export function HomeStartHere() {
         </Reveal>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          {paths.map(({ key, href, icon: Icon, primary }, i) => (
-            <Reveal key={key} delay={i * 0.08}>
+          {paths.map(({ key, to, icon: Icon, primary }) => (
               <Link
-                to={href}
-                className={`group flex h-full flex-col border p-5 transition-colors sm:p-6 ${
+                key={key}
+                to={to}
+                className={`group relative z-[1] flex h-full flex-col border p-5 transition-colors sm:p-6 ${
                   primary
                     ? "border-gold/50 bg-card hover:border-gold"
                     : "border-border bg-card hover:border-gold/40"
@@ -55,7 +55,6 @@ export function HomeStartHere() {
                   {t("home.startHere.explore")} →
                 </span>
               </Link>
-            </Reveal>
           ))}
         </div>
       </div>

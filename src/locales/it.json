@@ -1025,6 +1025,7 @@
     "heroDesc": "Safari su misura attraverso Tanzania, Africa Meridionale e Zanzibar. Ogni viaggio è completamente personalizzabile — richieda un preventivo gratuito.",
     "all": "Tutti",
     "tanzania": "Tanzania",
+    "uganda": "Uganda",
     "southernAfrica": "Africa Meridionale",
     "zanzibar": "Zanzibar",
     "days": "Giorni",
@@ -1127,6 +1128,7 @@
     "basedOn": "21 verified TripAdvisor reviews",
     "readOnTripadvisor": "Leggi su Tripadvisor →",
     "readAll": "Leggi tutte le recensioni su Tripadvisor",
+    "readMore": "Altre recensioni →",
     "items": [
       {
         "name": "NA N",

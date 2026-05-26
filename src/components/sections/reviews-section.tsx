@@ -1,9 +1,11 @@
-import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { Trans, useTranslation } from "react-i18next";
-import { Reveal, stagger, fadeUp } from "@/components/motion";
+import { Reveal } from "@/components/motion";
 import { TripAdvisorLogo } from "@/components/brand/trip-advisor-logo";
 import { SITE, TRIPADVISOR } from "@/lib/site-config";
+import { asObjectArray } from "@/lib/utils";
+
+const PREVIEW_COUNT = 3;
 
 function reviewerInitials(name: string) {
   return name
@@ -18,20 +20,21 @@ function reviewerInitials(name: string) {
 export function ReviewsSection() {
   const { t } = useTranslation();
 
-  const reviewItems = t("reviews.items", { returnObjects: true }) as {
+  const reviewItems = asObjectArray<{
     name: string;
     location: string;
     trip: string;
     date: string;
     title: string;
     body: string;
-  }[];
+  }>(t("reviews.items", { returnObjects: true }));
 
   const reviews = reviewItems.map((r) => ({
     ...r,
     rating: 5,
     initials: reviewerInitials(r.name),
   }));
+  const preview = reviews.slice(0, PREVIEW_COUNT);
 
   return (
     <section className="relative border-y border-border bg-background">
@@ -82,17 +85,10 @@ export function ReviewsSection() {
           </div>
         </Reveal>
 
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={stagger}
-          className="mt-14 grid gap-5 sm:mt-20 sm:gap-6 md:grid-cols-2 lg:grid-cols-3"
-        >
-          {reviews.map((r) => (
-            <motion.article
+        <div className="mt-14 grid gap-5 sm:mt-20 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {preview.map((r) => (
+            <article
               key={`${r.name}-${r.date}`}
-              variants={fadeUp}
               className="group flex flex-col border border-border bg-card p-7 transition-colors duration-500 hover:border-gold/40 sm:p-8"
             >
               <div className="flex items-center gap-1 text-gold">
@@ -108,7 +104,7 @@ export function ReviewsSection() {
               <h3 className="mt-4 font-serif text-xl leading-snug text-ink md:text-2xl">
                 &ldquo;{r.title}&rdquo;
               </h3>
-              <p className="mt-4 flex-1 text-[0.95rem] leading-[1.7] text-muted-foreground">{r.body}</p>
+              <p className="mt-4 flex-1 text-[0.95rem] leading-[1.7] text-muted-foreground line-clamp-4">{r.body}</p>
 
               <div className="mt-8 flex items-center gap-4 border-t border-border pt-6">
                 <span
@@ -124,17 +120,20 @@ export function ReviewsSection() {
               </div>
 
               <p className="mt-4 text-[0.62rem] uppercase tracking-[0.28em] text-coral/90">{r.date}</p>
-            </motion.article>
+            </article>
           ))}
-        </motion.div>
+        </div>
 
-        <Reveal delay={0.15}>
-          <div className="mt-16 flex flex-wrap items-center justify-center gap-8 border-t border-border pt-12">
-            <a href={SITE.tripAdvisor} target="_blank" rel="noopener noreferrer" className="btn-line">
-              {t("reviews.readAll")}
-            </a>
-          </div>
-        </Reveal>
+        <div className="mt-12 flex justify-center sm:mt-14">
+          <a
+            href={SITE.tripAdvisor}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-line"
+          >
+            {t("reviews.readMore")}
+          </a>
+        </div>
       </div>
     </section>
   );

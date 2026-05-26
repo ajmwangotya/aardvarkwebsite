@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
 import { PenLine } from "lucide-react";
 import { Trans, useTranslation } from "react-i18next";
 import { GUEST_NOTES } from "@/data/guest-notes";
-import { Reveal, stagger, fadeUp } from "@/components/motion";
+import { Reveal } from "@/components/motion";
 
 export function GuestNotesSection() {
   const { t } = useTranslation();
@@ -35,17 +34,10 @@ export function GuestNotesSection() {
           </div>
         </Reveal>
 
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-60px" }}
-          variants={stagger}
-          className="mt-14 grid gap-6 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
-        >
+        <div className="mt-14 grid gap-6 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {GUEST_NOTES.map((note, i) => (
-            <motion.article
+            <article
               key={note.id}
-              variants={fadeUp}
               className={`guest-note-paper group relative flex flex-col ${i === 2 ? "lg:mt-8" : ""} ${i === 4 ? "lg:-mt-6" : ""}`}
               style={{ transform: `rotate(${note.rotation ?? 0}deg)` }}
             >
@@ -92,9 +84,9 @@ export function GuestNotesSection() {
                   </div>
                 </div>
               )}
-            </motion.article>
+            </article>
           ))}
-        </motion.div>
+        </div>
 
         <Reveal delay={0.15} className="mt-14 text-center">
           <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">

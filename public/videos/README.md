@@ -2,7 +2,8 @@
 
 Place compressed MP4s here for **local development only**:
 
-- `aardvark-film.mp4` — “Watch the Film” modal
+- `aardvark-raw-footage.mp4` — hero **“Watch the Film”** modal (Aardvark raw footage)
+- `aardvark-film.mp4` — optional shorter brand cut (legacy)
 - `aardvark-wild.mp4` — **home hero background** (Aardvark Wild reel)
 - `gorilla-uganda.mp4` — Uganda destination page
 
