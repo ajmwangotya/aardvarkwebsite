@@ -1,9 +1,11 @@
 import type { TFunction } from "i18next";
 import { ITINERARY_CATALOG, type ItineraryCatalogRow } from "@/data/itinerary-catalog";
 import { getPackage } from "@/data/packages";
+import { getSafari } from "@/data/safaris";
 import { getLocalizedSafari } from "@/lib/localized-safari";
 import { getPackageImage, safariThumbImages, zanzibarBeach, destChobeElephants } from "@/data/destination-images";
 import migration from "@/assets/editorial/migration.jpg";
+import en from "@/locales/en.json";
 
 export type ItineraryListItem = ItineraryCatalogRow & {
   title: string;
@@ -25,9 +27,14 @@ function isCopyObject(value: unknown): value is ItineraryCopy {
   );
 }
 
+const EN_COPIES: ItineraryCopy[] = Array.isArray(en.itinerariesPage?.items)
+  ? en.itinerariesPage.items.filter(isCopyObject)
+  : [];
+
 function itineraryCopies(t: TFunction): ItineraryCopy[] {
   const raw = t("itinerariesPage.items", { returnObjects: true });
-  return Array.isArray(raw) ? raw.filter(isCopyObject) : [];
+  const fromLocale = Array.isArray(raw) ? raw.filter(isCopyObject) : [];
+  return fromLocale.length >= ITINERARY_CATALOG.length ? fromLocale : EN_COPIES;
 }
 
 function catalogImage(row: ItineraryCatalogRow): string {
@@ -68,6 +75,20 @@ export function buildItineraryListItems(t: TFunction): ItineraryListItem[] {
     } else if (row.packageSlug) {
       const pkg = getPackage(row.packageSlug);
       if (pkg) {
+        if (pkg.safariSlug) {
+          const safari = getLocalizedSafari(pkg.safariSlug, t) ?? getSafari(pkg.safariSlug);
+          if (safari) {
+            title = safari.title || title;
+            route = safari.route || route;
+            const intro = safari.intro.trim();
+            desc =
+              intro.length > 200
+                ? `${intro.slice(0, 197)}…`
+                : intro.length > 0
+                  ? intro
+                  : desc || `${safari.route} — ${safari.duration}`;
+          }
+        }
         const item = t(`packagesPage.items.${pkg.i18nKey}`, { returnObjects: true });
         if (item && typeof item === "object" && !Array.isArray(item)) {
           const pkgItem = item as { title?: string; summary?: string; duration?: string };
@@ -95,5 +116,5 @@ export function buildItineraryListItems(t: TFunction): ItineraryListItem[] {
       img: catalogImage(row),
       linkTo,
     };
-  });
+  }).filter((item) => item.title.trim().length > 0);
 }

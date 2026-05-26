@@ -4,7 +4,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$targets = @("aardvark-film.mp4", "aardvark-wild.mp4")
+$targets = @("aardvark-wild.mp4", "aardvark-raw-footage.mp4", "aardvark-film.mp4")
 
 foreach ($name in $targets) {
   $input = Join-Path $VideoDir $name
