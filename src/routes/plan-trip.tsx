@@ -2,8 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Trans, useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { FormSlaNote } from "@/components/forms/form-sla-note";
+import { FormSlaBanner } from "@/components/forms/form-sla-banner";
 import { BookingSteps } from "@/components/sections/booking-steps";
+import { PlanTripHumanTrust } from "@/components/sections/plan-trip-human-trust";
 import { PlanTripForm } from "@/components/forms/plan-trip-form";
 import { Reveal } from "@/components/motion";
 import { buildPageHead } from "@/lib/seo";
@@ -33,8 +34,8 @@ function PlanTripPage() {
             <Trans i18nKey="planTripPage.heroTitle" components={{ i: <span className="gradient-text italic" /> }} />
           </h1>
           <p className="mt-8 max-w-2xl text-muted-foreground">{t("planTripPage.heroDesc")}</p>
-          <div className="mt-6">
-            <FormSlaNote />
+          <div className="mt-8 max-w-2xl">
+            <FormSlaBanner />
           </div>
           <a
             href={whatsappUrl(
@@ -56,6 +57,8 @@ function PlanTripPage() {
           <BookingSteps className="mt-8" />
         </Reveal>
       </section>
+
+      <PlanTripHumanTrust />
 
       <section className="mx-auto max-w-[1200px] px-5 pb-20 sm:px-6 sm:pb-32 md:px-12">
         <Reveal>

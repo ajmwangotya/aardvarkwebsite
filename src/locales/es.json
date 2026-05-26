@@ -52,6 +52,19 @@
   },
   "home": {
     "scroll": "Desplazar",
+    "tripAdvisorShort": "{{count}} reseñas en TripAdvisor",
+    "startHere": {
+      "eyebrow": "Empiece aquí",
+      "title": "Tres formas de comenzar",
+      "desc": "¿Nuevo en Aardvark? Elija el camino que prefiera — respondemos en 24 horas.",
+      "explore": "Explorar",
+      "planTitle": "Planificar mi safari",
+      "planDesc": "Propuesta gratuita a medida desde Arusha",
+      "packagesTitle": "Ver paquetes",
+      "packagesDesc": "Safaris seleccionados con precios orientativos",
+      "destinationsTitle": "Explorar destinos",
+      "destinationsDesc": "Tanzania, Kenia, Uganda, Ruanda y Zanzíbar"
+    },
     "weHaveItAll": "Lo tenemos todo",
     "dreamTitle": "Tu safari <i>soñado</i>, perfectamente diseñado",
     "reliable": "Nos especializamos en servicios de safari personalizados y confiables — Trekking, safari y vacaciones de playa.",
@@ -721,6 +734,19 @@
     "eyebrow": "Planificar un viaje",
     "heroTitle": "Su <i>Tanzania a medida</i> lo espera",
     "heroDesc": "Cuéntenos lo que sueña y le diseñaremos una propuesta gratuita y sin compromiso — cada itinerario modelado exclusivamente en torno a sus intereses.",
+    "trustPanel": {
+      "eyebrow": "Quién lee su consulta",
+      "title": "Su mensaje va directo a nuestro equipo en Arusha",
+      "subtitle": "Operador con licencia · miembro TATO · viajes asegurados · {{rating}} en TripAdvisor",
+      "augustineName": "Augustine Mwangotya",
+      "augustineRole": "Fundador y guía principal",
+      "waltName": "Walt Mwangotya",
+      "waltRole": "Operaciones y logística",
+      "deborahName": "Deborah Mwangotya",
+      "deborahRole": "Atención al viajero",
+      "slaTitle": "Respuesta en 24 horas",
+      "slaBody": "A menudo el mismo día laborable (lun–vie 8:00–20:00 EAT). Leemos cada consulta personalmente."
+    },
     "fullName": "Nombre completo",
     "email": "Correo electrónico",
     "phone": "Teléfono",
@@ -1696,7 +1722,8 @@
     "title": "Popular <i>packages</i>",
     "desc": "Curated journeys with clear pricing guides — luxury and mid-range safaris, migration, gorillas, Kilimanjaro, and beach combos.",
     "viewAll": "All packages →",
-    "viewPackage": "View package"
+    "viewPackage": "View package",
+    "pricingLabel": "Precio orientativo"
   },
   "safarisContent": {
     "serengeti-northern-migration": {

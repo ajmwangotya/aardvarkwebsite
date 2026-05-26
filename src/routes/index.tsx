@@ -10,6 +10,7 @@ import { ReviewsSection } from "@/components/sections/reviews-section";
 import { FeaturedJourneys } from "@/components/sections/featured-journeys";
 import { FeaturedPackages } from "@/components/sections/featured-packages";
 import { TrustCredentials } from "@/components/sections/trust-credentials";
+import { HomeStartHere } from "@/components/sections/home-start-here";
 import { MigrationCalendar } from "@/components/sections/migration-calendar";
 import { SectionDivider } from "@/components/layout/section-divider";
 import { buildPageHead } from "@/lib/seo";
@@ -17,7 +18,7 @@ import { SITE, TRIPADVISOR, pageTitle } from "@/lib/site-config";
 import { Reveal, stagger, fadeUp, blurIn, ParallaxSection } from "@/components/motion";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { OptimizedImage } from "@/components/media/optimized-image";
-import { ArrowRight, Shield, Sparkles, Heart, MapPin, Play, Star } from "lucide-react";
+import { ArrowRight, Calendar, Shield, Sparkles, Heart, MapPin, Play, Star } from "lucide-react";
 import heroNdutu1 from "@/assets/heroes/hero-ndutu-1.jpg";
 import heroNdutu2 from "@/assets/heroes/hero-ndutu-2.jpg";
 import heroNdutu3 from "@/assets/heroes/hero-ndutu-3.jpg";
@@ -260,6 +261,7 @@ function HomePage() {
               className="hero-actions order-4 mt-5 flex w-full flex-col gap-3 sm:mt-8 md:mt-12 md:w-auto md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-5"
             >
               <Link to="/plan-trip" className="btn-fill w-full justify-center md:w-auto">
+                <Calendar className="h-8 w-8 shrink-0 md:h-7 md:w-7" strokeWidth={2} aria-hidden />
                 {t("nav.bookNow")}
               </Link>
               <button
@@ -323,6 +325,8 @@ function HomePage() {
 
       <SectionDivider variant="tracks" />
 
+      <HomeStartHere />
+
       {/* INTRO */}
       <section className="mx-auto max-w-[1400px] pb-16 pl-[max(1.25rem,env(safe-area-inset-left))] pr-[max(1.25rem,env(safe-area-inset-right))] sm:px-6 sm:pb-28 md:px-12 md:pb-40">
         <div className="grid gap-10 md:grid-cols-12 md:items-center md:gap-16">
@@ -339,7 +343,9 @@ function HomePage() {
               {t("home.expertCopyCta")}
             </p>
             <div className="mt-8 flex flex-wrap gap-3 sm:mt-10 sm:gap-4">
-              <Link to="/plan-trip" className="btn-fill">{t("home.letUsPlan")}</Link>
+              <Link to="/plan-trip" className="btn-fill hidden lg:inline-flex">
+                {t("home.letUsPlan")}
+              </Link>
               <Link to="/about" className="btn-line">{t("home.aboutUs")}</Link>
             </div>
           </Reveal>
@@ -840,7 +846,9 @@ function HomePage() {
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <Link to="/plan-trip" className="btn-fill">{t("home.planTrip")}</Link>
+            <Link to="/plan-trip" className="btn-fill hidden lg:inline-flex">
+              {t("home.planTrip")}
+            </Link>
             <Link to="/contact" className="btn-line text-bone">{t("home.contactUs")}</Link>
           </motion.div>
         </Reveal>

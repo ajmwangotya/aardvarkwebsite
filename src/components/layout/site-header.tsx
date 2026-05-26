@@ -1,11 +1,15 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { Calendar, ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import logoUrl from "@/assets/brand/aardvark-logo.svg";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
-import { MobileNavMenu } from "@/components/layout/mobile-nav-menu";
+import {
+  MobileNavPanel,
+  MobileNavTrigger,
+  type MobileNavLink,
+} from "@/components/layout/mobile-nav-menu";
 import { SITE, TRIPADVISOR } from "@/lib/site-config";
 
 type NavItem =
@@ -84,11 +88,31 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
     { href: "/contact", label: t("nav.contact") },
   ];
 
+  const mobileNavLinks: MobileNavLink[] = [
+    { href: "/", label: t("nav.home") },
+    { href: "/packages", label: t("nav.packages"), highlight: true },
+    { href: "/destinations", label: t("nav.destinations") },
+    ...countries.map((c) => ({
+      href: `/destinations/${c.slug}`,
+      label: c.name,
+      indent: true,
+    })),
+    { href: "/itineraries", label: t("nav.itineraries") },
+    { href: "/about", label: t("nav.about") },
+    { href: "/plan-trip", label: t("nav.planTrip") },
+    { href: "/experiences", label: t("planMenu.experiences") },
+    { href: "/camps", label: t("planMenu.camps") },
+    { href: "/faq", label: t("nav.faq") },
+    { href: "/blog", label: t("nav.blog") },
+    { href: "/contact", label: t("nav.contact") },
+  ];
+
   return (
+    <>
     <header
-      className={`fixed inset-x-0 top-0 z-[100] pt-[env(safe-area-inset-top,0px)] transition-all duration-500 ${
+      className={`pointer-events-none fixed inset-x-0 top-0 z-[100] pt-[env(safe-area-inset-top,0px)] transition-all duration-500 ${
         solid
-          ? "border-b border-border bg-background/95 shadow-sm backdrop-blur"
+          ? "border-b border-border bg-background/95 shadow-sm max-lg:backdrop-blur-none lg:backdrop-blur"
           : "bg-transparent max-lg:bg-ink/25"
       }`}
     >
@@ -115,19 +139,23 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
         </div>
       </div>
 
-      <div className="border-b border-primary-foreground/10 bg-primary/90 px-5 py-1.5 text-center text-[0.65rem] uppercase tracking-[0.2em] text-primary-foreground md:hidden">
-        <span className="text-gold">{TRIPADVISOR.rating} ★ TripAdvisor</span>
-        <span className="mx-2 text-primary-foreground/30" aria-hidden>
-          ·
-        </span>
-        <span>{t("mobileCta.trustShort", { defaultValue: "Reply within 24 hours" })}</span>
+      <div className="pointer-events-auto border-b border-primary-foreground/10 bg-primary/90 px-4 py-1 text-center text-[0.6rem] uppercase tracking-[0.16em] text-primary-foreground md:hidden">
+        <a
+          href={SITE.tripAdvisor}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-1.5 hover:text-gold"
+        >
+          <span className="text-gold">{TRIPADVISOR.rating} ★</span>
+          <span>{t("home.tripAdvisorShort", { count: TRIPADVISOR.reviewCount, defaultValue: "{{count}} reviews" })}</span>
+        </a>
       </div>
 
-      <div className="relative mx-auto flex h-16 max-w-[1600px] items-center gap-3 px-5 md:h-20 md:gap-4 md:px-10 lg:gap-12">
+      <div className="pointer-events-auto relative mx-auto flex h-16 w-full max-w-[1600px] items-center gap-2 px-5 md:h-20 md:gap-4 md:px-10 lg:gap-12">
         <a
           href="/"
           aria-label={`${brandLabel} — Home`}
-          className="relative z-[1] flex max-w-[min(48vw,10rem)] shrink-0 items-center sm:max-w-none"
+          className="relative z-[1] flex max-w-[min(40vw,9rem)] shrink-0 items-center sm:max-w-none"
         >
           <img
             src={logoUrl}
@@ -137,7 +165,7 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
         </a>
 
         <nav
-          className="hidden min-w-0 items-center justify-center gap-6 md:flex lg:gap-8"
+          className="pointer-events-auto hidden min-w-0 items-center justify-center gap-6 md:flex lg:gap-8"
           aria-label={t("nav.navigation")}
         >
             {navItems.map((item) => {
@@ -198,22 +226,25 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
             })}
         </nav>
 
-        <div className="pointer-events-auto relative z-[2] ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
-          <MobileNavMenu
-            navItems={navItems}
-            triggerClassName={
-              solid
-                ? "border-border text-foreground hover:border-gold hover:text-gold"
-                : "border-bone/40 text-bone hover:border-gold hover:text-gold"
-            }
-          />
-          <LanguageSwitcher light={!solid} />
-          <Link to="/plan-trip" className="btn-fill hidden md:inline-flex">
-            {t("nav.bookNow")}
-          </Link>
+        <div className="pointer-events-auto relative z-[2] ml-auto flex shrink-0 items-center gap-2">
+          <div className="lg:hidden">
+            <LanguageSwitcher light={!solid} />
+          </div>
+          <div className="hidden lg:block">
+            <LanguageSwitcher light={!solid} />
+          </div>
+          <MobileNavTrigger light={!solid} />
+          <div className="hidden lg:block">
+            <Link to="/plan-trip" className="btn-fill">
+              <Calendar className="h-6 w-6 shrink-0" strokeWidth={2} aria-hidden />
+              {t("nav.bookNow")}
+            </Link>
+          </div>
         </div>
       </div>
-
     </header>
+
+    <MobileNavPanel links={mobileNavLinks} />
+    </>
   );
 }

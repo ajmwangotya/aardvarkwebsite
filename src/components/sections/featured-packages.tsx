@@ -70,7 +70,12 @@ export function FeaturedPackages({ className = "" }: { className?: string }) {
                     <h3 className="mt-2 font-serif text-xl group-hover:text-gold transition-colors">{card.item.title}</h3>
                     <p className="mt-3 text-sm text-muted-foreground line-clamp-2">{card.item.summary}</p>
                     {card.item.pricingGuide && (
-                      <p className="mt-3 font-serif text-sm text-gold line-clamp-1">{card.item.pricingGuide}</p>
+                      <div className="mt-4 border-t border-border/80 pt-3">
+                        <p className="text-[0.62rem] uppercase tracking-eyebrow text-muted-foreground">
+                          {t("featuredPackages.pricingLabel")}
+                        </p>
+                        <p className="mt-1 font-serif text-sm leading-snug text-gold">{card.item.pricingGuide}</p>
+                      </div>
                     )}
                     <span className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-eyebrow text-muted-foreground group-hover:text-gold">
                       {t("featuredPackages.viewPackage")} <ArrowRight className="h-3 w-3" />

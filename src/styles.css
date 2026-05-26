@@ -577,46 +577,160 @@ html:not(.js-ready) [data-projection-id] {
   filter: none !important;
 }
 
-/* Mobile navigation — portaled overlay (escapes header backdrop-filter stacking) */
-.mobile-nav-overlay {
+/* Mobile hamburger menu — checkbox toggle, no JS required */
+.mobile-nav-panel-host {
+  display: contents;
+}
+
+.mobile-nav-toggle {
+  position: fixed;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+html:has(#site-mobile-nav-toggle:checked) {
+  overflow: hidden;
+}
+
+.mobile-nav-trigger {
+  display: flex;
+  height: 2.75rem;
+  width: 2.75rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  touch-action: manipulation;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.mobile-nav-icon-close {
+  display: none;
+}
+
+html:has(#site-mobile-nav-toggle:checked) .mobile-nav-icon-open {
+  display: none;
+}
+
+html:has(#site-mobile-nav-toggle:checked) .mobile-nav-icon-close {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .mobile-nav-trigger,
+  .mobile-nav-panel-host {
+    display: none !important;
+  }
+}
+
+.mobile-nav-root {
+  display: none;
   position: fixed;
   inset: 0;
-  z-index: 400;
+  z-index: 99999;
+  isolation: isolate;
   pointer-events: auto;
+}
+
+#site-mobile-nav-toggle:checked ~ .mobile-nav-root {
+  display: block;
 }
 
 .mobile-nav-backdrop {
   position: absolute;
   inset: 0;
+  z-index: 1;
+  cursor: pointer;
   border: 0;
   padding: 0;
   margin: 0;
-  cursor: pointer;
-  background: color-mix(in oklab, var(--ink) 82%, transparent);
+  background: color-mix(in oklab, var(--ink) 78%, transparent);
 }
 
 .mobile-nav-drawer {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   z-index: 2;
-  pointer-events: auto;
+  display: flex;
   height: 100%;
   width: min(88vw, 20rem);
   max-width: 100%;
-  padding: max(1.25rem, env(safe-area-inset-top, 0px)) 1.5rem max(2rem, env(safe-area-inset-bottom, 0px));
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--bone);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.45);
+  padding: max(1.25rem, env(safe-area-inset-top, 0px)) 1.25rem max(2rem, env(safe-area-inset-bottom, 0px));
   -webkit-overflow-scrolling: touch;
 }
 
-.mobile-nav-link {
+.mobile-nav-drawer-header {
   display: flex;
-  min-height: 2.75rem;
+  flex-shrink: 0;
   align-items: center;
-  padding: 0.5rem 0;
-  font-size: 0.95rem;
-  color: color-mix(in oklab, var(--bone) 75%, transparent);
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-bottom: 1px solid color-mix(in oklab, var(--bone) 12%, transparent);
+  padding-bottom: 1rem;
+}
+
+.mobile-nav-close {
+  display: flex;
+  height: 2.75rem;
+  width: 2.75rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  touch-action: manipulation;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  border: 1px solid color-mix(in oklab, var(--bone) 30%, transparent);
+  color: var(--bone);
+}
+
+.mobile-nav-list {
+  margin-top: 0.5rem;
+  min-height: 0;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.mobile-nav-list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-nav-link {
+  display: block;
+  min-height: 3rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid color-mix(in oklab, var(--bone) 10%, transparent);
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.35;
+  color: var(--bone);
   text-decoration: none;
   touch-action: manipulation;
+  -webkit-tap-highlight-color: color-mix(in oklab, var(--gold) 35%, transparent);
+}
+
+.mobile-nav-link--indent {
+  padding-left: 1rem;
+  font-size: 1rem;
+  color: color-mix(in oklab, var(--bone) 78%, transparent);
+}
+
+.mobile-nav-link--highlight {
+  color: var(--gold);
 }
 
 .mobile-nav-link:active,
@@ -624,40 +738,163 @@ html:not(.js-ready) [data-projection-id] {
   color: var(--gold);
 }
 
+.mobile-nav-footer {
+  flex-shrink: 0;
+  border-top: 1px solid color-mix(in oklab, var(--bone) 10%, transparent);
+  padding-top: 1rem;
+  font-size: 0.875rem;
+}
+
 .mobile-nav-contact-link {
   display: block;
   min-height: 2.75rem;
   padding: 0.5rem 0;
+  color: color-mix(in oklab, var(--bone) 75%, transparent);
+  text-decoration: none;
   touch-action: manipulation;
 }
 
-.mobile-nav-group > summary {
-  list-style: none;
+.mobile-nav-contact-link:active,
+.mobile-nav-contact-link:hover {
+  color: var(--gold);
 }
 
-.mobile-nav-group > summary::-webkit-details-marker {
-  display: none;
+/* Sticky mobile CTA bar — Plan / Call / WhatsApp (reference layout) */
+.mobile-cta-bar-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.75fr) minmax(0, 1fr);
+  gap: 0;
 }
 
+.mobile-cta-btn {
+  display: flex;
+  min-width: 0;
+  min-height: 3.75rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.35rem;
+  border: none;
+  border-radius: 0;
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: left;
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
 
-/* Phones + tablets: reserve space for sticky Book / Call / WhatsApp bar */
+.mobile-cta-btn-icon {
+  height: 2rem;
+  width: 2rem;
+  flex-shrink: 0;
+}
+
+.mobile-cta-btn-icon--svg {
+  height: 2.125rem;
+  width: 2.125rem;
+}
+
+@media (min-width: 360px) {
+  .mobile-cta-btn {
+    gap: 0.5rem;
+    padding: 0.55rem 0.45rem;
+    font-size: 0.62rem;
+    min-height: 4rem;
+  }
+
+  .mobile-cta-btn-icon {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+
+  .mobile-cta-btn-icon--svg {
+    height: 2.375rem;
+    width: 2.375rem;
+  }
+}
+
+.mobile-cta-btn-label {
+  display: block;
+  min-width: 0;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.mobile-cta-btn-label--plan {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+  line-height: 1.02;
+  letter-spacing: 0.12em;
+}
+
+.mobile-cta-btn-label--plan span {
+  display: block;
+}
+
+.mobile-cta-btn--plan {
+  background: #b85c2c;
+  color: #1a120e;
+}
+
+.mobile-cta-btn--plan .mobile-cta-btn-icon {
+  color: #1a120e;
+  stroke: #1a120e;
+}
+
+.mobile-cta-btn--call {
+  background: #f5ece4;
+  color: #1a120e;
+}
+
+.mobile-cta-btn--call .mobile-cta-btn-icon {
+  color: #1a120e;
+  stroke: #1a120e;
+}
+
+.mobile-cta-btn--whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.mobile-cta-btn--whatsapp .mobile-cta-btn-icon--svg {
+  color: #fff;
+}
+
+.mobile-cta-btn:active {
+  filter: brightness(0.94);
+}
+
+/* Phones + tablets: reserve space for sticky Plan / Call / Book bar */
 @media (max-width: 1023px) {
   nav.mobile-cta-bar {
     display: flex !important;
     visibility: visible !important;
   }
 
+  nav.mobile-cta-bar .mobile-cta-btn {
+    min-width: 0 !important;
+  }
+
   body {
-    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(4.25rem + env(safe-area-inset-bottom, 0px));
   }
 
   .cookie-consent-banner {
-    bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px));
+    bottom: calc(4.25rem + env(safe-area-inset-bottom, 0px));
     z-index: 70;
   }
 
   .plan-trip-submit-sticky {
-    bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px)) !important;
+    bottom: calc(3.75rem + env(safe-area-inset-bottom, 0px)) !important;
   }
 }
 

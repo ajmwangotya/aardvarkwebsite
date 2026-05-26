@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   useRouteContext,
   HeadContent,
   Scripts,
@@ -20,6 +21,7 @@ import { WhatsAppFloat } from "@/components/layout/whatsapp-float";
 import { MobileCtaBar } from "@/components/layout/mobile-cta-bar";
 import { CookieConsent } from "@/components/layout/cookie-consent";
 import { useTranslation } from "react-i18next";
+import { MOBILE_NAV_TOGGLE_ID } from "@/components/layout/mobile-nav-menu";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SITE, TRIPADVISOR, absoluteUrl, ogImageUrl, hreflangLinks } from "@/lib/site-config";
@@ -181,6 +183,17 @@ function SkipToContent() {
   );
 }
 
+function CloseMobileNavOnNavigate() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  useEffect(() => {
+    const toggle = document.getElementById(MOBILE_NAV_TOGGLE_ID) as HTMLInputElement | null;
+    if (toggle?.checked) toggle.checked = false;
+  }, [pathname]);
+
+  return null;
+}
+
 function RootComponent() {
   const { queryClient, i18n: serverI18n, lang } = Route.useRouteContext();
   const i18nInstance = serverI18n ?? i18n;
@@ -196,6 +209,7 @@ function RootComponent() {
   return (
     <I18nextProvider i18n={i18nInstance}>
       <QueryClientProvider client={queryClient}>
+        <CloseMobileNavOnNavigate />
         <SkipToContent />
         <main id="main-content">
           <Outlet />

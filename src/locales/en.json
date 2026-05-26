@@ -39,10 +39,22 @@
     "aria": "Chat on WhatsApp",
     "prefill": "Hello Aardvark Safaris — I'd like to plan a safari. "
   },
+  "mobileNav": {
+    "quickAria": "Main pages",
+    "more": "More",
+    "moreTitle": "More pages"
+  },
   "mobileCta": {
     "aria": "Quick contact actions",
-    "bookNow": "Book now",
+    "plan": "Plan",
+    "planWord1": "Plan",
+    "planWord2": "My",
+    "planWord3": "Safari",
+    "quoteLine1": "Get",
+    "quoteLine2": "quote",
     "call": "Call",
+    "book": "Book",
+    "bookAria": "Book via WhatsApp",
     "whatsapp": "WhatsApp",
     "getQuote": "Get quote",
     "trustShort": "Reply within 24 hours",
@@ -208,7 +220,8 @@
     "title": "Popular <i>packages</i>",
     "desc": "Curated journeys with clear pricing guides — luxury and mid-range safaris, migration, gorillas, Kilimanjaro, and beach combos.",
     "viewAll": "All packages →",
-    "viewPackage": "View package"
+    "viewPackage": "View package",
+    "pricingLabel": "Indicative pricing"
   },
   "footer": {
     "beginStory": "Begin your story",
@@ -238,6 +251,19 @@
   },
   "home": {
     "scroll": "Scroll",
+    "tripAdvisorShort": "{{count}} TripAdvisor reviews",
+    "startHere": {
+      "eyebrow": "Start here",
+      "title": "Three ways to begin",
+      "desc": "New to Aardvark? Pick the path that fits — we reply within 24 hours on every enquiry.",
+      "explore": "Explore",
+      "planTitle": "Plan my safari",
+      "planDesc": "Free tailor-made proposal from our Arusha team",
+      "packagesTitle": "Browse packages",
+      "packagesDesc": "Curated safaris with clear pricing guides",
+      "destinationsTitle": "Explore destinations",
+      "destinationsDesc": "Tanzania, Kenya, Uganda, Rwanda & Zanzibar"
+    },
     "weHaveItAll": "We have it all",
     "dreamTitle": "Your <i>dream</i> safari, perfectly crafted",
     "welcomeEyebrow": "Welcome",
@@ -1277,6 +1303,19 @@
     "eyebrow": "Plan a Trip",
     "heroTitle": "Your <i>tailor-made</i> Tanzania awaits",
     "heroDesc": "Tell us what you're dreaming of and we'll craft a free, no-obligation proposal — every itinerary uniquely shaped around your interests.",
+    "trustPanel": {
+      "eyebrow": "Who reads your enquiry",
+      "title": "Your message goes straight to our Arusha team",
+      "subtitle": "Licensed safari operator · TATO member · fully insured journeys · {{rating}} on TripAdvisor",
+      "augustineName": "Augustine Mwangotya",
+      "augustineRole": "Founder & lead guide",
+      "waltName": "Walt Mwangotya",
+      "waltRole": "Operations & logistics",
+      "deborahName": "Deborah Mwangotya",
+      "deborahRole": "Guest relations",
+      "slaTitle": "Reply within 24 hours",
+      "slaBody": "Often the same business day (Mon–Fri 8:00–20:00 EAT). We personally read every enquiry."
+    },
     "fullName": "Full name",
     "email": "Email",
     "phone": "Phone",

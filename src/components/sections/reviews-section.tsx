@@ -112,7 +112,11 @@ export function ReviewsSection() {
                 ))}
               </div>
 
-              <h3 className="mt-5 font-serif text-xl leading-snug text-ink md:text-2xl">
+              <span className="mt-5 inline-flex w-fit border border-gold/35 bg-gold/10 px-2.5 py-1 text-[0.62rem] font-medium uppercase tracking-[0.2em] text-gold">
+                {r.trip}
+              </span>
+
+              <h3 className="mt-4 font-serif text-xl leading-snug text-ink md:text-2xl">
                 &ldquo;{r.title}&rdquo;
               </h3>
               <p className="mt-4 flex-1 text-[0.95rem] leading-[1.7] text-muted-foreground">{r.body}</p>
@@ -130,10 +134,7 @@ export function ReviewsSection() {
                 </div>
               </div>
 
-              <div className="mt-4 flex flex-wrap items-center justify-between gap-2 text-[0.62rem] uppercase tracking-[0.28em] text-muted-foreground">
-                <span>{r.trip}</span>
-                <span className="text-coral/90">{r.date}</span>
-              </div>
+              <p className="mt-4 text-[0.62rem] uppercase tracking-[0.28em] text-coral/90">{r.date}</p>
             </motion.article>
           ))}
         </motion.div>
