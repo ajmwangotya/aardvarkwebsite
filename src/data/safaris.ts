@@ -187,7 +187,7 @@ export const safaris: Safari[] = [
     "slug": "exploring-cape-town-victoria-falls-botswana-wildlife-safari-circuit",
     "title": "Cape Town, Victoria Falls & Botswana Wildlife Circuit",
     "duration": "12 Days / 11 Nights",
-    "intro": "The northern part of Tanzania is renowned for its stunning landscapes and rich wildlife experiences. This region encompasses several world-famous parks and conservation areas. Here are some luxurious sample itineraries focused on the northern circuit, combining iconic destinations with high-end accommodations and exclusive experiences.",
+    "intro": "A southern Africa circuit from Cape Town through Victoria Falls into Botswana's premier wildlife areas — Chobe, Hwange, and the Okavango Delta — combining city, waterfall, and bush in one journey.",
     "route": "Victoria Falls · Chobe · Hwange · Okavango Delta",
     "days": [
       {
@@ -306,8 +306,8 @@ export const safaris: Safari[] = [
   {
     "slug": "crater-savannah",
     "title": "Crater Savannah",
-    "duration": "",
-    "intro": "",
+    "duration": "2 Days / 1 Night",
+    "intro": "A focused northern Tanzania escape pairing Tarangire's baobab woodlands with the wildlife-rich floor of Ngorongoro Crater — ideal when time is short but you want iconic game viewing.",
     "route": "Ngorongoro · Serengeti",
     "days": [
       {
@@ -324,8 +324,8 @@ export const safaris: Safari[] = [
   {
     "slug": "quick-escape",
     "title": "Quick Escape",
-    "duration": "",
-    "intro": "",
+    "duration": "2 Days / 1 Night",
+    "intro": "A compact overnight circuit to the Ngorongoro Crater rim and floor — maximum wildlife in minimum time, with scenic highland drives and the Big Five on the crater floor.",
     "route": "Tarangire · Ngorongoro",
     "days": [
       {
@@ -342,13 +342,13 @@ export const safaris: Safari[] = [
   {
     "slug": "day-tour",
     "title": "Day Tour",
-    "duration": "",
-    "intro": "",
+    "duration": "1 Day",
+    "intro": "A full-day descent into Ngorongoro Crater from Arusha — one of Africa's most concentrated wildlife arenas in a single unforgettable day.",
     "route": "One-day descent into the Crater",
     "days": [
       {
-        "title": "DAY 1:Karibu! Safari begins!",
-        "body": "A representative from Aardvark Safaris Tanzania will meet and greet you as soon as you arrive at Kilimanjaro International Airport and take you to the Mt. Meru Hotel, for your overnight. Arusha, nestled in the shadow of majestic Mount Meru, is a dynamic, fast- growing town and a famed embarkation point for Tanzania safaris. Because of its altitude (roughly 4,600 feet above sea level), Arusha is blessed with a pleasant climate, perfect for the coffee plantations that surround it."
+        "title": "Day 1: Ngorongoro Crater full-day safari",
+        "body": "Early departure from Arusha to the Ngorongoro Conservation Area. Descend into the crater for a full-day game drive on the floor — rhino, elephant, lion, flamingos on the lakes, and dense herds of zebra and wildebeest. Picnic lunch inside the crater before returning to Arusha in the evening."
       }
     ],
     "waypoints": [PT.arusha, PT.ngorongoro]

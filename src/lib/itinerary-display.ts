@@ -36,7 +36,13 @@ export function buildItineraryListItems(t: TFunction): ItineraryListItem[] {
       if (safari) {
         title = safari.title;
         route = safari.route;
-        desc = safari.intro.length > 200 ? `${safari.intro.slice(0, 197)}…` : safari.intro;
+        const intro = safari.intro.trim();
+        desc =
+          intro.length > 200
+            ? `${intro.slice(0, 197)}…`
+            : intro.length > 0
+              ? intro
+              : `${safari.route} — ${safari.duration}`;
         linkTo = { to: "/safaris/$slug", params: { slug: row.safariSlug } };
       }
     } else if (row.packageSlug) {

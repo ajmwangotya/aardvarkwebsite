@@ -35,6 +35,14 @@ See [docs/PROJECT-STRUCTURE.md](docs/PROJECT-STRUCTURE.md) for the full folder g
 
 - **Images:** `src/assets/` (organized by type)
 - **Videos:** Not in Git — use `public/videos/` locally and a CDN in production ([docs/EXTERNAL-VIDEOS.md](docs/EXTERNAL-VIDEOS.md))
+
+**Hero video on the live site:** After deploy, set **Cloudflare → Workers → Settings → Variables** (build-time):
+
+```env
+VITE_VIDEO_CDN_BASE=https://pub-xxxxxxxx.r2.dev
+```
+
+Upload films first: `npm run link-videos` then `npm run upload-videos` (R2). Or set `VITE_VIDEO_WILD_REEL` to a YouTube URL. Redeploy after changing env vars.
 - **Deploy:** Cloudflare Workers (see `wrangler.jsonc`) or Vercel (`vercel.json`)
 
 ### Cloudflare Workers Builds

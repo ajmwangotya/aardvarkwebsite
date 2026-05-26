@@ -12,6 +12,7 @@ import { CinematicVideoSection } from "@/components/sections/cinematic-video-sec
 import { SITE_VIDEOS } from "@/data/site-videos";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
+import { asObjectArray } from "@/lib/utils";
 
 export const Route = createFileRoute("/destinations/$slug")({
   loader: ({ params }) => {
@@ -36,11 +37,11 @@ function CountryDestinationPage() {
   const base = `countryPages.${slug}`;
   const hero = countryImages[slug] ?? migration;
 
-  const parks = t(`${base}.parks`, { returnObjects: true }) as { name: string; desc: string }[];
-  const wildlife = t(`${base}.wildlife`, { returnObjects: true }) as string[];
-  const culture = t(`${base}.culture`, { returnObjects: true }) as string[];
-  const bestTime = t(`${base}.bestTime`, { returnObjects: true }) as { season: string; note: string }[];
-  const tiers = t(`${base}.tiers`, { returnObjects: true }) as { tier: string; desc: string }[];
+  const parks = asObjectArray<{ name: string; desc: string }>(t(`${base}.parks`, { returnObjects: true }));
+  const wildlife = asObjectArray<string>(t(`${base}.wildlife`, { returnObjects: true }));
+  const culture = asObjectArray<string>(t(`${base}.culture`, { returnObjects: true }));
+  const bestTime = asObjectArray<{ season: string; note: string }>(t(`${base}.bestTime`, { returnObjects: true }));
+  const tiers = asObjectArray<{ tier: string; desc: string }>(t(`${base}.tiers`, { returnObjects: true }));
 
   return (
     <div className="bg-background text-foreground">
@@ -76,6 +77,7 @@ function CountryDestinationPage() {
         />
       )}
 
+      {parks.length > 0 && (
       <section className="bg-card border-y border-border">
         <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-6 md:px-12 md:py-24">
           <Reveal>
@@ -103,6 +105,7 @@ function CountryDestinationPage() {
           </div>
         </div>
       </section>
+      )}
 
       <section className="mx-auto max-w-[1400px] px-5 py-16 sm:px-6 md:px-12 md:py-24">
         <div className="grid gap-12 md:grid-cols-2">
@@ -161,7 +164,9 @@ function CountryDestinationPage() {
               <p className="mt-6 max-w-3xl text-muted-foreground">{t(`${base}.circuitsDesc`)}</p>
             </Reveal>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {(t("destPage.circuits", { returnObjects: true }) as { slug: CircuitSlug; name: string; intro: string; route: string }[]).map(
+              {asObjectArray<{ slug: CircuitSlug; name: string; intro: string; route: string }>(
+                t("destPage.circuits", { returnObjects: true }),
+              ).map(
                 (circuit) => (
                   <div key={circuit.slug} className="border border-border bg-background p-6">
                     <h3 className="font-serif text-xl">{circuit.name}</h3>

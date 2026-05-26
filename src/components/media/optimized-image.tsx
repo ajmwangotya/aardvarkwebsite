@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { imageFallback } from "@/data/destination-images";
+
 type OptimizedImageProps = {
   src: string;
   alt: string;
@@ -8,6 +11,8 @@ type OptimizedImageProps = {
   sizes?: string;
   width?: number;
   height?: number;
+  /** Override default fallback when src fails */
+  fallbackSrc?: string;
 };
 
 /**
@@ -21,10 +26,17 @@ export function OptimizedImage({
   sizes,
   width,
   height,
+  fallbackSrc = imageFallback,
 }: OptimizedImageProps) {
+  const [resolvedSrc, setResolvedSrc] = useState(src);
+
+  useEffect(() => {
+    setResolvedSrc(src);
+  }, [src]);
+
   return (
     <img
-      src={src}
+      src={resolvedSrc || fallbackSrc}
       alt={alt}
       className={className}
       width={width}
@@ -33,6 +45,9 @@ export function OptimizedImage({
       decoding="async"
       fetchPriority={priority ? "high" : "auto"}
       sizes={sizes}
+      onError={() => {
+        if (resolvedSrc !== fallbackSrc) setResolvedSrc(fallbackSrc);
+      }}
     />
   );
 }

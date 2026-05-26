@@ -74,6 +74,7 @@
     "greatMigration": "La Grande Migrazione",
     "migrationQuote": "\"Due milioni di zoccoli si muovono come uno.<br/>Noi ci muoviamo con loro.\"",
     "nationalParks": "Parchi Nazionali",
+    "iconicEyebrow": "Destinazioni iconiche",
     "iconicTitle": "Destinazioni <i>iconiche</i>",
     "iconicDesc": "Viva gli iconici parchi nazionali della Tanzania con le nostre guide esperte — dalle vaste pianure del Serengeti all'imponente Cratere di Ngorongoro.",
     "allDestinations": "Tutte le destinazioni",
@@ -224,7 +225,79 @@
       "rwanda": "Rwanda safari — Volcanoes National Park and lush highlands",
       "zanzibar": "Zanzibar — turquoise Indian Ocean coast and Stone Town",
       "serengeti": "Serengeti National Park — Great Migration and open plains"
-    }
+    },
+    "signatureDestinations": [
+      {
+        "slug": "tanzania",
+        "name": "Tanzania",
+        "tagline": "The heart of our operations",
+        "route": "Serengeti · Ngorongoro · Tarangire · Kilimanjaro",
+        "duration": "7–12 days",
+        "intro": "Africa's greatest concentration of iconic parks on one seamless northern circuit — the Great Migration, Ngorongoro's black rhino, Tarangire's elephant herds, and optional Kilimanjaro or Zanzibar extensions.",
+        "highlights": [
+          "Great Migration & Big Five",
+          "Ngorongoro Crater full-day descent",
+          "Maasai & Hadzabe cultural visits",
+          "Luxury tented camps or mid-range lodges"
+        ]
+      },
+      {
+        "slug": "kenya",
+        "name": "Kenya",
+        "tagline": "Migration crossings & classic savannah",
+        "route": "Maasai Mara · Amboseli · Lake Nakuru · Samburu",
+        "duration": "6–10 days",
+        "intro": "Kenya pairs perfectly with any Tanzania itinerary — especially during Mara River migration season. We arrange seamless cross-border logistics, private conservancy camps, and balloon safaris over rolling grasslands.",
+        "highlights": [
+          "Mara River migration crossings",
+          "Elephants beneath Kilimanjaro at Amboseli",
+          "Samburu special five species",
+          "Private conservancy night drives"
+        ]
+      },
+      {
+        "slug": "uganda",
+        "name": "Uganda",
+        "tagline": "Pearl of Africa — primates & the Nile",
+        "route": "Bwindi · Queen Elizabeth · Kibale · Murchison Falls",
+        "duration": "8–12 days",
+        "intro": "Uganda is the natural extension after a Tanzania safari — half the world's mountain gorillas in Bwindi, chimps in Kibale, tree-climbing lions in Ishasha, and the prehistoric Shoebill in Mabamba Bay on the Nile.",
+        "highlights": [
+          "Mountain gorilla trekking permits",
+          "Kazinga Channel boat cruise",
+          "Chimpanzee tracking in Kyambura",
+          "Murchison Falls & Nile delta"
+        ]
+      },
+      {
+        "slug": "rwanda",
+        "name": "Rwanda",
+        "tagline": "Intimate gorillas in the Virungas",
+        "route": "Volcanoes NP · Nyungwe · Akagera · Kigali",
+        "duration": "4–8 days",
+        "intro": "Rwanda offers a compact, polished gorilla experience on the slopes of the Virunga volcanoes — easily combined with Tanzania or Uganda. Golden monkeys, Nyungwe chimps, and a recovering Akagera savannah round out a remarkable short stay.",
+        "highlights": [
+          "Mountain gorilla families (1-hour observation)",
+          "Golden monkey tracking",
+          "Canopy walkway in Nyungwe",
+          "Kigali culture & coffee country"
+        ]
+      },
+      {
+        "slug": "zanzibar",
+        "name": "Zanzibar",
+        "tagline": "Spice islands & Indian Ocean finales",
+        "route": "Stone Town · Jozani · Mnemba · North Coast",
+        "duration": "4–7 days",
+        "intro": "After the dust of the bush, Zanzibar is the classic finale — UNESCO Stone Town, spice plantations, dhow sails at sunset, and north-coast resorts. We pair beach time seamlessly with your safari flights from Arusha or the coast.",
+        "highlights": [
+          "Stone Town heritage walks",
+          "Mnemba Atoll snorkelling & diving",
+          "Spice farm tours & Swahili cuisine",
+          "Dhow cruises & north-coast resorts"
+        ]
+      }
+    ]
   },
   "about": {
     "eyebrow": "Chi siamo",
@@ -527,7 +600,182 @@
         ]
       }
     ],
-    "parksTitle": "Key parks & reserves"
+    "parksTitle": "Key parks & reserves",
+    "countries": [
+      {
+        "slug": "tanzania",
+        "name": "Tanzania",
+        "tagline": "Serengeti, Ngorongoro, Kilimanjaro & the northern circuit.",
+        "highlights": [
+          "Great Migration & Big Five",
+          "Ngorongoro Crater",
+          "Mount Kilimanjaro",
+          "Maasai culture"
+        ]
+      },
+      {
+        "slug": "kenya",
+        "name": "Kenya",
+        "tagline": "Maasai Mara, Great Migration crossings & classic savannah.",
+        "highlights": [
+          "Mara River crossings",
+          "Amboseli elephants",
+          "Private conservancies",
+          "Hot-air balloon safaris"
+        ]
+      },
+      {
+        "slug": "uganda",
+        "name": "Uganda",
+        "tagline": "Mountain gorillas, chimps & the source of the Nile.",
+        "highlights": [
+          "Mountain gorilla trekking",
+          "Chimpanzees in Kibale",
+          "Tree-climbing lions",
+          "Source of the Nile"
+        ]
+      },
+      {
+        "slug": "rwanda",
+        "name": "Rwanda",
+        "tagline": "Volcanoes National Park & intimate gorilla trekking.",
+        "highlights": [
+          "Virunga gorilla families",
+          "Nyungwe rainforest",
+          "Akagera savannah",
+          "Kigali culture"
+        ]
+      },
+      {
+        "slug": "zanzibar",
+        "name": "Zanzibar",
+        "tagline": "Stone Town, spice tours & Indian Ocean beaches.",
+        "highlights": [
+          "UNESCO Stone Town",
+          "Spice farm tours",
+          "Mnemba reef diving",
+          "Dhow sunset cruises"
+        ]
+      }
+    ],
+    "countriesEyebrow": "Explore by Country",
+    "countriesTitle": "Where we <i>take you</i>",
+    "circuits": [
+      {
+        "slug": "northern",
+        "name": "Northern Circuit",
+        "route": "Arusha · Tarangire · Lake Manyara · Ngorongoro · Serengeti",
+        "duration": "Typically 7–12 days",
+        "intro": "Tanzania's most celebrated safari loop links the Serengeti, Ngorongoro Crater, Tarangire, and Lake Manyara in one seamless journey from Arusha. This is the circuit behind the Great Migration, the Big Five, and Kilimanjaro views — ideal for first-time safari guests and photographers who want Africa's greatest hits expertly paced.",
+        "parks": [
+          "Serengeti National Park",
+          "Ngorongoro Conservation Area",
+          "Tarangire National Park",
+          "Lake Manyara",
+          "Arusha National Park"
+        ],
+        "highlights": [
+          "Great Migration river crossings (Jul–Oct)",
+          "Ngorongoro black rhino & elephant tuskers",
+          "Tarangire's giant elephant herds",
+          "Night drives & hot-air balloon (optional)",
+          "Maasai & Hadzabe cultural visits"
+        ]
+      },
+      {
+        "slug": "southern",
+        "name": "Southern Circuit",
+        "route": "Dar es Salaam · Nyerere · Ruaha · Mikumi",
+        "duration": "Typically 8–10 days",
+        "intro": "The southern circuit is Tanzania at its wildest and least crowded — vast reserves where boat safaris on the Rufiji, walking safaris, and predator-rich Ruaha replace the bustle of the north. Nyerere (formerly Selous) is among Africa's largest protected areas; Ruaha delivers outstanding lion, wild dog, and elephant encounters without the convoys.",
+        "parks": [
+          "Nyerere National Park (Selous)",
+          "Ruaha National Park",
+          "Mikumi National Park",
+          "Udzungwa Mountains"
+        ],
+        "highlights": [
+          "Rufiji River boat safaris",
+          "Guided walking safaris",
+          "Wild dog & lion in Ruaha",
+          "Remote fly-in camps",
+          "Fewer vehicles, deeper wilderness"
+        ]
+      },
+      {
+        "slug": "western",
+        "name": "Western Circuit",
+        "route": "Kigoma · Gombe · Mahale · Katavi (optional)",
+        "duration": "Typically 6–9 days",
+        "intro": "Fly west to the shores of Lake Tanganyika for chimpanzee trekking in Gombe and Mahale — forests made famous by Jane Goodall and Dian Fossey's legacy. Combine with remote Katavi for hippo pools and buffalo herds that few travellers ever see. This circuit suits repeat safari guests and primate enthusiasts seeking intimacy over crowds.",
+        "parks": [
+          "Mahale Mountains National Park",
+          "Gombe Stream National Park",
+          "Katavi National Park"
+        ],
+        "highlights": [
+          "Chimpanzee trekking on Lake Tanganyika",
+          "Forest hikes & lake kayaking",
+          "Katavi hippo & crocodile concentrations",
+          "Exclusive fly-in logistics",
+          "Pairs well with northern or primate circuits"
+        ]
+      },
+      {
+        "slug": "coastal",
+        "name": "Coastal Circuit",
+        "route": "Zanzibar · Pemba · Mafia Island",
+        "duration": "Typically 4–7 days (often after safari)",
+        "intro": "After the dust of the bush, Tanzania's coast is the classic finale — UNESCO Stone Town, spice plantations, dhow sails at sunset, and reef islands where whale sharks gather off Mafia and Pemba's walls drop into turquoise water. Most guests add 4–7 beach nights to a northern or southern safari; we handle all flights and transfers.",
+        "parks": [
+          "Stone Town (Zanzibar)",
+          "Jozani Forest",
+          "Mnemba Atoll",
+          "Mafia Island Marine Park",
+          "Pemba Island"
+        ],
+        "highlights": [
+          "Stone Town heritage & spice tours",
+          "Snorkelling & diving on Mnemba",
+          "Whale sharks (Mafia, seasonal)",
+          "Beach resorts north & east coast",
+          "Seamless safari-to-beach flights"
+        ]
+      }
+    ],
+    "circuitsEyebrow": "Safari Circuits",
+    "circuitsTitle": "Tanzania's <i>safari circuits</i>",
+    "circuitsDesc": "Each circuit offers a distinct rhythm of wildlife, landscape, and travel style — from the iconic northern parks to remote southern reserves, chimpanzee forests in the west, and the spice islands of the coast.",
+    "circuitsViewPackages": "View packages",
+    "circuitsPlanTrip": "Plan a custom trip",
+    "featuredParksEyebrow": "Signature Parks",
+    "featuredParksTitle": "Safari <i>destinations</i> you asked for",
+    "featuredParks": [
+      {
+        "name": "Serengeti National Park",
+        "desc": "Endless plains and the Great Migration — Africa's most celebrated wildlife theatre."
+      },
+      {
+        "name": "Ngorongoro Crater",
+        "desc": "A UNESCO World Heritage caldera with extraordinary density of big game."
+      },
+      {
+        "name": "Mount Kilimanjaro",
+        "desc": "Africa's highest peak — five ecological zones to Uhuru at 5,895m."
+      },
+      {
+        "name": "Masai Mara National Reserve",
+        "desc": "Kenya's legendary reserve and the Mara River migration crossings."
+      },
+      {
+        "name": "Bwindi Impenetrable National Park",
+        "desc": "Uganda's mountain gorilla stronghold in ancient montane forest."
+      },
+      {
+        "name": "Volcanoes National Park",
+        "desc": "Rwanda's Virunga volcanoes — intimate gorilla encounters in the mist."
+      }
+    ]
   },
   "camps": {
     "eyebrow": "Campi e Lodge",
@@ -740,10 +988,10 @@
       "subtitle": "Operatore autorizzato · membro TATO · viaggi assicurati · {{rating}} su TripAdvisor",
       "augustineName": "Augustine Mwangotya",
       "augustineRole": "Fondatore e guida principale",
-      "waltName": "Walt Mwangotya",
-      "waltRole": "Operazioni e logistica",
-      "deborahName": "Deborah Mwangotya",
-      "deborahRole": "Relazioni con gli ospiti",
+      "waltName": "Walt Anderson",
+      "waltRole": "Rappresentante USA · Co-guida safari (semi-pensionato)",
+      "deborahName": "Deborah Mrema",
+      "deborahRole": "Marketing ed esperienza cliente",
       "slaTitle": "Risposta entro 24 ore",
       "slaBody": "Spesso lo stesso giorno lavorativo (lun–ven 8:00–20:00 EAT). Ogni richiesta viene letta personalmente."
     },
@@ -954,7 +1202,8 @@
   "forms": {
     "sla": "We reply within 24 hours — often the same business day (Mon–Fri 8:00–20:00 EAT). Messages go to",
     "sending": "Sending…",
-    "emailFallback": "Send by email instead"
+    "emailFallback": "Send by email instead",
+    "turnstileAria": "Security verification"
   },
   "cookie": {
     "title": "Cookie preferences",
@@ -968,8 +1217,15 @@
   },
   "mobileCta": {
     "aria": "Quick contact actions",
-    "bookNow": "Book now",
+    "plan": "Plan",
+    "planWord1": "Plan",
+    "planWord2": "My",
+    "planWord3": "Safari",
+    "quoteLine1": "Get",
+    "quoteLine2": "quote",
     "call": "Call",
+    "book": "Book",
+    "bookAria": "Book via WhatsApp",
     "whatsapp": "WhatsApp",
     "getQuote": "Get quote",
     "trustShort": "Reply within 24 hours",
@@ -1727,7 +1983,7 @@
     "desc": "Curated journeys with clear pricing guides — luxury and mid-range safaris, migration, gorillas, Kilimanjaro, and beach combos.",
     "viewAll": "All packages →",
     "viewPackage": "View package",
-    "pricingLabel": "Prezzo indicativo"
+    "pricingLabel": "Indicative pricing"
   },
   "safarisContent": {
     "serengeti-northern-migration": {
@@ -1865,7 +2121,7 @@
     "exploring-cape-town-victoria-falls-botswana-wildlife-safari-circuit": {
       "title": "Cape Town, Victoria Falls & Botswana Wildlife Circuit",
       "duration": "12 Days / 11 Nights",
-      "intro": "The northern part of Tanzania is renowned for its stunning landscapes and rich wildlife experiences. This region encompasses several world-famous parks and conservation areas. Here are some luxurious sample itineraries focused on the northern circuit, combining iconic destinations with high-end accommodations and exclusive experiences.",
+      "intro": "A southern Africa circuit from Cape Town through Victoria Falls into Botswana's premier wildlife areas — Chobe, Hwange, and the Okavango Delta — combining city, waterfall, and bush in one journey.",
       "route": "Victoria Falls · Chobe · Hwange · Okavango Delta",
       "days": [
         {
@@ -1972,8 +2228,8 @@
     },
     "crater-savannah": {
       "title": "Crater Savannah",
-      "duration": "",
-      "intro": "",
+      "duration": "2 Days / 1 Night",
+      "intro": "A focused northern Tanzania escape pairing Tarangire's baobab woodlands with the wildlife-rich floor of Ngorongoro Crater — ideal when time is short but you want iconic game viewing.",
       "route": "Ngorongoro · Serengeti",
       "days": [
         {
@@ -1988,8 +2244,8 @@
     },
     "quick-escape": {
       "title": "Quick Escape",
-      "duration": "",
-      "intro": "",
+      "duration": "2 Days / 1 Night",
+      "intro": "A compact overnight circuit to the Ngorongoro Crater rim and floor — maximum wildlife in minimum time, with scenic highland drives and the Big Five on the crater floor.",
       "route": "Tarangire · Ngorongoro",
       "days": [
         {
@@ -2004,8 +2260,8 @@
     },
     "day-tour": {
       "title": "Day Tour",
-      "duration": "",
-      "intro": "",
+      "duration": "1 Day",
+      "intro": "A full-day descent into Ngorongoro Crater from Arusha — one of Africa's most concentrated wildlife arenas in a single unforgettable day.",
       "route": "One-day descent into the Crater",
       "days": [
         {
@@ -2286,5 +2542,373 @@
       "fromPrice": "USD 3,255",
       "priceNote": "Per person · includes domestic flight Arusha–Zanzibar"
     }
+  },
+  "countryPages": {
+    "back": "All destinations",
+    "parksEyebrow": "National Parks",
+    "parksTitle": "Parks & <i>reserves</i>",
+    "wildlifeEyebrow": "Wildlife",
+    "wildlifeTitle": "Wildlife experiences",
+    "cultureEyebrow": "Culture",
+    "cultureTitle": "Cultural attractions",
+    "whenEyebrow": "When to Visit",
+    "whenTitle": "Best time to travel",
+    "tiersEyebrow": "How to Travel",
+    "tiersTitle": "Luxury vs mid-range",
+    "viewPackages": "View safari packages",
+    "planTrip": "Plan your trip",
+    "tanzania": {
+      "heroTitle": "<i>Tanzania</i>",
+      "heroDesc": "The heart of our operations — Serengeti, Ngorongoro, Kilimanjaro, Tarangire, and Zanzibar.",
+      "intro": "Tanzania offers Africa's greatest concentration of iconic parks on one seamless northern circuit. We craft both luxury tented camps and thoughtfully priced mid-range itineraries, all with private vehicles and expert guides based in Arusha.",
+      "parks": [
+        {
+          "name": "Serengeti National Park",
+          "desc": "Vast plains, kopjes, and the Great Migration — wildebeest, zebra, predators, and over 500 bird species."
+        },
+        {
+          "name": "Ngorongoro Crater",
+          "desc": "The world's largest intact volcanic caldera — black rhino, elephant tuskers, and dense predator populations."
+        },
+        {
+          "name": "Tarangire National Park",
+          "desc": "Baobab-studded landscapes and one of East Africa's largest elephant concentrations in the dry season."
+        },
+        {
+          "name": "Lake Manyara",
+          "desc": "Tree-climbing lions, flamingos, and groundwater forest along the Rift Valley escarpment."
+        },
+        {
+          "name": "Mount Kilimanjaro",
+          "desc": "Summit Africa's highest peak via routes including Northern Circuit, Machame, and Lemosho."
+        },
+        {
+          "name": "Nyerere (Selous)",
+          "desc": "Boat safaris on the Rufiji, walking safaris, and vast wilderness in southern Tanzania."
+        }
+      ],
+      "wildlife": [
+        "Great Migration river crossings",
+        "Big Five game drives",
+        "Night drives in Tarangire",
+        "Hot-air balloon over the Serengeti",
+        "Calving season on the southern plains",
+        "Leopard and cheetah in Seronera"
+      ],
+      "culture": [
+        "Maasai community partnerships",
+        "Hadzabe hunter-gatherer experiences",
+        "Datoga metalwork and pastoral traditions",
+        "Olduvai Gorge — cradle of humankind",
+        "Stone Town heritage (Zanzibar extension)"
+      ],
+      "bestTime": [
+        {
+          "season": "Jun–Oct (Dry)",
+          "note": "Peak wildlife viewing; migration in the north; ideal for Kilimanjaro climbs."
+        },
+        {
+          "season": "Jan–Mar (Calving)",
+          "note": "Southern Serengeti calving season — predators at their most active."
+        },
+        {
+          "season": "Nov–May (Green)",
+          "note": "Fewer crowds, lush scenery, excellent birding and competitive rates."
+        }
+      ],
+      "tiers": [
+        {
+          "tier": "Luxury Safaris",
+          "desc": "Exclusive camps, private guides, charter flights, and bespoke dining — every detail curated for discerning travellers."
+        },
+        {
+          "tier": "Mid-Range Safaris",
+          "desc": "Comfortable lodges and tented camps, private 4×4 vehicles, and the same expert guides — exceptional value without compromise on wildlife."
+        }
+      ],
+      "circuitsEyebrow": "Safari Circuits",
+      "circuitsTitle": "Explore by <i>circuit</i>",
+      "circuitsDesc": "Tanzania is best understood through its four great safari circuits — each with distinct parks, wildlife, and travel logistics. We design northern, southern, western, and coastal journeys as standalone trips or seamless combinations.",
+      "circuitsLink": "View all circuits on Destinations"
+    },
+    "kenya": {
+      "heroTitle": "<i>Kenya</i>",
+      "heroDesc": "Maasai Mara, migration crossings, and classic East African savannah.",
+      "intro": "Kenya complements any Tanzania itinerary perfectly — especially during the Mara River migration season. We arrange seamless cross-border logistics and camps on both sides of the ecosystem.",
+      "parks": [
+        {
+          "name": "Masai Mara National Reserve",
+          "desc": "The migration's dramatic river crossings and year-round big cat action on rolling grasslands."
+        },
+        {
+          "name": "Amboseli National Park",
+          "desc": "Elephants beneath Kilimanjaro's snow cap — iconic photography and birdlife."
+        },
+        {
+          "name": "Lake Nakuru",
+          "desc": "Rhino sanctuary, flamingos, and Rift Valley scenery."
+        },
+        {
+          "name": "Samburu",
+          "desc": "Special five species — Grevy's zebra, reticulated giraffe, and arid-adapted wildlife."
+        }
+      ],
+      "wildlife": [
+        "Mara River migration crossings",
+        "Lion, leopard, and cheetah densities",
+        "Elephant herds of Amboseli",
+        "Hot-air balloon safaris",
+        "Night drives in private conservancies"
+      ],
+      "culture": [
+        "Maasai village visits with community partners",
+        "Nairobi National Museum extensions",
+        "Beadwork cooperatives and local crafts"
+      ],
+      "bestTime": [
+        {
+          "season": "Jul–Oct",
+          "note": "Migration in the Mara; dry season game viewing across the country."
+        },
+        {
+          "season": "Jan–Feb",
+          "note": "Calving on the short-grass plains; fewer tourists, green landscapes."
+        },
+        {
+          "season": "Apr–Jun",
+          "note": "Long rains — quiet parks and excellent rates in conservancies."
+        }
+      ],
+      "tiers": [
+        {
+          "tier": "Luxury",
+          "desc": "Private conservancy camps, exclusive game drives, and fly-in access to remote Mara conservancies."
+        },
+        {
+          "tier": "Mid-Range",
+          "desc": "Comfortable Mara lodges with shared or private vehicles — ideal for families and first-time safari guests."
+        }
+      ]
+    },
+    "uganda": {
+      "heroTitle": "<i>Uganda</i>",
+      "heroDesc": "Mountain gorillas, chimpanzees, and the Pearl of Africa.",
+      "intro": "Uganda is the natural extension to a Tanzania safari — Bwindi's mountain gorillas, Queen Elizabeth's tree-climbing lions, and the prehistoric Shoebill in Mabamba Bay.",
+      "filmEyebrow": "Gorilla encounter",
+      "filmTitle": "Mountain gorillas in Uganda",
+      "filmDesc": "A glimpse of the intimate hour with a habituated family in Bwindi — the experience that draws travellers from Tanzania to the Pearl of Africa.",
+      "parks": [
+        {
+          "name": "Bwindi Impenetrable National Park",
+          "desc": "Half of the world's remaining mountain gorillas in misty montane forest."
+        },
+        {
+          "name": "Queen Elizabeth National Park",
+          "desc": "Kazinga Channel boat cruises, tree-climbing lions in Ishasha, and diverse ecosystems."
+        },
+        {
+          "name": "Kibale Forest",
+          "desc": "The world's primate capital — chimpanzee trekking and 13 primate species."
+        },
+        {
+          "name": "Murchison Falls",
+          "desc": "The Nile forced through a narrow gorge — hippos, crocs, and the Shoebill."
+        }
+      ],
+      "wildlife": [
+        "Mountain gorilla trekking",
+        "Chimpanzee tracking in Kyambura Gorge",
+        "Shoebill stork in Mabamba wetlands",
+        "Kazinga Channel boat safaris",
+        "Classic savannah game drives"
+      ],
+      "culture": [
+        "Batwa forest heritage experiences",
+        "Kampala and Entebbe city extensions",
+        "Community-run gorilla tourism revenue"
+      ],
+      "bestTime": [
+        {
+          "season": "Jun–Sep & Dec–Feb",
+          "note": "Dry seasons — best trekking conditions in Bwindi and Kibale."
+        },
+        {
+          "season": "Mar–May & Oct–Nov",
+          "note": "Wetter but fewer permits competition; lush forest photography."
+        }
+      ],
+      "tiers": [
+        {
+          "tier": "Luxury",
+          "desc": "Boutique lodges, private gorilla trekking arrangements, and charter connections from Tanzania."
+        },
+        {
+          "tier": "Mid-Range",
+          "desc": "Comfortable forest lodges and safari hotels — gorilla permits and ground logistics handled in full."
+        }
+      ]
+    },
+    "rwanda": {
+      "heroTitle": "<i>Rwanda</i>",
+      "heroDesc": "Volcanoes National Park and intimate gorilla encounters.",
+      "intro": "Rwanda offers a compact, polished gorilla-trekking experience in the Virunga volcanoes — easily combined with Tanzania or Uganda for a complete East Africa primate circuit.",
+      "parks": [
+        {
+          "name": "Volcanoes National Park",
+          "desc": "Mountain gorilla families on the slopes of the Virungas — Dian Fossey's legacy."
+        },
+        {
+          "name": "Akagera National Park",
+          "desc": "Savannah restoration success — lion, rhino, and lakeside game drives."
+        },
+        {
+          "name": "Nyungwe Forest",
+          "desc": "Ancient rainforest — chimpanzees and canopy walkway."
+        }
+      ],
+      "wildlife": [
+        "Mountain gorilla trekking (1 hour observation)",
+        "Golden monkey tracking",
+        "Chimpanzee treks in Nyungwe",
+        "Akagera big game recovery"
+      ],
+      "culture": [
+        "Kigali genocide memorial — powerful historical context",
+        "Coffee and tea plantation visits",
+        "Community cooperatives near Volcanoes"
+      ],
+      "bestTime": [
+        {
+          "season": "Jun–Sep",
+          "note": "Dry season — easiest forest trekking and clear volcano views."
+        },
+        {
+          "season": "Dec–Feb",
+          "note": "Short dry period; excellent for combining with Tanzania safari."
+        }
+      ],
+      "tiers": [
+        {
+          "tier": "Luxury",
+          "desc": "Volcanoes rim lodges, private guides, and helicopter transfers from Kigali."
+        },
+        {
+          "tier": "Mid-Range",
+          "desc": "Comfortable guesthouses and standard gorilla permit packages with expert trekking briefings."
+        }
+      ]
+    },
+    "zanzibar": {
+      "heroTitle": "<i>Zanzibar</i>",
+      "heroDesc": "Stone Town, spice islands, and turquoise Indian Ocean beaches.",
+      "intro": "After the dust of the savannah, Zanzibar is the perfect finale — dhow sails at sunset, UNESCO Stone Town, and north-coast resorts. We pair beach time seamlessly with your safari flights.",
+      "parks": [
+        {
+          "name": "Stone Town",
+          "desc": "UNESCO heritage — Arabian, Persian, Indian, and European architecture and spice markets."
+        },
+        {
+          "name": "Jozani Forest",
+          "desc": "Endemic red colobus monkeys in the island's only national park."
+        },
+        {
+          "name": "Mnemba Atoll",
+          "desc": "World-class snorkelling and diving on a protected reef."
+        },
+        {
+          "name": "Prison Island",
+          "desc": "Giant tortoises and half-day excursions from Stone Town."
+        }
+      ],
+      "wildlife": [
+        "Dolphin and reef snorkelling",
+        "Sea turtle nesting (seasonal)",
+        "Spice plantation tours",
+        "Sunset dhow cruises"
+      ],
+      "culture": [
+        "Spice farm tours — cloves, vanilla, cinnamon",
+        "Swahili cooking classes",
+        "Taarab music and Forodhani night market"
+      ],
+      "bestTime": [
+        {
+          "season": "Jun–Oct",
+          "note": "Cooler, drier — pairs perfectly with peak safari season."
+        },
+        {
+          "season": "Dec–Feb",
+          "note": "Hot and dry — ideal beach weather after calving-season safari."
+        },
+        {
+          "season": "Mar–May",
+          "note": "Long rains — quieter resorts and lower rates."
+        }
+      ],
+      "tiers": [
+        {
+          "tier": "Luxury",
+          "desc": "Boutique beach resorts, private villas, and yacht charters off the north coast."
+        },
+        {
+          "tier": "Mid-Range",
+          "desc": "Beautiful beach hotels and heritage stays in Stone Town — the perfect safari add-on."
+        }
+      ]
+    }
+  },
+  "legal": {
+    "privacyEyebrow": "Legal",
+    "privacyTitle": "Privacy <i>policy</i>",
+    "privacyIntro": "Aardvark Safaris Tanzania Ltd respects your privacy. We collect only the information needed to respond to inquiries and plan your safari — such as name, email, phone, and travel preferences.",
+    "privacyBody": "We do not sell personal data. Information is shared only with trusted partners required to deliver your trip (lodges, airlines, park authorities) and is stored securely. You may request access or deletion of your data by contacting info@aardvarktanzania.com. Aardvark may photograph or film trips; by booking, participants grant permission to use such material for promotional purposes unless otherwise agreed in writing.",
+    "privacySections": [
+      {
+        "heading": "Information we collect",
+        "body": "When you enquire or book, we may collect your name, email, phone number, nationality, travel dates, group size, budget preferences, and any details you share about interests or special requirements. Website analytics (if you accept cookies) may include anonymised usage data."
+      },
+      {
+        "heading": "How we use your information",
+        "body": "We use your details solely to respond to enquiries, prepare quotations, confirm bookings, coordinate lodges and park permits, and communicate about your safari. We may send occasional updates about migration seasons or offers if you have opted in."
+      },
+      {
+        "heading": "Sharing with third parties",
+        "body": "We share information only with suppliers necessary to operate your trip — accommodation, domestic airlines, ground handlers, Tanzania National Parks, and insurance partners for Flying Doctor evacuation cover. We do not sell or rent personal data to marketers."
+      },
+      {
+        "heading": "Retention and your rights",
+        "body": "Booking records are retained as required for accounting and dispute resolution. You may request a copy of your data or ask us to delete non-essential information by emailing info@aardvarktanzania.com. We will respond within a reasonable period."
+      },
+      {
+        "heading": "Photography and media",
+        "body": "Guides and staff may photograph or film safari activities for promotional use. By travelling with us you grant Aardvark Safaris Tanzania Ltd permission to use such material unless you notify us in writing before departure that you do not consent."
+      }
+    ],
+    "termsEyebrow": "Legal",
+    "termsTitle": "Terms & <i>conditions</i>",
+    "termsIntro": "By using this website and submitting an enquiry, you agree to these terms. Safari bookings are confirmed upon written agreement and deposit.",
+    "termsBody": "Deposits: 20% of total tour rate for standard group trips; 30% for customised itineraries. Balance due 90 days before departure. Currencies accepted: USD, EUR, GBP. Cancellation: 90+ days — USD 500 per person; 89–60 days — 20% of tour rate; 59–30 days — 50%; 29 days or fewer — 100% forfeiture. Trip cancellation insurance is strongly recommended; deposits may be held as a credit note for a future booking in lieu of cancellation where agreed. Prices and itineraries may change until confirmed in writing. Aardvark Safaris Tanzania Ltd is not liable for delays, injury, or loss arising from events beyond its control including force majeure, weather, wildlife interaction, or supplier default. Flying Doctor Society membership covers emergency evacuation transport only — hospital costs are borne by the participant.",
+    "termsSections": [
+      {
+        "heading": "Booking confirmation",
+        "body": "A safari is confirmed only after written agreement, receipt of the required deposit, and issuance of a confirmation invoice. Verbal quotes and website itineraries are indicative until confirmed in writing by Aardvark Safaris Tanzania Ltd."
+      },
+      {
+        "heading": "Deposits and payment",
+        "body": "Standard group departures require a 20% deposit; fully customised private itineraries require 30%. The balance is due no later than 90 days before the start date. We accept USD, EUR, and GBP by bank transfer or card where available. Late payment may result in release of reserved lodges or park permits."
+      },
+      {
+        "heading": "Cancellation and changes",
+        "body": "Cancellations 90 or more days before departure incur USD 500 per person. Between 89 and 60 days, 20% of the tour rate is forfeited; 59–30 days, 50%; 29 days or fewer, 100%. Date changes are subject to availability and may incur supplier fees. We strongly recommend comprehensive trip cancellation insurance."
+      },
+      {
+        "heading": "Itinerary changes",
+        "body": "Wildlife viewing, weather, road conditions, or park authority decisions may require route or lodge adjustments. We will propose comparable alternatives where possible. Price adjustments after confirmation apply only if you request upgrades or additional services."
+      },
+      {
+        "heading": "Liability and travel insurance",
+        "body": "Participants travel at their own risk. Aardvark Safaris Tanzania Ltd is not liable for injury, illness, loss, or delay caused by force majeure, wildlife, third-party suppliers, or participant negligence. Flying Doctor Society evacuation covers transport to hospital only — medical bills and repatriation are the traveller's responsibility. Adequate travel and medical insurance is required."
+      }
+    ]
   }
 }

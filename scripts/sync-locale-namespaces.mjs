@@ -27,9 +27,11 @@ const NAMESPACES_FROM_EN = [
   "notFound",
   "featuredPackages",
   "safarisContent",
+  "countryPages",
+  "legal",
 ];
 
-const HOME_PARTIAL_KEYS = ["trustJourneys", "destAlt"];
+const HOME_PARTIAL_KEYS = ["trustJourneys", "destAlt", "signatureDestinations"];
 
 const en = JSON.parse(readFileSync(join(localesDir, "en.json"), "utf8"));
 
@@ -52,16 +54,33 @@ for (const lang of ["de", "fr", "es", "it"]) {
   }
 
   if (locale.home) {
-    if (en.home?.trustJourneys) locale.home.trustJourneys = en.home.trustJourneys;
-    if (en.home?.destAlt) locale.home.destAlt = en.home.destAlt;
+    for (const key of HOME_PARTIAL_KEYS) {
+      if (en.home?.[key]) locale.home[key] = en.home[key];
+    }
   }
   if (locale.footer && en.footer) {
     for (const key of ["camps", "newsletterDone", "newsletterError", "regionAfrica", "regionNA", "taLine"]) {
       if (en.footer[key]) locale.footer[key] = en.footer[key];
     }
   }
-  if (locale.destPage && en.destPage?.parksTitle) {
-    locale.destPage.parksTitle = en.destPage.parksTitle;
+  if (en.destPage) {
+    locale.destPage = {
+      ...(locale.destPage ?? {}),
+      countries: en.destPage.countries,
+      countriesEyebrow: en.destPage.countriesEyebrow,
+      countriesTitle: en.destPage.countriesTitle,
+      circuits: en.destPage.circuits,
+      circuitsEyebrow: en.destPage.circuitsEyebrow,
+      circuitsTitle: en.destPage.circuitsTitle,
+      circuitsDesc: en.destPage.circuitsDesc,
+      circuitsViewPackages: en.destPage.circuitsViewPackages,
+      circuitsPlanTrip: en.destPage.circuitsPlanTrip,
+      parksTitle: en.destPage.parksTitle,
+      featuredParksEyebrow: en.destPage.featuredParksEyebrow,
+      featuredParksTitle: en.destPage.featuredParksTitle,
+      featuredParks: en.destPage.featuredParks,
+      groups: locale.destPage?.groups ?? en.destPage.groups,
+    };
   }
 
   if (en.itinerariesPage?.extra) {

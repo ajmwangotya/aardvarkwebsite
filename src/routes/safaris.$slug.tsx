@@ -20,6 +20,7 @@ import { safariThumbImages } from "@/data/destination-images";
 import migration from "@/assets/editorial/migration.jpg";
 import acacia from "@/assets/editorial/acacia.jpg";
 import maasai from "@/assets/editorial/maasai.jpg";
+import en from "@/locales/en.json";
 
 export const Route = createFileRoute("/safaris/$slug")({
   loader: ({ params, context }) => {

@@ -12,6 +12,8 @@ import { FeaturedPackages } from "@/components/sections/featured-packages";
 import { TrustCredentials } from "@/components/sections/trust-credentials";
 import { HomeStartHere } from "@/components/sections/home-start-here";
 import { HeroVideoBackground } from "@/components/sections/hero-video-background";
+import { HeroSlideshow } from "@/components/sections/hero-slideshow";
+import { IntroPhotoMosaic } from "@/components/sections/intro-photo-mosaic";
 import { MigrationCalendar } from "@/components/sections/migration-calendar";
 import { SectionDivider } from "@/components/layout/section-divider";
 import { buildPageHead } from "@/lib/seo";
@@ -42,6 +44,16 @@ export const Route = createFileRoute("/")({
 });
 
 const reasonIcons = [MapPin, Shield, Sparkles, Heart];
+
+const heroSlideImages = [
+  { img: heroNdutu1, alt: "Giraffes of Ndutu" },
+  { img: heroNdutu2, alt: "Safari wildlife" },
+  { img: heroNdutu3, alt: "East African landscape" },
+  { img: heroNdutu4, alt: "Wildlife on the plains" },
+  { img: heroNdutu5, alt: "Lion at golden hour" },
+  { img: heroNdutu6, alt: "Elephant tusks" },
+  { img: heroNdutu7, alt: "Dhow sailing at sunset on Zanzibar beach" },
+];
 
 const destinations = [
   { name: "Tanzania", tagKey: "nationalPark", img: iconicDestinationImages.tanzania, countrySlug: "tanzania", altKey: "tanzania" },
@@ -79,6 +91,9 @@ function HomePage() {
   const [isMobile, setIsMobile] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
   const [pauseHeroVideo, setPauseHeroVideo] = useState(false);
+  const [heroVideoFailed, setHeroVideoFailed] = useState(false);
+  const [heroSlide, setHeroSlide] = useState(0);
+  const useHeroSlideshow = pauseHeroVideo || heroVideoFailed;
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], reduceMotion ? ["0%", "0%"] : ["0%", "20%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
@@ -114,28 +129,38 @@ function HomePage() {
         className="hero-section relative h-[88dvh] min-h-[420px] w-full overflow-hidden sm:min-h-[500px] sm:h-[90dvh] md:min-h-[720px] md:h-[100svh]"
       >
         <motion.div style={{ y }} className="absolute inset-0 z-0 h-[115%] w-full">
-          <HeroVideoBackground
-            src={SITE_VIDEOS.wildReel}
-            poster={heroNdutu5}
-            paused={pauseHeroVideo}
-          />
+          {useHeroSlideshow ? (
+            <HeroSlideshow
+              slides={heroSlideImages}
+              activeIndex={heroSlide}
+              onActiveIndexChange={setHeroSlide}
+              reduceMotion={reduceMotion}
+            />
+          ) : (
+            <HeroVideoBackground
+              src={SITE_VIDEOS.wildReel}
+              poster={heroNdutu5}
+              paused={pauseHeroVideo}
+              onVideoError={() => setHeroVideoFailed(true)}
+            />
+          )}
         </motion.div>
 
-        {/* Cinematic overlay — lighter on mobile so the film stays visible */}
+        {/* Cinematic overlay — dark ink + warm gold tint (matches brand hero look) */}
         <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden>
-          <div className="absolute inset-0 bg-ink/15 md:bg-ink/35" />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-transparent to-ink/50 md:from-ink/60 md:via-ink/20 md:to-ink/80" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.28)_100%)] md:bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.55)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(196,155,70,0.12)_0%,transparent_58%)]" />
-          <div className="absolute inset-x-0 bottom-0 h-[18%] bg-gradient-to-t from-ink/55 via-ink/15 to-transparent md:hidden" />
+          <div className="absolute inset-0 bg-ink/35" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/25 to-ink/85 md:from-ink/60 md:via-ink/20 md:to-ink/80" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.55)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(196,155,70,0.14)_0%,transparent_58%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/95 via-ink/50 to-transparent md:hidden" />
         </div>
 
-        {/* Hero copy — mobile: compact glass card; desktop: centred */}
+        {/* Hero copy — mobile: stacked above sticky bar; desktop: centred */}
         <motion.div
           style={{ opacity }}
-          className="hero-content relative z-10 flex h-full w-full flex-col justify-end px-4 pb-[max(5.25rem,calc(4rem+env(safe-area-inset-bottom,0px)))] pt-[max(5rem,calc(4rem+env(safe-area-inset-top,0px)))] text-center text-bone sm:px-6 sm:pb-12 md:justify-center md:px-8 md:pb-12 md:pt-[calc(4.5rem+env(safe-area-inset-top))]"
+          className="hero-content relative z-10 flex h-full w-full flex-col justify-end px-4 pb-[max(5.5rem,calc(4.25rem+env(safe-area-inset-bottom,0px)))] pt-[max(6.5rem,calc(5rem+env(safe-area-inset-top,0px)))] text-center text-bone sm:px-6 sm:pb-12 md:justify-center md:px-8 md:pb-12 md:pt-[calc(4.5rem+env(safe-area-inset-top))]"
         >
-          <div className="hero-copy-panel hero-content-inner mx-auto flex w-full max-w-[min(100%,22.5rem)] flex-col items-center px-4 py-4 sm:max-w-md sm:px-5 sm:py-5 md:max-w-5xl md:gap-8 md:p-0">
+          <div className="hero-content-inner mx-auto flex w-full max-w-[min(100%,26rem)] flex-col items-center sm:max-w-md md:max-w-5xl md:gap-8">
             <p
               className="hero-eyebrow order-1 font-sans text-[0.65rem] font-medium uppercase leading-snug tracking-[0.22em] text-gold sm:text-[0.65rem] md:flex md:items-center md:gap-3 md:bg-transparent md:px-0 md:py-0 md:tracking-[0.45em]"
               aria-live="polite"
@@ -262,36 +287,11 @@ function HomePage() {
 
           {/* Staggered 4-image mosaic — tall / short / tall / short */}
           <Reveal delay={0.2} className="md:col-span-6 md:col-start-7">
-            <div className="grid grid-cols-2 gap-4">
-              <motion.div
-                initial={false}
-                whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                className="space-y-4"
-              >
-                <div className="image-zoom aspect-[3/4] gold-border-glow">
-                  <img src={heroNdutu5} alt="Lion at golden hour" loading="eager" fetchPriority="high" className="h-full w-full object-cover" />
-                </div>
-                <div className="image-zoom aspect-[3/2] gold-border-glow">
-                  <img src={heroNdutu7} alt="Dhow sailing at sunset on Zanzibar beach" loading="lazy" className="h-full w-full object-cover" />
-                </div>
-              </motion.div>
-              <motion.div
-                initial={false}
-                whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="space-y-4 md:pt-12"
-              >
-                <div className="image-zoom aspect-[3/2] gold-border-glow">
-                  <img src={heroNdutu6} alt="Elephant tusks" loading="lazy" className="h-full w-full object-cover" />
-                </div>
-                <div className="image-zoom aspect-[3/4] gold-border-glow">
-                  <img src={heroNdutu1} alt="Giraffes of Ndutu" loading="lazy" className="h-full w-full object-cover" />
-                </div>
-              </motion.div>
-            </div>
+            <IntroPhotoMosaic
+              photos={heroSlideImages.map(({ img, alt }) => ({ src: img, alt }))}
+              layout={[4, 6, 5, 0]}
+              aspects={["aspect-[3/4]", "aspect-[3/2]", "aspect-[3/2]", "aspect-[3/4]"]}
+            />
           </Reveal>
         </div>
       </section>
@@ -328,7 +328,7 @@ function HomePage() {
         <Reveal>
           <div className="flex flex-col items-start gap-6 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
             <div>
-              <span className="eyebrow">{t("home.nationalParks")}</span>
+              <span className="eyebrow">{t("home.iconicEyebrow")}</span>
               <h2 className="mt-4 max-w-2xl font-serif text-[clamp(1.75rem,5vw,3.75rem)] sm:mt-6">
                 <Trans i18nKey="home.iconicTitle" components={{ i: <span className="gradient-text italic" /> }} />
               </h2>
@@ -341,7 +341,7 @@ function HomePage() {
         </Reveal>
 
         <motion.div
-          initial={false}
+          initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
           variants={stagger}

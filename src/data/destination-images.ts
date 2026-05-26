@@ -268,3 +268,6 @@ export function getPackageImage(pkg: Pick<SafariPackage, "slug" | "safariSlug" |
   if (pkg.safariSlug && safariThumbImages[pkg.safariSlug]) return safariThumbImages[pkg.safariSlug];
   return packageCategoryImages[pkg.category];
 }
+
+/** Used when an image fails to load or a slot has no mapped asset. */
+export const imageFallback = migration;

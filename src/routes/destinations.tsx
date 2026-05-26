@@ -13,6 +13,7 @@ import {
 } from "@/data/destination-images";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
+import { asObjectArray } from "@/lib/utils";
 
 export const Route = createFileRoute("/destinations")({
   head: () =>
@@ -35,13 +36,14 @@ function destSlug(name: string) {
 function DestinationsPage() {
   const { t } = useTranslation();
 
-  const countries = t("destPage.countries", { returnObjects: true }) as {
+  const countries = asObjectArray<{
     slug: string;
     name: string;
     tagline: string;
     highlights?: string[];
-  }[];
-  const circuits = t("destPage.circuits", { returnObjects: true }) as {
+  }>(t("destPage.countries", { returnObjects: true }));
+
+  const circuits = asObjectArray<{
     slug: CircuitSlug;
     name: string;
     route: string;
@@ -49,13 +51,20 @@ function DestinationsPage() {
     intro: string;
     parks: string[];
     highlights: string[];
-  }[];
-  const featuredParks = t("destPage.featuredParks", { returnObjects: true }) as { name: string; desc: string }[];
-  const groupsData = t("destPage.groups", { returnObjects: true }) as { eyebrow: string; title: string; items: { name: string; desc: string }[] }[];
+  }>(t("destPage.circuits", { returnObjects: true }));
 
-  const groups = groupsData.map((g, gi) => ({
+  const featuredParks = asObjectArray<{ name: string; desc: string }>(
+    t("destPage.featuredParks", { returnObjects: true }),
+  );
+
+  const groups = asObjectArray<{ eyebrow: string; title: string; items: { name: string; desc: string }[] }>(
+    t("destPage.groups", { returnObjects: true }),
+  ).map((g, gi) => ({
     ...g,
-    items: g.items.map((item, ii) => ({ ...item, img: destinationGroupImages[gi][ii] })),
+    items: asObjectArray<{ name: string; desc: string }>(g.items).map((item, ii) => ({
+      ...item,
+      img: destinationGroupImages[gi]?.[ii],
+    })),
   }));
 
   const parkImgs = [...featuredParkImages];
@@ -76,6 +85,7 @@ function DestinationsPage() {
       </section>
 
       {/* Countries */}
+      {countries.length > 0 && (
       <section className="mx-auto max-w-[1600px] px-5 pb-16 sm:px-6 md:px-12">
         <Reveal>
           <span className="eyebrow">{t("destPage.countriesEyebrow")}</span>
@@ -120,8 +130,10 @@ function DestinationsPage() {
           ))}
         </div>
       </section>
+      )}
 
       {/* Safari circuits */}
+      {circuits.length > 0 && (
       <section className="border-y border-border bg-card">
         <div className="mx-auto max-w-[1600px] px-5 py-16 sm:px-6 md:px-12 md:py-24">
           <Reveal>
@@ -191,7 +203,9 @@ function DestinationsPage() {
           </div>
         </div>
       </section>
+      )}
 
+      {featuredParks.length > 0 && (
       <section className="mx-auto max-w-[1600px] px-5 pb-16 sm:px-6 md:px-12 border-t border-border pt-16">
         <Reveal>
           <span className="eyebrow">{t("destPage.featuredParksEyebrow")}</span>
@@ -209,9 +223,10 @@ function DestinationsPage() {
           ))}
         </div>
       </section>
+      )}
 
       <section className="mx-auto max-w-[1600px] px-5 pb-20 sm:px-6 sm:pb-32 md:px-12 space-y-16 sm:space-y-24">
-        {groups.map((g) => (
+        {groups.filter((g) => g.items.length > 0).map((g) => (
           <div key={g.eyebrow}>
             <Reveal>
               <span className="eyebrow">{g.eyebrow}</span>

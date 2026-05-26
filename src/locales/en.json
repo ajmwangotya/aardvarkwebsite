@@ -285,6 +285,7 @@
     "greatMigration": "The Great Migration",
     "migrationQuote": "\"Two million hooves move as one.<br/>We move with them.\"",
     "nationalParks": "National Parks",
+    "iconicEyebrow": "Iconic destinations",
     "iconicTitle": "Iconic <i>destinations</i>",
     "iconicDesc": "Experience Tanzania's iconic national parks with our expert guides — from the vast Serengeti plains to the awe-inspiring Ngorongoro Crater.",
     "allDestinations": "All Destinations",
@@ -1313,10 +1314,10 @@
       "subtitle": "Licensed safari operator · TATO member · fully insured journeys · {{rating}} on TripAdvisor",
       "augustineName": "Augustine Mwangotya",
       "augustineRole": "Founder & lead guide",
-      "waltName": "Walt Mwangotya",
-      "waltRole": "Operations & logistics",
-      "deborahName": "Deborah Mwangotya",
-      "deborahRole": "Guest relations",
+      "waltName": "Walt Anderson",
+      "waltRole": "US Representative · Safari Co-Leader (semi-retired)",
+      "deborahName": "Deborah Mrema",
+      "deborahRole": "Marketing & Customer Experience Specialist",
       "slaTitle": "Reply within 24 hours",
       "slaBody": "Often the same business day (Mon–Fri 8:00–20:00 EAT). We personally read every enquiry."
     },
@@ -2623,7 +2624,7 @@
     "exploring-cape-town-victoria-falls-botswana-wildlife-safari-circuit": {
       "title": "Cape Town, Victoria Falls & Botswana Wildlife Circuit",
       "duration": "12 Days / 11 Nights",
-      "intro": "The northern part of Tanzania is renowned for its stunning landscapes and rich wildlife experiences. This region encompasses several world-famous parks and conservation areas. Here are some luxurious sample itineraries focused on the northern circuit, combining iconic destinations with high-end accommodations and exclusive experiences.",
+      "intro": "A southern Africa circuit from Cape Town through Victoria Falls into Botswana's premier wildlife areas — Chobe, Hwange, and the Okavango Delta — combining city, waterfall, and bush in one journey.",
       "route": "Victoria Falls · Chobe · Hwange · Okavango Delta",
       "days": [
         {
@@ -2730,8 +2731,8 @@
     },
     "crater-savannah": {
       "title": "Crater Savannah",
-      "duration": "",
-      "intro": "",
+      "duration": "2 Days / 1 Night",
+      "intro": "A focused northern Tanzania escape pairing Tarangire's baobab woodlands with the wildlife-rich floor of Ngorongoro Crater — ideal when time is short but you want iconic game viewing.",
       "route": "Ngorongoro · Serengeti",
       "days": [
         {
@@ -2746,8 +2747,8 @@
     },
     "quick-escape": {
       "title": "Quick Escape",
-      "duration": "",
-      "intro": "",
+      "duration": "2 Days / 1 Night",
+      "intro": "A compact overnight circuit to the Ngorongoro Crater rim and floor — maximum wildlife in minimum time, with scenic highland drives and the Big Five on the crater floor.",
       "route": "Tarangire · Ngorongoro",
       "days": [
         {
@@ -2762,8 +2763,8 @@
     },
     "day-tour": {
       "title": "Day Tour",
-      "duration": "",
-      "intro": "",
+      "duration": "1 Day",
+      "intro": "A full-day descent into Ngorongoro Crater from Arusha — one of Africa's most concentrated wildlife arenas in a single unforgettable day.",
       "route": "One-day descent into the Crater",
       "days": [
         {

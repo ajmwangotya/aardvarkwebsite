@@ -1003,6 +1003,25 @@ html:has(#site-mobile-nav-toggle:checked) .mobile-nav-icon-close {
 /* Hero background slideshow — keep crossfade visible even when reduced-motion is on */
 .hero-slideshow__slide {
   will-change: opacity;
+  transition: opacity 1.2s ease-in-out;
+}
+
+@keyframes hero-ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.hero-slideshow__slide--active img {
+  animation: hero-ken-burns 5s linear forwards;
+}
+
+.intro-mosaic__slide {
+  will-change: opacity;
+  transition: opacity 0.9s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { GuestNotesSection } from "@/components/sections/guest-notes-section";
 import { CinematicVideoSection } from "@/components/sections/cinematic-video-section";
 import { SITE_VIDEOS } from "@/data/site-videos";
-import { Reveal, stagger, fadeUp, blurIn, flipIn, slideRight, ParallaxSection, CountUp } from "@/components/motion";
+import { Reveal, stagger, fadeUp, blurIn, slideRight, ParallaxSection, CountUp } from "@/components/motion";
 import { COMPANY_STATS, pageTitle, SITE, TRIPADVISOR } from "@/lib/site-config";
 import { ArrowRight, Star } from "lucide-react";
 import { buildPageHead } from "@/lib/seo";
@@ -273,17 +273,17 @@ function AboutPage() {
             </h2>
           </Reveal>
           <motion.div
-            initial="hidden"
+            initial={false}
             whileInView="show"
-            viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}
-            className="mt-16 grid gap-px bg-border md:grid-cols-2"
+            viewport={{ once: true, amount: 0.12, margin: "-40px" }}
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } } }}
+            className="mt-10 grid gap-4 sm:mt-16 sm:gap-px sm:bg-border md:grid-cols-2"
           >
             {values.map((v, i) => (
               <motion.div
                 key={v.title}
-                variants={flipIn}
-                className="bg-card p-6 sm:p-10 group gold-border-glow cursor-default"
+                variants={fadeUp}
+                className="rounded-sm border border-border bg-card p-6 sm:rounded-none sm:border-0 sm:p-10 group gold-border-glow cursor-default"
               >
                 <div className="text-[0.6rem] uppercase tracking-[0.4em] text-gold/40 transition-colors group-hover:text-gold">{String(i + 1).padStart(2, "0")}</div>
                 <h3 className="mt-3 font-serif text-3xl transition-colors duration-300 group-hover:text-[var(--gold)]">{v.title}</h3>

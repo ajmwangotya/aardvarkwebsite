@@ -29,12 +29,15 @@ export function getLocalizedSafari(slug: string, t: TFunction): Safari | undefin
     return base;
   }
 
+  const pick = (value: string | undefined, fallback: string) =>
+    typeof value === "string" && value.trim() ? value.trim() : fallback;
+
   return {
     ...base,
-    title: localized.title ?? base.title,
-    duration: localized.duration ?? base.duration,
-    intro: localized.intro ?? base.intro,
-    route: localized.route ?? base.route,
+    title: pick(localized.title, base.title),
+    duration: pick(localized.duration, base.duration),
+    intro: pick(localized.intro, base.intro),
+    route: pick(localized.route, base.route),
     days: localized.days?.length ? localized.days : base.days,
     highlights: localized.highlights ?? base.highlights,
     fromPrice: localized.fromPrice ?? base.fromPrice,

@@ -83,7 +83,7 @@ export function ReviewsSection() {
         </Reveal>
 
         <motion.div
-          initial={false}
+          initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
