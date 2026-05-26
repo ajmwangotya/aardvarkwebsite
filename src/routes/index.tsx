@@ -761,8 +761,8 @@ function HomePage() {
       <FilmModal
         open={filmOpen}
         onOpenChange={setFilmOpen}
-        src={SITE_VIDEOS.featureFilm}
-        poster={SITE_VIDEOS.featureFilmPoster}
+        src={SITE_VIDEOS.watchFilm}
+        poster={SITE_VIDEOS.watchFilmPoster}
         titleKey="home.filmTitle"
       />
 

@@ -55,12 +55,13 @@ export function FilmModal({ open, onOpenChange, src, poster, titleKey = "home.fi
             ) : null
           ) : (
             <video
+              key={src}
               ref={videoRef}
               src={open ? src : undefined}
               poster={poster}
               controls
               playsInline
-              preload="none"
+              preload={open ? "auto" : "none"}
               className="h-full w-full object-contain"
             >
               {t("home.filmUnsupported")}

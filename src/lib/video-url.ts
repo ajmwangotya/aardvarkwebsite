@@ -15,9 +15,8 @@ const CDN_BASE = (
 ).replace(/\/$/, "") || undefined;
 
 const OVERRIDES = {
-  "aardvark-raw-footage.mp4":
-    (import.meta.env.VITE_VIDEO_RAW_FOOTAGE as string | undefined)?.trim() ||
-    (import.meta.env.VITE_VIDEO_FEATURE_FILM as string | undefined)?.trim(),
+  /** Home “Watch the Film” modal only — do not alias to VITE_VIDEO_FEATURE_FILM (may point at another clip). */
+  "aardvark-raw-footage.mp4": (import.meta.env.VITE_VIDEO_RAW_FOOTAGE as string | undefined)?.trim(),
   "aardvark-film.mp4": (import.meta.env.VITE_VIDEO_FEATURE_FILM as string | undefined)?.trim(),
   "aardvark-wild.mp4": (import.meta.env.VITE_VIDEO_WILD_REEL as string | undefined)?.trim(),
   "gorilla-uganda.mp4": (import.meta.env.VITE_VIDEO_GORILLA as string | undefined)?.trim(),
