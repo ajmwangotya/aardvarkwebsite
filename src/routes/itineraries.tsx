@@ -70,11 +70,7 @@ function ItinerariesPage() {
   const listRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState<FilterCategory>("All");
 
-  const itineraries = useMemo(
-    () => buildItineraryListItems(t),
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- rebuild when language changes
-    [t, i18n.language],
-  );
+  const itineraries = useMemo(() => buildItineraryListItems(t), [t, i18n.language]);
 
   const filtered = useMemo(
     () => (active === "All" ? itineraries : itineraries.filter((i) => i.category === active)),
