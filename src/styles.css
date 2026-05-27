@@ -151,6 +151,8 @@
     height: 100%;
     max-width: none;
     object-fit: cover;
+    /* Keep compositing stable when layered under hero overlays */
+    transform: translateZ(0);
   }
   input, textarea, button, select { font: inherit; }
 

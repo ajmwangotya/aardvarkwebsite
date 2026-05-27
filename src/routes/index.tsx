@@ -30,11 +30,11 @@ import heroNdutu5 from "@/assets/heroes/hero-ndutu-5.jpg";
 import heroNdutu6 from "@/assets/heroes/hero-ndutu-6.jpg";
 import heroNdutu7 from "@/assets/editorial/zanzibar-beach.jpg";
 import migration from "@/assets/editorial/migration.jpg";
-import maasai from "@/assets/editorial/maasai.jpg";
-import walking from "@/assets/editorial/walking.jpg";
-import dining from "@/assets/editorial/dining.jpg";
-import acaciaEditorial from "@/assets/editorial/acacia.jpg";
 import elephants from "@/assets/editorial/elephants.jpg";
+import destNorthernTanzaniaLion from "@/assets/destinations/dest-northern-tanzania-lion.jpg";
+import destTreeLion from "@/assets/destinations/dest-tree-lion.jpg";
+import destTarangireElephants from "@/assets/destinations/dest-tarangire-elephants.jpg";
+import destUgandaChimps from "@/assets/destinations/dest-uganda-chimps.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => {
@@ -69,11 +69,11 @@ const heroSlideImages = [
 ];
 
 const introMosaicPhotos = [
-  { src: maasai, alt: "Maasai community in Tanzania" },
-  { src: walking, alt: "Safari guests watching wildlife" },
-  { src: dining, alt: "Bush dining experience" },
+  { src: destNorthernTanzaniaLion, alt: "Young lions resting on the Serengeti plains" },
+  { src: destTarangireElephants, alt: "Elephant walking through Tarangire National Park" },
+  { src: destTreeLion, alt: "Lion resting in an acacia tree" },
   { src: elephants, alt: "Elephants on the savannah" },
-  { src: acaciaEditorial, alt: "Acacia trees on the savannah" },
+  { src: destUgandaChimps, alt: "Mountain gorillas in Uganda's rainforest" },
 ];
 
 function HomePage() {
@@ -129,14 +129,17 @@ function HomePage() {
         ref={heroRef}
         className="hero-section relative h-[88dvh] min-h-[420px] w-full overflow-hidden sm:min-h-[500px] sm:h-[90dvh] md:min-h-[720px] md:h-[100svh]"
       >
-        <motion.div style={{ y }} className="absolute inset-0 z-0 h-[115%] w-full">
+        {/* Video must not sit inside a transformed parent — breaks playback on iOS/Safari. */}
+        <div className="absolute inset-0 z-0 h-[115%] w-full overflow-hidden">
           {useHeroSlideshow ? (
-            <HeroSlideshow
-              slides={heroSlideImages}
-              activeIndex={heroSlide}
-              onActiveIndexChange={setHeroSlide}
-              reduceMotion={reduceMotion}
-            />
+            <motion.div style={{ y }} className="absolute inset-0 h-full w-full">
+              <HeroSlideshow
+                slides={heroSlideImages}
+                activeIndex={heroSlide}
+                onActiveIndexChange={setHeroSlide}
+                reduceMotion={reduceMotion}
+              />
+            </motion.div>
           ) : (
             <HeroVideoBackground
               src={SITE_VIDEOS.wildReel}
@@ -144,7 +147,7 @@ function HomePage() {
               paused={pauseHeroVideo}
             />
           )}
-        </motion.div>
+        </div>
 
         <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden>
           <div className="absolute inset-0 bg-ink/35" />
