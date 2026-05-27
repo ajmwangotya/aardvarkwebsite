@@ -13,6 +13,25 @@ export const PACKAGE_CATEGORIES = [
 
 export type PackageCategory = (typeof PACKAGE_CATEGORIES)[number];
 
+/** Grouped layout for /packages — keeps related offerings together. */
+export const PACKAGE_PAGE_SECTIONS: {
+  id: string;
+  categories: PackageCategory[];
+}[] = [
+  {
+    id: "tanzaniaSafaris",
+    categories: ["luxury-safaris", "mid-range-safaris", "migration-safaris", "family-adventures"],
+  },
+  {
+    id: "primatesPeaks",
+    categories: ["gorilla-trekking", "kilimanjaro-climbs", "cultural-tours"],
+  },
+  {
+    id: "beachRomance",
+    categories: ["honeymoon-safaris", "beach-safari-combos"],
+  },
+];
+
 export type SafariPackage = {
   slug: string;
   category: PackageCategory;

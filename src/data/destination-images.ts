@@ -4,7 +4,7 @@
  */
 import type { CountrySlug } from "@/data/countries";
 import type { CircuitSlug } from "@/data/circuits";
-import type { PackageCategory, SafariPackage } from "@/data/packages";
+import { getPackage, type PackageCategory, type SafariPackage } from "@/data/packages";
 
 // Legacy hero / editorial assets (still used on homepage & blog)
 import migration from "@/assets/editorial/migration.jpg";
@@ -59,6 +59,7 @@ import destQuickSafari from "@/assets/destinations/dest-quick-safari.jpg";
 import destDayTour from "@/assets/destinations/dest-day-tour.jpg";
 import destSouthernMigration from "@/assets/destinations/dest-southern-migration.jpg";
 import destMkomaziRhino from "@/assets/destinations/dest-mkomazi-rhino.jpg";
+import destZanzibarHero from "@/assets/destinations/dest-zanzibar-hero.jpg";
 import destUgandaExtension from "@/assets/destinations/dest-uganda-extension.jpg";
 import destUgandaChimps from "@/assets/destinations/dest-uganda-chimps.jpg";
 import destZanzibarExtension from "@/assets/destinations/dest-zanzibar-extension.jpg";
@@ -105,6 +106,9 @@ import destBwindiGorillas from "@/assets/destinations/dest-bwindi-gorillas.jpg";
 import destCampLuxury from "@/assets/destinations/dest-camp-luxury.jpg";
 import destCalvingSeason from "@/assets/destinations/dest-calving-season.jpg";
 import zanzibarBeach2 from "@/assets/destinations/zanzibar-beach-2.jpg";
+import zanzibarBeach3 from "@/assets/destinations/zanzibar-beach-3.jpg";
+/** Client safari photo (_DSC8482) — young male lions, golden hour */
+import destNorthernTanzaniaLion from "@/assets/destinations/dest-northern-tanzania-lion.jpg";
 import campKichuguu from "@/assets/camps/camp-kichuguu.jpg";
 import campLionsPaw from "@/assets/camps/camp-lions-paw.jpg";
 import campPamoja from "@/assets/camps/camp-pamoja.jpg";
@@ -126,7 +130,7 @@ export const countryImages: Record<CountrySlug, string> = {
   kenya: destKenyaSavanna,
   uganda: gorillaUganda,
   rwanda: destRwandaVirungaGorilla,
-  zanzibar: destZanzibarStoneTown,
+  zanzibar: destZanzibarHero,
 };
 
 /** Safari circuit imagery (Tanzania) — unique per circuit */
@@ -158,7 +162,7 @@ export const destinationParkImageBySlug: Record<string, string> = {
   selous: destSelousBush,
   kilimanjaro: destKilimanjaroUhuru,
   meru: destMeruPeak,
-  zanzibar: destZanzibarStoneTown,
+  zanzibar: destZanzibarHero,
   pemba: destPembaIsland,
   mafia: destMafiaIsland,
   kenya: destKenyaHighlights,
@@ -201,7 +205,7 @@ export const iconicDestinationImages = {
   kenya: destKenyaSavanna,
   uganda: gorillaUganda,
   rwanda: destRwandaVirungaGorilla,
-  zanzibar: destZanzibarStoneTown,
+  zanzibar: destZanzibarHero,
   serengeti: destMaraRiver,
 } as const;
 
@@ -219,10 +223,10 @@ export const safariThumbImages: Record<string, string> = {
   "serengeti-southern-migration-zanzibar": destTurquoiseLagoon,
   "day-tour": destDayTour,
   "uganda-extension": destUgandaExtension,
-  "northern-tanzania-wildlife-safari": destGiraffeNdutu,
+  "northern-tanzania-wildlife-safari": destNorthernTanzaniaLion,
   "uganda-gorillas-chimps-7-day": destUgandaChimps,
-  "uganda-holiday-8-day": destUgandaHoliday,
-  "zanzibar-extension-4-day": destBeachResort,
+  "uganda-holiday-8-day": destUgandaExtension,
+  "zanzibar-extension-4-day": destZanzibarHero,
 };
 
 /**
@@ -268,11 +272,11 @@ export const campImages = [
 
 /** Experiences page — order matches `experiences.items` in en.json */
 export const experienceImages = [
+  destNorthernMigration,
   destGameDrive,
   destWalkingSafari,
   destBalloonSafari,
   destBushDining,
-  destMaasaiVillage,
   destCulturalEncounter,
 ] as const;
 
@@ -311,47 +315,103 @@ export {
   destGorillaTrek,
 };
 
-/** Category banner on /packages — one unique photo per category */
+/** Fallback when a package has no slug-specific image */
 export const packageCategoryImages: Record<PackageCategory, string> = {
   "luxury-safaris": destCampLuxury,
-  "mid-range-safaris": destGameDrive,
-  "honeymoon-safaris": zanzibarBeach,
+  "mid-range-safaris": destBalloonSafari,
+  "honeymoon-safaris": destDhowSunset,
   "family-adventures": destTarangireElephants,
-  "migration-safaris": destNorthernMigration,
+  "migration-safaris": destSerengetiMigration,
   "gorilla-trekking": destBwindiGorillas,
-  "beach-safari-combos": zanzibarBeach2,
+  "beach-safari-combos": destZanzibarCoast,
   "kilimanjaro-climbs": destKilimanjaroUhuru,
-  "cultural-tours": maasai,
+  "cultural-tours": destMaasaiVillage,
 };
 
-/** Unique hero/card image per package slug (overrides shared safari thumbnails) */
+/** One distinct photo per package card on /packages */
 export const packageImageBySlug: Record<string, string> = {
   "serengeti-luxury-migration": destNorthernMigration,
   "wildlife-wonders-luxury": destSafariLodge,
-  "classic-northern-mid": destTarangireElephants,
-  "iconic-tanzania-mid": destNgorongoroCrater,
-  "serengeti-zanzibar-honeymoon": zanzibarBeach,
-  "crater-romance": destCalderaWildlife,
-  "family-northern-circuit": destGameDrive,
-  "quick-family-escape": destNgorongoroCrater,
-  "northern-migration": destCampLuxury,
+  "classic-northern-mid": destClassicCircuit,
+  "iconic-tanzania-mid": destIconicTanzania,
+  "serengeti-zanzibar-honeymoon": zanzibarBeach2,
+  "crater-romance": destCraterSavannah,
+  "family-northern-circuit": destWildlifeWonders,
+  "quick-family-escape": destQuickSafari,
+  "northern-migration": destMaraRiver,
   "southern-calving": destCalvingSeason,
-  "uganda-gorilla": destUgandaExtension,
-  "northern-tanzania-wildlife": destSerengetiMigration,
+  "uganda-gorilla": gorillaUganda,
+  "northern-tanzania-wildlife": destNorthernTanzaniaLion,
   "uganda-gorillas-chimps-7": destUgandaChimps,
-  "uganda-holiday-8": destBwindiGorillas,
-  "zanzibar-extension-4": destZanzibarStoneTown,
+  "uganda-holiday-8": destUgandaHoliday,
+  "zanzibar-extension-4": destZanzibarHero,
   "rwanda-gorilla": destRwandaVirungaGorilla,
-  "safari-beach-combo": zanzibarBeach2,
-  "kili-northern-circuit": destKilimanjaroUhuru,
-  "cultural-northern": maasai,
-  "maasai-hadzabe": destIconicTanzania,
+  "safari-beach-combo": destTurquoiseLagoon,
+  "kili-northern-circuit": destKiliSummit,
+  "cultural-northern": destCulturalEncounter,
+  "maasai-hadzabe": destMaasaiVillage,
 };
 
 export function getPackageImage(pkg: Pick<SafariPackage, "slug" | "safariSlug" | "category">): string {
   if (packageImageBySlug[pkg.slug]) return packageImageBySlug[pkg.slug];
   if (pkg.safariSlug && safariThumbImages[pkg.safariSlug]) return safariThumbImages[pkg.safariSlug];
   return packageCategoryImages[pkg.category];
+}
+
+/** /itineraries catalog — safari rows that need a distinct hero from brochure thumbs */
+export const itinerarySafariImages: Record<string, string> = {
+  "northern-tanzania-wildlife-safari": destNorthernTanzaniaLion,
+  "uganda-gorillas-chimps-7-day": destBwindiGorillas,
+  "uganda-holiday-8-day": destUgandaExtension,
+  "northern-circuit-route": destKilimanjaroUhuru,
+  "serengeti-southern-migration-zanzibar": destCalvingSeason,
+  "uganda-extension": destUgandaExtension,
+};
+
+/** /itineraries catalog — package rows */
+export const itineraryPackageImages: Record<string, string> = {
+  "zanzibar-extension-4": destZanzibarHero,
+  "safari-beach-combo": destStoneTown,
+  "serengeti-zanzibar-honeymoon": zanzibarBeach2,
+};
+
+/** /itineraries catalog — per-row keys when package slug is shared */
+export const itineraryRowImages: Record<string, string> = {
+  "zanzibar-essentials-3n": destZanzibarHero,
+};
+
+export const itineraryExtraImages: Record<string, string> = {
+  okavangoDelta: destBotswanaDelta,
+};
+
+export function getItineraryCatalogImage(row: {
+  safariSlug?: string;
+  packageSlug?: string;
+  extraKey?: string;
+  imageKey?: string;
+  category: string;
+}): string {
+  if (row.imageKey && itineraryRowImages[row.imageKey]) {
+    return itineraryRowImages[row.imageKey];
+  }
+  if (row.safariSlug && itinerarySafariImages[row.safariSlug]) {
+    return itinerarySafariImages[row.safariSlug];
+  }
+  if (row.packageSlug && itineraryPackageImages[row.packageSlug]) {
+    return itineraryPackageImages[row.packageSlug];
+  }
+  if (row.extraKey && itineraryExtraImages[row.extraKey]) {
+    return itineraryExtraImages[row.extraKey];
+  }
+  if (row.safariSlug && safariThumbImages[row.safariSlug]) {
+    return safariThumbImages[row.safariSlug];
+  }
+  if (row.packageSlug) {
+    const pkg = getPackage(row.packageSlug);
+    if (pkg) return getPackageImage(pkg);
+  }
+  if (row.category === "Zanzibar") return zanzibarBeach;
+  return migration;
 }
 
 /** Used when an image fails to load or a slot has no mapped asset. */
