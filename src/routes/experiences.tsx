@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { DayOnSafariSection } from "@/components/sections/day-on-safari-section";
 import { Reveal, blurIn } from "@/components/motion";
 import { Sun, Cloud, Leaf } from "lucide-react";
+import { craftImages } from "@/data/craft-images";
 import { experienceImages } from "@/data/destination-images";
 import { getExperiencesContent } from "@/data/experiences-i18n";
 import { buildPageHead } from "@/lib/seo";
@@ -86,11 +87,32 @@ function ExperiencesPage() {
             </h2>
           </Reveal>
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {crafts.map((c) => (
+            {crafts.map((c, i) => (
               <div
                 key={c.title}
                 className="border border-border p-5 sm:p-8 bg-background gold-border-glow group transition-transform duration-300 hover:-translate-y-1"
               >
+                {i === 0 ? (
+                  <div className="mb-4 flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-border/60 bg-card">
+                    <img
+                      src={craftImages[i]}
+                      alt={c.title}
+                      loading="lazy"
+                      width={56}
+                      height={56}
+                      className="h-full w-full object-cover object-center"
+                    />
+                  </div>
+                ) : (
+                  <div className="mb-4 aspect-[4/3] w-full overflow-hidden rounded-sm border border-border/60">
+                    <img
+                      src={craftImages[i]}
+                      alt={c.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                )}
                 <h3 className="font-serif text-2xl transition-colors duration-300 group-hover:text-[var(--gold)]">
                   {c.title}
                 </h3>

@@ -7,9 +7,8 @@ import { getLocalizedSafari } from "@/lib/localized-safari";
 import { OptimizedImage } from "@/components/media/optimized-image";
 import { Reveal, fadeUp } from "@/components/motion";
 import { SectionHeader } from "@/components/sections/section-header";
-import { safariThumbImages } from "@/data/destination-images";
+import { getFeaturedTripImage } from "@/data/destination-images";
 import { i18nObject } from "@/lib/utils";
-import migration from "@/assets/editorial/migration.jpg";
 
 const regionStyle: Record<string, string> = {
   Tanzania: "border-gold/40 bg-gold/10 text-ink",
@@ -35,7 +34,7 @@ export function FeaturedTrips({ className = "" }: { className?: string }) {
       safari,
       packageSlug: pkg?.slug,
       packageItem,
-      img: safariThumbImages[safariSlug] ?? migration,
+      image: getFeaturedTripImage(safariSlug),
     };
   }).filter(Boolean);
 
@@ -63,7 +62,7 @@ export function FeaturedTrips({ className = "" }: { className?: string }) {
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {trips.map((trip) => {
             if (!trip) return null;
-            const { safari, safariSlug, packageSlug, packageItem, img } = trip;
+            const { safari, safariSlug, packageSlug, packageItem, image } = trip;
             const region = safari.region ?? "Tanzania";
             return (
               <motion.article
@@ -77,9 +76,10 @@ export function FeaturedTrips({ className = "" }: { className?: string }) {
                 <div className="grid md:grid-cols-5">
                   <div className="relative aspect-[16/10] md:col-span-2 md:aspect-auto md:min-h-[260px]">
                     <OptimizedImage
-                      src={img}
+                      src={image.src}
                       alt={safari.title}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      style={{ objectPosition: image.objectPosition }}
                       sizes="(max-width: 768px) 100vw, 40vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent md:bg-gradient-to-r" />

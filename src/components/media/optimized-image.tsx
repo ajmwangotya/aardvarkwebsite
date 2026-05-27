@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { imageFallback } from "@/data/destination-images";
 import { preloadImage } from "@/lib/preload-image";
 
@@ -14,6 +14,7 @@ type OptimizedImageProps = {
   width?: number;
   height?: number;
   fallbackSrc?: string;
+  style?: CSSProperties;
 };
 
 export function OptimizedImage({
@@ -26,6 +27,7 @@ export function OptimizedImage({
   width,
   height,
   fallbackSrc = imageFallback,
+  style,
 }: OptimizedImageProps) {
   const safeSrc = hidden ? undefined : src || fallbackSrc;
   const [resolvedSrc, setResolvedSrc] = useState(safeSrc);
@@ -61,6 +63,7 @@ export function OptimizedImage({
       decoding={priority ? "sync" : "async"}
       fetchPriority={priority ? "high" : "auto"}
       sizes={sizes}
+      style={style}
       onLoad={() => setLoaded(true)}
       onError={() => {
         if (!failed) {

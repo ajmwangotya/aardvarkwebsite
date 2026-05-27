@@ -20,6 +20,8 @@ const CDN_BASE = (
 ).replace(/\/$/, "") || undefined;
 
 const OVERRIDES = {
+  /** Home hero background — short web-optimized loop on R2 (full reel: aardvark-wild.mp4). */
+  "aardvark-hero.mp4": (env.VITE_VIDEO_HERO as string | undefined)?.trim(),
   /** Home “Watch the Film” modal only — do not alias to VITE_VIDEO_FEATURE_FILM (may point at another clip). */
   "aardvark-raw-footage.mp4": (env.VITE_VIDEO_RAW_FOOTAGE as string | undefined)?.trim(),
   "aardvark-film.mp4": (env.VITE_VIDEO_FEATURE_FILM as string | undefined)?.trim(),

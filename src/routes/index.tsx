@@ -30,11 +30,11 @@ import heroNdutu5 from "@/assets/heroes/hero-ndutu-5.jpg";
 import heroNdutu6 from "@/assets/heroes/hero-ndutu-6.jpg";
 import heroNdutu7 from "@/assets/editorial/zanzibar-beach.jpg";
 import migration from "@/assets/editorial/migration.jpg";
+import maasai from "@/assets/editorial/maasai.jpg";
+import walking from "@/assets/editorial/walking.jpg";
+import dining from "@/assets/editorial/dining.jpg";
+import acaciaEditorial from "@/assets/editorial/acacia.jpg";
 import elephants from "@/assets/editorial/elephants.jpg";
-import destNorthernTanzaniaLion from "@/assets/destinations/dest-northern-tanzania-lion.jpg";
-import destTreeLion from "@/assets/destinations/dest-tree-lion.jpg";
-import destTarangireElephants from "@/assets/destinations/dest-tarangire-elephants.jpg";
-import destUgandaChimps from "@/assets/destinations/dest-uganda-chimps.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => {
@@ -48,7 +48,7 @@ export const Route = createFileRoute("/")({
       ...base,
       links: [
         ...base.links,
-        { rel: "preload", href: SITE_VIDEOS.wildReel, as: "video", type: "video/mp4" },
+        { rel: "preload", href: SITE_VIDEOS.heroReel, as: "video", type: "video/mp4" },
         { rel: "preload", href: heroNdutu5, as: "image" },
       ],
     };
@@ -69,11 +69,11 @@ const heroSlideImages = [
 ];
 
 const introMosaicPhotos = [
-  { src: destNorthernTanzaniaLion, alt: "Young lions resting on the Serengeti plains" },
-  { src: destTarangireElephants, alt: "Elephant walking through Tarangire National Park" },
-  { src: destTreeLion, alt: "Lion resting in an acacia tree" },
-  { src: elephants, alt: "Elephants on the savannah" },
-  { src: destUgandaChimps, alt: "Mountain gorillas in Uganda's rainforest" },
+  { src: maasai, alt: "Maasai community in Tanzania" },
+  { src: walking, alt: "Safari guests watching wildlife" },
+  { src: dining, alt: "Bush dining experience" },
+  { src: elephants, alt: "Safari guests watching giraffes from an Aardvark vehicle" },
+  { src: acaciaEditorial, alt: "Guest photographing a zebra on safari" },
 ];
 
 function HomePage() {
@@ -109,7 +109,7 @@ function HomePage() {
 
   useEffect(() => {
     if (!useHeroSlideshow) {
-      preloadVideo(SITE_VIDEOS.wildReel);
+      preloadVideo(SITE_VIDEOS.heroReel);
       preloadImage(heroNdutu5);
     } else {
       preloadImage(heroNdutu1);
@@ -142,7 +142,7 @@ function HomePage() {
             </motion.div>
           ) : (
             <HeroVideoBackground
-              src={SITE_VIDEOS.wildReel}
+              src={SITE_VIDEOS.heroReel}
               poster={heroNdutu5}
               paused={pauseHeroVideo}
             />

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { preloadImage } from "@/lib/preload-image";
 
 type HeroVideoBackgroundProps = {
@@ -8,85 +8,56 @@ type HeroVideoBackgroundProps = {
   paused?: boolean;
 };
 
-const MAX_LOAD_RETRIES = 2;
-
+/** Hero background — video is always in the DOM (SSR + client) so autoplay works without waiting for React. */
 export function HeroVideoBackground({ src, poster, paused = false }: HeroVideoBackgroundProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const retryRef = useRef(0);
-  const [mounted, setMounted] = useState(false);
   const [failed, setFailed] = useState(false);
-  const [playing, setPlaying] = useState(false);
-  const fallbackImage = poster;
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    if (poster) preloadImage(poster);
+  }, [poster]);
 
   useEffect(() => {
-    retryRef.current = 0;
     setFailed(false);
-    setPlaying(false);
   }, [src]);
 
   useEffect(() => {
-    if (fallbackImage) preloadImage(fallbackImage);
-  }, [fallbackImage]);
-
-  const playVideo = useCallback(async () => {
-    if (!mounted || paused || failed) return;
-    const el = videoRef.current;
-    if (!el) return;
-    el.defaultMuted = true;
-    el.muted = true;
-    try {
-      await el.play();
-      setPlaying(true);
-    } catch {
-      // Autoplay blocked until user gesture — listener below retries.
-    }
-  }, [mounted, paused, failed]);
-
-  useEffect(() => {
-    if (!mounted || paused || failed) return;
+    if (paused || failed) return;
     const el = videoRef.current;
     if (!el) return;
 
-    void playVideo();
+    const ensurePlaying = () => {
+      el.muted = true;
+      el.defaultMuted = true;
+      void el.play().catch(() => {
+        /* Blocked until gesture — one-time retry below. */
+      });
+    };
 
-    const onGesture = () => void playVideo();
+    ensurePlaying();
+
+    const onGesture = () => ensurePlaying();
     window.addEventListener("pointerdown", onGesture, { once: true, passive: true });
     window.addEventListener("touchstart", onGesture, { once: true, passive: true });
+
+    const onVisible = () => {
+      if (document.visibilityState === "visible") ensurePlaying();
+    };
+    document.addEventListener("visibilitychange", onVisible);
 
     return () => {
       window.removeEventListener("pointerdown", onGesture);
       window.removeEventListener("touchstart", onGesture);
+      document.removeEventListener("visibilitychange", onVisible);
     };
-  }, [mounted, playVideo, paused, failed, src]);
+  }, [paused, failed, src]);
 
-  const onVideoError = useCallback(() => {
-    const el = videoRef.current;
-    if (!el) {
-      setFailed(true);
-      return;
-    }
-    if (retryRef.current < MAX_LOAD_RETRIES) {
-      retryRef.current += 1;
-      el.load();
-      void playVideo();
-      return;
-    }
-    setFailed(true);
-  }, [playVideo]);
-
-  const posterClass =
-    "absolute inset-0 h-full w-full object-cover object-[center_38%] md:object-center transition-opacity duration-700";
-
-  if (!mounted) {
-    return fallbackImage ? (
+  if (paused || failed) {
+    return poster ? (
       <img
-        src={fallbackImage}
+        src={poster}
         alt=""
-        className={`${posterClass} opacity-100`}
+        className="absolute inset-0 h-full w-full object-cover object-[center_38%] md:object-center"
         decoding="sync"
         fetchPriority="high"
         loading="eager"
@@ -95,52 +66,21 @@ export function HeroVideoBackground({ src, poster, paused = false }: HeroVideoBa
     ) : null;
   }
 
-  if ((paused || failed) && fallbackImage) {
-    return (
-      <img
-        src={fallbackImage}
-        alt=""
-        className={`${posterClass} opacity-100`}
-        decoding="sync"
-        fetchPriority="high"
-        loading="eager"
-        aria-hidden
-      />
-    );
-  }
-
   return (
-    <div className="absolute inset-0 overflow-hidden">
-      {fallbackImage && (
-        <img
-          src={fallbackImage}
-          alt=""
-          className={`${posterClass} z-[1] ${playing ? "opacity-0" : "opacity-100"}`}
-          decoding="sync"
-          fetchPriority="high"
-          loading="eager"
-          aria-hidden
-        />
-      )}
-      <video
-        ref={videoRef}
-        src={src}
-        poster={fallbackImage}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        disablePictureInPicture
-        data-video-fill
-        className="absolute inset-0 z-0 h-full w-full object-cover object-[center_38%] md:object-center"
-        aria-hidden
-        onLoadedData={() => void playVideo()}
-        onCanPlay={() => void playVideo()}
-        onPlaying={() => setPlaying(true)}
-        onPause={() => setPlaying(false)}
-        onError={onVideoError}
-      />
-    </div>
+    <video
+      ref={videoRef}
+      src={src}
+      poster={poster}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+      disablePictureInPicture
+      data-video-fill
+      className="absolute inset-0 z-0 h-full w-full object-cover object-[center_38%] md:object-center"
+      aria-hidden
+      onError={() => setFailed(true)}
+    />
   );
 }

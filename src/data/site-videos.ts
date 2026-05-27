@@ -10,7 +10,9 @@ export const SITE_VIDEOS = {
   /** @deprecated Use watchFilm — kept for any legacy imports */
   featureFilm: videoUrl(WATCH_FILM),
   featureFilmPoster: "/og-default.jpg",
-  /** Home hero background + About page reel (aardvark-wild.mp4 on R2) */
+  /** Home hero background — aardvark-hero.mp4 (compressed loop on R2) */
+  heroReel: videoUrl("aardvark-hero.mp4"),
+  /** About page & full brand reel (aardvark-wild.mp4 on R2) */
   wildReel: videoUrl("aardvark-wild.mp4"),
   wildReelPoster: "/og-default.jpg",
   /** Uganda gorilla encounter — Uganda destination */

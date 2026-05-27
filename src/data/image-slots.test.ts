@@ -41,7 +41,7 @@ describe("image slot policy", () => {
     assert.match(destinationImagesSource, /"mkomazi-extension":\s*destMkomaziRhino/);
     assert.match(
       destinationImagesSource,
-      /"zanzibar-extension-4-day":\s*destZanzibarHero/,
+      /"zanzibar-extension-4-day":\s*zanzibarBeach/,
     );
     assert.doesNotMatch(destinationImagesSource, /"mkomazi-extension":\s*destZanzibar/);
   });
@@ -62,6 +62,16 @@ describe("image slot policy", () => {
     assert.doesNotMatch(
       destinationImagesSource,
       /"northern-tanzania-wildlife-safari":\s*heroLion/,
+    );
+  });
+
+  it("uses HD gorilla and beach photos for homepage featured trips", () => {
+    assert.match(destinationImagesSource, /"uganda-holiday-8-day":\s*destBwindiGorillas/);
+    assert.match(destinationImagesSource, /"zanzibar-extension-4-day":\s*zanzibarBeach/);
+    assert.doesNotMatch(destinationImagesSource, /"uganda-holiday-8-day":\s*destUgandaExtension/);
+    assert.match(
+      destinationImagesSource,
+      /featuredTripImageMeta[\s\S]*"northern-tanzania-wildlife-safari"/,
     );
   });
 });

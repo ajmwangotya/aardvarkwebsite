@@ -232,9 +232,44 @@ export const safariThumbImages: Record<string, string> = {
   "uganda-extension": destUgandaExtension,
   "northern-tanzania-wildlife-safari": destNorthernTanzaniaLion,
   "uganda-gorillas-chimps-7-day": destUgandaChimps,
-  "uganda-holiday-8-day": destUgandaExtension,
-  "zanzibar-extension-4-day": destZanzibarHero,
+  "uganda-holiday-8-day": destBwindiGorillas,
+  "zanzibar-extension-4-day": zanzibarBeach,
 };
+
+/** Homepage featured trips — HD landscape crops (16:10 cards) with focal points */
+export const featuredTripImageMeta: Record<
+  string,
+  { src: string; objectPosition: string }
+> = {
+  "northern-tanzania-wildlife-safari": {
+    src: destNorthernTanzaniaLion,
+    objectPosition: "center 42%",
+  },
+  "uganda-gorillas-chimps-7-day": {
+    src: destUgandaChimps,
+    objectPosition: "center 38%",
+  },
+  "uganda-holiday-8-day": {
+    src: destBwindiGorillas,
+    objectPosition: "center 28%",
+  },
+  "zanzibar-extension-4-day": {
+    src: zanzibarBeach,
+    objectPosition: "center 55%",
+  },
+};
+
+export function getFeaturedTripImage(safariSlug: string): {
+  src: string;
+  objectPosition: string;
+} {
+  return (
+    featuredTripImageMeta[safariSlug] ?? {
+      src: safariThumbImages[safariSlug] ?? imageFallback,
+      objectPosition: "center center",
+    }
+  );
+}
 
 /**
  * @deprecated Use `getDestinationParkImage` — index arrays caused duplicate photos across sections.
@@ -350,8 +385,8 @@ export const packageImageBySlug: Record<string, string> = {
   "uganda-gorilla": gorillaUganda,
   "northern-tanzania-wildlife": destNorthernTanzaniaLion,
   "uganda-gorillas-chimps-7": destUgandaChimps,
-  "uganda-holiday-8": destUgandaHoliday,
-  "zanzibar-extension-4": destZanzibarHero,
+  "uganda-holiday-8": destBwindiGorillas,
+  "zanzibar-extension-4": zanzibarBeach,
   "rwanda-gorilla": destRwandaVirungaGorilla,
   "safari-beach-combo": destPackageSafariBeachCombo,
   "kili-northern-circuit": destKiliSummit,
@@ -368,8 +403,8 @@ export function getPackageImage(pkg: Pick<SafariPackage, "slug" | "safariSlug" |
 /** /itineraries catalog — safari rows that need a distinct hero from brochure thumbs */
 export const itinerarySafariImages: Record<string, string> = {
   "northern-tanzania-wildlife-safari": destNorthernTanzaniaLion,
-  "uganda-gorillas-chimps-7-day": destBwindiGorillas,
-  "uganda-holiday-8-day": destUgandaExtension,
+  "uganda-gorillas-chimps-7-day": destUgandaChimps,
+  "uganda-holiday-8-day": destBwindiGorillas,
   "northern-circuit-route": destKilimanjaroUhuru,
   "serengeti-southern-migration-zanzibar": destCalvingSeason,
   "uganda-extension": destUgandaExtension,
