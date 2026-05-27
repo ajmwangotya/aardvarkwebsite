@@ -1318,56 +1318,56 @@
     "heroTitle": "Safari <i>questions</i> answered",
     "heroDesc": "Migration timing, gorilla permits, visas, health, packing, payments, and our cancellation policy — from the Aardvark team in Arusha.",
     "bookingTitle": "How booking works",
-    "questionsTitle": "Domande frequenti",
+    "questionsTitle": "Common questions",
     "ctaDesc": "Still have questions? Our specialists are happy to help.",
     "items": [
       {
         "q": "When is the best time to see the Great Migration?",
-        "a": "The migration is an annual cycle, so there is always action in the Serengeti. January–February is calving season in the south near Ndutu. June–July the herds move through the western Serengeti and cross the Grumeti River. July–October is when the famous Mara River crossings happen in the north. November–December sees the herds return south. We tailor your itinerary to whichever phase interests you most."
+        "a": "The Great Migration is a year-round cycle — there is always wildlife drama in the Serengeti. January–February: calving season on the southern plains near Ndutu. June–July: herds move through the western corridor and cross the Grumeti River. July–October: famous Mara River crossings in the north (allow at least three nights here if crossings are your priority). November–December: herds drift back south. We position camps and game drives around the phase you care about most."
       },
       {
         "q": "How far in advance do I need to book gorilla permits?",
-        "a": "Gorilla trekking permits for Bwindi Impenetrable Forest (Uganda) are limited and in high demand. We recommend booking at least 3–6 months in advance, and up to a year ahead for peak months (June–September). Contact us early and we will handle permit allocation on your behalf."
+        "a": "Uganda mountain gorilla permits for Bwindi Impenetrable Forest are strictly limited. We recommend booking 3–6 months ahead, and up to 12 months for June–September peak season. Aardvark handles permit allocation, trekking briefings, and lodge logistics as part of your Uganda extension or dedicated gorilla itinerary — contact us early so we can secure dates before permits sell out."
       },
       {
         "q": "Do I need a visa for Tanzania / Uganda?",
-        "a": "Most nationalities including US and UK citizens require a visa for Tanzania, Uganda, and Rwanda. Tanzania offers an e-visa online before travel. Uganda visas can be obtained on arrival or online. We provide detailed, up-to-date visa guidance tailored to your nationality upon booking — requirements change, so always verify with the relevant embassy."
+        "a": "Most international guests need visas for Tanzania and Uganda (and Rwanda if you extend there). Tanzania offers an e-visa online before travel. Uganda visas can be obtained online or on arrival for many nationalities. After you book, we send nationality-specific guidance — requirements change, so always confirm with the relevant embassy before you fly."
       },
       {
         "q": "What vaccinations and health precautions do I need?",
-        "a": "Malaria prophylaxis is strongly recommended for Tanzania and Uganda — consult your doctor or a travel health clinic. Yellow fever vaccination is required if arriving from a yellow fever country and is recommended for Uganda. Other common recommendations include hepatitis A, typhoid, and tetanus. Always consult a qualified travel health professional at least 6–8 weeks before departure."
+        "a": "Malaria prophylaxis is standard for Tanzania and Uganda — most guests use Malarone or doxycycline after consulting a travel clinic. Yellow fever vaccination is required if you arrive from a yellow fever endemic country and is recommended for Uganda. Hepatitis A, typhoid, and tetanus are commonly advised. See a travel health professional 6–8 weeks before departure. Flying Doctor Society evacuation is included on our safaris; hospital bills and repatriation require your own travel insurance."
       },
       {
         "q": "What is included in the safari price?",
-        "a": "Our safari prices include a 4WD vehicle with pop-up roof, experienced English-speaking driver-guide, all accommodation and meals per the itinerary, national park entrance fees, mineral water on game drives, government taxes, and Flying Doctor Society emergency evacuation membership. International flights, visas, travel insurance, tips, and personal items are not included."
+        "a": "Confirmed Aardvark itineraries typically include: private 4WD safari vehicle with pop-up roof, professional English-speaking driver-guide, accommodation and meals as listed, national park and conservation fees, mineral water on game drives, government taxes, and Flying Doctor Society emergency evacuation membership. Not included: international flights, visas, travel insurance, tips, drinks not specified, gorilla or other special permits unless stated, and personal expenses. Your written confirmation invoice lists exact inclusions for your trip."
       },
       {
         "q": "What currencies and payment methods do you accept?",
-        "a": "We accept payment in USD, EUR, and GBP. Bank wire transfer is our primary payment method for deposits and balances. Please contact us and we will confirm current payment options including whether card payment is available."
+        "a": "We accept USD, EUR, and GBP. Standard group departures require a 20% deposit to confirm; fully customised private itineraries require 30%. The balance is due 90 days before departure. Bank wire transfer is our primary method; card payment may be available on request. Late payment can release reserved lodges or park permits — we confirm current options when you book."
       },
       {
         "q": "What is your cancellation policy?",
-        "a": "Cancellations 90+ days before departure incur a USD 500 per person fee. 89–60 days: 20% of total tour rate. 59–30 days: 50%. 29 days or fewer: 100% forfeiture. We strongly recommend trip cancellation insurance. In some cases we can hold your deposit as a credit note for a future trip."
+        "a": "Per Aardvark Safaris Tanzania Ltd terms: cancellations 90+ days before departure — USD 500 per person; 89–60 days — 20% of total tour rate forfeited; 59–30 days — 50%; 29 days or fewer — 100%. Date changes depend on lodge and permit availability and may incur supplier fees. Trip cancellation insurance is strongly recommended. Where agreed, deposits may be held as a credit note toward a future booking instead of a full cancellation."
       },
       {
         "q": "Is Tanzania / Uganda safe for travellers?",
-        "a": "Tanzania is one of Africa's most stable and safe tourism destinations. Our vehicles are equipped with radios and first aid kits, our guides are trained in visitor management, and all guests are enrolled in the Flying Doctor Society for emergency evacuation. We monitor conditions continuously and communicate any relevant updates before and during your trip."
+        "a": "Tanzania is one of Africa's most established safari destinations. Aardvark is a locally owned Arusha operator (since 1999), TATO member, with insured vehicles, radio-equipped 4WDs, first aid kits, and guides trained in guest safety and wildlife protocols. Every guest is enrolled in Flying Doctor Society evacuation cover. We monitor conditions and communicate updates before and during travel. Uganda gorilla and chimp trekking follows park authority rules with armed escorts where required."
       },
       {
         "q": "Are your safaris suitable for families with children?",
-        "a": "Yes — we design family safaris regularly. We recommend children be at least 6 years old for game drives. Gorilla trekking requires participants to be at least 15 years old. Kilimanjaro climbs are typically suitable for fit teenagers aged 14+. Tell us the ages of your children and we will tailor an appropriate itinerary."
+        "a": "Yes — we regularly design family northern-circuit and beach-combo safaris. We suggest children be at least 6 for full-day game drives. Gorilla trekking requires a minimum age of 15. Kilimanjaro and longer hikes suit fit teenagers from about 14. Family packages note child pricing on request. Tell us your children's ages and interests and we will match lodges, drive times, and activities accordingly."
       },
       {
         "q": "Can solo travellers join a group safari?",
-        "a": "Absolutely. We operate both group departures and private, customised itineraries for solo travellers. A single supplement applies for solo room occupancy on some tours. Contact us and we will advise on the best option — including whether joining an existing group departure makes sense for your dates."
+        "a": "Yes. We run scheduled group departures and private tailor-made safaris for solo guests. A single-room supplement applies on some tours. Once your deposit is paid, Aardvark guarantees departure of group programmes except in force majeure circumstances (per our terms). Contact our Arusha team — we will advise whether joining an existing group or a private vehicle makes more sense for your dates and budget."
       },
       {
         "q": "What should I pack for a safari?",
-        "a": "Lightweight neutral-coloured clothing (khaki, olive, tan — avoid white and bright colours); a good sun hat; sunscreen; insect repellent; comfortable walking shoes or boots; a light fleece or jacket for early mornings; binoculars; and a camera with a telephoto lens if possible. We provide a detailed packing list on booking."
+        "a": "Pack light: one medium soft-sided suitcase (about 15 kg on many bush flights). Neutral layers — khaki, olive, tan; avoid bright white, blue, and black (tsetse flies are attracted to blue/black). Sunhat, sunglasses, high-SPF sunscreen, insect repellent, sturdy walking shoes, sandals, fleece or wind layer for cold crater mornings, binoculars, headlamp, and camera with zoom if you have one. Long sleeves help at dusk for mosquitoes. We send a detailed pre-departure packing list when your booking is confirmed."
       },
       {
         "q": "What are the tipping guidelines?",
-        "a": "Tipping is an important show of appreciation for your guides and lodge staff. General guidance: driver-guide USD 15–20 per person per day; lodge staff USD 5–10 per person per day. These are guidelines — tip according to the quality of service you receive. We provide specific recommendations for each trip."
+        "a": "Tipping is customary in Tanzania and Uganda and supports guides, camp staff, and porters who depend on it. As a guideline: driver-guide USD 15–20 per guest per day; lodge and camp staff USD 5–10 per guest per day; porters on Kilimanjaro or treks as advised locally. Tip for genuine service — our team provides a clear written guideline with your confirmation documents so there are no surprises on the ground."
       }
     ]
   },
@@ -1481,7 +1481,26 @@
   "packagesPage": {
     "eyebrow": "Safari Packages",
     "heroTitle": "Packages & <i>experiences</i>",
-    "heroDesc": "Clearly organised journeys — luxury and mid-range safaris, honeymoons, family adventures, migration, gorilla trekking, Kilimanjaro, and beach combos. Every package includes duration, itinerary, accommodation, activities, inclusions, pricing guidance, and an inquiry form.",
+    "heroDesc": "Browse by journey type — each package includes duration, day-by-day itinerary, accommodation, activities, inclusions, pricing guidance, and a direct inquiry form.",
+    "heroVideoCaption": "Gorilla trekking · Uganda & Rwanda",
+    "jumpNav": "Jump to section",
+    "sections": {
+      "tanzaniaSafaris": {
+        "nav": "Tanzania safaris",
+        "title": "Tanzania safari collections",
+        "desc": "Luxury and mid-range circuits, Great Migration timing, and family-friendly northern routes — all led from our Arusha team."
+      },
+      "primatesPeaks": {
+        "nav": "Gorillas & peaks",
+        "title": "Gorillas, Kilimanjaro & culture",
+        "desc": "Primate trekking in Uganda and Rwanda, summit routes on Kilimanjaro, and respectful community visits on the northern circuit."
+      },
+      "beachRomance": {
+        "nav": "Beach & honeymoon",
+        "title": "Honeymoon & beach finales",
+        "desc": "Romantic bush-and-beach combinations and standalone Zanzibar extensions after your mainland safari."
+      }
+    },
     "viewDetails": "View package",
     "back": "All packages",
     "itineraryLabel": "Itinerary",
