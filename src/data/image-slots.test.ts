@@ -65,6 +65,17 @@ describe("image slot policy", () => {
     );
   });
 
+  it("uses golden monkey photo for Rwanda gorilla & golden monkey 5-day trek", () => {
+    assert.match(
+      destinationImagesSource,
+      /"rwanda-gorilla-golden-5-day":\s*destRwandaGoldenMonkey/,
+    );
+    assert.doesNotMatch(
+      destinationImagesSource,
+      /"rwanda-gorilla-golden-5-day":\s*destRwandaVirungaGorilla/,
+    );
+  });
+
   it("uses HD gorilla and beach photos for homepage featured trips", () => {
     assert.match(destinationImagesSource, /"uganda-holiday-8-day":\s*destBwindiGorillas/);
     assert.match(destinationImagesSource, /"zanzibar-extension-4-day":\s*zanzibarBeach/);

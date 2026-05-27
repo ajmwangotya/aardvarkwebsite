@@ -13,6 +13,7 @@ const FILTERS: { value: FilterCategory; labelKey: string }[] = [
   { value: "All", labelKey: "itinerariesPage.all" },
   { value: "Tanzania", labelKey: "itinerariesPage.tanzania" },
   { value: "Uganda", labelKey: "itinerariesPage.uganda" },
+  { value: "Rwanda", labelKey: "itinerariesPage.rwanda" },
   { value: "Southern Africa", labelKey: "itinerariesPage.southernAfrica" },
   { value: "Zanzibar", labelKey: "itinerariesPage.zanzibar" },
 ];
@@ -62,6 +63,7 @@ export function ItineraryCatalogSection() {
       All: itineraries.length,
       Tanzania: byCategory("Tanzania"),
       Uganda: byCategory("Uganda"),
+      Rwanda: byCategory("Rwanda"),
       "Southern Africa": byCategory("Southern Africa"),
       Zanzibar: byCategory("Zanzibar"),
     };

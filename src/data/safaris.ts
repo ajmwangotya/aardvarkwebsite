@@ -516,7 +516,7 @@ export const safaris: Safari[] = [
       { "title": "ZANZIBAR · DAY 1: Fly to Zanzibar", "body": "Fly across to the spice island. Transfer and overnight at the Hyatt Zanzibar in Stone Town." },
       { "title": "ZANZIBAR · DAY 2: Excursions in Zanzibar", "body": "Spice tour, Stone Town heritage walk, or simply unwind on the turquoise coast. Overnight at Hyatt Zanzibar." }
     ],
-    "waypoints": [PT.arusha, PT.serengetiS, PT.serengetiC, PT.nyerere, PT.zanzibarStone]
+    "waypoints": [PT.arusha, PT.serengetiS, PT.serengetiC, PT.nyerere, PT.zanzibarStone, PT.zanzibarN]
   },
   {
     "slug": "mkomazi-extension",
@@ -774,6 +774,221 @@ export const safaris: Safari[] = [
       },
     ],
     waypoints: [PT.arusha, PT.zanzibarStone, PT.zanzibarN],
+  },
+  {
+    slug: "rwanda-gorilla-golden-5-day",
+    title: "5-Day Rwanda Gorilla & Golden Monkey Trek",
+    duration: "5 Days / 4 Nights",
+    region: "Rwanda",
+    fromPrice: "Price on request",
+    priceNote: "Indicative quote for two guests on a private trip — gorilla & golden monkey permits, lodges, and 4×4 transport included.",
+    bestSeason: "June–September & December–February (drier trekking)",
+    lodges: [
+      "Heaven Boutique Hotel (Kigali, 1 night)",
+      "Five Volcanoes Boutique Hotel (Volcanoes NP, 3 nights)",
+    ],
+    highlights: [
+      "Mountain gorilla trek in Volcanoes NP",
+      "Golden monkey trekking",
+      "Kigali city tour & genocide memorial",
+      "Gorilla Guardians Village cultural visit",
+      "Evening campfire & local dance at the lodge",
+    ],
+    included: [
+      "Airport meet-and-greet, pick-up and drop-off in Kigali",
+      "Accommodation and meals per programme (FB at Volcanoes)",
+      "Gorilla trekking permit (Rwanda)",
+      "Golden monkey trekking permit",
+      "4×4 tourist vehicle and ground transfers",
+      "English-speaking driver-guide",
+      "Community walk to meet local people",
+      "Mineral bottled water per person per day",
+    ],
+    excluded: [
+      "International flights and travel insurance",
+      "Rwanda visa (apply online in advance)",
+      "Beers, wines, and personal drinks",
+      "Tips for driver and lodge staff",
+    ],
+    intro:
+      "A compact Rwanda primate circuit from Kigali to the Virunga volcanoes — one mountain gorilla trek, golden monkeys in bamboo forest, and time in the capital before or after your trek. Ideal as a stand-alone trip or combined with Tanzania or Uganda.",
+    route: "Kigali · Volcanoes NP · Kigali",
+    days: [
+      {
+        title: "Day 1: Arrive Kigali",
+        body: "Welcome at Kigali International Airport and transfer to your hotel on the city heights overlooking Kigali. Meet-and-greet, dinner, and briefing on the days ahead.",
+      },
+      {
+        title: "Day 2: Kigali city tour · Transfer to Volcanoes NP",
+        body: "Morning Kigali city tour — local markets, the Genocide Memorial, and other highlights. Lunch break, then a scenic drive (~3 hours) to Volcanoes National Park. Evening campfire and cultural performance at the lodge as you prepare for trekking.",
+      },
+      {
+        title: "Day 3: Gorilla trekking",
+        body: "Early breakfast, then briefing at Kinigi park headquarters. Trek with ranger guides to a habituated mountain gorilla family (typically 1–8 hours on foot; one hour with the gorillas). Return to the lodge, then visit the Gorilla Guardians Village for a cultural experience. Dinner and overnight at Five Volcanoes Boutique Hotel.",
+      },
+      {
+        title: "Day 4: Golden monkey trekking",
+        body: "Golden monkey trekking in Volcanoes NP — endangered golden-orange primates in bamboo forest (permit required; usually 2–4 hours including one hour of viewing, less strenuous than gorilla trekking). Afternoon at leisure at the lodge.",
+      },
+      {
+        title: "Day 5: Return to Kigali · Departure",
+        body: "Transfer to Kigali for your international departure or onward connection (e.g. Kilimanjaro/Arusha for a Tanzania safari extension).",
+      },
+    ],
+    waypoints: [PT.kigali, PT.volcanoes, PT.kigali],
+  },
+  {
+    slug: "rwanda-double-gorilla-golden-8-day",
+    title: "8-Day Rwanda · Double Gorilla Trek & Golden Monkeys",
+    duration: "8 Days / 7 Nights",
+    region: "Rwanda",
+    fromPrice: "From USD 4,925",
+    priceNote: "Per person, private trip for two guests (luxury hotels, full board at Volcanoes) — contact us for current permit and lodge rates.",
+    bestSeason: "June–September & December–February",
+    lodges: [
+      "Four Points by Sheraton Kigali (3 nights, BB)",
+      "Ingagi Park View Lodge (4 nights, FB)",
+    ],
+    highlights: [
+      "Two separate mountain gorilla treks (different families)",
+      "Golden monkey trekking",
+      "Kigali city tour, museum & King's Palace",
+      "Gorilla Guardians Village",
+      "Jet-lag recovery days in Kigali",
+    ],
+    included: [
+      "All airport pick-ups and transfers",
+      "3 nights in Kigali (bed & breakfast) including city tour on Day 3",
+      "4 nights at Volcanoes NP (full board)",
+      "Two gorilla trekking permits",
+      "Golden monkey trekking permit",
+      "4×4 transport and English-speaking guide",
+      "Community walk",
+      "Mineral water daily",
+    ],
+    excluded: [
+      "International flights and travel insurance",
+      "Beers, wines, and tips",
+    ],
+    intro:
+      "The classic Rwanda gorilla immersion — time in Kigali to acclimatise, then four nights at Volcanoes National Park for two gorilla treks (different trails/families), golden monkeys, and cultural encounters in the Land of a Thousand Hills.",
+    route: "Kigali · Volcanoes NP · Kigali",
+    days: [
+      {
+        title: "Day 1: Arrive Kigali",
+        body: "Arrive at Kigali International Airport (any time). Meet your driver at the arrivals hall, transfer to the hotel near the airport for refreshments, dinner, and a full briefing on the programme.",
+      },
+      {
+        title: "Day 2: Rest day in Kigali",
+        body: "A relaxed day to recover from travel — spa, swimming pool, and leisure time at the hotel before heading to the mountains.",
+      },
+      {
+        title: "Day 3: Kigali city tour",
+        body: "Kigali city tour including the museum, King's Palace, and local markets — experience everyday life in Rwanda's capital. Overnight Kigali.",
+      },
+      {
+        title: "Day 4: Transfer to Volcanoes National Park",
+        body: "Morning city sights if missed, then lunch and a ~3-hour drive to Volcanoes NP. Arrive for dinner and overnight at the lodge; campfire and cultural welcome dance.",
+      },
+      {
+        title: "Day 5: First gorilla trek",
+        body: "Early transfer to Kinigi for briefing, then trek to your first habituated gorilla family with ranger guides (1–8 hours hiking; one hour with the gorillas). Visit Gorilla Guardians Village, then return to the lodge.",
+      },
+      {
+        title: "Day 6: Second gorilla trek",
+        body: "Second briefing and trek to a different gorilla family — same routines, new trail and new group. Return to the lodge for dinner and overnight.",
+      },
+      {
+        title: "Day 7: Golden monkey trekking",
+        body: "Golden monkey trekking in Volcanoes NP, then leisure time at the lodge.",
+      },
+      {
+        title: "Day 8: Depart via Kigali",
+        body: "Transfer to Kigali for a farewell lunch or dinner in the city, then airport drop-off for your flight home or regional connection.",
+      },
+    ],
+    waypoints: [PT.kigali, PT.volcanoes, PT.kigali],
+  },
+  {
+    slug: "rwanda-nyungwe-double-gorilla-golden-10-day",
+    title: "10-Day Rwanda · Nyungwe Chimps, Double Gorilla & Golden Monkeys",
+    duration: "10 Days / 9 Nights",
+    region: "Rwanda",
+    fromPrice: "Price on request",
+    priceNote: "Private 4×4 itinerary — chimps at Nyungwe, two gorilla treks, golden monkeys; lodges as per brochure.",
+    bestSeason: "Year-round; drier months best for trekking",
+    lodges: [
+      "Marriott Kigali (3 nights, BB)",
+      "Nyungwe Top View Hotel (2 nights, FB)",
+      "Tiloreza Volcanoes Eco Lodge (4 nights)",
+    ],
+    highlights: [
+      "Chimpanzee tracking & canopy walk at Nyungwe",
+      "Two mountain gorilla treks in Volcanoes NP",
+      "Golden monkey trekking",
+      "Kigali cultural tour",
+      "Tea plantations & terraced hills en route",
+    ],
+    included: [
+      "Airport pick-up and final drop-off",
+      "3 nights Kigali (BB) with city tour",
+      "Nyungwe Forest NP fees and chimp tracking",
+      "Two gorilla trekking permits",
+      "Golden monkey permit",
+      "4 nights Volcanoes area accommodation",
+      "4×4 vehicle, driver-guide, community walk",
+      "Mineral water daily",
+    ],
+    excluded: [
+      "International flights, visa, insurance",
+      "Personal drinks and tips",
+    ],
+    intro:
+      "Rwanda's complete primate journey — Kigali at leisure, chimpanzees and canopy forest at Nyungwe, then Volcanoes National Park for two gorilla treks and golden monkeys among the Virunga volcanoes.",
+    route: "Kigali · Nyungwe · Volcanoes NP · Kigali",
+    days: [
+      {
+        title: "Day 1: Arrive Kigali",
+        body: "Arrive at Kigali International Airport. Meet your driver, transfer to the hotel for dinner and a full programme briefing.",
+      },
+      {
+        title: "Day 2: Rest in Kigali",
+        body: "Recovery day at the hotel — spa, pool, and rest after your international flight.",
+      },
+      {
+        title: "Day 3: Kigali city tour",
+        body: "City tour — museum, King's Palace, markets, and insight into Rwandan culture and history.",
+      },
+      {
+        title: "Day 4: Drive to Nyungwe Forest",
+        body: "Scenic transfer through terraced hills and tea plantations to Nyungwe Forest National Park. Check in at Nyungwe Top View Hotel.",
+      },
+      {
+        title: "Day 5: Chimp tracking & canopy walk",
+        body: "Morning chimpanzee tracking from park headquarters, then an afternoon nature walk on the canopy trail through the forest.",
+      },
+      {
+        title: "Day 6: Transfer to Volcanoes NP",
+        body: "After breakfast, drive to Volcanoes National Park (~3 hours). Evening at Tiloreza Volcanoes Eco Lodge with campfire and cultural welcome.",
+      },
+      {
+        title: "Day 7: First gorilla trek",
+        body: "Briefing at Kinigi, then trek to your first gorilla family (1–6+ hours). Overnight at the lodge.",
+      },
+      {
+        title: "Day 8: Second gorilla trek",
+        body: "Second trek to a different gorilla family — new trail, new group, same unforgettable hour with the mountain gorillas.",
+      },
+      {
+        title: "Day 9: Golden monkey trekking",
+        body: "Golden monkey trek in Volcanoes NP, then relax at the lodge.",
+      },
+      {
+        title: "Day 10: Depart Kigali",
+        body: "Transfer to Kigali for lunch or dinner in the city, then airport drop-off.",
+      },
+    ],
+    waypoints: [PT.kigali, PT.nyungwe, PT.volcanoes, PT.kigali],
   },
 ];
 

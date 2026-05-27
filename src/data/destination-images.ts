@@ -101,6 +101,7 @@ import destSouthAfricaCoast from "@/assets/destinations/dest-south-africa-coast.
 import destSpiceIsland from "@/assets/destinations/dest-spice-island.jpg";
 import destSnorkelling from "@/assets/destinations/dest-snorkelling.jpg";
 import destRwandaNyungwe from "@/assets/destinations/dest-rwanda-nyungwe.jpg";
+import destRwandaGoldenMonkey from "@/assets/destinations/dest-rwanda-golden-monkey.jpg";
 import destRwandaVirungaGorilla from "@/assets/destinations/dest-rwanda-virunga-gorilla.jpg";
 import destBwindiGorillas from "@/assets/destinations/dest-bwindi-gorillas.jpg";
 import destCampLuxury from "@/assets/destinations/dest-camp-luxury.jpg";
@@ -234,6 +235,9 @@ export const safariThumbImages: Record<string, string> = {
   "uganda-gorillas-chimps-7-day": destUgandaChimps,
   "uganda-holiday-8-day": destBwindiGorillas,
   "zanzibar-extension-4-day": zanzibarBeach,
+  "rwanda-gorilla-golden-5-day": destRwandaGoldenMonkey,
+  "rwanda-double-gorilla-golden-8-day": destRwandaVirungaGorilla,
+  "rwanda-nyungwe-double-gorilla-golden-10-day": destRwandaNyungwe,
 };
 
 /** Homepage featured trips — HD landscape crops (16:10 cards) with focal points */
@@ -387,7 +391,8 @@ export const packageImageBySlug: Record<string, string> = {
   "uganda-gorillas-chimps-7": destUgandaChimps,
   "uganda-holiday-8": destBwindiGorillas,
   "zanzibar-extension-4": zanzibarBeach,
-  "rwanda-gorilla": destRwandaVirungaGorilla,
+  "rwanda-gorilla-golden-5": destRwandaGoldenMonkey,
+  "rwanda-gorilla": destRwandaGoldenMonkey,
   "safari-beach-combo": destPackageSafariBeachCombo,
   "kili-northern-circuit": destKiliSummit,
   "cultural-northern": destPackageCulturalMaasai,

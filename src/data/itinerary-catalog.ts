@@ -1,5 +1,5 @@
 /** Listing rows for /itineraries — slug/packageSlug/extraKey drive copy (not array index). */
-export type ItineraryCategory = "Tanzania" | "Uganda" | "Southern Africa" | "Zanzibar";
+export type ItineraryCategory = "Tanzania" | "Uganda" | "Rwanda" | "Southern Africa" | "Zanzibar";
 
 export type ItineraryCatalogRow = {
   days: number;
@@ -17,6 +17,9 @@ export const ITINERARY_CATALOG: ItineraryCatalogRow[] = [
   { days: 9, category: "Tanzania", safariSlug: "northern-tanzania-wildlife-safari" },
   { days: 7, category: "Uganda", safariSlug: "uganda-gorillas-chimps-7-day" },
   { days: 8, category: "Uganda", safariSlug: "uganda-holiday-8-day" },
+  { days: 10, category: "Rwanda", safariSlug: "rwanda-nyungwe-double-gorilla-golden-10-day" },
+  { days: 8, category: "Rwanda", safariSlug: "rwanda-double-gorilla-golden-8-day" },
+  { days: 5, category: "Rwanda", safariSlug: "rwanda-gorilla-golden-5-day" },
   { days: 4, category: "Zanzibar", packageSlug: "zanzibar-extension-4" },
   { days: 12, category: "Tanzania", safariSlug: "serengeti-northern-migration" },
   { days: 11, category: "Tanzania", safariSlug: "wildlife-wonders-of-tanzania" },

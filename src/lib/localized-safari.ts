@@ -39,12 +39,13 @@ function pickStringList(value: unknown, fallback: string[] | undefined): string[
 function pickDays(value: unknown, fallback: SafariDay[]): SafariDay[] {
   const items = asObjectArray<SafariDay>(value);
   if (items.length === 0) return fallback;
-  return items
+  const merged = items
     .map((day, index) => ({
       title: pickString(day.title, fallback[index]?.title ?? ""),
       body: pickString(day.body, fallback[index]?.body ?? ""),
     }))
     .filter((day) => day.title || day.body);
+  return merged.length > 0 ? merged : fallback;
 }
 
 /** Full safari for detail pages — canonical `safaris.ts` + locale `safarisContent` overlay. */

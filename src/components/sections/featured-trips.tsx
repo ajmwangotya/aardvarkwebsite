@@ -13,6 +13,7 @@ import { i18nObject } from "@/lib/utils";
 const regionStyle: Record<string, string> = {
   Tanzania: "border-gold/40 bg-gold/10 text-ink",
   Uganda: "border-coral/40 bg-coral/10 text-ink",
+  Rwanda: "border-emerald-600/40 bg-emerald-600/10 text-ink",
   Zanzibar: "border-primary/30 bg-primary/10 text-ink",
 };
 

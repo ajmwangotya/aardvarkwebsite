@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { Reveal } from "@/components/motion";
+import { Reveal, fadeUp } from "@/components/motion";
 import { getSafari, safaris } from "@/data/safaris";
 import { resolveSafariSlug } from "@/data/safari-slug-aliases";
 import { getLocalizedSafari } from "@/lib/localized-safari";
@@ -194,7 +194,11 @@ function SafariDetail() {
               </h2>
               <p className="mt-4 max-w-xl text-muted-foreground">{t("safariDetail.mapDesc")}</p>
               <div className="mt-8">
-                <SafariMap waypoints={safari.waypoints} height={460} />
+                <SafariMap
+                  waypoints={safari.waypoints}
+                  routeLabel={safari.route}
+                  height={480}
+                />
               </div>
             </div>
           </Reveal>
@@ -212,9 +216,10 @@ function SafariDetail() {
           {safari.days.map((d, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              initial={false}
+              whileInView="show"
+              viewport={{ once: true, margin: "-24px" }}
+              variants={fadeUp}
               transition={{ duration: 0.5, delay: i * 0.04 }}
               className="bg-background p-6 md:p-8"
             >

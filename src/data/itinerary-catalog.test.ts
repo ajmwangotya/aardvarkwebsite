@@ -12,6 +12,10 @@ describe("itinerary catalog links", () => {
       assert.ok(safari, `missing safari: ${row.safariSlug}`);
       assert.ok(safari.days.length > 0, `no days: ${row.safariSlug}`);
       assert.ok(safari.intro.trim(), `no intro: ${row.safariSlug}`);
+      assert.ok(
+        safari.waypoints && safari.waypoints.length >= 2,
+        `need map waypoints (≥2): ${row.safariSlug}`,
+      );
     }
   });
 

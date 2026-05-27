@@ -9,7 +9,7 @@ const CSP = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
-  "connect-src 'self' https://plausible.io",
+  "connect-src 'self' https://plausible.io https://*.basemaps.cartocdn.com https://*.openstreetmap.org",
   "media-src 'self' https: blob:",
   "frame-src 'self' https://challenges.cloudflare.com https://www.youtube.com https://www.youtube-nocookie.com",
   "worker-src 'self' blob:",

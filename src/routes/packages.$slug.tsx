@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { PackageInquiryForm } from "@/components/forms/package-inquiry-form";
 import { FormSlaNote } from "@/components/forms/form-sla-note";
-import { Reveal } from "@/components/motion";
+import { Reveal, fadeUp } from "@/components/motion";
 import { asObjectArray, i18nObject } from "@/lib/utils";
 import { getPackage } from "@/data/packages";
 import { getSafari } from "@/data/safaris";
@@ -119,7 +119,11 @@ function PackageDetailPage() {
                 </h2>
                 <p className="mt-4 max-w-xl text-muted-foreground">{t("safariDetail.mapDesc")}</p>
                 <div className="mt-8">
-                  <SafariMap waypoints={linkedSafari.waypoints} height={420} />
+                  <SafariMap
+                    waypoints={linkedSafari.waypoints}
+                    routeLabel={linkedSafari.route}
+                    height={440}
+                  />
                 </div>
               </Reveal>
             )}
@@ -133,9 +137,10 @@ function PackageDetailPage() {
                   {linkedSafari.days.map((d, i) => (
                     <motion.div
                       key={i}
-                      initial={{ opacity: 0, y: 16 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-40px" }}
+                      initial={false}
+                      whileInView="show"
+                      viewport={{ once: true, margin: "-24px" }}
+                      variants={fadeUp}
                       transition={{ duration: 0.45, delay: i * 0.03 }}
                       className="bg-background p-6 md:p-8"
                     >
