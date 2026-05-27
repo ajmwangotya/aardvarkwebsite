@@ -105,6 +105,12 @@ import destRwandaVirungaGorilla from "@/assets/destinations/dest-rwanda-virunga-
 import destBwindiGorillas from "@/assets/destinations/dest-bwindi-gorillas.jpg";
 import destCampLuxury from "@/assets/destinations/dest-camp-luxury.jpg";
 import destCalvingSeason from "@/assets/destinations/dest-calving-season.jpg";
+/** Package cards — Unsplash / Pexels (free licenses); see docs/content/PHOTO-SOURCES.md */
+import destPackageGreatMigration from "@/assets/destinations/dest-package-great-migration.jpg";
+import destPackageSouthernLion from "@/assets/destinations/dest-package-southern-lion.jpg";
+import destPackageFamilyNorthern from "@/assets/destinations/dest-package-family-northern.jpg";
+import destPackageCulturalMaasai from "@/assets/destinations/dest-package-cultural-maasai.jpg";
+import destPackageHadzabe from "@/assets/destinations/dest-package-hadzabe.jpg";
 import zanzibarBeach2 from "@/assets/destinations/zanzibar-beach-2.jpg";
 import zanzibarBeach3 from "@/assets/destinations/zanzibar-beach-3.jpg";
 /** Client safari photo (_DSC8482) — young male lions, golden hour */
@@ -336,10 +342,10 @@ export const packageImageBySlug: Record<string, string> = {
   "iconic-tanzania-mid": destIconicTanzania,
   "serengeti-zanzibar-honeymoon": zanzibarBeach2,
   "crater-romance": destCraterSavannah,
-  "family-northern-circuit": destWildlifeWonders,
+  "family-northern-circuit": destPackageFamilyNorthern,
   "quick-family-escape": destQuickSafari,
-  "northern-migration": destMaraRiver,
-  "southern-calving": destCalvingSeason,
+  "northern-migration": destPackageGreatMigration,
+  "southern-calving": destPackageSouthernLion,
   "uganda-gorilla": gorillaUganda,
   "northern-tanzania-wildlife": destNorthernTanzaniaLion,
   "uganda-gorillas-chimps-7": destUgandaChimps,
@@ -348,8 +354,8 @@ export const packageImageBySlug: Record<string, string> = {
   "rwanda-gorilla": destRwandaVirungaGorilla,
   "safari-beach-combo": destTurquoiseLagoon,
   "kili-northern-circuit": destKiliSummit,
-  "cultural-northern": destCulturalEncounter,
-  "maasai-hadzabe": destMaasaiVillage,
+  "cultural-northern": destPackageCulturalMaasai,
+  "maasai-hadzabe": destPackageHadzabe,
 };
 
 export function getPackageImage(pkg: Pick<SafariPackage, "slug" | "safariSlug" | "category">): string {

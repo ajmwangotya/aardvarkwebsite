@@ -50,11 +50,11 @@ export function PackagesCategoryGrid({ category }: { category: PackageCategory }
                 params={{ slug: pkg.slug }}
                 className="group flex h-full flex-col overflow-hidden border border-border bg-card transition-colors hover:border-gold/50"
               >
-                <div className="aspect-[16/10] overflow-hidden bg-muted">
+                <div className="relative aspect-[16/10] overflow-hidden bg-muted">
                   <OptimizedImage
                     src={getPackageImage(pkg)}
                     alt={item.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="absolute inset-0 h-full w-full min-h-full min-w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>

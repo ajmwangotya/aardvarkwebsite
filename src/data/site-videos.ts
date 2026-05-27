@@ -1,6 +1,6 @@
 import { videoUrl } from "@/lib/video-url";
 
-/** Brand films — URLs from CDN env in production, /public/videos locally. See docs/EXTERNAL-VIDEOS.md */
+/** Brand films — MP4 URLs from R2 (VITE_VIDEO_CDN_BASE). See docs/EXTERNAL-VIDEOS.md */
 const WATCH_FILM = "aardvark-raw-footage.mp4" as const;
 
 export const SITE_VIDEOS = {

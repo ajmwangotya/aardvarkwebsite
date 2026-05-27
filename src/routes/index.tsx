@@ -81,26 +81,19 @@ function HomePage() {
   const reasonsData = (t("home.reasons", { returnObjects: true }) as { title: string; desc: string }[]).slice(0, 4);
   const reasons = reasonsData.map((r, i) => ({ ...r, icon: reasonIcons[i] }));
   const heroRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches,
-  );
   const [reduceMotion, setReduceMotion] = useState(false);
   const [pauseHeroVideo, setPauseHeroVideo] = useState(false);
-  const [heroVideoFailed, setHeroVideoFailed] = useState(false);
   const [heroSlide, setHeroSlide] = useState(0);
-  const useHeroSlideshow = pauseHeroVideo || heroVideoFailed;
+  const useHeroSlideshow = pauseHeroVideo;
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], reduceMotion ? ["0%", "0%"] : ["0%", "20%"]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   const [filmOpen, setFilmOpen] = useState(false);
-  const [filmDataAck, setFilmDataAck] = useState(false);
 
   useLayoutEffect(() => {
     const mobile = window.matchMedia("(max-width: 767px)");
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const update = () => {
-      setIsMobile(mobile.matches);
       setReduceMotion(mobile.matches || motion.matches);
       setPauseHeroVideo(motion.matches);
     };
@@ -146,7 +139,6 @@ function HomePage() {
               src={SITE_VIDEOS.wildReel}
               poster={heroNdutu5}
               paused={pauseHeroVideo}
-              onVideoError={() => setHeroVideoFailed(true)}
             />
           )}
         </motion.div>
@@ -159,10 +151,7 @@ function HomePage() {
           <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/95 via-ink/50 to-transparent md:hidden" />
         </div>
 
-        <motion.div
-          style={{ opacity }}
-          className="hero-content relative z-10 flex h-full w-full flex-col justify-end px-4 pb-[max(5.5rem,calc(4.25rem+env(safe-area-inset-bottom,0px)))] pt-[max(6.5rem,calc(5rem+env(safe-area-inset-top,0px)))] text-center text-bone sm:px-6 sm:pb-12 md:justify-center md:px-8 md:pb-12 md:pt-[calc(4.5rem+env(safe-area-inset-top))]"
-        >
+        <div className="hero-content pointer-events-auto relative z-10 flex h-full w-full flex-col justify-end px-4 pb-[max(5.5rem,calc(4.25rem+env(safe-area-inset-bottom,0px)))] pt-[max(6.5rem,calc(5rem+env(safe-area-inset-top,0px)))] text-center text-bone sm:px-6 sm:pb-12 md:justify-center md:px-8 md:pb-12 md:pt-[calc(4.5rem+env(safe-area-inset-top))]">
           <div className="hero-content-inner mx-auto flex w-full max-w-[min(100%,26rem)] flex-col items-center sm:max-w-md md:max-w-5xl md:gap-8">
             <motion.h1
               initial={false}
@@ -185,13 +174,7 @@ function HomePage() {
               </Link>
               <button
                 type="button"
-                onClick={() => {
-                  if (isMobile && !filmDataAck) {
-                    setFilmDataAck(true);
-                    return;
-                  }
-                  setFilmOpen(true);
-                }}
+                onClick={() => setFilmOpen(true)}
                 className="group mx-auto flex min-h-11 w-full max-w-[14rem] items-center justify-center gap-3 text-bone md:w-auto md:max-w-none md:justify-start"
                 aria-haspopup="dialog"
                 aria-expanded={filmOpen}
@@ -200,14 +183,9 @@ function HomePage() {
                   <Play className="h-4 w-4 fill-current" aria-hidden />
                 </span>
                 <span className="text-[0.7rem] uppercase tracking-[0.2em] md:text-xs md:tracking-[0.3em]">
-                  {filmDataAck && isMobile ? t("home.filmPlayAnyway") : t("home.watchFilm")}
+                  {t("home.watchFilm")}
                 </span>
               </button>
-              {filmDataAck && isMobile && !filmOpen && (
-                <p className="order-5 text-center text-[0.65rem] leading-relaxed text-bone/80" role="status">
-                  {t("home.filmDataWarning")}
-                </p>
-              )}
             </motion.div>
 
             <motion.p
@@ -219,7 +197,7 @@ function HomePage() {
               {t("home.trustLocal")}
             </motion.p>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       <SectionDivider variant="tracks" />

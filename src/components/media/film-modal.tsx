@@ -1,17 +1,16 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { YouTubeEmbed } from "@/components/media/youtube-embed";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { isYouTubeSource } from "@/lib/youtube";
 
 type FilmModalProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  /** Full MP4 URL from R2 (via VITE_VIDEO_CDN_BASE). */
   src: string;
   poster?: string;
   titleKey?: string;
@@ -20,22 +19,34 @@ type FilmModalProps = {
 export function FilmModal({ open, onOpenChange, src, poster, titleKey = "home.filmTitle" }: FilmModalProps) {
   const { t } = useTranslation();
   const videoRef = useRef<HTMLVideoElement>(null);
-  const useYouTube = isYouTubeSource(src);
+  const [loadError, setLoadError] = useState(false);
 
   useEffect(() => {
-    if (useYouTube) return;
+    setLoadError(false);
+  }, [src, open]);
+
+  useEffect(() => {
+    if (!open) return;
     const el = videoRef.current;
     if (!el) return;
-    if (open) {
+
+    const play = async () => {
       if (el.readyState < HTMLMediaElement.HAVE_METADATA) {
         el.load();
       }
-      void el.play().catch(() => {});
-    } else {
+      try {
+        await el.play();
+      } catch {
+        // User can press play via native controls.
+      }
+    };
+
+    void play();
+    return () => {
       el.pause();
       el.currentTime = 0;
-    }
-  }, [open, useYouTube, src]);
+    };
+  }, [open, src]);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -46,28 +57,22 @@ export function FilmModal({ open, onOpenChange, src, poster, titleKey = "home.fi
         <DialogTitle className="sr-only">{t(titleKey)}</DialogTitle>
         <DialogDescription className="sr-only">{t("home.filmDesc")}</DialogDescription>
         <div className="relative aspect-video w-full bg-black">
-          {useYouTube ? (
-            open ? (
-              <YouTubeEmbed
-                src={src}
-                title={t(titleKey)}
-                autoplay
-                controls
-              />
-            ) : null
+          {loadError ? (
+            <p className="flex h-full items-center justify-center px-6 text-center text-sm text-bone/80">
+              {t("home.filmUnsupported")}
+            </p>
           ) : (
             <video
               key={src}
               ref={videoRef}
-              src={open ? src : undefined}
+              src={src}
               poster={poster}
               controls
               playsInline
-              preload={open ? "metadata" : "none"}
+              preload="auto"
               className="h-full w-full object-contain"
-            >
-              {t("home.filmUnsupported")}
-            </video>
+              onError={() => setLoadError(true)}
+            />
           )}
         </div>
       </DialogContent>

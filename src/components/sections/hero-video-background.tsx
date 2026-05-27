@@ -1,27 +1,24 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { YouTubeEmbed } from "@/components/media/youtube-embed";
-import { isYouTubeSource } from "@/lib/youtube";
 import { preloadImage } from "@/lib/preload-image";
 
 type HeroVideoBackgroundProps = {
+  /** Full MP4 URL from R2 (via VITE_VIDEO_CDN_BASE). */
   src: string;
   poster?: string;
   paused?: boolean;
-  onVideoError?: () => void;
 };
 
-function canShowFirstFrame(el: HTMLVideoElement) {
-  return el.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA;
-}
+const MAX_LOAD_RETRIES = 2;
 
-export function HeroVideoBackground({ src, poster, paused = false, onVideoError }: HeroVideoBackgroundProps) {
+export function HeroVideoBackground({ src, poster, paused = false }: HeroVideoBackgroundProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const useYouTube = isYouTubeSource(src);
+  const retryRef = useRef(0);
   const [failed, setFailed] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
   const fallbackImage = poster;
 
   useEffect(() => {
+    retryRef.current = 0;
     setFailed(false);
     setVideoReady(false);
   }, [src]);
@@ -30,25 +27,59 @@ export function HeroVideoBackground({ src, poster, paused = false, onVideoError 
     if (fallbackImage) preloadImage(fallbackImage);
   }, [fallbackImage]);
 
-  const markReady = useCallback(() => {
-    const el = videoRef.current;
-    if (!el || !canShowFirstFrame(el)) return;
-    setVideoReady(true);
-  }, []);
-
-  const tryPlay = useCallback(() => {
-    if (useYouTube || paused || failed) return;
+  const playVideo = useCallback(async () => {
+    if (paused || failed) return;
     const el = videoRef.current;
     if (!el) return;
-    markReady();
-    void el.play().catch(() => {
-      // Autoplay can fail until enough data is buffered — retry on canplay.
-    });
-  }, [paused, useYouTube, failed, markReady]);
+    el.muted = true;
+    try {
+      await el.play();
+      setVideoReady(true);
+    } catch {
+      // Autoplay may be blocked until the user interacts with the page.
+    }
+  }, [paused, failed]);
 
   useEffect(() => {
-    tryPlay();
-  }, [tryPlay, src]);
+    void playVideo();
+  }, [playVideo, src]);
+
+  useEffect(() => {
+    if (paused || failed) return;
+    const el = videoRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) void playVideo();
+      },
+      { threshold: 0.15 },
+    );
+    observer.observe(el);
+
+    const onGesture = () => void playVideo();
+    window.addEventListener("pointerdown", onGesture, { once: true, passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("pointerdown", onGesture);
+    };
+  }, [playVideo, paused, failed]);
+
+  const onVideoError = useCallback(() => {
+    const el = videoRef.current;
+    if (!el) {
+      setFailed(true);
+      return;
+    }
+    if (retryRef.current < MAX_LOAD_RETRIES) {
+      retryRef.current += 1;
+      el.load();
+      void playVideo();
+      return;
+    }
+    setFailed(true);
+  }, [playVideo]);
 
   if ((paused || failed) && fallbackImage) {
     return (
@@ -64,27 +95,13 @@ export function HeroVideoBackground({ src, poster, paused = false, onVideoError 
     );
   }
 
-  if (useYouTube) {
-    return (
-      <YouTubeEmbed
-        src={src}
-        title="Aardvark Safaris — hero film"
-        cover
-        autoplay
-        mute
-        loop
-        controls={false}
-      />
-    );
-  }
-
   return (
     <div className="absolute inset-0">
       {fallbackImage && (
         <img
           src={fallbackImage}
           alt=""
-          className={`absolute inset-0 h-full w-full object-cover object-[center_38%] transition-opacity duration-500 md:object-center ${
+          className={`absolute inset-0 h-full w-full object-cover object-[center_38%] transition-opacity duration-700 md:object-center ${
             videoReady ? "opacity-0" : "opacity-100"
           }`}
           decoding="sync"
@@ -101,29 +118,16 @@ export function HeroVideoBackground({ src, poster, paused = false, onVideoError 
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         data-video-fill
-        className={`absolute inset-0 h-full w-full object-cover object-[center_38%] transition-opacity duration-500 md:object-center ${
+        className={`absolute inset-0 h-full w-full object-cover object-[center_38%] transition-opacity duration-700 md:object-center ${
           videoReady ? "opacity-100" : "opacity-0"
         }`}
         aria-hidden
-        onLoadedMetadata={() => {
-          markReady();
-          tryPlay();
-        }}
-        onLoadedData={() => {
-          markReady();
-          tryPlay();
-        }}
-        onCanPlay={() => {
-          markReady();
-          tryPlay();
-        }}
+        onLoadedData={() => void playVideo()}
+        onCanPlay={() => void playVideo()}
         onPlaying={() => setVideoReady(true)}
-        onError={() => {
-          setFailed(true);
-          onVideoError?.();
-        }}
+        onError={onVideoError}
       />
     </div>
   );

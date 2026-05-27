@@ -1,12 +1,12 @@
 /**
- * Resolve brand film URLs from env (CDN) or local /public/videos for dev.
+ * Resolve brand film MP4 URLs from Cloudflare R2.
  *
- * Production: set VITE_VIDEO_CDN_BASE (and optional per-file overrides) in Vercel / Cloudflare.
- * Overrides may be a full MP4 URL or a YouTube watch link — see docs/EXTERNAL-VIDEOS.md.
- * Local: leave unset — videos load from public/videos/*.mp4 on disk.
+ * Set VITE_VIDEO_CDN_BASE to your R2 public URL (r2.dev subdomain or custom domain).
+ * Files are served at `{CDN_BASE}/videos/{filename}`.
+ * Local dev: VITE_USE_LOCAL_VIDEOS=true uses /public/videos/*.mp4 on disk instead.
  */
 
-/** Public media CDN (R2 custom domain) — films at /videos/*.mp4 (see docs/EXTERNAL-VIDEOS.md). */
+/** R2 custom domain — used when VITE_VIDEO_CDN_BASE is not set. */
 const PRODUCTION_VIDEO_CDN = "https://media.aardvarktanzania.com";
 
 const env = import.meta.env ?? {};
