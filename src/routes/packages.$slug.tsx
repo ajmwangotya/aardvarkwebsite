@@ -3,7 +3,9 @@ import { Trans, useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { PackageInquiryForm } from "@/components/forms/package-inquiry-form";
+import { FormSlaNote } from "@/components/forms/form-sla-note";
 import { Reveal } from "@/components/motion";
+import { asObjectArray, i18nObject } from "@/lib/utils";
 import { getPackage } from "@/data/packages";
 import { getSafari } from "@/data/safaris";
 import { buildPageHead } from "@/lib/seo";
@@ -37,7 +39,7 @@ function PackageDetailPage() {
   const { pkg, safari } = Route.useLoaderData();
   const { t } = useTranslation();
   const key = pkg.i18nKey;
-  const detail = t(`packagesPage.items.${key}`, { returnObjects: true }) as {
+  const detail = i18nObject<{
     title: string;
     summary: string;
     duration: string;
@@ -47,7 +49,10 @@ function PackageDetailPage() {
     inclusions: string[];
     exclusions: string[];
     pricingGuide: string;
-  };
+  }>(t, `packagesPage.items.${key}`);
+  const activities = asObjectArray<string>(detail.activities);
+  const inclusions = asObjectArray<string>(detail.inclusions);
+  const exclusions = asObjectArray<string>(detail.exclusions);
 
   const hero = getPackageImage(pkg);
 
@@ -119,7 +124,7 @@ function PackageDetailPage() {
             <Reveal>
               <span className="eyebrow">{t("packagesPage.activitiesLabel")}</span>
               <ul className="mt-4 space-y-2">
-                {detail.activities.map((a) => (
+                {activities.map((a) => (
                   <li key={a} className="flex gap-3 text-muted-foreground">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
                     {a}
@@ -132,7 +137,7 @@ function PackageDetailPage() {
               <Reveal>
                 <span className="eyebrow">{t("packagesPage.inclusionsLabel")}</span>
                 <ul className="mt-4 space-y-2">
-                  {detail.inclusions.map((item) => (
+                  {inclusions.map((item) => (
                     <li key={item} className="text-sm text-muted-foreground">✓ {item}</li>
                   ))}
                 </ul>
@@ -140,7 +145,7 @@ function PackageDetailPage() {
               <Reveal>
                 <span className="eyebrow">{t("packagesPage.exclusionsLabel")}</span>
                 <ul className="mt-4 space-y-2">
-                  {detail.exclusions.map((item) => (
+                  {exclusions.map((item) => (
                     <li key={item} className="text-sm text-muted-foreground">— {item}</li>
                   ))}
                 </ul>

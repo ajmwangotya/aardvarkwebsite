@@ -8,6 +8,7 @@ export type LocalizedSafariFields = {
   route?: string;
   days?: SafariDay[];
   highlights?: string[];
+  lodges?: string[];
   fromPrice?: string;
   priceNote?: string;
   bestSeason?: string;
@@ -40,6 +41,7 @@ export function getLocalizedSafari(slug: string, t: TFunction): Safari | undefin
     route: pick(localized.route, base.route),
     days: localized.days?.length ? localized.days : base.days,
     highlights: localized.highlights ?? base.highlights,
+    lodges: localized.lodges ?? base.lodges,
     fromPrice: localized.fromPrice ?? base.fromPrice,
     priceNote: localized.priceNote ?? base.priceNote,
     bestSeason: localized.bestSeason ?? base.bestSeason,

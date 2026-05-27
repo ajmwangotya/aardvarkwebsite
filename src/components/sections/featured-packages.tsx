@@ -7,6 +7,7 @@ import { getPackage } from "@/data/packages";
 import { getPackageImage } from "@/data/destination-images";
 import { Reveal, fadeUp } from "@/components/motion";
 import { OptimizedImage } from "@/components/media/optimized-image";
+import { i18nObject } from "@/lib/utils";
 
 export function FeaturedPackages({ className = "" }: { className?: string }) {
   const { t } = useTranslation();
@@ -14,12 +15,12 @@ export function FeaturedPackages({ className = "" }: { className?: string }) {
   const cards = FEATURED_PACKAGE_SLUGS.map((slug) => {
     const pkg = getPackage(slug);
     if (!pkg) return null;
-    const item = t(`packagesPage.items.${pkg.i18nKey}`, { returnObjects: true }) as {
+    const item = i18nObject<{
       title: string;
       summary: string;
       duration: string;
       pricingGuide?: string;
-    };
+    }>(t, `packagesPage.items.${pkg.i18nKey}`);
     return { slug, pkg, item, img: getPackageImage(pkg) };
   }).filter(Boolean);
 

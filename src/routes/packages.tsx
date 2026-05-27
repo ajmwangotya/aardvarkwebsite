@@ -7,8 +7,16 @@ import { Reveal, fadeUp } from "@/components/motion";
 import { PACKAGE_CATEGORIES, getPackagesByCategory } from "@/data/packages";
 import { getPackageImage, packageCategoryImages } from "@/data/destination-images";
 import { OptimizedImage } from "@/components/media/optimized-image";
+import { i18nObject } from "@/lib/utils";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
+
+type PackageCardCopy = {
+  title: string;
+  summary: string;
+  duration: string;
+  pricingGuide?: string;
+};
 
 export const Route = createFileRoute("/packages")({
   head: () =>
@@ -34,6 +42,17 @@ function PackagesPage() {
             <Trans i18nKey="packagesPage.heroTitle" components={{ i: <span className="gradient-text italic" /> }} />
           </h1>
           <p className="mt-8 max-w-2xl text-muted-foreground">{t("packagesPage.heroDesc")}</p>
+          <nav aria-label={t("packagesPage.eyebrow")} className="mt-10 flex flex-wrap gap-2">
+            {PACKAGE_CATEGORIES.map((cat) => (
+              <a
+                key={cat}
+                href={`#${cat}`}
+                className="border border-border px-3 py-2 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:border-gold/50 hover:text-gold"
+              >
+                {t(`packagesPage.categories.${cat}.title`)}
+              </a>
+            ))}
+          </nav>
         </Reveal>
       </section>
 
@@ -64,19 +83,18 @@ function PackagesPage() {
               </Reveal>
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {items.map((pkg, i) => {
-                  const item = t(`packagesPage.items.${pkg.i18nKey}`, { returnObjects: true }) as {
-                    title: string;
-                    summary: string;
-                    duration: string;
-                    pricingGuide?: string;
-                  };
+                  const item = i18nObject<PackageCardCopy>(
+                    t,
+                    `packagesPage.items.${pkg.i18nKey}`,
+                  );
+                  if (!item.title) return null;
                   return (
                     <motion.div
                       key={pkg.slug}
                       variants={fadeUp}
-                      initial={{ opacity: 0, y: 16 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
+                      initial={false}
+                      whileInView="show"
+                      viewport={{ once: true, margin: "-40px" }}
                       transition={{ delay: i * 0.04 }}
                     >
                       <Link

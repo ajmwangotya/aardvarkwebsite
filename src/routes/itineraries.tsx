@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { Reveal } from "@/components/motion";
 import { FeaturedJourneys } from "@/components/sections/featured-journeys";
 import { ItineraryCatalogSection } from "@/components/sections/itinerary-catalog-section";
+import { SafariExtensionsSection } from "@/components/sections/safari-extensions-section";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
 
@@ -38,6 +39,8 @@ function ItinerariesPage() {
       </section>
 
       <ItineraryCatalogSection />
+
+      <SafariExtensionsSection />
 
       <SiteFooter />
     </div>

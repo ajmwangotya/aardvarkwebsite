@@ -13,9 +13,11 @@ import { buildPageHead } from "@/lib/seo";
 import maasai from "@/assets/editorial/maasai.jpg";
 import acacia from "@/assets/editorial/acacia.jpg";
 import walking from "@/assets/editorial/walking.jpg";
+import dining from "@/assets/editorial/dining.jpg";
 import augustinePhoto from "@/assets/team/team-augustine.jpg";
 import waltPhoto from "@/assets/team/team-walt.jpg";
 import deborahPhoto from "@/assets/team/team-deborah.jpg";
+import { ConservationImpactSection } from "@/components/sections/conservation-impact-section";
 
 export const Route = createFileRoute("/about")({
   head: () =>
@@ -166,7 +168,7 @@ function AboutPage() {
           </Reveal>
           <Reveal variants={slideRight} delay={0.2} className="md:col-span-5">
             <div className="image-zoom gold-border-glow">
-              <img src={maasai} alt="Maasai community" loading="lazy" className="aspect-[4/5] w-full object-cover" />
+              <img src={dining} alt="Guests enjoying a bush dining experience on safari" loading="lazy" className="aspect-[4/5] w-full object-cover" />
             </div>
           </Reveal>
         </div>
@@ -248,6 +250,8 @@ function AboutPage() {
           ))}
         </div>
       </section>
+
+      <ConservationImpactSection />
 
       <section className="bg-card">
         <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-12">

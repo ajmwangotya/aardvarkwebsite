@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { DayOnSafariSection } from "@/components/sections/day-on-safari-section";
 import { Reveal, stagger, fadeUp, blurIn, flipIn, slideRight, ParallaxSection } from "@/components/motion";
 import { Sun, Cloud, Leaf, Plane } from "lucide-react";
 import { experienceImages } from "@/data/destination-images";
@@ -46,6 +47,8 @@ function ExperiencesPage() {
           </h1>
         </Reveal>
       </section>
+
+      <DayOnSafariSection showCta={false} />
 
       <section className="mx-auto max-w-[1600px] px-5 pb-20 sm:px-6 sm:pb-32 md:px-12">
         <div className="grid gap-12 sm:gap-16">

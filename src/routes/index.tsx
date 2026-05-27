@@ -161,15 +161,6 @@ function HomePage() {
           className="hero-content relative z-10 flex h-full w-full flex-col justify-end px-4 pb-[max(5.5rem,calc(4.25rem+env(safe-area-inset-bottom,0px)))] pt-[max(6.5rem,calc(5rem+env(safe-area-inset-top,0px)))] text-center text-bone sm:px-6 sm:pb-12 md:justify-center md:px-8 md:pb-12 md:pt-[calc(4.5rem+env(safe-area-inset-top))]"
         >
           <div className="hero-content-inner mx-auto flex w-full max-w-[min(100%,26rem)] flex-col items-center sm:max-w-md md:max-w-5xl md:gap-8">
-            <p
-              className="hero-eyebrow order-1 font-sans text-[0.65rem] font-medium uppercase leading-snug tracking-[0.22em] text-gold sm:text-[0.65rem] md:flex md:items-center md:gap-3 md:bg-transparent md:px-0 md:py-0 md:tracking-[0.45em]"
-              aria-live="polite"
-            >
-              <span className="hidden h-px w-10 bg-gold md:inline-block" aria-hidden />
-              <span className="block text-balance">{t("home.heroEyebrow")}</span>
-              <span className="hidden h-px w-10 bg-gold md:inline-block" aria-hidden />
-            </p>
-
             <motion.h1
               initial={false}
               animate={{ opacity: 1, y: 0 }}
@@ -247,15 +238,6 @@ function HomePage() {
           </div>
         </motion.div>
 
-        {/* Scroll indicator — desktop only */}
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-3 text-[0.6rem] uppercase tracking-[0.5em] text-bone/70 md:flex"
-        >
-          {t("home.scroll")}
-          <span className="h-10 w-px bg-gradient-to-b from-bone/70 to-transparent" />
-        </motion.div>
       </section>
 
       <SectionDivider variant="tracks" />

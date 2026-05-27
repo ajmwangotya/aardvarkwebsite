@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { imageFallback } from "@/data/destination-images";
 
 type OptimizedImageProps = {
-  src: string;
+  src: string | undefined;
   alt: string;
   className?: string;
   /** LCP / hero images */
@@ -17,6 +17,7 @@ type OptimizedImageProps = {
 
 /**
  * Performance-minded img wrapper: lazy loading, async decode, optional priority, dimensions for CLS.
+ * Always resolves to a visible image — falls back on missing src or load errors.
  */
 export function OptimizedImage({
   src,
@@ -28,15 +29,20 @@ export function OptimizedImage({
   height,
   fallbackSrc = imageFallback,
 }: OptimizedImageProps) {
-  const [resolvedSrc, setResolvedSrc] = useState(src);
+  const safeSrc = src || fallbackSrc;
+  const [resolvedSrc, setResolvedSrc] = useState(safeSrc);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
-    setResolvedSrc(src);
-  }, [src]);
+    setResolvedSrc(src || fallbackSrc);
+    setFailed(false);
+  }, [src, fallbackSrc]);
+
+  const displaySrc = failed ? fallbackSrc : resolvedSrc || fallbackSrc;
 
   return (
     <img
-      src={resolvedSrc || fallbackSrc}
+      src={displaySrc}
       alt={alt}
       className={className}
       width={width}
@@ -46,7 +52,10 @@ export function OptimizedImage({
       fetchPriority={priority ? "high" : "auto"}
       sizes={sizes}
       onError={() => {
-        if (resolvedSrc !== fallbackSrc) setResolvedSrc(fallbackSrc);
+        if (!failed) {
+          setFailed(true);
+          setResolvedSrc(fallbackSrc);
+        }
       }}
     />
   );

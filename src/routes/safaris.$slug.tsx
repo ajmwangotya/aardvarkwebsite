@@ -142,7 +142,7 @@ function SafariDetail() {
           </Reveal>
         )}
 
-        {(safari.fromPrice || safari.highlights?.length) && (
+        {(safari.fromPrice || safari.highlights?.length || safari.lodges?.length) && (
           <Reveal>
             <div className="mt-10 grid gap-8 border border-border bg-card p-6 md:grid-cols-12 md:p-10">
               <div className="md:col-span-4">
@@ -152,6 +152,16 @@ function SafariDetail() {
                     <p className="mt-2 font-serif text-3xl text-gold">{safari.fromPrice}</p>
                     {safari.priceNote && <p className="mt-2 text-sm text-muted-foreground">{safari.priceNote}</p>}
                   </>
+                )}
+                {safari.lodges && safari.lodges.length > 0 && (
+                  <div className={safari.fromPrice ? "mt-8" : ""}>
+                    <span className="eyebrow">{t("safariDetail.lodges")}</span>
+                    <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                      {safari.lodges.map((lodge) => (
+                        <li key={lodge}>{lodge}</li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
               </div>
               {safari.highlights && safari.highlights.length > 0 && (

@@ -1,3 +1,5 @@
+import en from "@/locales/en.json";
+
 /** Blog post slugs — content lives in i18n `blog.posts`. */
 export const BLOG_SLUGS = [
   "great-migration-timing",
@@ -12,6 +14,18 @@ export const BLOG_SLUGS = [
 ] as const;
 
 export type BlogSlug = (typeof BLOG_SLUGS)[number];
+
+export type BlogPostCopy = {
+  slug: BlogSlug;
+  title: string;
+  read: string;
+  category: string;
+  excerpt: string;
+  body: string[];
+};
+
+/** Canonical English blog copy — used as fallback when locale data is missing. */
+export const BLOG_EN_POSTS = en.blog.posts as BlogPostCopy[];
 
 export function isBlogSlug(slug: string): slug is BlogSlug {
   return (BLOG_SLUGS as readonly string[]).includes(slug);

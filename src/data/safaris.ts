@@ -10,6 +10,7 @@ export type Safari = {
   waypoints?: Waypoint[];
   /** Short chips for cards and hero panels */
   highlights?: string[];
+  lodges?: string[];
   fromPrice?: string;
   priceNote?: string;
   bestSeason?: string;
@@ -17,6 +18,28 @@ export type Safari = {
   excluded?: string[];
   region?: "Tanzania" | "Uganda" | "Zanzibar";
 };
+
+/** Standard inclusions across brochure itineraries (Terms §5.3). */
+const STD_INCLUDED = [
+  "4WD safari vehicle with pop-up roof and English-speaking driver-guide",
+  "All accommodation and meals per itinerary",
+  "National park and conservation area entrance fees",
+  "Government taxes and intra-country airport taxes",
+  "Mineral water on all game drives",
+  "Flying Doctor Society emergency evacuation membership",
+  "Pre-departure information on East Africa history, culture, and ecology",
+] as const;
+
+const STD_EXCLUDED = [
+  "International flights and departure taxes",
+  "Passport and visa fees",
+  "Travel and medical insurance (strongly recommended)",
+  "Excess baggage charges",
+  "Personal items (drinks, laundry, calls, room service)",
+  "Gratuities / tips for guides and lodge staff",
+  "Optional activities priced separately (balloon flights, village visits, night drives where not included)",
+  "Hospital costs (Flying Doctor covers transport only)",
+] as const;
 
 // Shared coordinates for common stops
 const PT = {
@@ -60,11 +83,27 @@ export const safaris: Safari[] = [
     "slug": "serengeti-northern-migration",
     "title": "Serengeti Northern Migration",
     "duration": "12 Days / 11 Nights",
-    "bestSeason": "Jul–Oct for Mara River crossings; Jan–Mar for southern calving",
-    "fromPrice": "From USD 8,500 pp",
-    "priceNote": "Sharing basis, luxury camps, season-dependent — request a detailed quote.",
-    "included": ["Private 4×4 and professional guide", "Park and conservation fees", "Accommodation and meals per itinerary", "Airport transfers in Tanzania"],
-    "excluded": ["International flights", "Visas and vaccinations", "Travel insurance", "Tips and personal expenses", "Optional balloon safari"],
+    "region": "Tanzania",
+    "bestSeason": "July–October for Mara River crossings; June–July for Grumeti River",
+    "fromPrice": "Price on request",
+    "priceNote": "Contact us for a personalised quote — lodges, season, and group size affect the rate.",
+    "lodges": [
+      "Mt. Meru Hotel (Arusha)",
+      "Kichuguu Camp, Tarangire (2 nights)",
+      "Ngorongoro Sopa Lodge",
+      "Pamoja Tented Lodge (central Serengeti)",
+      "Mara Mara Kati Kati (northern Serengeti, 3 nights)",
+      "Ngorongoro Farm House",
+    ],
+    "highlights": [
+      "Night game drive at Tarangire",
+      "Lake Manyara tree-climbing lions",
+      "Five full days in the Serengeti",
+      "Mara River crossing spectacle",
+      "Oldupai Gorge museum",
+    ],
+    "included": [...STD_INCLUDED, "Night game drive at Tarangire"],
+    "excluded": [...STD_EXCLUDED],
     "intro": "The northern part of Tanzania is renowned for its stunning landscapes and rich wildlife experiences. This region encompasses several world-famous parks and conservation areas. Here are some luxurious sample itineraries focused on the northern circuit, combining iconic destinations with high-end accommodations and exclusive experiences.",
     "route": "Arusha · Tarangire · Ngorongoro · Serengeti",
     "days": [
@@ -103,6 +142,19 @@ export const safaris: Safari[] = [
     "slug": "wildlife-wonders-of-tanzania",
     "title": "Wildlife Wonders of Tanzania",
     "duration": "11 Days / 10 Nights",
+    "region": "Tanzania",
+    "bestSeason": "January–February (calving, south Serengeti); June–October (dry season, north Serengeti)",
+    "fromPrice": "Price on request",
+    "priceNote": "Personalised quote based on travel dates and lodge selection.",
+    "lodges": ["Mt. Meru Hotel", "Lion's Paw Camp (Ngorongoro, 3 nights)", "Serengeti tented camp (5 nights)", "Mt. Meru Hotel (final night)"],
+    "highlights": [
+      "Five full days Serengeti including wildebeest calving",
+      "Empakaai Crater walk with armed ranger",
+      "Two-day Ngorongoro exploration",
+      "Cultural Heritage Centre visit",
+    ],
+    "included": [...STD_INCLUDED],
+    "excluded": [...STD_EXCLUDED],
     "intro": "The northern part of Tanzania is renowned for its stunning landscapes and rich wildlife experiences. This region encompasses several world-famous parks and conservation areas. Here are some luxurious sample itineraries focused on the northern circuit, combining iconic destinations with high-end accommodations and exclusive experiences.",
     "route": "Arusha · Tarangire · Ngorongoro · Serengeti",
     "days": [
@@ -141,6 +193,27 @@ export const safaris: Safari[] = [
     "slug": "classic-northern-circuit-safari",
     "title": "Classic Northern Circuit Safari",
     "duration": "10 Days / 9 Nights",
+    "region": "Tanzania",
+    "bestSeason": "January–February (calving, south Serengeti); can extend to Uganda year-round",
+    "fromPrice": "Price on request",
+    "priceNote": "Ideal for cultural travellers, birders, and families — we tailor lodges and pacing to your group.",
+    "lodges": [
+      "Mount Meru Hotel (Arusha)",
+      "Simba Tented Camp (Tarangire / Lake Burunge)",
+      "Ngorongoro Sopa Lodge",
+      "Seronera & Ndutu Kati Kati Tented Camps",
+      "Ngorongoro Farm House",
+    ],
+    "highlights": [
+      "Arusha NP montane forest & Ngurdoto Crater",
+      "Hadzabe hunter-gatherer visit",
+      "Datoga metalworkers",
+      "Optional St Lucia Hospice & Orphanage visit",
+      "Wildebeest & zebra birthing season",
+      "Oldupai Gorge",
+    ],
+    "included": [...STD_INCLUDED],
+    "excluded": [...STD_EXCLUDED],
     "intro": "The northern part of Tanzania is renowned for its stunning landscapes and rich wildlife experiences. This region encompasses several world-famous parks and conservation areas. Here are some luxurious sample itineraries focused on the northern circuit, combining iconic destinations with high-end accommodations and exclusive experiences.",
     "route": "Arusha · Tarangire · Ngorongoro · Serengeti · Extension: Uganda",
     "days": [
@@ -245,9 +318,30 @@ export const safaris: Safari[] = [
   },
   {
     "slug": "northern-circuit-route",
-    "title": "Northern Circuit Route",
+    "title": "Kilimanjaro Northern Circuit Route",
     "duration": "10 Days / 9 Nights",
-    "intro": "Mount Kilimanjaro is an iconic landmark in Tanzania and Africa’s highest mountain, rising approximately 5,895 meters (19,341 feet) above sea level. It’s known as a “freestanding” mountain due to its isolated prominence, unlike most mountains, which are part of larger ranges. Here’s an overview of the mountain and what makes it unique:",
+    "region": "Tanzania",
+    "bestSeason": "January–February & June–October (clearest skies and best summit conditions)",
+    "fromPrice": "Price on request",
+    "priceNote": "Most scenic and remote Kilimanjaro route — includes Arusha Serena Lodge bookends.",
+    "highlights": ["Lava Tower acclimatisation", "Buffalo Ridge views", "Gilman's Point sunrise", "Uhuru Peak 5,895m", "Official summit certificate"],
+    "included": [
+      "4WD airport transfers",
+      "Mountain guide & porter team",
+      "All camping equipment on mountain",
+      "All meals on mountain",
+      "Park fees & conservation levy",
+      "Rescue fee",
+      "Arusha Serena Lodge (start & end nights)",
+    ],
+    "excluded": [
+      "International flights",
+      "Visa fees",
+      "Personal gear (boots, clothing, poles)",
+      "Travel insurance",
+      "Tips for mountain crew",
+    ],
+    "intro": "Mount Kilimanjaro is Africa's highest peak at 5,895 metres — a challenging but accessible trek without technical mountaineering. The Northern Circuit is the most scenic and remote path, passing through five vegetation zones to Uhuru Peak.",
     "route": "Mti Mkubwa · Shira · Moir · Buffalo · School Hut · Uhuru Peak",
     "days": [
       {
@@ -373,6 +467,19 @@ export const safaris: Safari[] = [
     "slug": "serengeti-southern-migration-zanzibar",
     "title": "Serengeti Southern Migration & Zanzibar Beach Holiday",
     "duration": "8 Days + Optional Zanzibar Extension",
+    "region": "Tanzania",
+    "bestSeason": "January–March (calving, south Serengeti + Zanzibar shoulder season)",
+    "fromPrice": "Price on request",
+    "priceNote": "Fly-in safari with internal charter flights — ideal for honeymooners and luxury travellers.",
+    "lodges": ["Legendary Lodge (Arusha)", "Serengeti Kusini (3 nights)", "Namiri Camp (2 nights)", "Sandriver Lodge, Nyerere (2 nights)", "Park Hyatt Zanzibar (extension)"],
+    "highlights": [
+      "Southern Serengeti calving season",
+      "Big cat concentration at Namiri",
+      "Nyerere boat safaris & walking safaris",
+      "Optional Zanzibar beach extension",
+    ],
+    "included": [...STD_INCLUDED, "Internal charter flights on fly-in sectors"],
+    "excluded": [...STD_EXCLUDED],
     "intro": "Combine the southern Serengeti's calving season and the wild beauty of Nyerere National Park with a relaxing beach extension on the spice island of Zanzibar.",
     "route": "Arusha · Serengeti Kusini · Namiri · Nyerere · Zanzibar",
     "days": [
@@ -392,6 +499,13 @@ export const safaris: Safari[] = [
     "slug": "mkomazi-extension",
     "title": "Mkomazi National Park Extension",
     "duration": "4 Days / 3 Nights",
+    "region": "Tanzania",
+    "bestSeason": "June–October (dry season wildlife viewing)",
+    "fromPrice": "Price on request",
+    "priceNote": "Optional add-on after any northern Tanzania itinerary — ideal for guests seeking off-the-beaten-track wildlife.",
+    "highlights": ["Rhino sanctuary visit", "Wild dog reintroduction project", "Gerenuk & kudu", "Bush breakfast at Dindera Dam"],
+    "included": [...STD_INCLUDED],
+    "excluded": [...STD_EXCLUDED],
     "intro": "An off-the-beaten-track extension into Mkomazi National Park, home to the Mkomazi Rhino Sanctuary and African Wild Dog reintroduction project — a quiet, uncrowded alternative to Tanzania's famous parks.",
     "route": "Arusha · Mkomazi · Arusha",
     "days": [
@@ -425,7 +539,17 @@ export const safaris: Safari[] = [
     region: "Tanzania",
     fromPrice: "USD 9,067",
     priceNote: "Per person · land safari only (excludes international flights)",
-    highlights: ["Great Migration focus", "Tarangire night drive", "Ngorongoro Crater", "Expert naturalist guiding"],
+    lodges: [
+      "Gran Melia Hotel (Arusha)",
+      "Tarangire Safari Lodge (2 nights)",
+      "Kubu Kubu Tented Lodge (Serengeti)",
+      "Lion's Paw (Ngorongoro rim, 2 nights)",
+      "Mount Meru Hotel (final night)",
+    ],
+    bestSeason: "May–October (dry); Jan–Feb for migration birthing in the south",
+    highlights: ["Great Migration focus", "Tarangire night drive", "Ngorongoro Crater full day", "Expert guide Augustine"],
+    included: [...STD_INCLUDED],
+    excluded: [...STD_EXCLUDED, "Balloon flights", "Village visits"],
     intro:
       "The Great Migration of the Serengeti is one of the world's most spectacular wildlife phenomena. This safari concentrates on wildlife-rich Tarangire, Serengeti, and Ngorongoro so you spend more time observing and less time travelling — with expert leadership that turns sightings into stories.",
     route: "Arusha · Tarangire · Serengeti · Ngorongoro · Arusha",
@@ -470,9 +594,19 @@ export const safaris: Safari[] = [
     title: "7-Day Uganda Gorillas & Chimps Trek",
     duration: "7 Days / 6 Nights",
     region: "Uganda",
-    fromPrice: "USD 4,500",
-    priceNote: "From per person (dual gorilla trek option) · Kigali start",
+    fromPrice: "From USD 3,700",
+    priceNote: "USD 3,700 (birding + chimps) · USD 4,000 (1 gorilla trek) · USD 4,500 (2 gorilla treks). Single supplement +USD 300. Kigali start.",
     highlights: ["Two gorilla treks", "Chimp tracking", "Tree-climbing lions", "Batwa community"],
+    included: [
+      "Flights Arusha–Kigali",
+      "All airport transfers and accommodation",
+      "Gorilla permits (as selected)",
+      "Chimp permits and all park fees",
+      "4WD ground transport with English-speaking Ugandan guide",
+      "Mineral water, juices & fruits",
+      "Last-day Kigali lunch",
+    ],
+    excluded: ["Beers, wines, tips"],
     intro:
       "A primate-rich circuit through Rwanda and Uganda: mountain gorillas in Bwindi (one or two treks), chimpanzees in Queen Elizabeth, tree-climbing lions in Ishasha, and cultural time with Batwa communities — in comfortable 4×4 Land Cruisers with an English-speaking Ugandan guide.",
     route: "Kigali · Bwindi · Queen Elizabeth NP · Kigali",
@@ -516,6 +650,22 @@ export const safaris: Safari[] = [
     fromPrice: "USD 6,250",
     priceNote: "Per person (2 travellers) · super-luxury lodges, meals inclusive",
     highlights: ["Shoebill at Mabamba", "Dual gorilla permits", "Mweya Safari Lodge", "Chimps & boat cruise"],
+    included: [
+      "All airport transfers",
+      "Mabamba shoebill birding & boat",
+      "2 gorilla permits (Bwindi)",
+      "Chimp permit",
+      "4WD open-roof safari car hire & fuel",
+      "All park entrance fees",
+      "Kazinga Channel boat cruise",
+      "Warm lunches on transfer days",
+      "Mineral water in vehicle",
+      "All meals full board (vegetarian available)",
+      "English-speaking driver-guide",
+      "7 nights accommodation",
+      "Departure airport drop",
+    ],
+    excluded: ["International flights & visa", "Souvenir shopping", "Tips"],
     intro:
       "A super-luxury Uganda holiday from Entebbe: shoebill birding on Lake Victoria, the Equator, two gorilla treks in Bwindi, tree-climbing lions, chimpanzees, and a sunset boat on the Kazinga Channel — with open-roof 4×4 transport and top-tier lodge accommodation throughout.",
     route: "Entebbe · Mabamba · Bwindi · Queen Elizabeth NP · Entebbe",
@@ -563,6 +713,19 @@ export const safaris: Safari[] = [
     fromPrice: "USD 3,255",
     priceNote: "Per person · includes domestic flight Arusha–Zanzibar",
     highlights: ["Stone Town UNESCO tour", "Spice farm", "Jozani red colobus", "Mnemba snorkelling"],
+    included: [
+      "Airport transfers and ground transport",
+      "Stone Town city tour",
+      "Prison Island boat trip",
+      "Jozani Forest & spice tour",
+      "Excursion lunches",
+      "Mnemba Atoll snorkel & dolphin",
+      "Site entry fees",
+      "Mineral water during tours",
+      "Domestic flight Arusha–Zanzibar",
+      "1 night Arusha pre-departure (Olerai Lodge / Mt. Meru Hotel) + airport transfer",
+    ],
+    excluded: ["Tips", "Beverages at hotel", "Visas", "Personal items"],
     intro:
       "The perfect beach finale after a mainland safari: fly from Arusha to Zanzibar for Stone Town heritage, Prison Island tortoises, spice farms, Jozani Forest's red colobus monkeys, and a full day at Mnemba Atoll — with Essque Zalu Beach Resort and Park Hyatt Stone Town.",
     route: "Arusha · Zanzibar · Stone Town · Mnemba · Departure",

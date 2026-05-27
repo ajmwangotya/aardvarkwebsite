@@ -1,0 +1,3 @@
+# Brand films are served from CDN in production (see src/lib/video-url.ts).
+# Local MP4s in public/videos/ exceed Workers' 25 MiB per-asset limit.
+videos/*.mp4

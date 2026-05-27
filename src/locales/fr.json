@@ -174,8 +174,8 @@
       },
       {
         "time": "12:00",
-        "title": "Paysages vivants",
-        "body": "Du guépard à l'éléphant — chaque observation transforme le paysage en récit."
+        "title": "Explorer les paysages tanzaniens",
+        "body": "Peter Matthiessen écrivait que « tout le paysage semble en alerte ». Chaque observation — du guépard majestueux à la harde d'éléphants — transforme le paysage en une entité vivante."
       },
       {
         "time": "16:30",
@@ -185,7 +185,7 @@
       {
         "time": "20:00",
         "title": "Feu de camp & repos",
-        "body": "Dîner, histoires autour du feu et le rugissement lointain d'un lion."
+        "body": "Après le dîner au camp, nous nous réunissons autour du feu. Au matin, nous partageons l'avis d'Elspeth Huxley : aucun sommeil n'est si parfait que celui troublé — mais non brisé — par le rugissement d'un lion."
       }
     ],
     "heroSlides": [
@@ -297,7 +297,8 @@
           "Dhow cruises & north-coast resorts"
         ]
       }
-    ]
+    ],
+    "servicesQuote": "Nos services sont non seulement totalement fiables et sûrs, mais aussi personnalisés selon vos besoins et préférences. Avec nous, vous pouvez planifier vos vacances en toute confiance."
   },
   "about": {
     "eyebrow": "À propos",
@@ -356,7 +357,28 @@
     ],
     "ctaTitle": "Voyagez avec <i>nous</i>",
     "ctaDesc": "Laissez nos spécialistes créer un voyage qui vous ressemble.",
-    "ctaButton": "Planifier un voyage"
+    "ctaButton": "Planifier un voyage",
+    "conservationEyebrow": "Conservation & Communauté",
+    "conservationTitle": "Voyager en <i>donnant</i>",
+    "conservationIntro": "Aardvark Safaris a été fondé sur la conviction que le tourisme de nature est essentiel à la préservation de la faune et du patrimoine culturel de la Tanzanie. Nous sommes fiers de soutenir les communautés et la conservation à travers l'Afrique de l'Est.",
+    "conservationProjects": [
+      {
+        "title": "St Lucia Hospice & Orphanage",
+        "desc": "Fondé par Winfrida Mwangotya (épouse d'Augustine) — soutient les victimes du VIH/SIDA et les orphelins à Arusha. Les voyageurs du circuit nord classique peuvent organiser une visite optionnelle."
+      },
+      {
+        "title": "Projet communautaire Batwa (Ouganda)",
+        "desc": "À Bwindi, les voyageurs passent du temps avec la communauté pygmée Batwa via le projet de Luke et la fondation Joseph's Hope — préservation culturelle autochtone."
+      },
+      {
+        "title": "Conservation des gorilles",
+        "desc": "Chaque permis de trekking finance directement la conservation des gorilles de montagne. Les voyageurs Aardvark contribuent à l'une des plus grandes réussites de la conservation."
+      },
+      {
+        "title": "Conservation communautaire",
+        "desc": "La thèse de Master d'Augustine (Prescott College) portait sur la conservation communautaire dans les villages des corridors fauniques près de Tarangire — recherche qui guide notre approche responsable."
+      }
+    ]
   },
   "contact": {
     "eyebrow": "Contact",
@@ -504,98 +526,98 @@
     "heroDesc": "Explorez les parcs, montagnes et îles de Tanzanie — et prolongez votre voyage à travers l'Afrique de l'Est et australe.",
     "groups": [
       {
-        "eyebrow": "Parcs nationaux",
-        "title": "Le cœur sauvage de la Tanzanie",
+        "eyebrow": "National Parks",
+        "title": "Tanzania's wild heart",
         "items": [
           {
             "name": "Serengeti",
-            "desc": "Des plaines infinies et la Grande Migration."
+            "desc": "Endless plains and the Great Migration."
           },
           {
             "name": "Ngorongoro",
-            "desc": "La plus forte concentration de faune d'Afrique au cœur d'une caldeira volcanique."
+            "desc": "Africa's densest wildlife inside a volcanic caldera."
           },
           {
             "name": "Tarangire",
-            "desc": "Baobabs et les plus grands troupeaux d'éléphants du nord de la Tanzanie."
+            "desc": "In the dry season, second only to Ngorongoro for wildlife concentrations — giant baobabs, elephant herds, rare gerenuk, and superb birding in riverine forest."
           },
           {
             "name": "Arusha NP",
-            "desc": "Les pentes du mont Meru, ses lacs et sa forêt luxuriante."
+            "desc": "A naturalist's gem — montane rainforest, Momela Lakes flamingos, Ngurdoto Crater, and Mount Meru backdrop; over 600 bird species recorded."
           },
           {
-            "name": "Lac Manyara",
-            "desc": "Lions arboricoles et flamants roses de la vallée du Rift."
+            "name": "Lake Manyara",
+            "desc": "Tree-climbing lions and Rift Valley flamingos."
           },
           {
             "name": "Ruaha",
-            "desc": "Sauvage, reculé et riche en prédateurs."
+            "desc": "Wild, remote and rich with predators."
           },
           {
             "name": "Selous",
-            "desc": "L'une des plus grandes réserves fauniques du continent."
+            "desc": "One of the largest faunal reserves on the continent."
           }
         ]
       },
       {
-        "eyebrow": "Montagnes",
-        "title": "Le toit de l'Afrique",
+        "eyebrow": "Mountains",
+        "title": "Roof of Africa",
         "items": [
           {
-            "name": "Kilimandjaro",
-            "desc": "Le plus haut sommet d'Afrique — 5 895 m à travers cinq zones écologiques."
+            "name": "Kilimanjaro",
+            "desc": "Africa's tallest peak — 5,895m through five ecological zones."
           },
           {
             "name": "Meru",
-            "desc": "Le deuxième sommet de Tanzanie — sauvage et rarement gravi."
+            "desc": "Tanzania's second peak — wild and seldom climbed."
           }
         ]
       },
       {
-        "eyebrow": "Îles",
-        "title": "La côte aux épices",
+        "eyebrow": "Islands",
+        "title": "Spice coast",
         "items": [
           {
             "name": "Zanzibar",
-            "desc": "Stone Town, eaux turquoise et plages de sable blanc."
+            "desc": "Stone Town, turquoise waters and powder-white beaches."
           },
           {
             "name": "Pemba",
-            "desc": "L'île verte — plongée, boutres et quiétude."
+            "desc": "The green island — diving, dhows and seclusion."
           },
           {
             "name": "Mafia",
-            "desc": "Requins-baleines et un parc marin au large de la côte sud."
+            "desc": "Whale sharks and a marine park off the southern coast."
           }
         ]
       },
       {
-        "eyebrow": "Autres pays",
-        "title": "Au-delà de la Tanzanie",
+        "eyebrow": "Other Countries",
+        "title": "Beyond Tanzania",
         "items": [
           {
             "name": "Kenya",
-            "desc": "Le Maasai Mara et l'autre moitié de la migration."
+            "desc": "Maasai Mara and the migration's other half."
           },
           {
-            "name": "Ouganda",
-            "desc": "Gorilles de montagne et les sources du Nil."
+            "name": "Uganda",
+            "desc": "Mountain gorillas and the source of the Nile."
           },
           {
             "name": "Rwanda",
-            "desc": "Trekking gorilles dans les volcans des Virunga."
+            "desc": "Gorilla trekking in the Virunga volcanoes."
           },
           {
             "name": "Botswana",
-            "desc": "Le delta de l'Okavango et les rives du Chobe."
+            "desc": "Okavango Delta and the Chobe waterfront."
           },
           {
             "name": "Zimbabwe",
-            "desc": "Les chutes Victoria et l'intérieur sauvage de Hwange."
+            "desc": "Victoria Falls and Hwange's wild interior."
           },
           {
-            "name": "Afrique du Sud",
-            "desc": "Le Cap, Kruger et la Route des Jardins."
+            "name": "South Africa",
+            "desc": "Cape Town, Kruger and the Garden Route."
           }
         ]
       }
@@ -753,15 +775,15 @@
     "featuredParks": [
       {
         "name": "Serengeti National Park",
-        "desc": "Endless plains and the Great Migration — Africa's most celebrated wildlife theatre."
+        "desc": "The Serengeti — \"endless plains\" in Maasai — is Tanzania's most iconic wildlife area and home to the Great Migration. Vast rolling savannah, dramatic kopjes, flat-topped acacias, and crocodile-inhabited rivers create the ultimate wild Africa landscape."
       },
       {
         "name": "Ngorongoro Crater",
-        "desc": "A UNESCO World Heritage caldera with extraordinary density of big game."
+        "desc": "One of the world's largest intact calderas — 10–11 miles across and 2,500 feet deep — with astonishing year-round wildlife. Rare black rhinos and elephants with enormous tusks thrive in this self-contained ecosystem."
       },
       {
         "name": "Mount Kilimanjaro",
-        "desc": "Africa's highest peak — five ecological zones to Uhuru at 5,895m."
+        "desc": "At 5,895 metres, Kilimanjaro is Africa's highest peak and the world's highest free-standing mountain — a challenging but accessible trek through five vegetation zones from rainforest to arctic summit."
       },
       {
         "name": "Masai Mara National Reserve",
@@ -1118,7 +1140,31 @@
         "route": "Moremi Game Reserve · Okavango Delta · Victoria Falls",
         "desc": "An immersive Southern African journey through the Delta and Moremi to the thundering falls."
       }
-    }
+    },
+    "extensionsEyebrow": "Extensions safari",
+    "extensionsTitle": "Prolongez votre <i>voyage</i>",
+    "extensionsDesc": "Ajoutez ces extensions optionnelles à tout itinéraire du nord de la Tanzanie — lycaons et rhinos de Mkomazi, primates en Ouganda, ou la côte aux épices de Zanzibar.",
+    "extensionsCta": "Voir l'extension",
+    "extensions": [
+      {
+        "slug": "mkomazi-extension",
+        "title": "Parc national de Mkomazi",
+        "duration": "3 jours / 2 nuits",
+        "desc": "L'un des parcs les moins visités de Tanzanie — lycaons, rhinos, gerenuk, koudous et wilderness loin de la foule du Serengeti."
+      },
+      {
+        "slug": "uganda-extension",
+        "title": "Ouganda — Gorilles & Chimpanzés",
+        "duration": "6 jours / 5 nuits",
+        "desc": "Gorilles de montagne à Bwindi, shoebill à Mabamba Bay, chimpanzés à Kyambura Gorge et lions grimpeurs à Queen Elizabeth NP."
+      },
+      {
+        "slug": "zanzibar-extension-4-day",
+        "title": "Extension plage Zanzibar",
+        "duration": "4 jours / 3 nuits",
+        "desc": "Patrimoine UNESCO de Stone Town, plantations d'épices, colobes rouges de Jozani et snorkelling à Mnemba — la finale parfaite après un safari."
+      }
+    ]
   },
   "reviews": {
     "eyebrow": "Témoignages",
@@ -1376,6 +1422,7 @@
     "included": "What's included",
     "excluded": "Not included",
     "tripHighlights": "Trip highlights",
+    "lodges": "Lodges & camps",
     "tailorTour": "Tailor-make your tour",
     "requestQuote": "Request a <i>free quote</i>",
     "quoteDesc": "Tell us about your dream {{safari}} adventure — we'll respond within 24 hours with a fully personalized proposal.",
@@ -2909,6 +2956,26 @@
       {
         "heading": "Liability and travel insurance",
         "body": "Participants travel at their own risk. Aardvark Safaris Tanzania Ltd is not liable for injury, illness, loss, or delay caused by force majeure, wildlife, third-party suppliers, or participant negligence. Flying Doctor Society evacuation covers transport to hospital only — medical bills and repatriation are the traveller's responsibility. Adequate travel and medical insurance is required."
+      },
+      {
+        "heading": "Guaranteed departures",
+        "body": "Aardvark guarantees departure of all group programmes once a deposit is paid, excepting only force majeure circumstances including events that adversely affect international travel patterns."
+      },
+      {
+        "heading": "Arrangements & rate revisions",
+        "body": "Quoted tour rates include planning, handling and operational charges based on current exchange and tariff rates. In the event of increases in foreign exchange or tariff rates, rates are subject to revision."
+      },
+      {
+        "heading": "Luggage",
+        "body": "Tour rates include transport and handling of two pieces of luggage per person per airline regulations. Guests are urged to travel with only one medium-size suitcase. On certain internal African flights, strict luggage restrictions apply — details are provided in your pre-departure documentation."
+      },
+      {
+        "heading": "Unused services",
+        "body": "There is no right to a refund for any unused services. Baggage is at owner risk throughout the tour unless insured separately."
+      },
+      {
+        "heading": "Photography",
+        "body": "Aardvark may take photographs or film of trips and participants. By booking, participants grant Aardvark express permission to use such material for promotional or commercial purposes."
       }
     ]
   }

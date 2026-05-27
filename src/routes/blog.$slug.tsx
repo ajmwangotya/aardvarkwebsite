@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Reveal } from "@/components/motion";
 import { BLOG_POST_META, isBlogSlug } from "@/data/blog";
+import { getBlogPost } from "@/data/blog-i18n";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
 import { Clock, ArrowLeft } from "lucide-react";
@@ -41,16 +42,7 @@ function BlogPostPage() {
   const { t } = useTranslation();
   const meta = BLOG_POST_META[slug];
 
-  const posts = t("blog.posts", { returnObjects: true }) as {
-    slug: string;
-    title: string;
-    read: string;
-    category: string;
-    excerpt: string;
-    body: string[];
-  }[];
-
-  const post = posts.find((p) => p.slug === slug);
+  const post = getBlogPost(t, slug);
   if (!post) throw notFound();
 
   const img = postImages[meta.imageIndex];
@@ -85,9 +77,9 @@ function BlogPostPage() {
 
         <div className="prose-custom mt-12 space-y-6">
           {post.body.map((para, i) => (
-            <Reveal key={i} delay={i * 0.04}>
-              <p className="text-base leading-[1.85] text-muted-foreground md:text-lg">{para}</p>
-            </Reveal>
+            <p key={i} className="text-base leading-[1.85] text-muted-foreground md:text-lg">
+              {para}
+            </p>
           ))}
         </div>
 

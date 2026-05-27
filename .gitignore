@@ -23,6 +23,9 @@ dist-ssr
 # Raw photo dump (assets already copied into src/assets)
 wetransfer__dsc1010-jpeg_2026-05-17_1737/
 
+# Raw PDF extraction cache (processed images live in src/assets/{team,destinations,editorial}/)
+src/assets/profile-pdf/
+
 # Source brochure PDFs (not used by the live site build)
 aardvark safariprofileV14.pdf
 docs/reference/*.pdf

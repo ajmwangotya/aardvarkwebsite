@@ -1,0 +1,514 @@
+{
+  "assigned": 127,
+  "sources": 104,
+  "items": [
+    {
+      "target": "src\\assets\\heroes\\hero-lion.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC1010.jpeg"
+    },
+    {
+      "target": "src\\assets\\heroes\\hero-ndutu-1.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC1011.jpeg"
+    },
+    {
+      "target": "src\\assets\\heroes\\hero-ndutu-2.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC1230.jpeg"
+    },
+    {
+      "target": "src\\assets\\heroes\\hero-ndutu-3.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC2557.jpeg"
+    },
+    {
+      "target": "src\\assets\\heroes\\hero-ndutu-4.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC2769.jpeg"
+    },
+    {
+      "target": "src\\assets\\heroes\\hero-ndutu-5.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC2773.jpeg"
+    },
+    {
+      "target": "src\\assets\\heroes\\hero-ndutu-6.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC2781.jpeg"
+    },
+    {
+      "target": "src\\assets\\heroes\\hero-ndutu-7.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC3322.jpeg"
+    },
+    {
+      "target": "src\\assets\\editorial\\acacia.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC3324.jpeg"
+    },
+    {
+      "target": "src\\assets\\editorial\\balloon.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC3531.jpeg"
+    },
+    {
+      "target": "src\\assets\\editorial\\camp-1.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC4299.jpeg"
+    },
+    {
+      "target": "src\\assets\\editorial\\dining.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC4307.jpeg"
+    },
+    {
+      "target": "src\\assets\\editorial\\elephants.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC4401.jpeg"
+    },
+    {
+      "target": "src\\assets\\editorial\\gorilla-rwanda-new.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC4936.jpeg"
+    },
+    {
+      "target": "src\\assets\\editorial\\gorilla-rwanda.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC4939.jpeg"
+    },
+    {
+      "target": "src\\assets\\editorial\\gorilla-uganda.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC4942.jpeg"
+    },
+    {
+      "target": "src\\assets\\editorial\\leopard.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5116.jpeg"
+    },
+    {
+      "target": "src\\assets\\editorial\\maasai.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5168.jpeg"
+    },
+    {
+      "target": "src\\assets\\editorial\\migration.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5171.jpeg"
+    },
+    {
+      "target": "src\\assets\\editorial\\walking.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5172.jpeg"
+    },
+    {
+      "target": "src\\assets\\editorial\\zanzibar-beach.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5220.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-aardvark-night.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5221.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-acacia-sunset.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5242.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-arusha-park.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5243.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-balloon-safari.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5246.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-baobab-savanna.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5497.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-beach-resort.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5505.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-birding.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC6083.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-botswana-delta.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC6546.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-buffalo-herd.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC6551.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-bush-dining.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC6647.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-caldera-wildlife.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC6652.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-calving-season.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC6998.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-camp-luxury.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7170.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-cape-town.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7174.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-cheetah-plains.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7283.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-chobe-elephants.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7306.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-classic-circuit.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7381.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-crater-landscape.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7405.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-crocodile-river.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7508.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-cultural-encounter.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7683.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-day-tour.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7747.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-dhow-sunset.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7749.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-eagle-hunt.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7791.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-elephant-family.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7805.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-empakaai.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7808.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-exploring-southern-africa.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7816.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-flamingo-lake.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7821.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-game-drive.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7825.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-giraffe-ndutu.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7862.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-gorilla-trek.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7864.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-hippo-lake.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7866.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-hippo-pool.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7869.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-hyena-night.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7871.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-iconic-tanzania.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7909.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-kenya-highlights.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7911.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-kenya-mara.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7919.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-kenya-savanna.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7934.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-kenya-wildlife.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7945.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-kili-summit.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7949.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-kilimanjaro.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7951.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-kruger-safari.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC7982.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-lake-manyara.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8057.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-leopard-tree.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8117.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-lion-pride.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8129.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-maasai-village.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8132.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-maasai-warriors.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8136.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-mafia-island.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8140.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-manyara-flamingos.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8155.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-mara-river.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8162.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-migration-crossing.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8174.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-mkomazi-rhino.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8196.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-mount-meru.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8200.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-ngorongoro-crater.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8217.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-ngorongoro-view.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8227.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-northern-circuit.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8261.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-northern-migration.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8272.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-nyerere-wild.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8279.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-oldupai-gorge.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8302.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-pemba-island.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8304.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-plains-game.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8456.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-predator-closeup.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8482.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-predator-hunt.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8767.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-quick-safari.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8856.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-river-crossing.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8868.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-ruaha-landscape.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8869.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-ruaha-predators.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC9114.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-rwanda-volcanoes.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC9120.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-safari-lodge.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC9152.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-safari-panorama.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC9224-2.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-safari-vehicle.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC9224-5.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-savanna-golden.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC9234.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-selous-bush.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC9602.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-selous-river.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC9650.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-serengeti-migration.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC9964.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-snorkelling.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\DSC_5404.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-south-africa-coast.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\DSC_5407.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-southern-africa.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\DSC_5418.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-southern-migration.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\DSC_5421.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-southern-serengeti.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\DSC_5423.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-spice-island.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\DSC_5432.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-stone-town.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\DSC_5452.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-sunrise-safari.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\DSC_5544.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-tanzania-plains.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\DSC_8719.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-tanzania-wildlife.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC1010.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-tarangire-elephants.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC1011.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-tented-camp.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC1230.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-tree-lion.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC2557.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-turquoise-lagoon.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC2769.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-uganda-chimps.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC2773.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-uganda-extension.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC2781.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-uganda-forest.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC3322.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-uganda-holiday.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC3324.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-victoria-falls.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC3531.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-walking-safari.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC4299.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-warthog.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC4307.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-wetland-birds.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC4401.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-wildebeest-herd.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC4936.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-wildlife-wonders.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC4939.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-zanzibar-coast.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC4942.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-zanzibar-extension.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5116.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-zebra-plains.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5168.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-zimbabwe-hwange.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5171.jpeg"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-zimbabwe-sunset.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5172.jpeg"
+    },
+    {
+      "target": "src\\assets\\team\\team-augustine.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5220.jpeg"
+    },
+    {
+      "target": "src\\assets\\team\\team-deborah.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5221.jpeg"
+    },
+    {
+      "target": "src\\assets\\team\\team-walt.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC5242.jpeg"
+    }
+  ]
+}

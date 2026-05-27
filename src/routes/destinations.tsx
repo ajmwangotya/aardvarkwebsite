@@ -3,12 +3,14 @@ import { Trans, useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Reveal } from "@/components/motion";
+import { OptimizedImage } from "@/components/media/optimized-image";
 import { CIRCUIT_SLUGS, circuitAnchor, type CircuitSlug } from "@/data/circuits";
+import type { CountrySlug } from "@/data/countries";
 import {
-  circuitImages,
-  countryImages,
-  destinationGroupImages,
-  featuredParkImages,
+  getCircuitImage,
+  getCountryImage,
+  getDestinationParkImage,
+  getFeaturedParkImage,
 } from "@/data/destination-images";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
@@ -58,15 +60,13 @@ function DestinationsPage() {
 
   const groups = asObjectArray<{ eyebrow: string; title: string; items: { name: string; desc: string }[] }>(
     t("destPage.groups", { returnObjects: true }),
-  ).map((g, gi) => ({
+  ).map((g) => ({
     ...g,
-    items: asObjectArray<{ name: string; desc: string }>(g.items).map((item, ii) => ({
+    items: asObjectArray<{ name: string; desc: string }>(g.items).map((item) => ({
       ...item,
-      img: destinationGroupImages[gi]?.[ii],
+      img: getDestinationParkImage(item.name),
     })),
   }));
-
-  const parkImgs = [...featuredParkImages];
 
   return (
     <div className="bg-background text-foreground">
@@ -100,11 +100,11 @@ function DestinationsPage() {
               params={{ slug: c.slug }}
               className="group flex flex-col border border-border overflow-hidden gold-border-glow"
             >
-              <div className="aspect-[16/10] overflow-hidden">
-                <img
-                  src={countryImages[c.slug as keyof typeof countryImages]}
+              <div className="aspect-[16/10] overflow-hidden bg-muted">
+                <OptimizedImage
+                  src={getCountryImage(c.slug as CountrySlug)}
                   alt={c.name}
-                  loading="lazy"
+                  priority={countries.indexOf(c) < 3}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
@@ -153,11 +153,10 @@ function DestinationsPage() {
                   id={circuitAnchor(slug)}
                   className="scroll-mt-32 grid gap-8 border border-border bg-background p-6 md:grid-cols-2 md:gap-12 md:p-10"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden md:aspect-auto md:min-h-[320px]">
-                    <img
-                      src={circuitImages[slug]}
+                  <div className="relative aspect-[4/3] overflow-hidden bg-muted md:aspect-auto md:min-h-[320px]">
+                    <OptimizedImage
+                      src={getCircuitImage(slug)}
                       alt={circuit.name}
-                      loading="lazy"
                       className="absolute inset-0 h-full w-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
@@ -213,9 +212,13 @@ function DestinationsPage() {
           </h2>
         </Reveal>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredParks.map((p, i) => (
+          {featuredParks.map((p) => (
             <div key={p.name} className="border border-border p-6 bg-card">
-              <img src={parkImgs[i]} alt={p.name} loading="lazy" className="mb-4 aspect-[16/9] w-full object-cover" />
+              <OptimizedImage
+                src={getFeaturedParkImage(p.name)}
+                alt={p.name}
+                className="mb-4 aspect-[16/9] w-full bg-muted object-cover"
+              />
               <h3 className="font-serif text-xl">{p.name}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
             </div>
@@ -239,8 +242,12 @@ function DestinationsPage() {
                   className="scroll-mt-32"
                 >
                   <div className="group block">
-                    <div className="relative aspect-[4/3] overflow-hidden">
-                      <img src={p.img} alt={`${p.name} — wildlife and landscape`} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110" />
+                    <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                      <OptimizedImage
+                        src={p.img}
+                        alt={`${p.name} — wildlife and landscape`}
+                        className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-5">
                         <h3 className="font-serif text-2xl text-bone">{p.name}</h3>

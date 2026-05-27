@@ -1024,8 +1024,19 @@ html:has(#site-mobile-nav-toggle:checked) .mobile-nav-icon-close {
   transition: opacity 0.9s ease-in-out;
 }
 
+@media (max-width: 767px) {
+  .intro-mosaic__slide {
+    transition: opacity 0.9s ease-in-out !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-slideshow__slide {
+    transition-duration: 400ms !important;
+    transition-property: opacity !important;
+  }
+
+  .intro-mosaic__slide {
     transition-duration: 400ms !important;
     transition-property: opacity !important;
   }
@@ -1105,7 +1116,6 @@ html:has(#site-mobile-nav-toggle:checked) .mobile-nav-icon-close {
   .hero-trust {
     margin-top: 0;
     padding-top: 0.5rem;
-    border-top: 1px solid color-mix(in oklab, var(--bone) 10%, transparent);
   }
 
   .hero-trust a,
@@ -1195,7 +1205,8 @@ html:has(#site-mobile-nav-toggle:checked) .mobile-nav-icon-close {
     transform: none;
   }
 
-  .hero-slideshow__slide {
+  .hero-slideshow__slide,
+  .intro-mosaic__slide {
     transition-duration: 400ms !important;
     transition-property: opacity !important;
   }

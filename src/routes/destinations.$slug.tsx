@@ -6,13 +6,17 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { Reveal, fadeUp } from "@/components/motion";
 import { COUNTRY_SLUGS, isCountrySlug } from "@/data/countries";
 import { circuitAnchor, type CircuitSlug } from "@/data/circuits";
-import { countryImages } from "@/data/destination-images";
-import migration from "@/assets/editorial/migration.jpg";
+import { getCountryImage } from "@/data/destination-images";
 import { CinematicVideoSection } from "@/components/sections/cinematic-video-section";
 import { SITE_VIDEOS } from "@/data/site-videos";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
 import { asObjectArray } from "@/lib/utils";
+import { OptimizedImage } from "@/components/media/optimized-image";
+import destStoneTown from "@/assets/destinations/dest-stone-town.jpg";
+import destZanzibarCoast from "@/assets/destinations/dest-zanzibar-coast.jpg";
+import destTurquoiseLagoon from "@/assets/destinations/dest-turquoise-lagoon.jpg";
+import destBeachResort from "@/assets/destinations/dest-beach-resort.jpg";
 
 export const Route = createFileRoute("/destinations/$slug")({
   loader: ({ params }) => {
@@ -35,7 +39,7 @@ function CountryDestinationPage() {
   const { slug } = Route.useLoaderData();
   const { t } = useTranslation();
   const base = `countryPages.${slug}`;
-  const hero = countryImages[slug] ?? migration;
+  const hero = getCountryImage(slug);
 
   const parks = asObjectArray<{ name: string; desc: string }>(t(`${base}.parks`, { returnObjects: true }));
   const wildlife = asObjectArray<string>(t(`${base}.wildlife`, { returnObjects: true }));
@@ -47,7 +51,7 @@ function CountryDestinationPage() {
     <div className="bg-background text-foreground">
       <SiteHeader light />
       <section className="relative h-[50vh] min-h-[360px] w-full overflow-hidden sm:h-[60vh]">
-        <img src={hero} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <OptimizedImage src={hero} alt="" priority className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/30 to-ink/85" />
         <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-end px-5 pb-12 sm:px-6 md:px-12 md:pb-20">
           <Reveal>
@@ -67,6 +71,29 @@ function CountryDestinationPage() {
           <p className="font-serif text-lg leading-relaxed sm:text-xl md:text-2xl">{t(`${base}.intro`)}</p>
         </Reveal>
       </section>
+
+      {slug === "zanzibar" && (
+        <section className="mx-auto max-w-[1400px] px-5 pb-10 sm:px-6 md:px-12 md:pb-16">
+          <Reveal>
+            <span className="eyebrow">{t("countryPages.zanzibarBeachesEyebrow", "Zanzibar beaches")}</span>
+            <h2 className="mt-4 font-serif text-[clamp(1.5rem,4vw,3rem)]">
+              <Trans i18nKey="countryPages.zanzibarBeachesTitle" defaults="Turquoise waters, coves & sandbanks" />
+            </h2>
+          </Reveal>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { src: destStoneTown, alt: "Mnemba reef waters and Zanzibar coastline" },
+              { src: destZanzibarCoast, alt: "Palm-fringed Zanzibar coastline at low tide" },
+              { src: destTurquoiseLagoon, alt: "Turquoise lagoon and sandbar off Zanzibar" },
+              { src: destBeachResort, alt: "Boutique beachfront lodge on Zanzibar" },
+            ].map((img) => (
+              <div key={img.alt} className="aspect-[4/5] overflow-hidden rounded-sm border border-border bg-muted">
+                <OptimizedImage src={img.src} alt={img.alt} className="h-full w-full object-cover" />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {slug === "uganda" && (
         <CinematicVideoSection

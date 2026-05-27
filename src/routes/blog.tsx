@@ -1,13 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
+import { BLOG_POST_META } from "@/data/blog";
+import { blogPostMatchesQuery, getBlogPosts } from "@/data/blog-i18n";
+import { asObjectArray } from "@/lib/utils";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { NewsletterForm } from "@/components/forms/newsletter-form";
-import { Reveal, stagger, fadeUp } from "@/components/motion";
+import { Reveal } from "@/components/motion";
 import { ArrowRight, Clock, Search, BookOpen, TrendingUp } from "lucide-react";
 import migration from "@/assets/editorial/migration.jpg";
 import elephants from "@/assets/editorial/elephants.jpg";
@@ -32,33 +35,49 @@ export const Route = createFileRoute("/blog")({
 function BlogPage() {
   const { t } = useTranslation();
 
-  const postsI18n = t("blog.posts", { returnObjects: true }) as { slug: string; title: string; read: string; category: string; excerpt: string; body: string[] }[];
-  const topicTags = t("blog.topicTags", { returnObjects: true }) as string[];
+  const topicTags = asObjectArray<string>(t("blog.topicTags", { returnObjects: true }));
 
   const postImages = [migration, elephants, acacia, walking, balloon, maasai, leopard, camp1, dining];
-  const postDates = ["May 12, 2026", "Apr 28, 2026", "Apr 14, 2026", "Mar 30, 2026", "Mar 16, 2026", "Feb 22, 2026", "Feb 08, 2026", "Jan 25, 2026", "Jan 11, 2026"];
-  const postAuthors = ["Augustine Mwangotya", "Lucy Mollel", "James Kimaro", "Hassan Mwakyusa", "Lucy Mollel", "Naserian Lemomo", "Hassan Mwakyusa", "Lucy Mollel", "James Kimaro"];
-  const postFeatured = [true, false, false, false, false, false, false, false, false];
 
-  const posts = postsI18n.map((p, i) => ({
-    ...p,
-    img: postImages[i],
-    date: postDates[i],
-    author: postAuthors[i],
-    featured: postFeatured[i] || false,
-  }));
+  const posts = getBlogPosts(t).map((p) => {
+    const meta = BLOG_POST_META[p.slug];
+    return {
+      ...p,
+      img: postImages[meta.imageIndex],
+      date: meta.date,
+      author: meta.author,
+      featured: meta.featured ?? false,
+    };
+  });
 
   const categoryKeys = ["all", "guides", "wildlife", "culture", "trekking", "experiences", "travelTips"] as const;
-  const categories = categoryKeys.map(k => t(`blog.categories.${k}`));
+  type CategoryKey = (typeof categoryKeys)[number];
+  const categories = categoryKeys.map((k) => t(`blog.categories.${k}`));
 
-  const [active, setActive] = useState(categories[0]);
+  const [activeKey, setActiveKey] = useState<CategoryKey>("all");
   const [query, setQuery] = useState("");
-  const featured = posts.find((p) => p.featured)!;
+  const featured = posts.find((p) => p.featured) ?? posts[0];
   const trending = posts.filter((p) => !p.featured).slice(0, 3);
+
+  if (!featured) {
+    return (
+      <div className="bg-background text-foreground min-h-screen">
+        <SiteHeader light={false} />
+        <div className="mx-auto max-w-xl px-5 py-40 text-center text-muted-foreground">
+          <p>{t("blog.noResults")}</p>
+          <Link to="/" className="mt-6 inline-block text-primary underline">
+            {t("nav.home")}
+          </Link>
+        </div>
+        <SiteFooter />
+      </div>
+    );
+  }
+  const activeCategoryLabel = t(`blog.categories.${activeKey}`);
   const filtered = posts
     .filter((p) => !p.featured)
-    .filter((p) => active === categories[0] || p.category === active)
-    .filter((p) => p.title.toLowerCase().includes(query.toLowerCase()));
+    .filter((p) => activeKey === "all" || p.category === activeCategoryLabel)
+    .filter((p) => blogPostMatchesQuery(p, query));
 
   return (
     <div className="bg-background text-foreground">
@@ -147,22 +166,22 @@ function BlogPage() {
       <section className="border-y border-border bg-card/40 backdrop-blur sticky top-16 sm:top-20 z-20">
         <div className="mx-auto flex max-w-[1400px] flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-between gap-3 sm:gap-6 px-5 py-4 sm:px-6 sm:py-5 md:px-12">
           <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 sm:pb-0 sm:flex-wrap sm:overflow-visible [&::-webkit-scrollbar]:h-0">
-            {categories.map((c) => (
+            {categoryKeys.map((key, i) => (
               <button
-                key={c}
-                onClick={() => setActive(c)}
+                key={key}
+                onClick={() => setActiveKey(key)}
                 className={`relative px-3 py-1.5 sm:px-4 sm:py-2 text-[0.6rem] sm:text-[0.7rem] uppercase tracking-[0.25em] sm:tracking-[0.3em] transition-colors whitespace-nowrap shrink-0 sm:shrink ${
-                  active === c ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                  activeKey === key ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {active === c && (
+                {activeKey === key && (
                   <motion.span
                     layoutId="cat-pill"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     className="absolute inset-0 -z-10 bg-primary"
                   />
                 )}
-                {c}
+                {categories[i]}
               </button>
             ))}
           </div>
@@ -181,20 +200,11 @@ function BlogPage() {
       {/* GRID + SIDEBAR */}
       <section className="mx-auto max-w-[1400px] grid gap-10 sm:gap-12 px-5 py-14 sm:px-6 sm:py-20 md:grid-cols-12 md:px-12">
         <div className="md:col-span-8">
-          <AnimatePresence mode="popLayout">
-            <motion.div
-              key={active + query}
-              initial="hidden"
-              animate="show"
-              variants={stagger}
-              className="grid gap-10 sm:grid-cols-2"
-            >
+          <div key={`${activeKey}-${query}`} className="grid gap-10 sm:grid-cols-2">
               {filtered.map((p, i) => (
-                <motion.article
-                  key={p.title}
-                  variants={fadeUp}
-                  whileHover={{ y: -6 }}
-                  className={`group ${i === 0 ? "sm:col-span-2" : ""}`}
+                <article
+                  key={p.slug}
+                  className={`group transition-transform duration-300 hover:-translate-y-1.5 ${i === 0 ? "sm:col-span-2" : ""}`}
                 >
                   <Link to="/blog/$slug" params={{ slug: p.slug }} className="block w-full text-left">
                     <div className={`relative overflow-hidden ${i === 0 ? "aspect-[16/9]" : "aspect-[4/3]"}`}>
@@ -224,15 +234,14 @@ function BlogPage() {
                       </div>
                     </div>
                   </Link>
-                </motion.article>
+                </article>
               ))}
               {filtered.length === 0 && (
                 <div className="sm:col-span-2 py-20 text-center text-muted-foreground">
                   {t("blog.noResults")}
                 </div>
               )}
-            </motion.div>
-          </AnimatePresence>
+          </div>
         </div>
 
         {/* SIDEBAR */}

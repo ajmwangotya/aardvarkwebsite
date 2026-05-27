@@ -460,6 +460,7 @@
     "philosophyCta": "Explore journeys",
     "inTheField": "In the Field",
     "dayOnSafariTitle": "A day on <i>safari</i>",
+    "servicesQuote": "Our services are not only completely reliable and safe but also personalised to suit your needs and preferences. With us, you can plan your holiday with confidence.",
     "peterBeardQuote": "\"A paradise caressed by light and air.\" — Peter Beard",
     "directorQuote": "We focus on making sure our guests leave happy — knowing they have made a positive difference and found their place in nature.",
     "directorQuoteAttr": "— Augustine Mwangotya, Executive Director",
@@ -476,8 +477,8 @@
       },
       {
         "time": "12:00",
-        "title": "Living landscapes",
-        "body": "From cheetah to elephant — each sighting transforms scenery into story."
+        "title": "Exploring Tanzania's landscapes",
+        "body": "Peter Matthiessen wrote that \"whole landscapes seem alert.\" Each sighting — from a majestic cheetah to a herd of elephants — transforms the land from mere scenery into a living, engaging entity."
       },
       {
         "time": "16:30",
@@ -487,7 +488,7 @@
       {
         "time": "20:00",
         "title": "Campfire & sleep",
-        "body": "Dinner, fireside stories, and the distant thrill of a lion's roar."
+        "body": "After dinner back at camp, we gather around the campfire. By morning we agree with Elspeth Huxley: there is no sleep so perfect as that stirred — but not broken — by the thrilling vibrance of a lion's roar."
       }
     ],
     "heroSlides": [
@@ -542,6 +543,27 @@
     "sustainEyebrow": "Responsible Tourism",
     "sustainTitle": "Sustainability & <i>conservation</i>",
     "sustainDesc": "We stand for long-term responsibility to conserve the world's most beautiful places. Community-based visits, ethical wildlife viewing, support for orphanage and school projects in Arusha, and itineraries that fund conservation through responsible tourism are woven into every journey we craft.",
+    "conservationEyebrow": "Conservation & Community",
+    "conservationTitle": "Travel that gives <i>back</i>",
+    "conservationIntro": "Aardvark Safaris was founded on the belief that nature-based tourism is essential for preserving and enhancing Tanzania's wildlife and cultural heritage. We are proud to support communities and conservation across East Africa.",
+    "conservationProjects": [
+      {
+        "title": "St Lucia Hospice & Orphanage",
+        "desc": "Founded by Winfrida Mwangotya (Augustine's wife) — supports HIV/AIDS victims and orphans in Arusha. Guests on the Classic Northern Circuit can arrange an optional visit."
+      },
+      {
+        "title": "Batwa Community Project (Uganda)",
+        "desc": "At Bwindi, guests spend time with the Batwa Pygmy community through Luke's Batwa Project and Joseph's Hope Foundation — supporting indigenous cultural preservation."
+      },
+      {
+        "title": "Gorilla conservation",
+        "desc": "Every gorilla trekking permit directly funds mountain gorilla conservation. Aardvark guests have contributed to one of conservation's greatest success stories: gorilla numbers are slowly increasing."
+      },
+      {
+        "title": "Community-based conservation",
+        "desc": "Augustine's Master's thesis (Prescott College) focused on community-based conservation in wildlife corridor villages near Tarangire — research that informs our approach to responsible tourism."
+      }
+    ],
     "certsEyebrow": "Trust & Membership",
     "certsTitle": "Certifications & <i>associations</i>",
     "certifications": [
@@ -614,7 +636,7 @@
       {
         "name": "Deborah Mrema",
         "role": "Marketing & Customer Experience Specialist",
-        "bio": "Deborah brings first-hand knowledge of African safari from working and living in East Africa. She shapes guest communication, marketing, and the care you receive from first enquiry through to travel — ensuring every journey with Aardvark Safaris Tanzania feels personal, clear, and well supported."
+        "bio": "With first-hand knowledge of the African safari from working and living in East Africa, Deborah and the team promise a once-in-a-lifetime experience in Africa's most scenic destinations. At the heart of any adventure with Aardvark Safaris, you give life and purpose to the experience — she ensures it becomes a lifetime's treasure through marketing, guest care, and seamless communication from first enquiry to travel."
       }
     ],
     "ctaTitle": "Travel with <i>us</i>",
@@ -678,6 +700,26 @@
       {
         "heading": "Liability and travel insurance",
         "body": "Participants travel at their own risk. Aardvark Safaris Tanzania Ltd is not liable for injury, illness, loss, or delay caused by force majeure, wildlife, third-party suppliers, or participant negligence. Flying Doctor Society evacuation covers transport to hospital only — medical bills and repatriation are the traveller's responsibility. Adequate travel and medical insurance is required."
+      },
+      {
+        "heading": "Guaranteed departures",
+        "body": "Aardvark guarantees departure of all group programmes once a deposit is paid, excepting only force majeure circumstances including events that adversely affect international travel patterns."
+      },
+      {
+        "heading": "Arrangements & rate revisions",
+        "body": "Quoted tour rates include planning, handling and operational charges based on current exchange and tariff rates. In the event of increases in foreign exchange or tariff rates, rates are subject to revision."
+      },
+      {
+        "heading": "Luggage",
+        "body": "Tour rates include transport and handling of two pieces of luggage per person per airline regulations. Guests are urged to travel with only one medium-size suitcase. On certain internal African flights, strict luggage restrictions apply — details are provided in your pre-departure documentation."
+      },
+      {
+        "heading": "Unused services",
+        "body": "There is no right to a refund for any unused services. Baggage is at owner risk throughout the tour unless insured separately."
+      },
+      {
+        "heading": "Photography",
+        "body": "Aardvark may take photographs or film of trips and participants. By booking, participants grant Aardvark express permission to use such material for promotional or commercial purposes."
       }
     ]
   },
@@ -981,15 +1023,15 @@
     "featuredParks": [
       {
         "name": "Serengeti National Park",
-        "desc": "Endless plains and the Great Migration — Africa's most celebrated wildlife theatre."
+        "desc": "The Serengeti — \"endless plains\" in Maasai — is Tanzania's most iconic wildlife area and home to the Great Migration. Vast rolling savannah, dramatic kopjes, flat-topped acacias, and crocodile-inhabited rivers create the ultimate wild Africa landscape."
       },
       {
         "name": "Ngorongoro Crater",
-        "desc": "A UNESCO World Heritage caldera with extraordinary density of big game."
+        "desc": "One of the world's largest intact calderas — 10–11 miles across and 2,500 feet deep — with astonishing year-round wildlife. Rare black rhinos and elephants with enormous tusks thrive in this self-contained ecosystem."
       },
       {
         "name": "Mount Kilimanjaro",
-        "desc": "Africa's highest peak — five ecological zones to Uhuru at 5,895m."
+        "desc": "At 5,895 metres, Kilimanjaro is Africa's highest peak and the world's highest free-standing mountain — a challenging but accessible trek through five vegetation zones from rainforest to arctic summit."
       },
       {
         "name": "Masai Mara National Reserve",
@@ -1019,11 +1061,11 @@
           },
           {
             "name": "Tarangire",
-            "desc": "Baobabs and northern Tanzania's largest elephant herds."
+            "desc": "In the dry season, second only to Ngorongoro for wildlife concentrations — giant baobabs, elephant herds, rare gerenuk, and superb birding in riverine forest."
           },
           {
             "name": "Arusha NP",
-            "desc": "Mount Meru's slopes, lakes and lush forest."
+            "desc": "A naturalist's gem — montane rainforest, Momela Lakes flamingos, Ngurdoto Crater, and Mount Meru backdrop; over 600 bird species recorded."
           },
           {
             "name": "Lake Manyara",
@@ -1374,6 +1416,30 @@
     "eyebrow": "Itineraries",
     "heroTitle": "Signature <i>journeys</i>",
     "heroDesc": "Tailor-made safaris across Tanzania, Southern Africa and Zanzibar. Every journey is fully customizable — request a free quote.",
+    "extensionsEyebrow": "Safari Extensions",
+    "extensionsTitle": "Extend your <i>journey</i>",
+    "extensionsDesc": "Add these optional extensions to any northern Tanzania itinerary — Mkomazi's wild dogs and rhinos, Uganda's primates, or Zanzibar's spice coast and beaches.",
+    "extensionsCta": "View extension",
+    "extensions": [
+      {
+        "slug": "mkomazi-extension",
+        "title": "Mkomazi National Park",
+        "duration": "3 days / 2 nights",
+        "desc": "One of Tanzania's least-visited parks — wild dog and rhino conservation projects, gerenuk, kudu, and open wilderness away from the Serengeti crowds."
+      },
+      {
+        "slug": "uganda-extension",
+        "title": "Uganda — Gorillas & Chimps",
+        "duration": "6 days / 5 nights",
+        "desc": "Mountain gorillas in Bwindi, shoebill birding at Mabamba Bay, chimps in Kyambura Gorge, and tree-climbing lions at Queen Elizabeth NP."
+      },
+      {
+        "slug": "zanzibar-extension-4-day",
+        "title": "Zanzibar Beach Holiday",
+        "duration": "4 days / 3 nights",
+        "desc": "Stone Town UNESCO heritage, spice farms, Jozani red colobus monkeys, and Mnemba Atoll snorkelling — the perfect safari finale."
+      }
+    ],
     "all": "All",
     "tanzania": "Tanzania",
     "uganda": "Uganda",
@@ -1578,6 +1644,7 @@
     "included": "What's included",
     "excluded": "Not included",
     "tripHighlights": "Trip highlights",
+    "lodges": "Lodges & camps",
     "tailorTour": "Tailor-make your tour",
     "requestQuote": "Request a <i>free quote</i>",
     "quoteDesc": "Tell us about your dream {{safari}} adventure — we'll respond within 24 hours with a fully personalized proposal.",
