@@ -111,6 +111,7 @@ import destPackageSouthernLion from "@/assets/destinations/dest-package-southern
 import destPackageFamilyNorthern from "@/assets/destinations/dest-package-family-northern.jpg";
 import destPackageCulturalMaasai from "@/assets/destinations/dest-package-cultural-maasai.jpg";
 import destPackageHadzabe from "@/assets/destinations/dest-package-hadzabe.jpg";
+import destPackageSafariBeachCombo from "@/assets/destinations/dest-package-safari-beach-combo.jpg";
 import zanzibarBeach2 from "@/assets/destinations/zanzibar-beach-2.jpg";
 import zanzibarBeach3 from "@/assets/destinations/zanzibar-beach-3.jpg";
 /** Client safari photo (_DSC8482) — young male lions, golden hour */
@@ -352,7 +353,7 @@ export const packageImageBySlug: Record<string, string> = {
   "uganda-holiday-8": destUgandaHoliday,
   "zanzibar-extension-4": destZanzibarHero,
   "rwanda-gorilla": destRwandaVirungaGorilla,
-  "safari-beach-combo": destTurquoiseLagoon,
+  "safari-beach-combo": destPackageSafariBeachCombo,
   "kili-northern-circuit": destKiliSummit,
   "cultural-northern": destPackageCulturalMaasai,
   "maasai-hadzabe": destPackageHadzabe,
