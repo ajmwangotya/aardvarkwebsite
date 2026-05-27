@@ -12,7 +12,7 @@ export const SITE = {
   /** Legal entity (footer, terms) */
   legalName: "Aardvark Safaris Tanzania Ltd",
   url: SITE_URL.replace(/\/$/, ""),
-  tagline: "We specialise in personalised & reliable safari services",
+  tagline: "Tailor-made northern Tanzania safaris from Arusha",
   servicesLine: "Trekking · Safari · Beach Holidays",
   currencies: ["USD", "EUR", "GBP"] as const,
   phoneAfrica: "+255 785 957 611",

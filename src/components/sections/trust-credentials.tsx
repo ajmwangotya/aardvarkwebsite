@@ -1,6 +1,5 @@
-import { BadgeCheck, ShieldCheck, type LucideIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { TripAdvisorLogo } from "@/components/brand/trip-advisor-logo";
+import { BadgeCheck, ShieldCheck, type LucideIcon } from "lucide-react";
 import { Reveal } from "@/components/motion";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { TRUST_CREDENTIALS } from "@/lib/site-config";
@@ -18,18 +17,21 @@ function CredentialMark({ id }: { id: TrustCredentialId }) {
   }
 
   if (id === "tripadvisor") {
-    return <TripAdvisorLogo className="h-7 w-auto text-[#00AF87] sm:h-8" />;
+    return null;
   }
 
-  const icons: Record<Exclude<TrustCredentialId, "tato" | "tripadvisor">, LucideIcon> = {
+  const icons: Record<"license" | "insured", LucideIcon> = {
     license: BadgeCheck,
     insured: ShieldCheck,
   };
 
   const Icon = icons[id as keyof typeof icons];
-  return <Icon className="h-9 w-9 text-gold sm:h-10 sm:w-10" strokeWidth={1.15} aria-hidden />;
+  return Icon ? <Icon className="h-9 w-9 text-gold sm:h-10 sm:w-10" strokeWidth={1.15} aria-hidden /> : null;
 }
 
+const CREDENTIALS_WITHOUT_TA = TRUST_CREDENTIALS.filter((c) => c.id !== "tripadvisor");
+
+/** Compact credentials strip — prefer {@link SocialProofSection} on the homepage. */
 export function TrustCredentials({ className = "" }: { className?: string }) {
   const { t } = useTranslation();
 
@@ -50,7 +52,7 @@ export function TrustCredentials({ className = "" }: { className?: string }) {
             aria-label={t("trust.swipeHint")}
           >
             <CarouselContent className="-ml-0">
-              {TRUST_CREDENTIALS.map((c, index) => {
+              {CREDENTIALS_WITHOUT_TA.map((c, index) => {
                 const isExternal = c.href.startsWith("http");
                 const linkClass = cn(
                   "group flex h-full min-h-[7.5rem] flex-col items-center justify-center px-6 py-4 text-center transition-opacity hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold sm:min-h-[8rem] sm:px-8",
@@ -74,7 +76,7 @@ export function TrustCredentials({ className = "" }: { className?: string }) {
                 return (
                   <CarouselItem
                     key={c.id}
-                    className="basis-[52%] pl-0 sm:basis-[38%] md:basis-[28%] lg:basis-1/4"
+                    className="basis-[52%] pl-0 sm:basis-[38%] md:basis-[28%] lg:basis-1/3"
                   >
                     {isExternal ? (
                       <a href={c.href} target="_blank" rel="noopener noreferrer" className={linkClass}>

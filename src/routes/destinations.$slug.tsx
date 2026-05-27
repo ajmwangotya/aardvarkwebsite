@@ -119,7 +119,7 @@ function CountryDestinationPage() {
               <motion.article
                 key={p.name}
                 variants={fadeUp}
-                initial="hidden"
+                initial={false}
                 whileInView="show"
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}

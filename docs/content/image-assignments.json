@@ -4,7 +4,12 @@
   "items": [
     {
       "target": "src\\assets\\heroes\\hero-lion.jpg",
-      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC1010.jpeg"
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC1010.jpeg",
+      "note": "Mislabelled — source is zebras; do not use for lion heroes"
+    },
+    {
+      "target": "src\\assets\\destinations\\dest-northern-tanzania-lion.jpg",
+      "source": "wetransfer__dsc1010-jpeg_2026-05-17_1737\\_DSC8482.jpeg"
     },
     {
       "target": "src\\assets\\heroes\\hero-ndutu-1.jpg",

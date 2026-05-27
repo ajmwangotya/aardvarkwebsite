@@ -1,7 +1,7 @@
+import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
-import { Clock, Shield } from "lucide-react";
+import { Clock } from "lucide-react";
 import { Reveal } from "@/components/motion";
-import { TRIPADVISOR, TRUST_CREDENTIALS } from "@/lib/site-config";
 import augustinePhoto from "@/assets/team/team-augustine.jpg";
 import waltPhoto from "@/assets/team/team-walt.jpg";
 import deborahPhoto from "@/assets/team/team-deborah.jpg";
@@ -25,9 +25,10 @@ export function PlanTripHumanTrust() {
               <h2 id="plan-trip-trust-heading" className="mt-4 font-serif text-2xl md:text-3xl">
                 {t("planTripPage.trustPanel.title")}
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground">
-                {t("planTripPage.trustPanel.subtitle", { rating: TRIPADVISOR.rating })}
-              </p>
+              <p className="mt-3 text-sm text-muted-foreground">{t("planTripPage.trustPanel.subtitle")}</p>
+              <Link to="/about" className="btn-line mt-6 inline-flex">
+                {t("planTripPage.trustPanel.aboutLink")}
+              </Link>
             </div>
 
             <div
@@ -57,25 +58,6 @@ export function PlanTripHumanTrust() {
             </Reveal>
           ))}
         </div>
-
-        <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {TRUST_CREDENTIALS.map((c, i) => (
-            <Reveal key={c.id} delay={0.1 + i * 0.05}>
-              <li className="flex h-full gap-3 border border-border bg-card p-4">
-                <Shield className="mt-0.5 h-5 w-5 shrink-0 text-gold" strokeWidth={1.25} aria-hidden />
-                <div>
-                  <p className="font-serif text-sm text-ink">{t(c.nameKey)}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{t(c.descKey)}</p>
-                  {c.id === "tripadvisor" && (
-                    <p className="mt-2 text-[0.62rem] uppercase tracking-eyebrow text-gold">
-                      {TRIPADVISOR.rating} · {t("reviews.basedOn")}
-                    </p>
-                  )}
-                </div>
-              </li>
-            </Reveal>
-          ))}
-        </ul>
       </div>
     </section>
   );

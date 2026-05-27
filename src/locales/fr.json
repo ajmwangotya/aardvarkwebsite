@@ -53,7 +53,7 @@
   "home": {
     "scroll": "Défiler",
     "tripAdvisorShort": "{{count}} avis TripAdvisor",
-    "brandPromise": "Safaris sur mesure dans le nord de la Tanzanie depuis Arusha",
+    "brandPromise": "Safaris sur mesure au nord de la Tanzanie · Arusha depuis 1999",
     "brandPromiseProof": "27 ans · {{rating}} sur TripAdvisor · {{count}} avis",
     "startHere": {
       "eyebrow": "Nouveau en safari ?",
@@ -66,12 +66,12 @@
       "circuitTitle": "Découvrir le circuit nord de 10 jours",
       "circuitDesc": "Serengeti, Ngorongoro, Tarangire — itinéraire jour par jour avec options de lodges.",
       "circuitCta": "Voir l'itinéraire complet",
-      "planTitle": "Obtenir un devis gratuit sur mesure",
-      "planDesc": "Indiquez vos dates et centres d'intérêt. Réponse sous 24 heures.",
-      "planCta": "Planifier mon safari"
+      "contactTitle": "Des questions avant de réserver ?",
+      "contactDesc": "Contactez notre équipe à Arusha par e-mail ou WhatsApp — réponse sous 24 h.",
+      "contactCta": "Nous contacter"
     },
     "weHaveItAll": "Spécialistes du nord tanzanien",
-    "dreamTitle": "Safaris sur mesure dans le nord de la <i>Tanzanie</i>, depuis Arusha",
+    "dreamTitle": "Les grands espaces légendaires d'Afrique, <i>rien que pour vous</i> — depuis Arusha",
     "welcomeTitle": "27 ans · {{rating}} sur TripAdvisor · depuis 1999",
     "reliable": "Nous sommes spécialisés dans les services de safari personnalisés et fiables — trekking, safari et vacances balnéaires.",
     "expertCopy": "AARDVARK SAFARIS a été fondé sur la conviction que le tourisme de nature est essentiel à la préservation et à la valorisation de la faune et du patrimoine culturel de la Tanzanie. Notre mission est d'offrir à nos visiteurs des expériences uniques, capables de transformer leur regard sur le monde. Nous vous invitons à nous rejoindre pour une aventure inoubliable, unique en son genre.",

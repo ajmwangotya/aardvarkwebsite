@@ -3,7 +3,6 @@ import { Trans, useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Reveal } from "@/components/motion";
-import { FeaturedJourneys } from "@/components/sections/featured-journeys";
 import { ItineraryCatalogSection } from "@/components/sections/itinerary-catalog-section";
 import { SafariExtensionsSection } from "@/components/sections/safari-extensions-section";
 import { buildPageHead } from "@/lib/seo";
@@ -35,7 +34,6 @@ function ItinerariesPage() {
           <p className="mt-6 max-w-2xl text-muted-foreground">{t("itinerariesPage.heroDesc")}</p>
         </Reveal>
 
-        <FeaturedJourneys className="mt-14 border-t border-border pt-14 md:mt-20 md:pt-20" />
       </section>
 
       <ItineraryCatalogSection />

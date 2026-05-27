@@ -9,6 +9,8 @@ export type ItineraryCatalogRow = {
   packageSlug?: string;
   /** i18n: itinerariesPage.extra.{extraKey} */
   extraKey?: string;
+  /** Optional image override key — see `itineraryRowImages` in destination-images.ts */
+  imageKey?: string;
 };
 
 export const ITINERARY_CATALOG: ItineraryCatalogRow[] = [
@@ -31,5 +33,5 @@ export const ITINERARY_CATALOG: ItineraryCatalogRow[] = [
   { days: 8, category: "Southern Africa", extraKey: "okavangoDelta" },
   { days: 5, durationLabel: "5 Nights", category: "Zanzibar", packageSlug: "safari-beach-combo" },
   { days: 5, category: "Zanzibar", packageSlug: "serengeti-zanzibar-honeymoon" },
-  { days: 3, durationLabel: "3 Nights", category: "Zanzibar", packageSlug: "zanzibar-extension-4" },
+  { days: 3, durationLabel: "3 Nights", category: "Zanzibar", packageSlug: "zanzibar-extension-4", imageKey: "zanzibar-essentials-3n" },
 ];

@@ -1,12 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { Calendar, Compass, MapPin } from "lucide-react";
+import { BookOpen, Mail, Map } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Reveal } from "@/components/motion";
 
-const paths = [
-  { key: "plan", to: "/plan-trip" as const, icon: Calendar, primary: true },
-  { key: "packages", to: "/packages" as const, icon: Compass, primary: false },
-  { key: "destinations", to: "/destinations" as const, icon: MapPin, primary: false },
+const steps = [
+  { key: "guide", step: 1, to: "/blog/first-timer-guide" as const, icon: BookOpen },
+  { key: "circuit", step: 2, to: "/safaris/classic-northern-circuit-safari" as const, icon: Map },
+  { key: "contact", step: 3, to: "/contact" as const, icon: Mail },
 ] as const;
 
 export function HomeStartHere() {
@@ -15,48 +14,47 @@ export function HomeStartHere() {
   return (
     <section aria-labelledby="start-here-heading" className="border-b border-border bg-secondary/30">
       <div className="mx-auto max-w-[1400px] px-5 py-12 sm:px-6 sm:py-16 md:px-12">
-        <Reveal className="text-center md:text-left">
+        <div className="text-center md:text-left">
           <span className="eyebrow">{t("home.startHere.eyebrow")}</span>
           <h2 id="start-here-heading" className="mt-4 font-serif text-[clamp(1.5rem,4vw,2.5rem)]">
             {t("home.startHere.title")}
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground md:mx-0">{t("home.startHere.desc")}</p>
-        </Reveal>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground md:mx-0">
+            {t("home.startHere.desc")}
+          </p>
+        </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          {paths.map(({ key, to, icon: Icon, primary }) => (
+        <ol className="mt-10 grid gap-4 md:grid-cols-3 md:gap-6">
+          {steps.map(({ key, step, to, icon: Icon }) => (
+            <li key={key}>
               <Link
-                key={key}
                 to={to}
-                className={`group relative z-[1] flex h-full flex-col border p-5 transition-colors sm:p-6 ${
-                  primary
-                    ? "border-gold/50 bg-card hover:border-gold"
-                    : "border-border bg-card hover:border-gold/40"
-                }`}
+                className="group flex h-full flex-col border border-border bg-card p-5 transition-colors hover:border-gold/40 sm:p-6"
               >
-                <span
-                  className={`flex h-20 w-20 items-center justify-center rounded-full border sm:h-[5.5rem] sm:w-[5.5rem] ${
-                    primary
-                      ? "border-gold/40 bg-gold/10"
-                      : "border-border bg-secondary group-hover:border-gold/40"
-                  }`}
-                  aria-hidden
-                >
-                  <Icon
-                    className={`h-11 w-11 sm:h-12 sm:w-12 ${primary ? "text-gold" : "text-muted-foreground group-hover:text-gold"}`}
-                    strokeWidth={1.75}
-                  />
-                </span>
-                <h3 className="mt-4 font-serif text-lg text-ink group-hover:text-gold transition-colors">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-gold">
+                    {t("home.startHere.stepLabel", { n: step })}
+                  </span>
+                  <span
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-secondary"
+                    aria-hidden
+                  >
+                    <Icon className="h-5 w-5 text-muted-foreground" strokeWidth={1.75} />
+                  </span>
+                </div>
+                <h3 className="mt-4 font-serif text-lg text-ink transition-colors group-hover:text-gold">
                   {t(`home.startHere.${key}Title`)}
                 </h3>
-                <p className="mt-2 flex-1 text-sm text-muted-foreground">{t(`home.startHere.${key}Desc`)}</p>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {t(`home.startHere.${key}Desc`)}
+                </p>
                 <span className="mt-4 text-[0.65rem] uppercase tracking-eyebrow text-coral group-hover:text-gold">
-                  {t("home.startHere.explore")} →
+                  {t(`home.startHere.${key}Cta`)} →
                 </span>
               </Link>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

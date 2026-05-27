@@ -228,6 +228,19 @@
     "viewPackage": "View package",
     "pricingLabel": "Indicative pricing"
   },
+  "featuredTrips": {
+    "eyebrow": "Featured trips",
+    "title": "Curated <i>journeys</i>",
+    "desc": "Signature itineraries from our official brochures — full day-by-day detail, transparent pricing, and links to package options.",
+    "from": "From",
+    "viewItinerary": "Full itinerary",
+    "viewPackage": "Package overview",
+    "allItineraries": "All itineraries →",
+    "allPackages": "All packages →"
+  },
+  "socialProof": {
+    "guestStories": "Guest book & our story →"
+  },
   "footer": {
     "beginStory": "Begin your story",
     "ready": "Ready for the wild?",
@@ -257,7 +270,7 @@
   "home": {
     "scroll": "Scroll",
     "tripAdvisorShort": "{{count}} TripAdvisor reviews",
-    "brandPromise": "Tailor-made northern Tanzania safaris from Arusha",
+    "brandPromise": "Bespoke northern Tanzania safaris · trusted in Arusha since 1999",
     "brandPromiseProof": "27 years · {{rating}} on TripAdvisor · {{count}} reviews",
     "startHere": {
       "eyebrow": "New to safari?",
@@ -270,33 +283,21 @@
       "circuitTitle": "Explore the 10-day northern circuit",
       "circuitDesc": "Serengeti, Ngorongoro, Tarangire — sample day-by-day itinerary with lodge options.",
       "circuitCta": "View full itinerary",
-      "planTitle": "Get your free tailor-made quote",
-      "planDesc": "Tell us your dates and interests. We reply within 24 hours with a personalised proposal.",
-      "planCta": "Plan my safari"
+      "contactTitle": "Questions before you book?",
+      "contactDesc": "Reach our Arusha team by email or WhatsApp — we reply within 24 hours with honest advice, no pressure.",
+      "contactCta": "Contact us"
     },
     "weHaveItAll": "Northern Tanzania specialists",
-    "dreamTitle": "Tailor-made northern Tanzania <i>safaris</i> from Arusha",
-    "welcomeEyebrow": "Welcome",
-    "welcomeTitle": "27 years · {{rating}} on TripAdvisor · established since 1999",
-    "welcomeP1": "Welcome to Aardvark Safaris Tanzania, where luxury meets adventure in the heart of East Africa. We specialise in crafting personalised, high-end travel experiences for discerning international guests. Our passion is to unveil the hidden gems and exclusive destinations of this magnificent country, ensuring that every journey is as unique as you are.",
-    "welcomeP2": "With Aardvark Safaris Tanzania, you'll experience the very best of East African hospitality while creating unforgettable memories that will last a lifetime.",
-    "differenceEyebrow": "The Aardvark Difference",
+    "dreamTitle": "Africa's legendary wilderness, <i>yours</i> alone — from Arusha",
     "differenceTitle": "Experience the <i>Aardvark Difference</i>",
-    "differenceP1": "At Aardvark Safaris Tanzania, every service is thoughtfully designed to meet your unique needs, ensuring a truly personalised and unforgettable experience. Our team of experts provides insider access to exclusive destinations and extraordinary experiences, delivering the finest in both luxury and mid-range travel.",
-    "differenceP2": "From meticulous planning to flawless execution, we take care of every detail, allowing you to relax and fully enjoy your East African adventure. We are committed to delivering the highest standards of service and comfort, ensuring that every aspect of your journey is exceptional.",
     "expertCopy": "Northern circuit wildlife, Kilimanjaro ascents, Ngorongoro craters, and Zanzibar tides — planned as one seamless journey or standalone escapes. Every detail is bespoke: private vehicles, hand-selected lodges, and routes timed to migration seasons and the moments worth waking early for.",
     "expertCopyCta": "Tell us your dates and what excites you most. We handle permits, transfers, and camp reservations — from Arusha to the coast, with insider access and flawless logistics throughout.",
-    "letUsPlan": "Let us Plan",
     "aboutUs": "About Us",
     "greatMigration": "The Great Migration",
     "migrationQuote": "\"Two million hooves move as one.<br/>We move with them.\"",
-    "nationalParks": "National Parks",
-    "iconicEyebrow": "Iconic destinations",
-    "iconicTitle": "Iconic <i>destinations</i>",
-    "iconicDesc": "Experience Tanzania's iconic national parks with our expert guides — from the vast Serengeti plains to the awe-inspiring Ngorongoro Crater.",
+    "destinationsEyebrow": "East Africa",
     "allDestinations": "All Destinations",
     "whyChoose": "Why Choose Us",
-    "signature": "Signature Safaris",
     "tailorTitle": "East Africa's five <i>destinations</i>",
     "tailorDesc": "From Tanzania's Great Migration to Rwanda's gorillas and Zanzibar's spice coast — explore each country with insider detail, then tailor your journey with our Arusha team.",
     "signatureDuration": "Typical journey",
@@ -373,11 +374,7 @@
         ]
       }
     ],
-    "allItineraries": "All Itineraries",
     "explore": "Explore",
-    "activities": "Activities",
-    "activitiesTitle": "A world of <i>extraordinary</i> excursions",
-    "activitiesDesc": "From iconic Serengeti game drives to the breathtaking Ngorongoro Crater — curated experiences for unforgettable moments.",
     "tailorMade": "Tailor-made trip",
     "ctaTitle": "Let us create your <i>tailor-made</i> trip",
     "ctaDesc": "Our specialists are ready to assist you every step of the way. Start planning your dream adventure with a free, no-obligation quote.",
@@ -390,32 +387,13 @@
     "filmUnsupported": "Your browser does not support video playback.",
     "filmDataWarning": "Video may use mobile data. Tap again to play.",
     "filmPlayAnyway": "Play video",
-    "tripAdvisorLine": "{{rating}} · TripAdvisor · {{count}} reviews",
-    "trustJourneys": "5.0 · 21 TripAdvisor reviews",
     "trustLocal": "Local · Arusha since 1999",
     "whyChooseTitle": "Why Choose <i>Aardvark Safari</i>",
     "whyChooseDesc": "Locally owned in Arusha with decades of field expertise — dedicated vehicles, expert guides, and itineraries shaped around how you want to travel.",
-    "mapEyebrow": "On the Map",
-    "mapTitle": "Where the <i>wild things</i> are",
-    "mapDesc": "From the Serengeti plains to the shores of Zanzibar — explore the places that make Tanzania unforgettable.",
     "day_one": "{{count}} Day",
     "day_other": "{{count}} Days",
     "itinerary": "Itinerary",
     "tanzaniaEa": "Tanzania · East Africa",
-    "destTags": {
-      "nationalPark": "National Park",
-      "crater": "Crater",
-      "mountain": "Mountain",
-      "island": "Island"
-    },
-    "destAlt": {
-      "tanzania": "Tanzania safari — Serengeti plains and northern circuit wildlife",
-      "kenya": "Kenya safari — Maasai Mara savannah and wildlife",
-      "uganda": "Uganda safari — rainforest and mountain gorilla habitat",
-      "rwanda": "Rwanda safari — Volcanoes National Park and lush highlands",
-      "zanzibar": "Zanzibar — turquoise Indian Ocean coast and Stone Town",
-      "serengeti": "Serengeti National Park — Great Migration and open plains"
-    },
     "reasons": [
       {
         "title": "Local Advisors",
@@ -1359,7 +1337,8 @@
     "trustPanel": {
       "eyebrow": "Who reads your enquiry",
       "title": "Your message goes straight to our Arusha team",
-      "subtitle": "Licensed safari operator · TATO member · fully insured journeys · {{rating}} on TripAdvisor",
+      "subtitle": "Licensed safari operator · TATO member · fully insured journeys.",
+      "aboutLink": "Meet the team & guest stories",
       "augustineName": "Augustine Mwangotya",
       "augustineRole": "Founder & lead guide",
       "waltName": "Walt Anderson",

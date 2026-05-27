@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import { OptimizedImage } from "@/components/media/optimized-image";
+import { preloadImage } from "@/lib/preload-image";
 
 export type MosaicPhoto = {
   src: string;
@@ -12,38 +13,27 @@ const MOBILE_ROTATE_MS = 4500;
 
 type IntroPhotoMosaicProps = {
   photos: MosaicPhoto[];
-  /** Four starting indices into `photos` (one per cell). */
   layout: [number, number, number, number];
   aspects: [string, string, string, string];
 };
 
 function MosaicCell({
-  photos,
-  index,
+  photo,
   aspectClass,
+  priority = false,
 }: {
-  photos: MosaicPhoto[];
-  index: number;
+  photo: MosaicPhoto;
   aspectClass: string;
+  priority?: boolean;
 }) {
-  const active = photos[index % photos.length];
-
   return (
-    <div className={`image-zoom ${aspectClass} gold-border-glow relative overflow-hidden`}>
-      {photos.map((photo, i) => (
-        <div
-          key={photo.src}
-          className="intro-mosaic__slide absolute inset-0"
-          style={{
-            opacity: i === index % photos.length ? 1 : 0,
-            zIndex: i === index % photos.length ? 1 : 0,
-          }}
-          aria-hidden={i !== index % photos.length}
-        >
-          <OptimizedImage src={photo.src} alt={photo.alt} className="h-full w-full object-cover" />
-        </div>
-      ))}
-      <span className="sr-only">{active.alt}</span>
+    <div className={`image-zoom ${aspectClass} gold-border-glow relative overflow-hidden bg-muted`}>
+      <OptimizedImage
+        src={photo.src}
+        alt={photo.alt}
+        priority={priority}
+        className="h-full w-full object-cover"
+      />
     </div>
   );
 }
@@ -54,12 +44,14 @@ function MosaicCellRotating({
   aspectClass,
   staggerMs,
   enabled,
+  priority = false,
 }: {
   photos: MosaicPhoto[];
   startIndex: number;
   aspectClass: string;
   staggerMs: number;
   enabled: boolean;
+  priority?: boolean;
 }) {
   const [index, setIndex] = useState(startIndex);
 
@@ -81,10 +73,16 @@ function MosaicCellRotating({
     };
   }, [enabled, photos.length, staggerMs]);
 
-  return <MosaicCell photos={photos} index={index} aspectClass={aspectClass} />;
+  const photo = photos[index % photos.length];
+  const nextPhoto = photos[(index + 1) % photos.length];
+
+  useEffect(() => {
+    preloadImage(nextPhoto.src);
+  }, [nextPhoto.src]);
+
+  return <MosaicCell photo={photo} aspectClass={aspectClass} priority={priority} />;
 }
 
-/** Four-up mosaic under the hero — crossfades through the photo pool (synced on mobile). */
 export function IntroPhotoMosaic({ photos, layout, aspects }: IntroPhotoMosaicProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const inView = useInView(rootRef, { margin: "-12% 0px", amount: 0.2 });
@@ -98,6 +96,13 @@ export function IntroPhotoMosaic({ photos, layout, aspects }: IntroPhotoMosaicPr
     mq.addEventListener("change", update);
     return () => mq.removeEventListener("change", update);
   }, []);
+
+  useEffect(() => {
+    if (!inView || photos.length === 0) return;
+    for (let i = 0; i < 4; i++) {
+      preloadImage(photos[(layout[i] ?? 0) % photos.length].src);
+    }
+  }, [inView, photos, layout]);
 
   useEffect(() => {
     if (!isMobile || !inView || photos.length < 2) return;
@@ -122,13 +127,12 @@ export function IntroPhotoMosaic({ photos, layout, aspects }: IntroPhotoMosaicPr
         {isMobile ? (
           <>
             <MosaicCell
-              photos={photos}
-              index={(syncIndex + cells[0].startIndex) % photos.length}
+              photo={photos[(syncIndex + cells[0].startIndex) % photos.length]}
               aspectClass={cells[0].aspect}
+              priority
             />
             <MosaicCell
-              photos={photos}
-              index={(syncIndex + cells[1].startIndex) % photos.length}
+              photo={photos[(syncIndex + cells[1].startIndex) % photos.length]}
               aspectClass={cells[1].aspect}
             />
           </>
@@ -140,6 +144,7 @@ export function IntroPhotoMosaic({ photos, layout, aspects }: IntroPhotoMosaicPr
               aspectClass={cells[0].aspect}
               staggerMs={cells[0].staggerMs}
               enabled={inView}
+              priority
             />
             <MosaicCellRotating
               photos={photos}
@@ -155,13 +160,11 @@ export function IntroPhotoMosaic({ photos, layout, aspects }: IntroPhotoMosaicPr
         {isMobile ? (
           <>
             <MosaicCell
-              photos={photos}
-              index={(syncIndex + cells[2].startIndex) % photos.length}
+              photo={photos[(syncIndex + cells[2].startIndex) % photos.length]}
               aspectClass={cells[2].aspect}
             />
             <MosaicCell
-              photos={photos}
-              index={(syncIndex + cells[3].startIndex) % photos.length}
+              photo={photos[(syncIndex + cells[3].startIndex) % photos.length]}
               aspectClass={cells[3].aspect}
             />
           </>

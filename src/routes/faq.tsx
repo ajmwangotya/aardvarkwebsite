@@ -3,15 +3,11 @@ import { Trans, useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { BookingSteps } from "@/components/sections/booking-steps";
+import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { Reveal } from "@/components/motion";
+import { getFaqItems } from "@/data/faq-i18n";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/faq")({
   head: () =>
@@ -26,7 +22,7 @@ export const Route = createFileRoute("/faq")({
 
 function FaqPage() {
   const { t } = useTranslation();
-  const items = t("faq.items", { returnObjects: true }) as { q: string; a: string }[];
+  const items = getFaqItems(t);
 
   return (
     <div className="bg-background text-foreground">
@@ -42,24 +38,18 @@ function FaqPage() {
         </Reveal>
       </section>
 
-      <section className="mx-auto max-w-[900px] px-5 pb-16 sm:px-6 md:px-12">
+      <section className="mx-auto max-w-[900px] px-5 pb-28 sm:px-6 sm:pb-16 md:px-12">
         <Reveal>
           <h2 className="font-serif text-2xl">{t("faq.bookingTitle")}</h2>
           <BookingSteps className="mt-8" />
         </Reveal>
 
-        <Reveal className="mt-16">
-          <Accordion type="single" collapsible className="w-full">
-            {items.map((item, i) => (
-              <AccordionItem key={item.q} value={`faq-${i}`}>
-                <AccordionTrigger className="font-serif text-left text-lg hover:text-gold">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">{item.a}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </Reveal>
+        <section className="mt-16" aria-labelledby="faq-questions-heading">
+          <h2 id="faq-questions-heading" className="font-serif text-2xl">
+            {t("faq.questionsTitle")}
+          </h2>
+          <FaqAccordion items={items} />
+        </section>
 
         <Reveal className="mt-16 border border-border bg-card p-8 text-center">
           <p className="text-muted-foreground">{t("faq.ctaDesc")}</p>

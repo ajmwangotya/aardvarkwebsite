@@ -12,8 +12,9 @@ import { type ReactNode, useRef, useEffect, useState } from "react";
 const smooth = [0.22, 1, 0.36, 1] as const;
 const snappy = [0.16, 1, 0.3, 1] as const;
 
+/** Content stays visible — only position animates (avoids blank sections if in-view fails). */
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 60 },
+  hidden: { opacity: 1, y: 32 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [...smooth] } },
 };
 
@@ -48,7 +49,7 @@ export const scaleIn: Variants = {
 };
 
 export const flipIn: Variants = {
-  hidden: { opacity: 0, rotateX: -30, y: 30 },
+  hidden: { opacity: 1, rotateX: 0, y: 24 },
   show: { opacity: 1, rotateX: 0, y: 0, transition: { duration: 0.9, ease: [...snappy] } },
 };
 

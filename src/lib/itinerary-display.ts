@@ -3,8 +3,7 @@ import { ITINERARY_CATALOG, type ItineraryCatalogRow } from "@/data/itinerary-ca
 import { getPackage } from "@/data/packages";
 import { getSafari } from "@/data/safaris";
 import { getLocalizedSafari } from "@/lib/localized-safari";
-import { getPackageImage, safariThumbImages, zanzibarBeach, destChobeElephants } from "@/data/destination-images";
-import migration from "@/assets/editorial/migration.jpg";
+import { getItineraryCatalogImage } from "@/data/destination-images";
 import en from "@/locales/en.json";
 
 export type ItineraryListItem = ItineraryCatalogRow & {
@@ -38,14 +37,7 @@ function itineraryCopies(t: TFunction): ItineraryCopy[] {
 }
 
 function catalogImage(row: ItineraryCatalogRow): string {
-  if (row.safariSlug && safariThumbImages[row.safariSlug]) return safariThumbImages[row.safariSlug];
-  if (row.packageSlug) {
-    const pkg = getPackage(row.packageSlug);
-    if (pkg) return getPackageImage(pkg);
-  }
-  if (row.extraKey === "okavangoDelta") return destChobeElephants;
-  if (row.category === "Zanzibar") return zanzibarBeach;
-  return migration;
+  return getItineraryCatalogImage(row);
 }
 
 export function buildItineraryListItems(t: TFunction): ItineraryListItem[] {

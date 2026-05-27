@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Trans, useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { BrandPromiseBar } from "@/components/sections/brand-promise-bar";
 import { DayOnSafariSection } from "@/components/sections/day-on-safari-section";
 import { PackagesCategoryGrid } from "@/components/sections/packages-category-grid";
 import { Reveal } from "@/components/motion";
@@ -35,7 +34,6 @@ function PackagesPage() {
             <Trans i18nKey="packagesPage.heroTitle" components={{ i: <span className="gradient-text italic" /> }} />
           </h1>
           <p className="mt-8 max-w-2xl text-muted-foreground">{t("packagesPage.heroDesc")}</p>
-          <BrandPromiseBar className="mt-6 max-w-2xl" />
         </Reveal>
 
         <nav

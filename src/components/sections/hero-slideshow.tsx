@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { OptimizedImage } from "@/components/media/optimized-image";
+import { preloadImage } from "@/lib/preload-image";
 
 export type HeroSlide = {
   img: string;
@@ -16,10 +17,6 @@ type HeroSlideshowProps = {
   reduceMotion?: boolean;
 };
 
-/**
- * Full-bleed crossfading hero background. Class + inline opacity so global
- * reduced-motion resets do not block slide changes.
- */
 export function HeroSlideshow({
   slides,
   activeIndex,
@@ -32,6 +29,8 @@ export function HeroSlideshow({
   onChangeRef.current = onActiveIndexChange;
   activeRef.current = activeIndex;
 
+  const nextIndex = count > 0 ? (activeIndex + 1) % count : 0;
+
   useEffect(() => {
     if (count < 2) return;
     const id = window.setInterval(() => {
@@ -40,12 +39,19 @@ export function HeroSlideshow({
     return () => window.clearInterval(id);
   }, [count]);
 
+  useEffect(() => {
+    if (count === 0) return;
+    preloadImage(slides[activeIndex].img);
+    preloadImage(slides[nextIndex].img);
+  }, [activeIndex, nextIndex, count, slides]);
+
   if (count === 0) return null;
 
   return (
     <div className="absolute inset-0" aria-hidden>
       {slides.map((slide, i) => {
         const active = i === activeIndex;
+        const shouldLoad = i === activeIndex || i === nextIndex;
         return (
           <div
             key={slide.img}
@@ -61,8 +67,9 @@ export function HeroSlideshow({
             <OptimizedImage
               src={slide.img}
               alt=""
-              className="h-full w-full object-cover object-[center_38%] md:object-center"
+              hidden={!shouldLoad}
               priority={i === 0}
+              className="h-full w-full object-cover object-[center_38%] md:object-center"
             />
           </div>
         );
