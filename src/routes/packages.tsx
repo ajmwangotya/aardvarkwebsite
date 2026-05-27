@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { DayOnSafariSection } from "@/components/sections/day-on-safari-section";
 import { PackagesCategoryGrid } from "@/components/sections/packages-category-grid";
-import { HeroVideoBackground } from "@/components/sections/hero-video-background";
+import { PackagesHeroVideo } from "@/components/sections/packages-hero-video";
 import { Reveal } from "@/components/motion";
 import { PACKAGE_PAGE_SECTIONS } from "@/data/packages";
 import { SITE_VIDEOS } from "@/data/site-videos";
@@ -31,8 +31,8 @@ function PackagesPage() {
       <SiteHeader light={false} />
 
       <section className="mx-auto max-w-[1400px] px-5 pb-10 pt-28 sm:px-6 sm:pt-40 sm:pb-14 md:px-12">
-        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
-          <div className="lg:col-span-7">
+        <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-8">
             <Reveal>
               <span className="eyebrow">{t("packagesPage.eyebrow")}</span>
               <h1 className="mt-6 max-w-4xl font-serif text-[clamp(2.25rem,7vw,4.5rem)]">
@@ -57,17 +57,13 @@ function PackagesPage() {
             </nav>
           </div>
 
-          <Reveal delay={0.12} className="lg:col-span-5 lg:pt-4">
-            <figure className="relative aspect-[16/10] overflow-hidden rounded-sm border border-border bg-ink shadow-[0_24px_60px_-28px_rgba(0,0,0,0.35)] sm:aspect-[5/4] lg:sticky lg:top-28 lg:aspect-[4/5]">
-              <HeroVideoBackground
-                src={SITE_VIDEOS.gorillaUganda}
-                poster={gorillaUgandaPoster}
-              />
-              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 via-ink/40 to-transparent px-4 pb-4 pt-16 text-[0.65rem] uppercase tracking-[0.2em] text-bone/90">
-                {t("packagesPage.heroVideoCaption")}
-              </figcaption>
-            </figure>
-          </Reveal>
+          <div className="flex justify-center lg:col-span-4 lg:justify-end lg:pt-2">
+            <PackagesHeroVideo
+              src={SITE_VIDEOS.gorillaUganda}
+              poster={gorillaUgandaPoster}
+              caption={t("packagesPage.heroVideoCaption")}
+            />
+          </div>
         </div>
       </section>
 
