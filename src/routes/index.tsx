@@ -88,7 +88,7 @@ function HomePage() {
   const [pauseHeroVideo, setPauseHeroVideo] = useState(false);
   const [heroVideoFailed, setHeroVideoFailed] = useState(false);
   const [heroSlide, setHeroSlide] = useState(0);
-  const useHeroSlideshow = isMobile || pauseHeroVideo || heroVideoFailed;
+  const useHeroSlideshow = pauseHeroVideo || heroVideoFailed;
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], reduceMotion ? ["0%", "0%"] : ["0%", "20%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);

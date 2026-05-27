@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { YouTubeEmbed } from "@/components/media/youtube-embed";
 import { isYouTubeSource } from "@/lib/youtube";
 import { preloadImage } from "@/lib/preload-image";
@@ -26,12 +26,16 @@ export function HeroVideoBackground({ src, poster, paused = false, onVideoError 
     if (fallbackImage) preloadImage(fallbackImage);
   }, [fallbackImage]);
 
-  useEffect(() => {
+  const tryPlay = useCallback(() => {
     if (useYouTube || paused || failed) return;
     const el = videoRef.current;
     if (!el) return;
-    el.play().catch(() => {});
-  }, [paused, src, useYouTube, failed]);
+    void el.play().catch(() => {});
+  }, [paused, useYouTube, failed]);
+
+  useEffect(() => {
+    tryPlay();
+  }, [tryPlay, src]);
 
   if ((paused || failed) && fallbackImage) {
     return (
@@ -84,12 +88,19 @@ export function HeroVideoBackground({ src, poster, paused = false, onVideoError 
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         className={`absolute inset-0 h-full w-full object-cover object-[center_38%] transition-opacity duration-500 md:object-center ${
           videoReady ? "opacity-100" : "opacity-0"
         }`}
         aria-hidden
-        onCanPlay={() => setVideoReady(true)}
+        onLoadedData={() => {
+          setVideoReady(true);
+          tryPlay();
+        }}
+        onCanPlay={() => {
+          setVideoReady(true);
+          tryPlay();
+        }}
         onError={() => {
           setFailed(true);
           onVideoError?.();

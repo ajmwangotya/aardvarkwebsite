@@ -381,7 +381,7 @@ export const itineraryRowImages: Record<string, string> = {
 };
 
 export const itineraryExtraImages: Record<string, string> = {
-  okavangoDelta: destBotswanaDelta,
+  okavangoDelta: destVictoriaFalls,
 };
 
 export function getItineraryCatalogImage(row: {

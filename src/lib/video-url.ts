@@ -25,9 +25,8 @@ const OVERRIDES = {
 export function videoUrl(filename: keyof typeof OVERRIDES): string {
   const override = OVERRIDES[filename];
   if (override) return override;
-  // Dev server: always use public/videos on disk (CDN env is often set but R2 may be empty or blocked)
-  if (import.meta.env.DEV) return `/videos/${filename}`;
   if (CDN_BASE) return `${CDN_BASE}/videos/${filename}`;
+  // No CDN configured — use files in public/videos/ (local dev or self-hosted prod)
   return `/videos/${filename}`;
 }
 
