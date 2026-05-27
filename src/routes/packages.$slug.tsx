@@ -8,10 +8,13 @@ import { Reveal } from "@/components/motion";
 import { asObjectArray, i18nObject } from "@/lib/utils";
 import { getPackage } from "@/data/packages";
 import { getSafari } from "@/data/safaris";
+import { getLocalizedSafari } from "@/lib/localized-safari";
+import { motion } from "framer-motion";
 import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
 import { getPackageImage } from "@/data/destination-images";
 import { OptimizedImage } from "@/components/media/optimized-image";
+import { SafariMap } from "@/components/maps/safari-map";
 import { tFromContext } from "@/lib/route-i18n";
 
 export const Route = createFileRoute("/packages/$slug")({
@@ -38,6 +41,7 @@ export const Route = createFileRoute("/packages/$slug")({
 function PackageDetailPage() {
   const { pkg, safari } = Route.useLoaderData();
   const { t } = useTranslation();
+  const linkedSafari = pkg.safariSlug ? getLocalizedSafari(pkg.safariSlug, t) : undefined;
   const key = pkg.i18nKey;
   const detail = i18nObject<{
     title: string;
@@ -105,16 +109,67 @@ function PackageDetailPage() {
             <Reveal>
               <span className="eyebrow">{t("packagesPage.itineraryLabel")}</span>
               <p className="mt-4 leading-relaxed text-muted-foreground">{detail.itinerary}</p>
-              {safari && (
+            </Reveal>
+
+            {linkedSafari && linkedSafari.waypoints && linkedSafari.waypoints.length > 0 && (
+              <Reveal>
+                <span className="eyebrow">{t("safariDetail.routeMap")}</span>
+                <h2 className="mt-4 font-serif text-[clamp(1.5rem,4vw,2.5rem)]">
+                  <Trans i18nKey="safariDetail.yourJourney" components={{ i: <span className="gradient-text italic" /> }} />
+                </h2>
+                <p className="mt-4 max-w-xl text-muted-foreground">{t("safariDetail.mapDesc")}</p>
+                <div className="mt-8">
+                  <SafariMap waypoints={linkedSafari.waypoints} height={420} />
+                </div>
+              </Reveal>
+            )}
+
+            {linkedSafari && linkedSafari.days.length > 0 && (
+              <Reveal>
+                <h2 className="font-serif text-[clamp(1.5rem,4vw,2.5rem)]">
+                  <Trans i18nKey="safariDetail.dayByDay" components={{ i: <span className="gradient-text italic" /> }} />
+                </h2>
+                <div className="mt-8 space-y-px bg-border">
+                  {linkedSafari.days.map((d, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-40px" }}
+                      transition={{ duration: 0.45, delay: i * 0.03 }}
+                      className="bg-background p-6 md:p-8"
+                    >
+                      <div className="grid gap-4 md:grid-cols-12">
+                        <div className="md:col-span-3">
+                          <div className="font-serif text-3xl text-gold tabular-nums">
+                            {String(i + 1).padStart(2, "0")}
+                          </div>
+                          <div className="mt-1 text-[10px] uppercase tracking-eyebrow text-muted-foreground">
+                            {t("safariDetail.dayLabel", { num: i + 1 })}
+                          </div>
+                        </div>
+                        <div className="md:col-span-9">
+                          <h3 className="font-serif text-xl md:text-2xl">{d.title}</h3>
+                          <p className="mt-3 text-base leading-relaxed text-muted-foreground">{d.body}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </Reveal>
+            )}
+
+            {safari && !linkedSafari?.days.length && (
+              <Reveal>
                 <Link
                   to="/safaris/$slug"
                   params={{ slug: safari.slug }}
-                  className="btn-line mt-6 inline-flex"
+                  className="btn-line inline-flex"
                 >
                   {t("packagesPage.fullItinerary")} →
                 </Link>
-              )}
-            </Reveal>
+              </Reveal>
+            )}
 
             <Reveal>
               <span className="eyebrow">{t("packagesPage.accommodationLabel")}</span>

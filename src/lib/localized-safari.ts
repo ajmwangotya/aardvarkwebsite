@@ -1,51 +1,73 @@
 import type { TFunction } from "i18next";
 import { getSafari, type Safari, type SafariDay } from "@/data/safaris";
+import { asObjectArray, i18nObject } from "@/lib/utils";
 
-export type LocalizedSafariFields = {
-  title?: string;
-  duration?: string;
-  intro?: string;
-  route?: string;
-  days?: SafariDay[];
-  highlights?: string[];
-  lodges?: string[];
-  fromPrice?: string;
-  priceNote?: string;
-  bestSeason?: string;
-  included?: string[];
-  excluded?: string[];
-};
+type SafariLocaleContent = Partial<
+  Pick<
+    Safari,
+    | "title"
+    | "duration"
+    | "intro"
+    | "route"
+    | "days"
+    | "highlights"
+    | "lodges"
+    | "fromPrice"
+    | "priceNote"
+    | "bestSeason"
+    | "included"
+    | "excluded"
+  >
+>;
 
-/** Overlay translated copy from `safarisContent.{slug}` onto static safari data. */
+function pickString(value: unknown, fallback: string): string {
+  return typeof value === "string" && value.trim() ? value.trim() : fallback;
+}
+
+function pickOptionalString(value: unknown, fallback: string | undefined): string | undefined {
+  const next = pickString(value, fallback ?? "");
+  return next || fallback;
+}
+
+function pickStringList(value: unknown, fallback: string[] | undefined): string[] | undefined {
+  const items = asObjectArray<string>(value)
+    .map((item) => String(item).trim())
+    .filter(Boolean);
+  return items.length > 0 ? items : fallback;
+}
+
+function pickDays(value: unknown, fallback: SafariDay[]): SafariDay[] {
+  const items = asObjectArray<SafariDay>(value);
+  if (items.length === 0) return fallback;
+  return items
+    .map((day, index) => ({
+      title: pickString(day.title, fallback[index]?.title ?? ""),
+      body: pickString(day.body, fallback[index]?.body ?? ""),
+    }))
+    .filter((day) => day.title || day.body);
+}
+
+/** Full safari for detail pages — canonical `safaris.ts` + locale `safarisContent` overlay. */
 export function getLocalizedSafari(slug: string, t: TFunction): Safari | undefined {
   const base = getSafari(slug);
   if (!base) return undefined;
 
-  const localized = t(`safarisContent.${slug}`, {
-    returnObjects: true,
-    defaultValue: null,
-  }) as LocalizedSafariFields | null;
-
-  if (!localized || typeof localized !== "object") {
-    return base;
-  }
-
-  const pick = (value: string | undefined, fallback: string) =>
-    typeof value === "string" && value.trim() ? value.trim() : fallback;
+  const locale = i18nObject<SafariLocaleContent>(t, `safarisContent.${slug}`);
 
   return {
     ...base,
-    title: pick(localized.title, base.title),
-    duration: pick(localized.duration, base.duration),
-    intro: pick(localized.intro, base.intro),
-    route: pick(localized.route, base.route),
-    days: localized.days?.length ? localized.days : base.days,
-    highlights: localized.highlights ?? base.highlights,
-    lodges: localized.lodges ?? base.lodges,
-    fromPrice: localized.fromPrice ?? base.fromPrice,
-    priceNote: localized.priceNote ?? base.priceNote,
-    bestSeason: localized.bestSeason ?? base.bestSeason,
-    included: localized.included ?? base.included,
-    excluded: localized.excluded ?? base.excluded,
+    title: pickString(locale.title, base.title),
+    duration: pickString(locale.duration, base.duration),
+    intro: pickString(locale.intro, base.intro),
+    route: pickString(locale.route, base.route),
+    days: pickDays(locale.days, base.days),
+    waypoints: base.waypoints,
+    highlights: pickStringList(locale.highlights, base.highlights),
+    lodges: pickStringList(locale.lodges, base.lodges),
+    fromPrice: pickOptionalString(locale.fromPrice, base.fromPrice),
+    priceNote: pickOptionalString(locale.priceNote, base.priceNote),
+    bestSeason: pickOptionalString(locale.bestSeason, base.bestSeason),
+    included: pickStringList(locale.included, base.included),
+    excluded: pickStringList(locale.excluded, base.excluded),
   };
 }

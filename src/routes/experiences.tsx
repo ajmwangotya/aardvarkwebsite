@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { DayOnSafariSection } from "@/components/sections/day-on-safari-section";
 import { Reveal, blurIn } from "@/components/motion";
 import { Sun, Cloud, Leaf } from "lucide-react";
-import { craftImages } from "@/data/craft-images";
+import { LocalCraftsSection } from "@/components/sections/local-crafts-section";
+import { TanzaniaCuisineSection } from "@/components/sections/tanzania-cuisine-section";
 import { experienceImages } from "@/data/destination-images";
 import { getExperiencesContent } from "@/data/experiences-i18n";
 import { buildPageHead } from "@/lib/seo";
@@ -77,76 +78,9 @@ function ExperiencesPage() {
         </div>
       </section>
 
-      {/* LOCAL CRAFTS & ART */}
-      <section className="bg-card">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-12">
-          <Reveal>
-            <span className="eyebrow">{t("experiences.craftsEyebrow")}</span>
-            <h2 className="mt-6 max-w-3xl font-serif text-[clamp(1.75rem,5vw,3.75rem)]">
-              <Trans i18nKey="experiences.craftsTitle" components={{ i: <span className="gradient-text italic" /> }} />
-            </h2>
-          </Reveal>
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {crafts.map((c, i) => (
-              <div
-                key={c.title}
-                className="border border-border p-5 sm:p-8 bg-background gold-border-glow group transition-transform duration-300 hover:-translate-y-1"
-              >
-                {i === 0 ? (
-                  <div className="mb-4 flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-border/60 bg-card">
-                    <img
-                      src={craftImages[i]}
-                      alt={c.title}
-                      loading="lazy"
-                      width={56}
-                      height={56}
-                      className="h-full w-full object-cover object-center"
-                    />
-                  </div>
-                ) : (
-                  <div className="mb-4 aspect-[4/3] w-full overflow-hidden rounded-sm border border-border/60">
-                    <img
-                      src={craftImages[i]}
-                      alt={c.title}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                )}
-                <h3 className="font-serif text-2xl transition-colors duration-300 group-hover:text-[var(--gold)]">
-                  {c.title}
-                </h3>
-                <span className="mt-3 block h-px w-8 bg-gold transition-all duration-500 group-hover:w-16" />
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <LocalCraftsSection crafts={crafts} />
 
-      {/* CUISINE */}
-      <section className="mx-auto max-w-[1400px] px-6 py-24 md:px-12">
-        <Reveal>
-          <span className="eyebrow">{t("experiences.cuisineEyebrow")}</span>
-          <h2 className="mt-6 max-w-3xl font-serif text-[clamp(1.75rem,5vw,3.75rem)]">
-            <Trans i18nKey="experiences.cuisineTitle" components={{ i: <span className="gradient-text italic" /> }} />
-          </h2>
-          <p className="mt-6 max-w-2xl text-muted-foreground">{t("experiences.cuisineDesc")}</p>
-        </Reveal>
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
-          {cuisine.map((c) => (
-            <div key={c.title} className="flex gap-6">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gold/10">
-                <span className="font-serif text-2xl text-gold">{c.title[0]}</span>
-              </div>
-              <div>
-                <h3 className="font-serif text-xl">{c.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <TanzaniaCuisineSection cuisine={cuisine} />
 
       {/* BEST TIME TO TRAVEL */}
       <section className="bg-ink text-bone">

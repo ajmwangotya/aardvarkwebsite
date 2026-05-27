@@ -1,17 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { preloadImage } from "@/lib/preload-image";
 
 type HeroVideoBackgroundProps = {
-  /** Full MP4 URL from R2 (via VITE_VIDEO_CDN_BASE). */
+  /** MP4 URL — typically same-origin /videos/* (proxied to R2 in production). */
   src: string;
   poster?: string;
   paused?: boolean;
 };
 
-/** Hero background — video is always in the DOM (SSR + client) so autoplay works without waiting for React. */
+/** Hero background — SSR <video> + aggressive play retries (iOS autoplay, slow networks). */
 export function HeroVideoBackground({ src, poster, paused = false }: HeroVideoBackgroundProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [failed, setFailed] = useState(false);
+  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     if (poster) preloadImage(poster);
@@ -19,38 +20,52 @@ export function HeroVideoBackground({ src, poster, paused = false }: HeroVideoBa
 
   useEffect(() => {
     setFailed(false);
+    setPlaying(false);
   }, [src]);
+
+  const tryPlay = useCallback(async () => {
+    const el = videoRef.current;
+    if (!el || paused || failed) return;
+    el.defaultMuted = true;
+    el.muted = true;
+    try {
+      await el.play();
+    } catch {
+      /* Autoplay blocked until gesture — listeners below retry. */
+    }
+  }, [paused, failed]);
 
   useEffect(() => {
     if (paused || failed) return;
     const el = videoRef.current;
     if (!el) return;
 
-    const ensurePlaying = () => {
-      el.muted = true;
-      el.defaultMuted = true;
-      void el.play().catch(() => {
-        /* Blocked until gesture — one-time retry below. */
-      });
-    };
+    void tryPlay();
 
-    ensurePlaying();
-
-    const onGesture = () => ensurePlaying();
+    const onGesture = () => void tryPlay();
     window.addEventListener("pointerdown", onGesture, { once: true, passive: true });
     window.addEventListener("touchstart", onGesture, { once: true, passive: true });
 
     const onVisible = () => {
-      if (document.visibilityState === "visible") ensurePlaying();
+      if (document.visibilityState === "visible") void tryPlay();
     };
     document.addEventListener("visibilitychange", onVisible);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) void tryPlay();
+      },
+      { threshold: 0.05 },
+    );
+    observer.observe(el);
 
     return () => {
       window.removeEventListener("pointerdown", onGesture);
       window.removeEventListener("touchstart", onGesture);
       document.removeEventListener("visibilitychange", onVisible);
+      observer.disconnect();
     };
-  }, [paused, failed, src]);
+  }, [paused, failed, src, tryPlay]);
 
   if (paused || failed) {
     return poster ? (
@@ -70,7 +85,7 @@ export function HeroVideoBackground({ src, poster, paused = false }: HeroVideoBa
     <video
       ref={videoRef}
       src={src}
-      poster={poster}
+      poster={playing ? undefined : poster}
       autoPlay
       muted
       loop
@@ -80,6 +95,9 @@ export function HeroVideoBackground({ src, poster, paused = false }: HeroVideoBa
       data-video-fill
       className="absolute inset-0 z-0 h-full w-full object-cover object-[center_38%] md:object-center"
       aria-hidden
+      onLoadedData={() => void tryPlay()}
+      onCanPlay={() => void tryPlay()}
+      onPlaying={() => setPlaying(true)}
       onError={() => setFailed(true)}
     />
   );

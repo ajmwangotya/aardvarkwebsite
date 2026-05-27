@@ -6,8 +6,8 @@
  * Local dev: VITE_USE_LOCAL_VIDEOS=true uses /public/videos/*.mp4 on disk instead.
  */
 
-/** Cloudflare R2 public bucket URL — hero & brand films (see .env VITE_VIDEO_CDN_BASE). */
-const DEFAULT_R2_CDN = "https://pub-63bf513aa48e4a83a4da0d27b2e2d577.r2.dev";
+/** R2 / media CDN origin — proxied at /videos/* (see src/lib/video-proxy.ts). */
+const DEFAULT_R2_CDN = "https://media.aardvarktanzania.com";
 
 const env = import.meta.env ?? {};
 
@@ -32,8 +32,7 @@ const OVERRIDES = {
 export function videoUrl(filename: keyof typeof OVERRIDES): string {
   const override = OVERRIDES[filename];
   if (override) return override;
-  if (CDN_BASE) return `${CDN_BASE}/videos/${filename}`;
-  // No CDN configured — use files in public/videos/ (local dev or self-hosted prod)
+  // Same-origin paths — Worker proxies to R2 (mobile Safari-friendly). Local: public/videos/.
   return `/videos/${filename}`;
 }
 

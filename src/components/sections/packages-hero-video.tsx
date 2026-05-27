@@ -51,9 +51,9 @@ export function PackagesHeroVideo({ src, poster, caption }: PackagesHeroVideoPro
 
   if (failed) {
     return (
-      <figure className="relative w-full max-w-[17rem] overflow-hidden rounded-sm border border-border bg-ink shadow-md lg:ml-auto">
-        <img src={poster} alt="" className="aspect-video w-full object-cover" loading="eager" />
-        <figcaption className="bg-ink px-3 py-2.5 text-[0.6rem] uppercase tracking-[0.18em] text-bone/85">
+      <figure className="relative w-full overflow-hidden rounded-sm border border-border bg-ink shadow-lg lg:ml-auto">
+        <img src={poster} alt="" className="aspect-[4/3] w-full object-cover sm:aspect-video" loading="eager" />
+        <figcaption className="bg-ink px-4 py-3 text-[0.65rem] uppercase tracking-[0.18em] text-bone/85 sm:text-xs">
           {caption}
         </figcaption>
       </figure>
@@ -61,8 +61,8 @@ export function PackagesHeroVideo({ src, poster, caption }: PackagesHeroVideoPro
   }
 
   return (
-    <figure className="group relative w-full max-w-[17rem] overflow-hidden rounded-sm border border-border bg-ink shadow-md lg:ml-auto">
-      <div className="relative aspect-video bg-ink">
+    <figure className="group relative w-full overflow-hidden rounded-sm border border-border bg-ink shadow-lg lg:ml-auto">
+      <div className="relative aspect-[4/3] bg-ink sm:aspect-video">
         <video
           ref={videoRef}
           src={src}
@@ -93,7 +93,7 @@ export function PackagesHeroVideo({ src, poster, caption }: PackagesHeroVideoPro
           </button>
         )}
       </div>
-      <figcaption className="bg-ink px-3 py-2.5 text-[0.6rem] uppercase tracking-[0.18em] text-bone/85">
+      <figcaption className="bg-ink px-4 py-3 text-[0.65rem] uppercase tracking-[0.18em] text-bone/85 sm:text-xs">
         {caption}
       </figcaption>
     </figure>

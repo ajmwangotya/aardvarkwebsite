@@ -16,7 +16,7 @@ export type Safari = {
   bestSeason?: string;
   included?: string[];
   excluded?: string[];
-  region?: "Tanzania" | "Uganda" | "Zanzibar";
+  region?: "Tanzania" | "Uganda" | "Rwanda" | "Zanzibar";
 };
 
 /** Standard inclusions across brochure itineraries (Terms §5.3). */
@@ -59,8 +59,10 @@ const PT = {
   zanzibarStone: { name: "Stone Town, Zanzibar", lat: -6.165, lng: 39.2026 },
   zanzibarN: { name: "North Zanzibar", lat: -5.72, lng: 39.3 },
   nyerere: { name: "Nyerere National Park", lat: -8.0, lng: 37.5 },
-  // Uganda
+  // Rwanda & Uganda
   kigali: { name: "Kigali", lat: -1.9441, lng: 30.0619 },
+  nyungwe: { name: "Nyungwe Forest", lat: -2.5, lng: 29.25 },
+  volcanoes: { name: "Volcanoes NP (Kinigi)", lat: -1.47, lng: 29.53 },
   entebbe: { name: "Entebbe / Kampala", lat: 0.045, lng: 32.443 },
   mabamba: { name: "Mabamba Bay", lat: 0.115, lng: 32.32 },
   mbarara: { name: "Mbarara", lat: -0.61, lng: 30.658 },
@@ -262,6 +264,15 @@ export const safaris: Safari[] = [
     "duration": "12 Days / 11 Nights",
     "intro": "A southern Africa circuit from Cape Town through Victoria Falls into Botswana's premier wildlife areas — Chobe, Hwange, and the Okavango Delta — combining city, waterfall, and bush in one journey.",
     "route": "Victoria Falls · Chobe · Hwange · Okavango Delta",
+    "highlights": [
+      "Cape Town & Table Mountain",
+      "Victoria Falls rainforest walk",
+      "Chobe River boat safari",
+      "Hwange elephant herds",
+      "Okavango mokoro & walking safaris",
+    ],
+    "included": [...STD_INCLUDED, "Internal flights between circuit sectors where noted"],
+    "excluded": [...STD_EXCLUDED, "Victoria Falls optional activities (helicopter, etc.)"],
     "days": [
       {
         "title": "Day 1–2: Cape Town",
@@ -393,6 +404,9 @@ export const safaris: Safari[] = [
     "duration": "4 Days / 3 Nights",
     "intro": "The northern part of Tanzania is renowned for its stunning landscapes and rich wildlife experiences. This region encompasses several world-famous parks and conservation areas. Here are some luxurious sample itineraries focused on the northern circuit, combining iconic destinations with high-end accommodations and exclusive experiences.",
     "route": "Tarangire · Ngorongoro · Serengeti",
+    "highlights": ["Baobab woodlands of Tarangire", "Ngorongoro Crater Big Five", "Central Serengeti plains"],
+    "included": [...STD_INCLUDED],
+    "excluded": [...STD_EXCLUDED],
     "days": [
       {
         "title": "Day 1: Arrival & Tarangire National Park",
@@ -419,6 +433,9 @@ export const safaris: Safari[] = [
     "duration": "2 Days / 1 Night",
     "intro": "A focused northern Tanzania escape pairing Tarangire's baobab woodlands with the wildlife-rich floor of Ngorongoro Crater — ideal when time is short but you want iconic game viewing.",
     "route": "Ngorongoro · Serengeti",
+    "highlights": ["Tarangire elephant herds", "Ngorongoro Crater rim overnight"],
+    "included": [...STD_INCLUDED],
+    "excluded": [...STD_EXCLUDED],
     "days": [
       {
         "title": "Day 1: Arrival & Tarangire National Park",
@@ -437,6 +454,9 @@ export const safaris: Safari[] = [
     "duration": "2 Days / 1 Night",
     "intro": "A compact overnight circuit to the Ngorongoro Crater rim and floor — maximum wildlife in minimum time, with scenic highland drives and the Big Five on the crater floor.",
     "route": "Tarangire · Ngorongoro",
+    "highlights": ["Ngorongoro Crater rim views", "Crater floor Big Five game drive"],
+    "included": [...STD_INCLUDED],
+    "excluded": [...STD_EXCLUDED],
     "days": [
       {
         "title": "Day 1: Arrival & Transfer to Ngorongoro Conservation Area",
@@ -455,6 +475,9 @@ export const safaris: Safari[] = [
     "duration": "1 Day",
     "intro": "A full-day descent into Ngorongoro Crater from Arusha — one of Africa's most concentrated wildlife arenas in a single unforgettable day.",
     "route": "One-day descent into the Crater",
+    "highlights": ["Full-day Ngorongoro Crater descent", "Rhino, lion & flamingo on the crater floor"],
+    "included": [...STD_INCLUDED],
+    "excluded": [...STD_EXCLUDED],
     "days": [
       {
         "title": "Day 1: Ngorongoro Crater full-day safari",
@@ -522,6 +545,9 @@ export const safaris: Safari[] = [
     "duration": "6 Days / 5 Nights",
     "intro": "A natural extension to any Tanzania safari: track mountain gorillas in Bwindi, search for the prehistoric Shoebill in Mabamba's papyrus swamps, and trek chimpanzees in the primate capital of the world.",
     "route": "Entebbe · Mabamba · Mbarara · Bwindi · Queen Elizabeth NP · Kampala",
+    "highlights": ["Mountain gorilla trek", "Shoebill at Mabamba", "Chimpanzees & tree-climbing lions"],
+    "included": [...STD_INCLUDED, "Gorilla permit (when booked as part of extension)"],
+    "excluded": [...STD_EXCLUDED],
     "days": [
       { "title": "DAY 1: Flight to Uganda", "body": "Met by our Aardvark representative on arrival in Entebbe and transferred to the Lake Victoria Serena Resort, whose gardens of indigenous plants attract butterflies and resident and migratory birds — Splendid Starling, Pied and Woodland Kingfishers, Black-headed Gonolek and more." },
       { "title": "DAY 2: Kampala to Mabamba Bay – Mbarara", "body": "After breakfast, proceed to Mabamba Bay on Lake Victoria where papyrus swamps support over 260 bird species, including the rare Shoebill. Enter the swamps by boat with local guides to look for Shoebill, Palm-nut Vulture, jaçanas, Pygmy Goose, Goliath Heron and more. Continue to Mbarara, arriving in late evening. Igongo Cultural Center Hotel. Transit time 4–5 hours." },

@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Reveal } from "@/components/motion";
 import { getSafari, safaris } from "@/data/safaris";
+import { resolveSafariSlug } from "@/data/safari-slug-aliases";
 import { getLocalizedSafari } from "@/lib/localized-safari";
 import { buildPageHead } from "@/lib/seo";
 import { SITE, pageTitle } from "@/lib/site-config";
@@ -20,21 +21,24 @@ import { safariThumbImages } from "@/data/destination-images";
 import migration from "@/assets/editorial/migration.jpg";
 import acacia from "@/assets/editorial/acacia.jpg";
 import maasai from "@/assets/editorial/maasai.jpg";
-import en from "@/locales/en.json";
-
 export const Route = createFileRoute("/safaris/$slug")({
   loader: ({ params, context }) => {
-    if (!getSafari(params.slug)) throw notFound();
-    const baseKey = `safarisContent.${params.slug}`;
-    const seoTitle = tFromContext(context.i18n, `${baseKey}.title`);
-    const seoRoute = tFromContext(context.i18n, `${baseKey}.route`, "");
-    const seoDuration = tFromContext(context.i18n, `${baseKey}.duration`, "");
-    const seoIntro = tFromContext(context.i18n, `${baseKey}.intro`, "");
-    return { slug: params.slug, seoTitle, seoRoute, seoDuration, seoIntro };
+    const slug = resolveSafariSlug(params.slug);
+    if (slug !== params.slug) {
+      throw redirect({ to: "/safaris/$slug", params: { slug }, replace: true });
+    }
+    const safari = getSafari(slug);
+    if (!safari) throw notFound();
+    const baseKey = `safarisContent.${slug}`;
+    const seoTitle = tFromContext(context.i18n, `${baseKey}.title`, safari.title);
+    const seoRoute = safari.route;
+    const seoDuration = safari.duration;
+    const seoIntro = safari.intro;
+    return { slug, seoTitle, seoRoute, seoDuration, seoIntro };
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [{ title: pageTitle("Safari") }] };
-    const path = `/safaris/${params.slug}`;
+    const path = `/safaris/${loaderData.slug ?? params.slug}`;
     const description = `${loaderData.seoDuration ? loaderData.seoDuration + ". " : ""}${loaderData.seoRoute}. Day-by-day itinerary, request a free quote.`;
     const title = pageTitle(loaderData.seoTitle);
     const base = buildPageHead({
@@ -59,7 +63,7 @@ export const Route = createFileRoute("/safaris/$slug")({
               "@type": "TravelAgency",
               name: SITE.name,
             },
-            itinerary: ((en.safarisContent as Record<string, { days: { title: string }[] }>)[params.slug]?.days ?? []).map((d, i) => ({
+            itinerary: (getSafari(loaderData.slug ?? params.slug)?.days ?? []).map((d, i) => ({
               "@type": "ListItem",
               position: i + 1,
               name: d.title,
@@ -196,6 +200,8 @@ function SafariDetail() {
           </Reveal>
         )}
 
+        {safari.days.length > 0 && (
+          <>
         <Reveal>
           <h2 className="mt-16 font-serif text-[clamp(1.5rem,4vw,3rem)]">
             <Trans i18nKey="safariDetail.dayByDay" components={{ i: <span className="gradient-text italic" /> }} />
@@ -203,7 +209,7 @@ function SafariDetail() {
         </Reveal>
 
         <div className="mt-10 space-y-px bg-border">
-          {safari.days.map((d: { title: string; body: string }, i: number) => (
+          {safari.days.map((d, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -227,6 +233,8 @@ function SafariDetail() {
             </motion.div>
           ))}
         </div>
+          </>
+        )}
 
         {(safari.included?.length || safari.excluded?.length) && (
           <Reveal>

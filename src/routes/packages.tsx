@@ -31,8 +31,8 @@ function PackagesPage() {
       <SiteHeader light={false} />
 
       <section className="mx-auto max-w-[1400px] px-5 pb-10 pt-28 sm:px-6 sm:pt-40 sm:pb-14 md:px-12">
-        <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-8">
+        <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-7">
             <Reveal>
               <span className="eyebrow">{t("packagesPage.eyebrow")}</span>
               <h1 className="mt-6 max-w-4xl font-serif text-[clamp(2.25rem,7vw,4.5rem)]">
@@ -57,7 +57,7 @@ function PackagesPage() {
             </nav>
           </div>
 
-          <div className="flex justify-center lg:col-span-4 lg:justify-end lg:pt-2">
+          <div className="w-full lg:col-span-5 lg:pt-2">
             <PackagesHeroVideo
               src={SITE_VIDEOS.gorillaUganda}
               poster={gorillaUgandaPoster}

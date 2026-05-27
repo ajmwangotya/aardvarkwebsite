@@ -5,6 +5,6 @@ describe("videoUrl", () => {
   it("resolves CDN paths for known filenames", async () => {
     const { videoUrl } = await import("./video-url");
     const url = videoUrl("aardvark-wild.mp4");
-    assert.match(url, /^https:\/\/.+\/videos\/aardvark-wild\.mp4$/);
+    assert.equal(url, "/videos/aardvark-wild.mp4");
   });
 });

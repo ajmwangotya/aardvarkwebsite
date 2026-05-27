@@ -30,7 +30,12 @@ export const ITINERARY_CATALOG: ItineraryCatalogRow[] = [
   { days: 4, category: "Tanzania", safariSlug: "mkomazi-extension" },
   { days: 6, category: "Tanzania", safariSlug: "uganda-extension" },
   { days: 11, category: "Southern Africa", safariSlug: "exploring-cape-town-victoria-falls-botswana-wildlife-safari-circuit" },
-  { days: 8, category: "Southern Africa", extraKey: "okavangoDelta" },
+  {
+    days: 8,
+    category: "Southern Africa",
+    safariSlug: "exploring-cape-town-victoria-falls-botswana-wildlife-safari-circuit",
+    imageKey: "okavangoDelta",
+  },
   { days: 5, durationLabel: "5 Nights", category: "Zanzibar", packageSlug: "safari-beach-combo" },
   { days: 5, category: "Zanzibar", packageSlug: "serengeti-zanzibar-honeymoon" },
   { days: 3, durationLabel: "3 Nights", category: "Zanzibar", packageSlug: "zanzibar-extension-4", imageKey: "zanzibar-essentials-3n" },

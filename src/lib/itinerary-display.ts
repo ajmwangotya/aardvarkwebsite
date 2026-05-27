@@ -88,7 +88,9 @@ export function buildItineraryListItems(t: TFunction): ItineraryListItem[] {
           route = pkgItem.duration?.trim() || route;
           desc = pkgItem.summary?.trim() || desc;
         }
-        linkTo = { to: "/packages/$slug", params: { slug: row.packageSlug } };
+        linkTo = pkg.safariSlug
+          ? { to: "/safaris/$slug", params: { slug: pkg.safariSlug } }
+          : { to: "/packages/$slug", params: { slug: row.packageSlug } };
       }
     } else if (row.extraKey) {
       const extra = t(`itinerariesPage.extra.${row.extraKey}`, { returnObjects: true });

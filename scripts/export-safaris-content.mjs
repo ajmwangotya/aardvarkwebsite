@@ -23,6 +23,7 @@ for (const s of safaris) {
     route: s.route,
     days: s.days,
     highlights: s.highlights,
+    lodges: s.lodges,
     fromPrice: s.fromPrice,
     priceNote: s.priceNote,
     bestSeason: s.bestSeason,
