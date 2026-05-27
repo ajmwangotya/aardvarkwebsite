@@ -102,6 +102,7 @@ function CountryDestinationPage() {
           eyebrowKey={`${base}.filmEyebrow`}
           titleKey={`${base}.filmTitle`}
           descKey={`${base}.filmDesc`}
+          autoPlayMuted
         />
       )}
 
