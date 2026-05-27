@@ -17,6 +17,7 @@ import { MigrationCalendar } from "@/components/sections/migration-calendar";
 import { SectionDivider } from "@/components/layout/section-divider";
 import { buildPageHead } from "@/lib/seo";
 import { preloadImage } from "@/lib/preload-image";
+import { preloadVideo } from "@/lib/preload-video";
 import { pageTitle } from "@/lib/site-config";
 import { OptimizedImage } from "@/components/media/optimized-image";
 import { Reveal, blurIn, ParallaxSection } from "@/components/motion";
@@ -47,7 +48,7 @@ export const Route = createFileRoute("/")({
       ...base,
       links: [
         ...base.links,
-        { rel: "preload", href: heroNdutu1, as: "image" },
+        { rel: "preload", href: SITE_VIDEOS.wildReel, as: "video", type: "video/mp4" },
         { rel: "preload", href: heroNdutu5, as: "image" },
       ],
     };
@@ -106,15 +107,17 @@ function HomePage() {
     };
   }, []);
 
-  // Avoid competing with hero video for bandwidth — defer below-the-fold mosaic preloads.
   useEffect(() => {
-    if (useHeroSlideshow) {
+    if (!useHeroSlideshow) {
+      preloadVideo(SITE_VIDEOS.wildReel);
+      preloadImage(heroNdutu5);
+    } else {
       preloadImage(heroNdutu1);
       preloadImage(heroNdutu5);
     }
     const deferMosaic = window.setTimeout(() => {
       for (const photo of introMosaicPhotos) preloadImage(photo.src);
-    }, useHeroSlideshow ? 0 : 2500);
+    }, useHeroSlideshow ? 0 : 3000);
     return () => window.clearTimeout(deferMosaic);
   }, [useHeroSlideshow]);
 

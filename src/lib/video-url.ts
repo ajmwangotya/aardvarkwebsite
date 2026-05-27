@@ -6,8 +6,8 @@
  * Local dev: VITE_USE_LOCAL_VIDEOS=true uses /public/videos/*.mp4 on disk instead.
  */
 
-/** R2 custom domain — used when VITE_VIDEO_CDN_BASE is not set. */
-const PRODUCTION_VIDEO_CDN = "https://media.aardvarktanzania.com";
+/** Cloudflare R2 public bucket URL — hero & brand films (see .env VITE_VIDEO_CDN_BASE). */
+const DEFAULT_R2_CDN = "https://pub-63bf513aa48e4a83a4da0d27b2e2d577.r2.dev";
 
 const env = import.meta.env ?? {};
 
@@ -16,7 +16,7 @@ const USE_LOCAL_VIDEOS = env.VITE_USE_LOCAL_VIDEOS === "true";
 
 const CDN_BASE = (
   (env.VITE_VIDEO_CDN_BASE as string | undefined)?.trim() ||
-  (!USE_LOCAL_VIDEOS ? PRODUCTION_VIDEO_CDN : "")
+  (!USE_LOCAL_VIDEOS ? DEFAULT_R2_CDN : "")
 ).replace(/\/$/, "") || undefined;
 
 const OVERRIDES = {

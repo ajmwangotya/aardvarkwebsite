@@ -27,18 +27,26 @@ export function HeroVideoBackground({ src, poster, paused = false }: HeroVideoBa
     if (fallbackImage) preloadImage(fallbackImage);
   }, [fallbackImage]);
 
+  const revealFrame = useCallback(() => {
+    const el = videoRef.current;
+    if (el && el.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      setVideoReady(true);
+    }
+  }, []);
+
   const playVideo = useCallback(async () => {
     if (paused || failed) return;
     const el = videoRef.current;
     if (!el) return;
     el.muted = true;
+    revealFrame();
     try {
       await el.play();
       setVideoReady(true);
     } catch {
       // Autoplay may be blocked until the user interacts with the page.
     }
-  }, [paused, failed]);
+  }, [paused, failed, revealFrame]);
 
   useEffect(() => {
     void playVideo();
@@ -119,12 +127,20 @@ export function HeroVideoBackground({ src, poster, paused = false }: HeroVideoBa
         loop
         playsInline
         preload="auto"
+        fetchPriority="high"
         data-video-fill
         className={`absolute inset-0 h-full w-full object-cover object-[center_38%] transition-opacity duration-700 md:object-center ${
           videoReady ? "opacity-100" : "opacity-0"
         }`}
         aria-hidden
-        onLoadedData={() => void playVideo()}
+        onLoadedMetadata={() => {
+          revealFrame();
+          void playVideo();
+        }}
+        onLoadedData={() => {
+          revealFrame();
+          void playVideo();
+        }}
         onCanPlay={() => void playVideo()}
         onPlaying={() => setVideoReady(true)}
         onError={onVideoError}
