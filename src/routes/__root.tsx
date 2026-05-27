@@ -3,6 +3,7 @@ import {
   Outlet,
   Link,
   createRootRouteWithContext,
+  retainSearchParams,
   useRouter,
   useRouterState,
   useRouteContext,
@@ -10,12 +11,12 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { I18nextProvider } from "react-i18next";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { z } from "zod";
 
 import appCss from "../styles.css?url";
 import clientI18n from "@/lib/i18n";
-import { parseLangParam } from "@/lib/i18n-instance";
+import { createI18nForLang, parseLangParam } from "@/lib/i18n-instance";
 import { applyLanguage } from "@/lib/switch-language";
 import type { RouterContext } from "@/router";
 import { WhatsAppFloat } from "@/components/layout/whatsapp-float";
@@ -70,9 +71,14 @@ const defaultDescription =
 
 export const Route = createRootRouteWithContext<RouterContext>()({
   validateSearch: rootSearchSchema,
-  beforeLoad: ({ search, context }) => {
+  search: {
+    middlewares: [retainSearchParams(["lang"])],
+  },
+  beforeLoad: async ({ search, context }) => {
     const lang = parseLangParam(search.lang ?? context.lang);
-    return { lang };
+    const i18n =
+      context.i18n?.language === lang ? context.i18n : await createI18nForLang(lang);
+    return { lang, i18n };
   },
   head: () => ({
     meta: [
@@ -196,17 +202,22 @@ function CloseMobileNavOnNavigate() {
 }
 
 function RootComponent() {
-  const { queryClient, i18n: serverI18n, lang } = Route.useRouteContext();
-  const i18nInstance = typeof document !== "undefined" ? clientI18n : (serverI18n ?? clientI18n);
+  const { queryClient, i18n: requestI18n, lang } = Route.useRouteContext();
+  const isClient = typeof document !== "undefined";
+  const providerI18n = isClient ? clientI18n : (requestI18n ?? clientI18n);
+
+  useLayoutEffect(() => {
+    if (!isClient) return;
+    void applyLanguage(lang, clientI18n);
+  }, [lang, isClient]);
 
   useEffect(() => {
-    if (typeof document === "undefined") return;
-    void applyLanguage(lang, clientI18n);
+    if (!isClient) return;
     document.documentElement.classList.add("js-ready");
-  }, [lang]);
+  }, [isClient]);
 
   return (
-    <I18nextProvider i18n={i18nInstance}>
+    <I18nextProvider i18n={providerI18n} defaultNS="translation">
       <QueryClientProvider client={queryClient}>
         <CloseMobileNavOnNavigate />
         <SkipToContent />

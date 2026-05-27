@@ -1,7 +1,7 @@
-import clientI18n, { SUPPORTED_LANGS, type Lang } from "@/lib/i18n";
+import { SUPPORTED_LANGS, type Lang } from "@/lib/i18n";
 import { parseLangParam } from "@/lib/i18n-instance";
-import { buildLanguagePath, hardNavigateLanguage } from "@/lib/switch-language";
-import { useRouterState } from "@tanstack/react-router";
+import { buildLanguagePath, switchLanguage } from "@/lib/switch-language";
+import { useNavigate, useRouterState } from "@tanstack/react-router";
 import { Globe, ChevronDown } from "lucide-react";
 import type { MouseEvent } from "react";
 import { useTranslation } from "react-i18next";
@@ -15,7 +15,8 @@ const FLAGS: Record<Lang, string> = {
 };
 
 export function LanguageSwitcher({ light = false }: { light?: boolean }) {
-  const { t, i18n } = useTranslation(undefined, { i18n: clientI18n });
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const search = useRouterState({ select: (s) => s.location.search }) as Record<string, unknown>;
   const current = parseLangParam(
@@ -24,7 +25,7 @@ export function LanguageSwitcher({ light = false }: { light?: boolean }) {
 
   const onPickLanguage = (event: MouseEvent<HTMLAnchorElement>, lng: Lang) => {
     event.preventDefault();
-    hardNavigateLanguage(lng);
+    void switchLanguage(lng, navigate);
   };
 
   return (
