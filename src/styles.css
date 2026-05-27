@@ -608,6 +608,27 @@ html:not(.js-ready) [data-projection-id] {
   filter: none !important;
 }
 
+/* Language switcher — native <details> so the menu opens without React state */
+.language-switcher > summary::-webkit-details-marker {
+  display: none;
+}
+
+.language-switcher > summary::marker {
+  content: "";
+}
+
+.language-switcher__menu {
+  pointer-events: auto;
+}
+
+/* In the mobile drawer footer, open the menu upward so it isn't clipped */
+.mobile-nav-footer .language-switcher__menu {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
 /* Mobile hamburger menu — checkbox toggle, no JS required */
 .mobile-nav-panel-host {
   display: contents;

@@ -235,7 +235,7 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
             })}
         </nav>
 
-        <div className="pointer-events-auto relative z-[2] ml-auto flex shrink-0 items-center gap-2">
+        <div className="pointer-events-auto relative z-[120] ml-auto flex shrink-0 items-center gap-2">
           <LanguageSwitcher light={!solid} />
           <MobileNavTrigger light={!solid} />
           <div className="hidden lg:block">

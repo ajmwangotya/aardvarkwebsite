@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { buildLanguageSearch, languageSearchUrl } from "./switch-language.ts";
+import { buildLanguagePath, buildLanguageSearch, languageSearchUrl } from "./switch-language.ts";
 import { parseLangParam } from "./i18n-instance.ts";
 
 describe("switch-language", () => {
@@ -10,6 +10,11 @@ describe("switch-language", () => {
 
   it("buildLanguageSearch sets lang for non-English", () => {
     assert.deepEqual(buildLanguageSearch({ foo: "bar" }, "fr"), { foo: "bar", lang: "fr" });
+  });
+
+  it("buildLanguagePath updates the query string", () => {
+    assert.equal(buildLanguagePath("/packages", { foo: "bar" }, "de"), "/packages?foo=bar&lang=de");
+    assert.equal(buildLanguagePath("/packages", { lang: "de" }, "en"), "/packages");
   });
 
   it("languageSearchUrl updates the query string", () => {

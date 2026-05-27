@@ -37,6 +37,23 @@ export function languageSearchUrl(lng: Lang, baseUrl = window.location.href): st
   return url.toString();
 }
 
+/** Same-origin path + query for language links (SSR-safe). */
+export function buildLanguagePath(
+  pathname: string,
+  search: Record<string, unknown>,
+  lng: Lang,
+): string {
+  const params = new URLSearchParams();
+  const next = buildLanguageSearch(search, lng);
+  for (const [key, value] of Object.entries(next)) {
+    if (value !== undefined && value !== null && value !== "") {
+      params.set(key, String(value));
+    }
+  }
+  const query = params.toString();
+  return query ? `${pathname}?${query}` : pathname;
+}
+
 /** Last-resort fallback — always changes language via navigation. */
 export function hardNavigateLanguage(lng: Lang): void {
   if (typeof window === "undefined") return;
