@@ -14,8 +14,9 @@ import { useEffect } from "react";
 import { z } from "zod";
 
 import appCss from "../styles.css?url";
-import i18n from "@/lib/i18n";
+import clientI18n from "@/lib/i18n";
 import { parseLangParam } from "@/lib/i18n-instance";
+import { applyLanguage } from "@/lib/switch-language";
 import type { RouterContext } from "@/router";
 import { WhatsAppFloat } from "@/components/layout/whatsapp-float";
 import { MobileCtaBar } from "@/components/layout/mobile-cta-bar";
@@ -196,15 +197,13 @@ function CloseMobileNavOnNavigate() {
 
 function RootComponent() {
   const { queryClient, i18n: serverI18n, lang } = Route.useRouteContext();
-  const i18nInstance = serverI18n ?? i18n;
+  const i18nInstance = typeof document !== "undefined" ? clientI18n : (serverI18n ?? clientI18n);
 
   useEffect(() => {
-    if (!serverI18n && lang && i18n.language !== lang) {
-      void i18n.changeLanguage(lang);
-    }
-    document.documentElement.lang = lang;
+    if (typeof document === "undefined") return;
+    void applyLanguage(lang, clientI18n);
     document.documentElement.classList.add("js-ready");
-  }, [lang, serverI18n]);
+  }, [lang]);
 
   return (
     <I18nextProvider i18n={i18nInstance}>

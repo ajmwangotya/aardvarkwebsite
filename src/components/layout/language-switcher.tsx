@@ -1,9 +1,11 @@
-import { useTranslation } from "react-i18next";
-import { useEffect, useRef, useState } from "react";
-import { useNavigate, useRouterState } from "@tanstack/react-router";
-import { Globe, ChevronDown } from "lucide-react";
-import { SUPPORTED_LANGS, type Lang } from "@/lib/i18n";
+import clientI18n, { SUPPORTED_LANGS, type Lang } from "@/lib/i18n";
 import { parseLangParam } from "@/lib/i18n-instance";
+import { switchLanguage } from "@/lib/switch-language";
+import { useNavigate, useRouteContext, useRouterState } from "@tanstack/react-router";
+import { Globe, ChevronDown } from "lucide-react";
+import { useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
 
 const FLAGS: Record<Lang, string> = {
   en: "🇬🇧",
@@ -14,98 +16,142 @@ const FLAGS: Record<Lang, string> = {
 };
 
 export function LanguageSwitcher({ light = false }: { light?: boolean }) {
-  const { i18n, t } = useTranslation();
+  const { t, i18n } = useTranslation(undefined, { i18n: clientI18n });
   const navigate = useNavigate();
-  const search = useRouterState({ select: (s) => s.location.search });
-  const [open, setOpen] = useState(false);
+  const listboxId = useId();
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
   const rootRef = useRef<HTMLDivElement>(null);
-  const current = parseLangParam(
-    (search as { lang?: string }).lang ?? i18n.resolvedLanguage ?? i18n.language,
+  const [open, setOpen] = useState(false);
+  const [menuStyle, setMenuStyle] = useState<{ top: number; left: number; width: number } | null>(
+    null,
   );
+
+  const search = useRouterState({ select: (s) => s.location.search }) as { lang?: string };
+  const { lang: routeLang } = useRouteContext({ from: "__root__", strict: false }) as {
+    lang?: Lang;
+  };
+  const current = parseLangParam(search.lang ?? routeLang ?? i18n.resolvedLanguage ?? i18n.language);
 
   useEffect(() => {
     document.documentElement.lang = current;
   }, [current]);
 
   useEffect(() => {
-    if (!open) return;
-    const close = (e: MouseEvent) => {
-      const target = e.target as Node | null;
-      if (rootRef.current && target && !rootRef.current.contains(target)) {
-        setOpen(false);
-      }
+    if (!open || !buttonRef.current) {
+      setMenuStyle(null);
+      return;
+    }
+
+    const updatePosition = () => {
+      const rect = buttonRef.current?.getBoundingClientRect();
+      if (!rect) return;
+      setMenuStyle({
+        top: rect.bottom + 8,
+        left: Math.max(8, rect.right - 176),
+        width: 176,
+      });
     };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    document.addEventListener("mousedown", close);
-    document.addEventListener("keydown", onKey);
+
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+    window.addEventListener("scroll", updatePosition, true);
     return () => {
+      window.removeEventListener("resize", updatePosition);
+      window.removeEventListener("scroll", updatePosition, true);
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const close = (event: MouseEvent) => {
+      const target = event.target as Node | null;
+      if (!target) return;
+      if (rootRef.current?.contains(target)) return;
+      if (menuRef.current?.contains(target)) return;
+      setOpen(false);
+    };
+
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    const timer = window.setTimeout(() => {
+      document.addEventListener("mousedown", close);
+      document.addEventListener("keydown", onKey);
+    }, 0);
+
+    return () => {
+      window.clearTimeout(timer);
       document.removeEventListener("mousedown", close);
       document.removeEventListener("keydown", onKey);
     };
   }, [open]);
 
-  const setLanguage = (lng: Lang) => {
-    void i18n.changeLanguage(lng);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("lang", lng);
-    }
-    navigate({
-      to: ".",
-      search: (prev: Record<string, unknown>) => ({
-        ...prev,
-        lang: lng === "en" ? undefined : lng,
-      }),
-      replace: true,
-    });
+  const chooseLanguage = (lng: Lang) => {
     setOpen(false);
+    void switchLanguage(lng, navigate);
   };
 
+  const menu =
+    open && menuStyle
+      ? createPortal(
+          <div
+            ref={menuRef}
+            id={listboxId}
+            role="listbox"
+            aria-label={t("lang.label")}
+            style={{
+              position: "fixed",
+              top: menuStyle.top,
+              left: menuStyle.left,
+              width: menuStyle.width,
+              zIndex: 100000,
+            }}
+            className="border border-border bg-card shadow-2xl"
+          >
+            {SUPPORTED_LANGS.map((lng) => (
+              <button
+                key={lng}
+                type="button"
+                role="option"
+                aria-selected={current === lng}
+                onClick={() => chooseLanguage(lng)}
+                className={`flex min-h-11 w-full touch-manipulation items-center gap-2 px-4 py-3 text-left text-sm transition-colors hover:bg-secondary active:bg-secondary ${
+                  current === lng ? "text-gold" : "text-foreground/80"
+                }`}
+              >
+                <span aria-hidden>{FLAGS[lng]}</span>
+                <span>{t(`lang.${lng}`)}</span>
+              </button>
+            ))}
+          </div>,
+          document.body,
+        )
+      : null;
+
   return (
-    <div ref={rootRef} className="relative shrink-0">
-      <button
-        type="button"
-        onClick={(e) => {
-          e.stopPropagation();
-          setOpen((v) => !v);
-        }}
-        aria-label={t("lang.label")}
-        aria-expanded={open}
-        aria-haspopup="listbox"
-        aria-controls="lang-listbox"
-        className={`flex min-h-11 min-w-11 touch-manipulation items-center justify-center gap-1.5 px-2 text-[0.7rem] font-medium uppercase tracking-[0.18em] transition-colors ${
-          light ? "text-bone hover:text-gold" : "text-foreground hover:text-gold"
-        }`}
-      >
-        <Globe className="h-3.5 w-3.5" aria-hidden />
-        <span>{current.toUpperCase()}</span>
-        <ChevronDown className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden />
-      </button>
-      {open && (
-        <div
-          id="lang-listbox"
-          role="listbox"
+    <>
+      <div ref={rootRef} className="relative shrink-0">
+        <button
+          ref={buttonRef}
+          type="button"
+          onClick={() => setOpen((value) => !value)}
           aria-label={t("lang.label")}
-          className="absolute right-0 top-full z-[130] mt-2 w-44 border border-border bg-card shadow-2xl"
+          aria-expanded={open}
+          aria-haspopup="listbox"
+          aria-controls={listboxId}
+          className={`flex min-h-11 min-w-11 touch-manipulation items-center justify-center gap-1.5 px-2 text-[0.7rem] font-medium uppercase tracking-[0.18em] transition-colors ${
+            light ? "text-bone hover:text-gold" : "text-foreground hover:text-gold"
+          }`}
         >
-          {SUPPORTED_LANGS.map((lng) => (
-            <button
-              key={lng}
-              type="button"
-              role="option"
-              aria-selected={current === lng}
-              onClick={() => setLanguage(lng)}
-              className={`flex min-h-11 w-full touch-manipulation items-center gap-2 px-4 py-3 text-left text-sm transition-colors hover:bg-secondary active:bg-secondary ${
-                current === lng ? "text-gold" : "text-foreground/80"
-              }`}
-            >
-              <span aria-hidden>{FLAGS[lng]}</span>
-              <span>{t(`lang.${lng}`)}</span>
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
+          <Globe className="h-3.5 w-3.5" aria-hidden />
+          <span>{current.toUpperCase()}</span>
+          <ChevronDown className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden />
+        </button>
+      </div>
+      {menu}
+    </>
   );
 }

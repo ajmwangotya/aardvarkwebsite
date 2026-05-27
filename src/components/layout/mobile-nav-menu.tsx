@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site-config";
 import { NavHrefLink, closeMobileNav } from "@/lib/nav-href";
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
 
 export const MOBILE_NAV_TOGGLE_ID = "site-mobile-nav-toggle";
 
@@ -92,6 +93,9 @@ export function MobileNavPanel({ links }: { links: MobileNavLink[] }) {
           </nav>
 
           <div className="mobile-nav-footer">
+            <div className="mb-4 border-b border-bone/15 pb-4">
+              <LanguageSwitcher light />
+            </div>
             <a href={`tel:${SITE.phoneAfricaTel}`} className="mobile-nav-contact-link">
               {SITE.phoneAfrica}
             </a>
