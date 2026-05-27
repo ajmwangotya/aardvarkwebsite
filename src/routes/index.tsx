@@ -32,7 +32,6 @@ import heroNdutu7 from "@/assets/editorial/zanzibar-beach.jpg";
 import migration from "@/assets/editorial/migration.jpg";
 import maasai from "@/assets/editorial/maasai.jpg";
 import walking from "@/assets/editorial/walking.jpg";
-import dining from "@/assets/editorial/dining.jpg";
 import acaciaEditorial from "@/assets/editorial/acacia.jpg";
 import elephants from "@/assets/editorial/elephants.jpg";
 
@@ -71,9 +70,8 @@ const heroSlideImages = [
 const introMosaicPhotos = [
   { src: maasai, alt: "Maasai community in Tanzania" },
   { src: walking, alt: "Safari guests watching wildlife" },
-  { src: dining, alt: "Bush dining experience" },
-  { src: elephants, alt: "Safari guests watching giraffes from an Aardvark vehicle" },
   { src: acaciaEditorial, alt: "Guest photographing a zebra on safari" },
+  { src: elephants, alt: "Safari guests watching giraffes from an Aardvark vehicle" },
 ];
 
 function HomePage() {
