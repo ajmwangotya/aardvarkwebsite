@@ -37,6 +37,9 @@ export function CinematicVideoSection({
     if (!el) return;
     try {
       if (el.paused) {
+        if (el.readyState < HTMLMediaElement.HAVE_METADATA) {
+          el.load();
+        }
         await el.play();
         setPlaying(true);
       } else {
@@ -82,7 +85,8 @@ export function CinematicVideoSection({
                   playsInline
                   preload="metadata"
                   controls
-                  className="aspect-video h-full w-full object-cover"
+                  className="relative z-0 aspect-video h-full w-full cursor-pointer object-cover"
+                  onClick={() => void togglePlay()}
                   onPlay={() => setPlaying(true)}
                   onPause={() => setPlaying(false)}
                   onEnded={() => setPlaying(false)}
@@ -93,11 +97,11 @@ export function CinematicVideoSection({
                 >
                   {t("home.filmUnsupported")}
                 </video>
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-ink/20 opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
+                <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-ink/70 via-transparent to-ink/20 opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
                 <button
                   type="button"
                   onClick={() => void togglePlay()}
-                  className="absolute left-1/2 top-1/2 z-10 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-bone/60 bg-ink/50 text-bone backdrop-blur-sm transition-all hover:border-gold hover:bg-gold/20 hover:shadow-[0_0_40px_rgba(196,155,70,0.35)] sm:h-20 sm:w-20 md:opacity-0 md:group-hover:opacity-100 md:focus-visible:opacity-100"
+                  className="absolute left-1/2 top-1/2 z-[2] flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-bone/60 bg-ink/50 text-bone backdrop-blur-sm transition-all hover:border-gold hover:bg-gold/20 hover:shadow-[0_0_40px_rgba(196,155,70,0.35)] sm:h-20 sm:w-20 md:opacity-0 md:group-hover:opacity-100 md:focus-visible:opacity-100"
                   aria-label={playing ? t("video.pause") : t("video.play")}
                 >
                   {playing ? <Pause className="h-7 w-7" /> : <Play className="h-7 w-7 fill-current" />}

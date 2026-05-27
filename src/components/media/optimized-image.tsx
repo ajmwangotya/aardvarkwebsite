@@ -54,7 +54,7 @@ export function OptimizedImage({
     <img
       src={displaySrc}
       alt={alt}
-      className={`${className}${!priority && !loaded ? " opacity-0" : ""} transition-opacity duration-200`}
+      className={`${className}${!priority && !loaded ? " opacity-80" : ""} transition-opacity duration-300`}
       width={width}
       height={height}
       loading={priority ? "eager" : "lazy"}

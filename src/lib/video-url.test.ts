@@ -1,0 +1,10 @@
+import assert from "node:assert/strict";
+import { describe, it } from "node:test";
+
+describe("videoUrl", () => {
+  it("resolves CDN paths for known filenames", async () => {
+    const { videoUrl } = await import("./video-url");
+    const url = videoUrl("aardvark-wild.mp4");
+    assert.match(url, /^https:\/\/.+\/videos\/aardvark-wild\.mp4$/);
+  });
+});

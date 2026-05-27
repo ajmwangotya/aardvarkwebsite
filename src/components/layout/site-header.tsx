@@ -14,7 +14,7 @@ import { SITE, TRIPADVISOR } from "@/lib/site-config";
 import { NavHrefLink } from "@/lib/nav-href";
 
 type NavItem =
-  | { href: string; label: string; highlight?: boolean }
+  | { href: string; label: string }
   | { label: string; children: NavChild[]; key: string };
 
 const brandLabel = SITE.name;
@@ -42,20 +42,13 @@ type NavChild = { label: string; href: string };
 export function SiteHeader({ light = true }: { light?: boolean }) {
   const { t } = useTranslation();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const [scrolled, setScrolled] = useState(false);
   const [openDrop, setOpenDrop] = useState<string | null>(null);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     setOpenDrop(null);
   }, [pathname]);
 
-  const solid = !light || scrolled;
+  const solid = !light;
 
   const countries = asCountryList(t("destPage.countries", { returnObjects: true }));
   const destinations: NavChild[] = [
@@ -80,7 +73,7 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
   const navItems: NavItem[] = [
     { href: "/", label: t("nav.home") },
     { href: "/about", label: t("nav.about") },
-    { href: "/packages", label: t("nav.packages"), highlight: true },
+    { href: "/packages", label: t("nav.packages") },
     { label: t("nav.destinations"), children: destinations, key: "destinations" },
     { href: "/itineraries", label: t("nav.itineraries") },
     { label: t("nav.planTrip"), children: planTrip, key: "plan" },
@@ -92,7 +85,7 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
   const mobileNavLinks: MobileNavLink[] = [
     { href: "/", label: t("nav.home") },
     { href: "/about", label: t("nav.about") },
-    { href: "/packages", label: t("nav.packages"), highlight: true },
+    { href: "/packages", label: t("nav.packages") },
     { href: "/destinations", label: t("nav.destinations") },
     ...countries.map((c) => ({
       href: `/destinations/${c.slug}`,
@@ -111,10 +104,10 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
   return (
     <>
     <header
-      className={`pointer-events-none fixed inset-x-0 top-0 z-[100] pt-[env(safe-area-inset-top,0px)] transition-all duration-500 ${
+      className={`pointer-events-none fixed inset-x-0 top-0 z-[100] pt-[env(safe-area-inset-top,0px)] ${
         solid
           ? "border-b border-border bg-background/95 shadow-sm max-lg:backdrop-blur-none lg:backdrop-blur"
-          : "bg-transparent max-lg:bg-ink/25"
+          : "border-b border-bone/10 bg-ink/45 backdrop-blur-md"
       }`}
     >
       <div className="hidden w-full border-b border-primary-foreground/10 bg-primary text-primary-foreground md:block">
@@ -183,13 +176,13 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
                   >
                     <Link
                       to={item.key === "destinations" ? "/destinations" : "/plan-trip"}
-                      className={`nav-link ${solid ? "text-foreground" : "text-bone"} hover:text-primary`}
+                      className={`nav-link ${solid ? "text-foreground" : "text-bone"}`}
                     >
                       {item.label}
                     </Link>
                     <button
                       type="button"
-                      className={`nav-link flex items-center px-1 ${solid ? "text-foreground" : "text-bone"} hover:text-primary`}
+                      className={`nav-link flex items-center px-1 ${solid ? "text-foreground" : "text-bone"}`}
                       aria-expanded={isOpen}
                       aria-label={`${item.label} menu`}
                       onClick={() => setOpenDrop((k) => (k === item.key ? null : item.key))}
@@ -225,9 +218,7 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
                   key={item.href}
                   to={item.href}
                   activeOptions={{ exact: item.href === "/" }}
-                  className={`nav-link ${solid ? "text-foreground" : "text-bone"} hover:text-primary ${
-                    item.highlight ? "font-medium text-gold" : ""
-                  }`}
+                  className={`nav-link ${solid ? "text-foreground" : "text-bone"}`}
                 >
                   {item.label}
                 </Link>
@@ -236,8 +227,8 @@ export function SiteHeader({ light = true }: { light?: boolean }) {
         </nav>
 
         <div className="pointer-events-auto relative z-[120] ml-auto flex shrink-0 items-center gap-2">
-          <LanguageSwitcher light={!solid} />
-          <MobileNavTrigger light={!solid} />
+          <LanguageSwitcher light={light} />
+          <MobileNavTrigger light={light} />
           <div className="hidden lg:block">
             <Link to="/plan-trip" className="btn-fill">
               <Calendar className="h-6 w-6 shrink-0" strokeWidth={2} aria-hidden />

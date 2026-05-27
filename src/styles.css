@@ -142,7 +142,16 @@
   }
   h1 { font-weight: 400; }
   p { text-wrap: pretty; line-height: 1.65; }
-  img, video, svg { max-width: 100%; height: auto; display: block; }
+  img, svg { max-width: 100%; height: auto; display: block; }
+  /* Default block videos; fill-mode heroes/cinematics use data-video-fill (see hero-video-background). */
+  video:not([data-video-fill]) { max-width: 100%; height: auto; display: block; }
+  video[data-video-fill] {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+  }
   input, textarea, button, select { font: inherit; }
 
   @media (max-width: 480px) {
@@ -406,9 +415,8 @@
     transform: scaleX(0); transform-origin: right;
     transition: transform 300ms ease;
   }
-  .nav-link:hover::after,
   .nav-link[data-status="active"]::after { transform: scaleX(1); transform-origin: left; }
-  .nav-link[data-status="active"] { color: var(--color-gold); }
+  .nav-link[data-status="active"] { color: var(--color-gold) !important; }
 
   /* Transparent header over hero — tighter nav so all links fit */
   @media (min-width: 768px) {

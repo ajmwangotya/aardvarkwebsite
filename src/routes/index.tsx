@@ -113,11 +113,17 @@ function HomePage() {
     };
   }, []);
 
+  // Avoid competing with hero video for bandwidth — defer below-the-fold mosaic preloads.
   useEffect(() => {
-    preloadImage(heroNdutu1);
-    preloadImage(heroNdutu5);
-    for (const photo of introMosaicPhotos) preloadImage(photo.src);
-  }, []);
+    if (useHeroSlideshow) {
+      preloadImage(heroNdutu1);
+      preloadImage(heroNdutu5);
+    }
+    const deferMosaic = window.setTimeout(() => {
+      for (const photo of introMosaicPhotos) preloadImage(photo.src);
+    }, useHeroSlideshow ? 0 : 2500);
+    return () => window.clearTimeout(deferMosaic);
+  }, [useHeroSlideshow]);
 
   return (
     <div className="bg-background text-foreground">

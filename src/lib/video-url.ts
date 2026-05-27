@@ -9,17 +9,22 @@
 /** Public media CDN (R2 custom domain) — films at /videos/*.mp4 (see docs/EXTERNAL-VIDEOS.md). */
 const PRODUCTION_VIDEO_CDN = "https://media.aardvarktanzania.com";
 
+const env = import.meta.env ?? {};
+
+/** Set VITE_USE_LOCAL_VIDEOS=true to force /public/videos/*.mp4 in dev (files not in Git). */
+const USE_LOCAL_VIDEOS = env.VITE_USE_LOCAL_VIDEOS === "true";
+
 const CDN_BASE = (
-  (import.meta.env.VITE_VIDEO_CDN_BASE as string | undefined)?.trim() ||
-  (import.meta.env.PROD ? PRODUCTION_VIDEO_CDN : "")
+  (env.VITE_VIDEO_CDN_BASE as string | undefined)?.trim() ||
+  (!USE_LOCAL_VIDEOS ? PRODUCTION_VIDEO_CDN : "")
 ).replace(/\/$/, "") || undefined;
 
 const OVERRIDES = {
   /** Home “Watch the Film” modal only — do not alias to VITE_VIDEO_FEATURE_FILM (may point at another clip). */
-  "aardvark-raw-footage.mp4": (import.meta.env.VITE_VIDEO_RAW_FOOTAGE as string | undefined)?.trim(),
-  "aardvark-film.mp4": (import.meta.env.VITE_VIDEO_FEATURE_FILM as string | undefined)?.trim(),
-  "aardvark-wild.mp4": (import.meta.env.VITE_VIDEO_WILD_REEL as string | undefined)?.trim(),
-  "gorilla-uganda.mp4": (import.meta.env.VITE_VIDEO_GORILLA as string | undefined)?.trim(),
+  "aardvark-raw-footage.mp4": (env.VITE_VIDEO_RAW_FOOTAGE as string | undefined)?.trim(),
+  "aardvark-film.mp4": (env.VITE_VIDEO_FEATURE_FILM as string | undefined)?.trim(),
+  "aardvark-wild.mp4": (env.VITE_VIDEO_WILD_REEL as string | undefined)?.trim(),
+  "gorilla-uganda.mp4": (env.VITE_VIDEO_GORILLA as string | undefined)?.trim(),
 } as const;
 
 export function videoUrl(filename: keyof typeof OVERRIDES): string {

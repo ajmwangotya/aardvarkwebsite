@@ -27,13 +27,15 @@ export function FilmModal({ open, onOpenChange, src, poster, titleKey = "home.fi
     const el = videoRef.current;
     if (!el) return;
     if (open) {
-      el.load();
+      if (el.readyState < HTMLMediaElement.HAVE_METADATA) {
+        el.load();
+      }
       void el.play().catch(() => {});
     } else {
       el.pause();
       el.currentTime = 0;
     }
-  }, [open, useYouTube]);
+  }, [open, useYouTube, src]);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -61,7 +63,7 @@ export function FilmModal({ open, onOpenChange, src, poster, titleKey = "home.fi
               poster={poster}
               controls
               playsInline
-              preload={open ? "auto" : "none"}
+              preload={open ? "metadata" : "none"}
               className="h-full w-full object-contain"
             >
               {t("home.filmUnsupported")}

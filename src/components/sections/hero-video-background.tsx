@@ -10,6 +10,10 @@ type HeroVideoBackgroundProps = {
   onVideoError?: () => void;
 };
 
+function canShowFirstFrame(el: HTMLVideoElement) {
+  return el.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA;
+}
+
 export function HeroVideoBackground({ src, poster, paused = false, onVideoError }: HeroVideoBackgroundProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const useYouTube = isYouTubeSource(src);
@@ -26,12 +30,21 @@ export function HeroVideoBackground({ src, poster, paused = false, onVideoError 
     if (fallbackImage) preloadImage(fallbackImage);
   }, [fallbackImage]);
 
+  const markReady = useCallback(() => {
+    const el = videoRef.current;
+    if (!el || !canShowFirstFrame(el)) return;
+    setVideoReady(true);
+  }, []);
+
   const tryPlay = useCallback(() => {
     if (useYouTube || paused || failed) return;
     const el = videoRef.current;
     if (!el) return;
-    void el.play().catch(() => {});
-  }, [paused, useYouTube, failed]);
+    markReady();
+    void el.play().catch(() => {
+      // Autoplay can fail until enough data is buffered — retry on canplay.
+    });
+  }, [paused, useYouTube, failed, markReady]);
 
   useEffect(() => {
     tryPlay();
@@ -88,19 +101,25 @@ export function HeroVideoBackground({ src, poster, paused = false, onVideoError 
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
+        data-video-fill
         className={`absolute inset-0 h-full w-full object-cover object-[center_38%] transition-opacity duration-500 md:object-center ${
           videoReady ? "opacity-100" : "opacity-0"
         }`}
         aria-hidden
+        onLoadedMetadata={() => {
+          markReady();
+          tryPlay();
+        }}
         onLoadedData={() => {
-          setVideoReady(true);
+          markReady();
           tryPlay();
         }}
         onCanPlay={() => {
-          setVideoReady(true);
+          markReady();
           tryPlay();
         }}
+        onPlaying={() => setVideoReady(true)}
         onError={() => {
           setFailed(true);
           onVideoError?.();

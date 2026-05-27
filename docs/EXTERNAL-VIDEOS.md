@@ -117,8 +117,12 @@ VITE_VIDEO_GORILLA=https://example.com/gorilla.mp4
 
 ## Local development
 
-1. Put compressed MP4s in `public/videos/` (see `scripts/compress-videos.ps1`).
-2. **Do not** set `VITE_VIDEO_CDN_BASE` in `.env` — the app uses `/videos/...` locally.
+By default, `npm run dev` loads films from the **production CDN** (no local MP4s required).
+
+To use files on disk instead:
+
+1. Put compressed MP4s in `public/videos/` (see `scripts/compress-videos.ps1` or `npm run link-videos`).
+2. Set `VITE_USE_LOCAL_VIDEOS=true` in `.env`.
 3. Run `npm run dev`.
 
 ---
