@@ -4,8 +4,23 @@ import { BLOG_EN_POSTS, BLOG_SLUGS, type BlogPostCopy, type BlogSlug } from "./b
 
 export type { BlogPostCopy };
 
+const MIN_FULL_ARTICLE_PARAGRAPHS = 3;
+const MIN_PARAGRAPH_CHARS = 80;
+
+function isParagraphSubstantial(value: unknown): value is string {
+  return typeof value === "string" && value.trim().length >= MIN_PARAGRAPH_CHARS;
+}
+
+function hasSubstantialBody(local: unknown): local is string[] {
+  return (
+    Array.isArray(local) &&
+    local.length >= MIN_FULL_ARTICLE_PARAGRAPHS &&
+    local.every((paragraph) => isParagraphSubstantial(paragraph))
+  );
+}
+
 function mergeBody(local: string[] | undefined, fallback: string[]): string[] {
-  if (Array.isArray(local) && local.length > 0) return local;
+  if (hasSubstantialBody(local)) return local;
   return Array.isArray(fallback) ? fallback : [];
 }
 

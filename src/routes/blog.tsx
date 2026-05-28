@@ -106,24 +106,22 @@ function BlogPage() {
       {/* FEATURED */}
       <section className="mx-auto max-w-[1400px] px-5 pb-14 sm:px-6 sm:pb-20 md:px-12">
         <Reveal>
-          <Link
-            to="/blog/$slug"
-            params={{ slug: featured.slug }}
-            className="group block w-full text-left"
-          >
+          <div className="group block w-full text-left">
             <div className="grid gap-10 md:grid-cols-12 md:items-center">
               <div className="relative md:col-span-7">
-                <div className="relative aspect-[4/3] overflow-hidden md:aspect-[16/11]">
-                  <img
-                    src={featured.img}
-                    alt={featured.title}
-                    className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-ink/40 to-transparent" />
-                  <span className="absolute left-5 top-5 bg-primary px-3 py-1.5 text-[0.6rem] uppercase tracking-[0.4em] text-primary-foreground">
-                    {t("blog.featured")}
-                  </span>
-                </div>
+                <Link to="/blog/$slug" params={{ slug: featured.slug }} className="block">
+                  <div className="relative aspect-[4/3] overflow-hidden md:aspect-[16/11]">
+                    <img
+                      src={featured.img}
+                      alt={featured.title}
+                      className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-ink/40 to-transparent" />
+                    <span className="absolute left-5 top-5 bg-primary px-3 py-1.5 text-[0.6rem] uppercase tracking-[0.4em] text-primary-foreground">
+                      {t("blog.featured")}
+                    </span>
+                  </div>
+                </Link>
                 <motion.div
                   animate={{ rotate: [0, 6, 0] }}
                   transition={{ duration: 6, repeat: Infinity }}
@@ -140,9 +138,11 @@ function BlogPage() {
                   <span>{featured.date}</span>
                   <span className="flex items-center gap-1.5"><Clock className="h-3 w-3" /> {featured.read}</span>
                 </div>
-                <h2 className="mt-6 font-serif text-[clamp(1.75rem,5vw,3.75rem)] leading-tight group-hover:text-primary transition-colors">
-                  {featured.title}
-                </h2>
+                <Link to="/blog/$slug" params={{ slug: featured.slug }} className="block">
+                  <h2 className="mt-6 font-serif text-[clamp(1.75rem,5vw,3.75rem)] leading-tight group-hover:text-primary transition-colors">
+                    {featured.title}
+                  </h2>
+                </Link>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{featured.excerpt}</p>
                 <div className="mt-8 flex items-center gap-4">
                   <div className="grid h-11 w-11 place-items-center rounded-full bg-primary text-primary-foreground font-serif">
@@ -153,12 +153,16 @@ function BlogPage() {
                     <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{t("blog.headGuide")}</div>
                   </div>
                 </div>
-                <div className="mt-10 inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary">
+                <Link
+                  to="/blog/$slug"
+                  params={{ slug: featured.slug }}
+                  className="mt-10 inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary"
+                >
                   {t("blog.readStory")} <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-                </div>
+                </Link>
               </div>
             </div>
-          </Link>
+          </div>
         </Reveal>
       </section>
 
@@ -219,21 +223,27 @@ function BlogPage() {
                         {p.category}
                       </span>
                     </div>
-                    <div className="mt-5">
-                      <div className="flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
-                        <span>{p.date}</span>
-                        <span>·</span>
-                        <span className="flex items-center gap-1"><Clock className="h-3 w-3" />{p.read}</span>
-                      </div>
+                  </Link>
+                  <div className="mt-5">
+                    <div className="flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
+                      <span>{p.date}</span>
+                      <span>·</span>
+                      <span className="flex items-center gap-1"><Clock className="h-3 w-3" />{p.read}</span>
+                    </div>
+                    <Link to="/blog/$slug" params={{ slug: p.slug }} className="block">
                       <h3 className={`mt-3 font-serif transition-colors group-hover:text-primary ${i === 0 ? "text-3xl md:text-4xl" : "text-2xl"}`}>
                         {p.title}
                       </h3>
-                      <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground">{p.excerpt}</p>
-                      <div className="mt-4 inline-flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.3em] text-primary">
-                        {t("blog.readMore")} <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-                      </div>
-                    </div>
-                  </Link>
+                    </Link>
+                    <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground">{p.excerpt}</p>
+                    <Link
+                      to="/blog/$slug"
+                      params={{ slug: p.slug }}
+                      className="mt-4 inline-flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.3em] text-primary"
+                    >
+                      {t("blog.readMore")} <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </div>
                 </article>
               ))}
               {filtered.length === 0 && (
