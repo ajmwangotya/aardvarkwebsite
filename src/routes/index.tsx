@@ -241,7 +241,11 @@ function HomePage() {
 
       <section className="relative h-[45vh] min-h-[320px] w-full overflow-hidden sm:h-[55vh] sm:min-h-[380px] md:h-[70vh]">
         <ParallaxSection speed={0.4} className="absolute inset-0 -top-[15%] -bottom-[15%]">
-          <OptimizedImage src={migration} alt="Wildebeest migration" className="h-full w-full object-cover" />
+          <OptimizedImage
+            src={migration}
+            alt="Plains zebras on the Great Migration circuit, Tanzania"
+            className="h-full w-full object-cover object-[center_42%]"
+          />
         </ParallaxSection>
         <div className="absolute inset-0 bg-ink/55" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
