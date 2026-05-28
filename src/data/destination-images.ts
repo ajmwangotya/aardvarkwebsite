@@ -52,6 +52,7 @@ import destNorthernMigration from "@/assets/destinations/dest-northern-migration
 import destWildlifeWonders from "@/assets/destinations/dest-wildlife-wonders.jpg";
 import destClassicCircuit from "@/assets/destinations/dest-classic-circuit.jpg";
 import destExploringSouthernAfrica from "@/assets/destinations/dest-exploring-southern-africa.jpg";
+import destSouthernAfrica from "@/assets/destinations/dest-southern-africa.jpg";
 import destNorthernCircuitRoute from "@/assets/destinations/dest-northern-circuit.jpg";
 import destIconicTanzania from "@/assets/destinations/dest-iconic-tanzania.jpg";
 import destCraterSavannah from "@/assets/destinations/dest-crater-landscape.jpg";
