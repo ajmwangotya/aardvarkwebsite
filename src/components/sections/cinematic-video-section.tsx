@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Play } from "lucide-react";
 import { Reveal } from "@/components/motion";
 import { YouTubeEmbed } from "@/components/media/youtube-embed";
+import { useMutedAutoplay } from "@/lib/use-muted-autoplay";
 import { cn } from "@/lib/utils";
 import { isYouTubeSource } from "@/lib/youtube";
 
@@ -14,7 +15,7 @@ type CinematicVideoSectionProps = {
   descKey: string;
   className?: string;
   dark?: boolean;
-  /** Muted autoplay when scrolled into view (destination clips). Default: user presses play with sound. */
+  /** Muted autoplay when in view. Default: true. */
   autoPlayMuted?: boolean;
 };
 
@@ -26,54 +27,15 @@ export function CinematicVideoSection({
   descKey,
   className,
   dark = false,
-  autoPlayMuted = false,
+  autoPlayMuted = true,
 }: CinematicVideoSectionProps) {
   const { t } = useTranslation();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [failed, setFailed] = useState(false);
-  const [needsTap, setNeedsTap] = useState(false);
   const useYouTube = isYouTubeSource(src);
-
-  const tryPlay = useCallback(async () => {
-    const el = videoRef.current;
-    if (!el || failed) return;
-    if (autoPlayMuted) {
-      el.defaultMuted = true;
-      el.muted = true;
-    }
-    try {
-      if (el.readyState < HTMLMediaElement.HAVE_METADATA) {
-        el.load();
-      }
-      await el.play();
-      setNeedsTap(false);
-    } catch {
-      if (autoPlayMuted) setNeedsTap(true);
-    }
-  }, [autoPlayMuted, failed]);
-
-  useEffect(() => {
-    setFailed(false);
-    setNeedsTap(false);
-  }, [src]);
-
-  useEffect(() => {
-    if (!autoPlayMuted || failed || useYouTube) return;
-    const el = videoRef.current;
-    if (!el) return;
-
-    void tryPlay();
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0]?.isIntersecting) void tryPlay();
-      },
-      { threshold: 0.2 },
-    );
-    observer.observe(el);
-
-    return () => observer.disconnect();
-  }, [autoPlayMuted, failed, src, tryPlay, useYouTube]);
+  const { tryPlay, needsTap } = useMutedAutoplay(videoRef, src, {
+    enabled: autoPlayMuted && !failed && !useYouTube,
+  });
 
   return (
     <section className={cn(dark ? "bg-ink text-bone" : "bg-card", className)}>
@@ -89,7 +51,15 @@ export function CinematicVideoSection({
         <Reveal delay={0.15} className="mt-10 sm:mt-14">
           <div className="group relative aspect-video overflow-hidden rounded-sm gold-border-glow bg-ink">
             {useYouTube ? (
-              <YouTubeEmbed src={src} title={t(titleKey)} controls className="aspect-video w-full" />
+              <YouTubeEmbed
+                src={src}
+                title={t(titleKey)}
+                autoplay={autoPlayMuted}
+                mute={autoPlayMuted}
+                loop={autoPlayMuted}
+                controls
+                className="aspect-video w-full"
+              />
             ) : failed ? (
               <div className="flex aspect-video flex-col items-center justify-center gap-3 px-6 text-center">
                 {poster ? (
@@ -111,18 +81,12 @@ export function CinematicVideoSection({
                   poster={poster}
                   playsInline
                   preload="auto"
-                  controls
                   muted={autoPlayMuted}
                   loop={autoPlayMuted}
                   autoPlay={autoPlayMuted}
                   className="relative z-0 h-full w-full object-cover"
-                  onLoadedData={() => {
-                    if (autoPlayMuted) void tryPlay();
-                  }}
-                  onCanPlay={() => {
-                    if (autoPlayMuted) void tryPlay();
-                  }}
-                  onPlaying={() => setNeedsTap(false)}
+                  onLoadedData={() => void tryPlay()}
+                  onCanPlay={() => void tryPlay()}
                   onError={() => setFailed(true)}
                 >
                   {t("home.filmUnsupported")}

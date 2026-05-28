@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useMutedAutoplay } from "@/lib/use-muted-autoplay";
 
 type PackagesHeroVideoProps = {
   src: string;
@@ -12,42 +13,7 @@ export function PackagesHeroVideo({ src, poster, caption }: PackagesHeroVideoPro
   const { t } = useTranslation();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [failed, setFailed] = useState(false);
-  const [needsTap, setNeedsTap] = useState(false);
-
-  const tryPlay = useCallback(async () => {
-    const el = videoRef.current;
-    if (!el || failed) return;
-    el.defaultMuted = true;
-    el.muted = true;
-    try {
-      await el.play();
-      setNeedsTap(false);
-    } catch {
-      setNeedsTap(true);
-    }
-  }, [failed]);
-
-  useEffect(() => {
-    setFailed(false);
-    setNeedsTap(false);
-  }, [src]);
-
-  useEffect(() => {
-    const el = videoRef.current;
-    if (!el || failed) return;
-
-    void tryPlay();
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0]?.isIntersecting) void tryPlay();
-      },
-      { threshold: 0.2 },
-    );
-    observer.observe(el);
-
-    return () => observer.disconnect();
-  }, [failed, src, tryPlay]);
+  const { tryPlay, needsTap } = useMutedAutoplay(videoRef, src, { enabled: !failed });
 
   if (failed) {
     return (
@@ -72,11 +38,9 @@ export function PackagesHeroVideo({ src, poster, caption }: PackagesHeroVideoPro
           playsInline
           autoPlay
           preload="auto"
-          controls
           className="h-full w-full object-cover object-center"
           onLoadedData={() => void tryPlay()}
           onCanPlay={() => void tryPlay()}
-          onPlaying={() => setNeedsTap(false)}
           onError={() => setFailed(true)}
         />
         {needsTap && (

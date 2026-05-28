@@ -67,10 +67,12 @@ export function FilmModal({ open, onOpenChange, src, poster, titleKey = "home.fi
               ref={videoRef}
               src={src}
               poster={poster}
+              autoPlay
               controls
               playsInline
               preload="auto"
               className="h-full w-full object-contain"
+              onLoadedData={() => void videoRef.current?.play().catch(() => {})}
               onError={() => setLoadError(true)}
             />
           )}

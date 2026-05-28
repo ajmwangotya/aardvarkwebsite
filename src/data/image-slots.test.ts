@@ -50,8 +50,9 @@ describe("image slot policy", () => {
     assert.match(destinationImagesSource, /zanzibar:\s*destZanzibarHero/);
   });
 
-  it("uses Victoria Falls image for okavangoDelta itinerary row", () => {
-    assert.match(destinationImagesSource, /okavangoDelta:\s*destVictoriaFalls/);
+  it("uses distinct Southern Africa itinerary row images", () => {
+    assert.match(destinationImagesSource, /victoriaFalls:\s*destVictoriaFalls/);
+    assert.match(destinationImagesSource, /okavangoDelta:\s*destSouthernAfrica/);
   });
 
   it("uses client northern Tanzania lion photo for wildlife safari hero", () => {

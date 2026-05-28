@@ -222,7 +222,7 @@ export const safariThumbImages: Record<string, string> = {
   "serengeti-northern-migration": destNorthernMigration,
   "wildlife-wonders-of-tanzania": destWildlifeWonders,
   "classic-northern-circuit-safari": destClassicCircuit,
-  "exploring-cape-town-victoria-falls-botswana-wildlife-safari-circuit": destExploringSouthernAfrica,
+  "exploring-cape-town-victoria-falls-botswana-wildlife-safari-circuit": destVictoriaFalls,
   "northern-circuit-route": destMountMeru,
   "mkomazi-extension": destMkomaziRhino,
   "quick-escape": destQuickSafari,
@@ -232,7 +232,7 @@ export const safariThumbImages: Record<string, string> = {
   "day-tour": destDayTour,
   "uganda-extension": destUgandaExtension,
   "northern-tanzania-wildlife-safari": destNorthernTanzaniaLion,
-  "uganda-gorillas-chimps-7-day": destUgandaChimps,
+  "uganda-gorillas-chimps-7-day": destTreeLion,
   "uganda-holiday-8-day": destBwindiGorillas,
   "zanzibar-extension-4-day": zanzibarBeach,
   "rwanda-gorilla-golden-5-day": destRwandaGoldenMonkey,
@@ -250,8 +250,8 @@ export const featuredTripImageMeta: Record<
     objectPosition: "center 42%",
   },
   "uganda-gorillas-chimps-7-day": {
-    src: destUgandaChimps,
-    objectPosition: "center 38%",
+    src: destTreeLion,
+    objectPosition: "center 35%",
   },
   "uganda-holiday-8-day": {
     src: destBwindiGorillas,
@@ -388,7 +388,7 @@ export const packageImageBySlug: Record<string, string> = {
   "southern-calving": destPackageSouthernLion,
   "uganda-gorilla": gorillaUganda,
   "northern-tanzania-wildlife": destNorthernTanzaniaLion,
-  "uganda-gorillas-chimps-7": destUgandaChimps,
+  "uganda-gorillas-chimps-7": destTreeLion,
   "uganda-holiday-8": destBwindiGorillas,
   "zanzibar-extension-4": zanzibarBeach,
   "rwanda-gorilla-golden-5": destRwandaGoldenMonkey,
@@ -408,7 +408,7 @@ export function getPackageImage(pkg: Pick<SafariPackage, "slug" | "safariSlug" |
 /** /itineraries catalog — safari rows that need a distinct hero from brochure thumbs */
 export const itinerarySafariImages: Record<string, string> = {
   "northern-tanzania-wildlife-safari": destNorthernTanzaniaLion,
-  "uganda-gorillas-chimps-7-day": destUgandaChimps,
+  "uganda-gorillas-chimps-7-day": destTreeLion,
   "uganda-holiday-8-day": destBwindiGorillas,
   "northern-circuit-route": destKilimanjaroUhuru,
   "serengeti-southern-migration-zanzibar": destCalvingSeason,
@@ -424,11 +424,14 @@ export const itineraryPackageImages: Record<string, string> = {
 
 /** /itineraries catalog — per-row keys when package slug is shared */
 export const itineraryRowImages: Record<string, string> = {
-  "zanzibar-essentials-3n": destZanzibarHero,
+  "zanzibar-essentials-3n": zanzibarBeach3,
+  victoriaFalls: destVictoriaFalls,
+  okavangoDelta: destSouthernAfrica,
+  southernWildlife: destExploringSouthernAfrica,
 };
 
 export const itineraryExtraImages: Record<string, string> = {
-  okavangoDelta: destVictoriaFalls,
+  okavangoDelta: destSouthernAfrica,
 };
 
 export function getItineraryCatalogImage(row: {
@@ -438,8 +441,9 @@ export function getItineraryCatalogImage(row: {
   imageKey?: string;
   category: string;
 }): string {
-  if (row.imageKey && itineraryRowImages[row.imageKey]) {
-    return itineraryRowImages[row.imageKey];
+  if (row.imageKey) {
+    if (itineraryRowImages[row.imageKey]) return itineraryRowImages[row.imageKey];
+    if (itineraryExtraImages[row.imageKey]) return itineraryExtraImages[row.imageKey];
   }
   if (row.safariSlug && itinerarySafariImages[row.safariSlug]) {
     return itinerarySafariImages[row.safariSlug];

@@ -28,7 +28,7 @@
     "ingest-pdf-profile": "node scripts/ingest-pdf-profile.mjs",
     "organize-project": "node scripts/reorganize-project.mjs",
     "audit": "npm audit --audit-level=moderate",
-    "test": "node --import tsx --test src/lib/enquiry-schema.test.ts src/lib/switch-language.test.ts src/lib/localized-safari.test.ts src/lib/safari-waypoints.test.ts src/lib/video-url.test.ts src/data/destination-images.test.ts src/data/image-slots.test.ts src/data/packages-images.test.ts src/data/itinerary-catalog.test.ts src/data/blog.test.ts src/data/experiences.test.ts src/data/faq.test.ts"
+    "test": "node --import tsx --test src/lib/enquiry-schema.test.ts src/lib/switch-language.test.ts src/lib/localized-safari.test.ts src/lib/safari-waypoints.test.ts src/lib/video-url.test.ts src/data/destination-images.test.ts src/data/image-slots.test.ts src/data/packages-images.test.ts src/data/itinerary-catalog.test.ts src/data/itinerary-images.test.ts src/data/blog.test.ts src/data/experiences.test.ts src/data/faq.test.ts"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",

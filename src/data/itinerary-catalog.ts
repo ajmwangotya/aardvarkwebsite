@@ -32,7 +32,12 @@ export const ITINERARY_CATALOG: ItineraryCatalogRow[] = [
   { days: 8, category: "Tanzania", safariSlug: "serengeti-southern-migration-zanzibar" },
   { days: 4, category: "Tanzania", safariSlug: "mkomazi-extension" },
   { days: 6, category: "Tanzania", safariSlug: "uganda-extension" },
-  { days: 11, category: "Southern Africa", safariSlug: "exploring-cape-town-victoria-falls-botswana-wildlife-safari-circuit" },
+  {
+    days: 11,
+    category: "Southern Africa",
+    safariSlug: "exploring-cape-town-victoria-falls-botswana-wildlife-safari-circuit",
+    imageKey: "victoriaFalls",
+  },
   {
     days: 8,
     category: "Southern Africa",

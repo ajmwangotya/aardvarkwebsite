@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useMutedAutoplay } from "@/lib/use-muted-autoplay";
 import { preloadImage } from "@/lib/preload-image";
 
 type HeroVideoBackgroundProps = {
@@ -8,11 +9,12 @@ type HeroVideoBackgroundProps = {
   paused?: boolean;
 };
 
-/** Hero background — SSR <video> + aggressive play retries (iOS autoplay, slow networks). */
+/** Hero background — SSR <video> + muted autoplay (iOS/Safari-friendly retries). */
 export function HeroVideoBackground({ src, poster, paused = false }: HeroVideoBackgroundProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [failed, setFailed] = useState(false);
   const [playing, setPlaying] = useState(false);
+  const { tryPlay } = useMutedAutoplay(videoRef, src, { paused, enabled: !failed });
 
   useEffect(() => {
     if (poster) preloadImage(poster);
@@ -22,50 +24,6 @@ export function HeroVideoBackground({ src, poster, paused = false }: HeroVideoBa
     setFailed(false);
     setPlaying(false);
   }, [src]);
-
-  const tryPlay = useCallback(async () => {
-    const el = videoRef.current;
-    if (!el || paused || failed) return;
-    el.defaultMuted = true;
-    el.muted = true;
-    try {
-      await el.play();
-    } catch {
-      /* Autoplay blocked until gesture — listeners below retry. */
-    }
-  }, [paused, failed]);
-
-  useEffect(() => {
-    if (paused || failed) return;
-    const el = videoRef.current;
-    if (!el) return;
-
-    void tryPlay();
-
-    const onGesture = () => void tryPlay();
-    window.addEventListener("pointerdown", onGesture, { once: true, passive: true });
-    window.addEventListener("touchstart", onGesture, { once: true, passive: true });
-
-    const onVisible = () => {
-      if (document.visibilityState === "visible") void tryPlay();
-    };
-    document.addEventListener("visibilitychange", onVisible);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0]?.isIntersecting) void tryPlay();
-      },
-      { threshold: 0.05 },
-    );
-    observer.observe(el);
-
-    return () => {
-      window.removeEventListener("pointerdown", onGesture);
-      window.removeEventListener("touchstart", onGesture);
-      document.removeEventListener("visibilitychange", onVisible);
-      observer.disconnect();
-    };
-  }, [paused, failed, src, tryPlay]);
 
   if (paused || failed) {
     return poster ? (

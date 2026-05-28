@@ -112,10 +112,11 @@ export function SafariMap({
       />
     ) : (
       <div
-        className="flex flex-col items-center justify-center gap-6 bg-[#e8dfd0] px-6 py-10"
+        className="flex items-center justify-center bg-[#e8dfd0] px-6"
         style={{ minHeight: mapHeight }}
+        role="status"
+        aria-live="polite"
       >
-        <SafariRouteStops waypoints={waypoints} />
         <p className="text-center text-xs uppercase tracking-eyebrow text-muted-foreground">
           {engine === "error" ? t("safariDetail.mapUnavailable") : t("safariDetail.mapLoading")}
         </p>
