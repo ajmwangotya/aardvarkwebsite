@@ -1,9 +1,23 @@
-import { useEffect } from "react";
-import { MapContainer, Marker, Polyline, Popup, TileLayer, useMap } from "react-leaflet";
+import { useEffect, useState } from "react";
+import {
+  LayerGroup,
+  LayersControl,
+  MapContainer,
+  Marker,
+  Polyline,
+  Popup,
+  TileLayer,
+  useMap,
+} from "react-leaflet";
+import { fetchOsrmRoute } from "@/lib/osrm-route";
 import type { Waypoint } from "@/components/maps/safari-route-stops";
 
-const MAP_TILES =
-  "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png";
+const STREET_TILES =
+  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}";
+const SATELLITE_TILES =
+  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
+const LABELS_TILES =
+  "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}";
 
 const MAP_STYLES = `
   @keyframes safari-map-pulse {
@@ -11,26 +25,23 @@ const MAP_STYLES = `
     100% { transform: scale(1.6); opacity: 0; }
   }
   .safari-map-marker { background: transparent !important; border: none !important; }
-  .safari-map .leaflet-container { background: #e8dfd0; font-family: inherit; }
+  .safari-map .leaflet-container { background: #e8dfd0; font-family: inherit; z-index: 0; }
   .safari-map .leaflet-popup-content-wrapper {
     border-radius: 2px; background: #FAF7F2;
-    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.4); padding: 2px;
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.4);
   }
-  .safari-map .leaflet-popup-tip { background: #FAF7F2; }
-  .safari-map .leaflet-popup-content { margin: 10px 14px; font-family: inherit; }
-  .safari-map .leaflet-control-attribution {
-    font-size: 9px; background: rgba(250,247,242,0.9) !important;
-    border-radius: 2px 0 0 0; padding: 2px 6px !important;
-  }
-  .safari-map .leaflet-control-zoom {
+  .safari-map .leaflet-control-layers {
     border: none !important;
     box-shadow: 0 8px 24px -8px rgba(0,0,0,0.25) !important;
+    border-radius: 2px !important;
+  }
+  .safari-map .leaflet-control-layers-toggle {
+    width: 36px !important; height: 36px !important;
+    background: #FAF7F2 !important;
   }
   .safari-map .leaflet-control-zoom a {
     background: #FAF7F2 !important; color: #3D3832 !important;
     border-color: rgba(61,56,50,0.12) !important;
-    width: 34px !important; height: 34px !important;
-    line-height: 34px !important; font-size: 16px !important;
   }
   .safari-map .leaflet-control-zoom a:hover {
     background: #f0e8dc !important; color: #C8634E !important;
@@ -72,7 +83,7 @@ export function buildMapBounds(L: typeof import("leaflet"), waypoints: Waypoint[
 function MapBoundsFitter({ bounds }: { bounds: L.LatLngBounds }) {
   const map = useMap();
   useEffect(() => {
-    map.fitBounds(bounds, { padding: [56, 56], maxZoom: 9, animate: false });
+    map.fitBounds(bounds, { padding: [56, 56], maxZoom: 10, animate: false });
     const timer = window.setTimeout(() => map.invalidateSize(), 150);
     return () => window.clearTimeout(timer);
   }, [map, bounds]);
@@ -88,7 +99,49 @@ function MapResizeHandler() {
   return null;
 }
 
-export function SafariMapCanvas({
+function OsrmRouteLayer({
+  waypoints,
+  fallbackPositions,
+}: {
+  waypoints: Waypoint[];
+  fallbackPositions: [number, number][];
+}) {
+  const [positions, setPositions] = useState<[number, number][]>(fallbackPositions);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchOsrmRoute(waypoints).then((coords) => {
+      if (cancelled || !coords) return;
+      setPositions(coords.map(([lng, lat]) => [lat, lng]));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [waypoints]);
+
+  if (positions.length < 2) return null;
+
+  return (
+    <>
+      <Polyline
+        positions={positions}
+        pathOptions={{ color: "#FAF7F2", weight: 6, opacity: 0.95, lineCap: "round", lineJoin: "round" }}
+      />
+      <Polyline
+        positions={positions}
+        pathOptions={{
+          color: "#C8634E",
+          weight: 3,
+          opacity: 0.9,
+          lineCap: "round",
+          lineJoin: "round",
+        }}
+      />
+    </>
+  );
+}
+
+export function SafariLeafletMap({
   waypoints,
   mapHeight,
   bounds,
@@ -107,7 +160,7 @@ export function SafariMapCanvas({
   stopLabel: (num: number) => string;
   L: typeof import("leaflet");
 }) {
-  const routePositions = waypoints.map((w) => [w.lat, w.lng] as [number, number]);
+  const straightLine = waypoints.map((w) => [w.lat, w.lng] as [number, number]);
 
   return (
     <>
@@ -123,40 +176,30 @@ export function SafariMapCanvas({
           <span className="mt-0.5 block font-serif text-sm leading-snug text-ink">{routeLabel}</span>
         </div>
       )}
-      <div
-        className="pointer-events-none absolute bottom-0 left-0 right-0 z-[1000] h-16 bg-gradient-to-t from-ink/10 to-transparent"
-        aria-hidden
-      />
       <MapContainer
         bounds={bounds}
-        scrollWheelZoom={false}
+        scrollWheelZoom
         zoomControl
         style={{ height: `${mapHeight}px`, width: "100%" }}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'
-          url={MAP_TILES}
-        />
+        <LayersControl position="topright">
+          <LayersControl.BaseLayer checked name="Map">
+            <TileLayer
+              attribution='&copy; <a href="https://www.esri.com/">Esri</a>'
+              url={STREET_TILES}
+            />
+          </LayersControl.BaseLayer>
+          <LayersControl.BaseLayer name="Satellite">
+            <LayerGroup>
+              <TileLayer url={SATELLITE_TILES} />
+              <TileLayer url={LABELS_TILES} />
+            </LayerGroup>
+          </LayersControl.BaseLayer>
+        </LayersControl>
         <MapBoundsFitter bounds={bounds} />
         <MapResizeHandler />
-        {drawRoute && routePositions.length > 1 && (
-          <>
-            <Polyline
-              positions={routePositions}
-              pathOptions={{ color: "#FAF7F2", weight: 5, opacity: 0.9, lineCap: "round", lineJoin: "round" }}
-            />
-            <Polyline
-              positions={routePositions}
-              pathOptions={{
-                color: "#C8634E",
-                weight: 2.5,
-                dashArray: "8 10",
-                opacity: 0.92,
-                lineCap: "round",
-                lineJoin: "round",
-              }}
-            />
-          </>
+        {drawRoute && straightLine.length > 1 && (
+          <OsrmRouteLayer waypoints={waypoints} fallbackPositions={straightLine} />
         )}
         {waypoints.map((d, i) => (
           <Marker

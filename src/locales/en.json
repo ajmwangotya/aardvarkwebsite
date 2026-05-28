@@ -1636,6 +1636,7 @@
     "mapLoading": "Loading interactive map…",
     "mapUnavailable": "Interactive map unavailable — route stops shown below",
     "mapStop": "Stop {{num}}",
+    "openInGoogleMaps": "Open in Google Maps",
     "dayByDay": "Day to Day <i>Itinerary</i>",
     "dayLabel": "Day {{num}}",
     "bookingTips": "Booking Tips",
