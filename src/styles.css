@@ -1055,6 +1055,44 @@ html:has(#site-mobile-nav-toggle:checked) .mobile-nav-icon-close {
   }
 }
 
+/* Cinematic home hero — dark overlay, brand wordmark */
+.hero-cinematic__image {
+  filter: saturate(1.08) contrast(1.05) brightness(0.8);
+  transform: scale(1.06);
+  transform-origin: 75% 45%;
+}
+
+.hero-cinematic__overlay {
+  background:
+    linear-gradient(
+      105deg,
+      color-mix(in oklab, var(--ink) 82%, transparent) 0%,
+      color-mix(in oklab, var(--ink) 55%, transparent) 45%,
+      color-mix(in oklab, var(--ink) 20%, transparent) 100%
+    ),
+    linear-gradient(to top, color-mix(in oklab, var(--ink) 75%, transparent), transparent 48%);
+}
+
+.hero-cinematic__brand {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-cinematic .btn-line-light {
+  border-color: color-mix(in oklab, var(--gold) 75%, var(--bone));
+}
+
+.hero-cinematic .btn-line-light:hover {
+  color: var(--color-ink);
+  border-color: var(--color-gold);
+}
+
+@media (max-width: 767px) {
+  .hero-cinematic__image {
+    transform: scale(1.12);
+    transform-origin: 72% 38%;
+  }
+}
+
 /* Hero background slideshow — keep crossfade visible even when reduced-motion is on */
 .hero-slideshow__slide {
   will-change: opacity;

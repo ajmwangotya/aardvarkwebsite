@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/layout/site-header";
 import { FilmModal } from "@/components/media/film-modal";
@@ -10,25 +10,16 @@ import { FeaturedTrips } from "@/components/sections/featured-trips";
 import { SocialProofSection } from "@/components/sections/social-proof-section";
 import { DestinationsShowcase } from "@/components/sections/destinations-showcase";
 import { HomeStartHere } from "@/components/sections/home-start-here";
-import { HeroVideoBackground } from "@/components/sections/hero-video-background";
-import { HeroSlideshow } from "@/components/sections/hero-slideshow";
+import { CinematicHero, heroLeopard } from "@/components/sections/cinematic-hero";
 import { IntroPhotoMosaic } from "@/components/sections/intro-photo-mosaic";
 import { MigrationCalendar } from "@/components/sections/migration-calendar";
 import { SectionDivider } from "@/components/layout/section-divider";
 import { buildPageHead } from "@/lib/seo";
 import { preloadImage } from "@/lib/preload-image";
-import { preloadVideo } from "@/lib/preload-video";
 import { pageTitle } from "@/lib/site-config";
 import { OptimizedImage } from "@/components/media/optimized-image";
 import { Reveal, blurIn, ParallaxSection } from "@/components/motion";
-import { Calendar, Shield, Sparkles, Heart, MapPin, Play } from "lucide-react";
-import heroNdutu1 from "@/assets/heroes/hero-ndutu-1.jpg";
-import heroNdutu2 from "@/assets/heroes/hero-ndutu-2.jpg";
-import heroNdutu3 from "@/assets/heroes/hero-ndutu-3.jpg";
-import heroNdutu4 from "@/assets/heroes/hero-ndutu-4.jpg";
-import heroNdutu5 from "@/assets/heroes/hero-ndutu-5.jpg";
-import heroNdutu6 from "@/assets/heroes/hero-ndutu-6.jpg";
-import heroNdutu7 from "@/assets/editorial/zanzibar-beach.jpg";
+import { Shield, Sparkles, Heart, MapPin } from "lucide-react";
 import migration from "@/assets/editorial/migration.jpg";
 import maasai from "@/assets/editorial/maasai.jpg";
 import walking from "@/assets/editorial/walking.jpg";
@@ -45,27 +36,13 @@ export const Route = createFileRoute("/")({
     });
     return {
       ...base,
-      links: [
-        ...base.links,
-        { rel: "preload", href: SITE_VIDEOS.heroReel, as: "video", type: "video/mp4" },
-        { rel: "preload", href: heroNdutu5, as: "image" },
-      ],
+      links: [...base.links, { rel: "preload", href: heroLeopard, as: "image" }],
     };
   },
   component: HomePage,
 });
 
 const reasonIcons = [MapPin, Shield, Sparkles, Heart];
-
-const heroSlideImages = [
-  { img: heroNdutu1, alt: "Giraffes of Ndutu" },
-  { img: heroNdutu2, alt: "Safari wildlife" },
-  { img: heroNdutu3, alt: "East African landscape" },
-  { img: heroNdutu4, alt: "Wildlife on the plains" },
-  { img: heroNdutu5, alt: "Lion at golden hour" },
-  { img: heroNdutu6, alt: "Elephant tusks" },
-  { img: heroNdutu7, alt: "Dhow sailing at sunset on Zanzibar beach" },
-];
 
 const introMosaicPhotos = [
   { src: maasai, alt: "Maasai community in Tanzania" },
@@ -79,130 +56,21 @@ function HomePage() {
 
   const reasonsData = (t("home.reasons", { returnObjects: true }) as { title: string; desc: string }[]).slice(0, 4);
   const reasons = reasonsData.map((r, i) => ({ ...r, icon: reasonIcons[i] }));
-  const heroRef = useRef<HTMLDivElement>(null);
-  const [reduceMotion, setReduceMotion] = useState(false);
-  const [pauseHeroVideo, setPauseHeroVideo] = useState(false);
-  const [heroSlide, setHeroSlide] = useState(0);
-  const useHeroSlideshow = pauseHeroVideo;
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], reduceMotion ? ["0%", "0%"] : ["0%", "20%"]);
-
   const [filmOpen, setFilmOpen] = useState(false);
 
-  useLayoutEffect(() => {
-    const mobile = window.matchMedia("(max-width: 767px)");
-    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => {
-      setReduceMotion(mobile.matches || motion.matches);
-      setPauseHeroVideo(motion.matches);
-    };
-    update();
-    mobile.addEventListener("change", update);
-    motion.addEventListener("change", update);
-    return () => {
-      mobile.removeEventListener("change", update);
-      motion.removeEventListener("change", update);
-    };
-  }, []);
-
   useEffect(() => {
-    if (!useHeroSlideshow) {
-      preloadVideo(SITE_VIDEOS.heroReel);
-      preloadImage(heroNdutu5);
-    } else {
-      preloadImage(heroNdutu1);
-      preloadImage(heroNdutu5);
-    }
+    preloadImage(heroLeopard);
     const deferMosaic = window.setTimeout(() => {
       for (const photo of introMosaicPhotos) preloadImage(photo.src);
-    }, useHeroSlideshow ? 0 : 3000);
+    }, 2000);
     return () => window.clearTimeout(deferMosaic);
-  }, [useHeroSlideshow]);
+  }, []);
 
   return (
     <div className="bg-background text-foreground">
       <SiteHeader light />
 
-      <section
-        ref={heroRef}
-        className="hero-section relative h-[88dvh] min-h-[420px] w-full overflow-hidden sm:min-h-[500px] sm:h-[90dvh] md:min-h-[720px] md:h-[100svh]"
-      >
-        {/* Video must not sit inside a transformed parent — breaks playback on iOS/Safari. */}
-        <div className="absolute inset-0 z-0 h-[115%] w-full overflow-hidden">
-          {useHeroSlideshow ? (
-            <motion.div style={{ y }} className="absolute inset-0 h-full w-full">
-              <HeroSlideshow
-                slides={heroSlideImages}
-                activeIndex={heroSlide}
-                onActiveIndexChange={setHeroSlide}
-                reduceMotion={reduceMotion}
-              />
-            </motion.div>
-          ) : (
-            <HeroVideoBackground
-              src={SITE_VIDEOS.heroReel}
-              poster={heroNdutu5}
-              paused={pauseHeroVideo}
-            />
-          )}
-        </div>
-
-        <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden>
-          <div className="absolute inset-0 bg-ink/35" />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/25 to-ink/85 md:from-ink/60 md:via-ink/20 md:to-ink/80" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.55)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(196,155,70,0.14)_0%,transparent_58%)]" />
-          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/95 via-ink/50 to-transparent md:hidden" />
-        </div>
-
-        <div className="hero-content pointer-events-auto relative z-10 flex h-full w-full flex-col justify-end px-4 pb-[max(5.5rem,calc(4.25rem+env(safe-area-inset-bottom,0px)))] pt-[max(6.5rem,calc(5rem+env(safe-area-inset-top,0px)))] text-center text-bone sm:px-6 sm:pb-12 md:justify-center md:px-8 md:pb-12 md:pt-[calc(4.5rem+env(safe-area-inset-top))]">
-          <div className="hero-content-inner mx-auto flex w-full max-w-[min(100%,26rem)] flex-col items-center sm:max-w-md md:max-w-5xl md:gap-8">
-            <motion.h1
-              initial={false}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="hero-title order-2 font-serif text-[clamp(2rem,8.25vw,4rem)] font-medium leading-[1.06] tracking-[-0.02em] text-balance text-bone md:text-[clamp(2.5rem,6vw,7rem)] md:font-normal md:leading-[1.06] md:tracking-tight"
-            >
-              <Trans i18nKey="home.dreamTitle" components={{ i: <span className="hero-accent shimmer-text italic" /> }} />
-            </motion.h1>
-
-            <motion.div
-              initial={false}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="hero-actions order-3 flex w-full flex-col gap-3 md:order-4 md:mt-2 md:w-auto md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-5"
-            >
-              <Link to="/plan-trip" className="btn-fill w-full justify-center md:w-auto">
-                <Calendar className="h-8 w-8 shrink-0 md:h-7 md:w-7" strokeWidth={2} aria-hidden />
-                {t("nav.bookNow")}
-              </Link>
-              <button
-                type="button"
-                onClick={() => setFilmOpen(true)}
-                className="group mx-auto flex min-h-11 w-full max-w-[14rem] items-center justify-center gap-3 text-bone md:w-auto md:max-w-none md:justify-start"
-                aria-haspopup="dialog"
-                aria-expanded={filmOpen}
-              >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-bone/60 transition-all group-hover:border-gold group-hover:bg-gold/10 group-active:scale-95 md:group-hover:shadow-[0_0_30px_rgba(196,155,70,0.3)]">
-                  <Play className="h-4 w-4 fill-current" aria-hidden />
-                </span>
-                <span className="text-[0.7rem] uppercase tracking-[0.2em] md:text-xs md:tracking-[0.3em]">
-                  {t("home.watchFilm")}
-                </span>
-              </button>
-            </motion.div>
-
-            <motion.p
-              initial={false}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.8 }}
-              className="hero-trust order-4 font-sans text-[0.6875rem] uppercase tracking-[0.14em] text-bone/85 md:order-5 md:mt-2 md:text-[0.65rem] md:tracking-[0.28em] md:text-bone/80"
-            >
-              {t("home.trustLocal")}
-            </motion.p>
-          </div>
-        </div>
-      </section>
+      <CinematicHero onWatchFilm={() => setFilmOpen(true)} filmOpen={filmOpen} />
 
       <SectionDivider variant="tracks" />
 
