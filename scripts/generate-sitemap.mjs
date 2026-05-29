@@ -56,6 +56,7 @@ const SAFARI_SLUGS = [
   "zanzibar-extension-4-day",
 ];
 
+/** Keep in sync with `src/data/packages.ts` — used for sitemap generation only. */
 const PACKAGE_SLUGS = [
   "serengeti-luxury-migration",
   "wildlife-wonders-luxury",
@@ -72,6 +73,9 @@ const PACKAGE_SLUGS = [
   "uganda-gorillas-chimps-7",
   "uganda-holiday-8",
   "zanzibar-extension-4",
+  "rwanda-gorilla-golden-5",
+  "rwanda-double-gorilla-8",
+  "rwanda-nyungwe-gorilla-10",
   "rwanda-gorilla",
   "safari-beach-combo",
   "kili-northern-circuit",

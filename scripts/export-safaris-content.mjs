@@ -24,8 +24,6 @@ for (const s of safaris) {
     days: s.days,
     highlights: s.highlights,
     lodges: s.lodges,
-    fromPrice: s.fromPrice,
-    priceNote: s.priceNote,
     bestSeason: s.bestSeason,
     included: s.included,
     excluded: s.excluded,

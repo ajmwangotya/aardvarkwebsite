@@ -11,7 +11,6 @@ type PackageCardCopy = {
   title: string;
   summary: string;
   duration: string;
-  pricingGuide?: string;
 };
 
 export function PackagesCategoryGrid({ category }: { category: PackageCategory }) {
@@ -66,9 +65,6 @@ export function PackagesCategoryGrid({ category }: { category: PackageCategory }
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
                     {item.summary}
                   </p>
-                  {item.pricingGuide && (
-                    <p className="mt-3 font-serif text-sm text-gold line-clamp-2">{item.pricingGuide}</p>
-                  )}
                   <span className="mt-4 inline-flex text-xs uppercase tracking-eyebrow text-muted-foreground group-hover:text-gold">
                     {t("packagesPage.viewDetails")} →
                   </span>

@@ -25,7 +25,7 @@ export function FeaturedTrips({ className = "" }: { className?: string }) {
     if (!safari) return null;
     const pkg = getPackageBySafariSlug(safariSlug);
     const packageItem = pkg
-      ? i18nObject<{ title: string; summary: string; pricingGuide?: string }>(
+      ? i18nObject<{ title: string; summary: string }>(
           t,
           `packagesPage.items.${pkg.i18nKey}`,
         )
@@ -106,9 +106,6 @@ export function FeaturedTrips({ className = "" }: { className?: string }) {
                       <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
                         {packageItem?.summary ?? safari.intro}
                       </p>
-                      {packageItem?.pricingGuide && (
-                        <p className="mt-3 font-serif text-sm text-gold">{packageItem.pricingGuide}</p>
-                      )}
                       {safari.highlights && safari.highlights.length > 0 && (
                         <ul className="mt-4 flex flex-wrap gap-2">
                           {safari.highlights.slice(0, 3).map((h) => (
@@ -124,11 +121,6 @@ export function FeaturedTrips({ className = "" }: { className?: string }) {
                     </div>
 
                     <div className="mt-6 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:flex-wrap sm:items-center">
-                      {safari.fromPrice && (
-                        <p className="font-serif text-xl text-ink sm:mr-auto">
-                          {t("featuredTrips.from")} {safari.fromPrice}
-                        </p>
-                      )}
                       <Link
                         to="/safaris/$slug"
                         params={{ slug: safariSlug }}

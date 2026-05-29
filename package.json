@@ -12,8 +12,9 @@
   "packageManager": "npm@10.9.2",
   "scripts": {
     "dev": "vite dev",
+    "prebuild": "npm run sitemap",
     "build": "vite build",
-    "deploy": "vite build && wrangler deploy",
+    "deploy": "npm run build && wrangler deploy",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",

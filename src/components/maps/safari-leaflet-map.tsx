@@ -1,19 +1,9 @@
 import { useEffect, useState } from "react";
-import {
-  LayerGroup,
-  LayersControl,
-  MapContainer,
-  Marker,
-  Polyline,
-  Popup,
-  TileLayer,
-  useMap,
-} from "react-leaflet";
 import { fetchOsrmRoute } from "@/lib/osrm-route";
 import type { Waypoint } from "@/components/maps/safari-route-stops";
 
 const STREET_TILES =
-  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}";
+  "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
 const SATELLITE_TILES =
   "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
 const LABELS_TILES =
@@ -30,6 +20,8 @@ const MAP_STYLES = `
     border-radius: 2px; background: #FAF7F2;
     box-shadow: 0 20px 40px -20px rgba(0,0,0,0.4);
   }
+  .safari-map .leaflet-popup-tip { background: #FAF7F2; }
+  .safari-map .leaflet-popup-content { margin: 10px 14px; font-family: inherit; }
   .safari-map .leaflet-control-layers {
     border: none !important;
     box-shadow: 0 8px 24px -8px rgba(0,0,0,0.25) !important;
@@ -46,9 +38,15 @@ const MAP_STYLES = `
   .safari-map .leaflet-control-zoom a:hover {
     background: #f0e8dc !important; color: #C8634E !important;
   }
+  .safari-map .leaflet-control-attribution {
+    font-size: 10px; background: rgba(250,247,242,0.85) !important;
+  }
 `;
 
-function createNumberedMarkerIcon(L: typeof import("leaflet"), index: number, total: number) {
+type LeafletModule = typeof import("leaflet");
+type ReactLeafletModule = typeof import("react-leaflet");
+
+function createNumberedMarkerIcon(L: LeafletModule, index: number, total: number) {
   const isFirst = index === 0;
   const isLast = index === total - 1;
   const fill = isFirst ? "#D4A574" : isLast ? "#C8634E" : "#3D3832";
@@ -66,7 +64,7 @@ function createNumberedMarkerIcon(L: typeof import("leaflet"), index: number, to
   });
 }
 
-export function buildMapBounds(L: typeof import("leaflet"), waypoints: Waypoint[]) {
+export function buildMapBounds(L: LeafletModule, waypoints: Waypoint[]) {
   const lats = waypoints.map((w) => w.lat);
   const lngs = waypoints.map((w) => w.lng);
   const span = Math.max(
@@ -80,7 +78,13 @@ export function buildMapBounds(L: typeof import("leaflet"), waypoints: Waypoint[
   ).pad(pad);
 }
 
-function MapBoundsFitter({ bounds }: { bounds: L.LatLngBounds }) {
+function MapBoundsFitter({
+  bounds,
+  useMap,
+}: {
+  bounds: L.LatLngBounds;
+  useMap: ReactLeafletModule["useMap"];
+}) {
   const map = useMap();
   useEffect(() => {
     map.fitBounds(bounds, { padding: [56, 56], maxZoom: 10, animate: false });
@@ -90,7 +94,7 @@ function MapBoundsFitter({ bounds }: { bounds: L.LatLngBounds }) {
   return null;
 }
 
-function MapResizeHandler() {
+function MapResizeHandler({ useMap }: { useMap: ReactLeafletModule["useMap"] }) {
   const map = useMap();
   useEffect(() => {
     const timer = window.setTimeout(() => map.invalidateSize(), 250);
@@ -102,9 +106,11 @@ function MapResizeHandler() {
 function OsrmRouteLayer({
   waypoints,
   fallbackPositions,
+  Polyline,
 }: {
   waypoints: Waypoint[];
   fallbackPositions: [number, number][];
+  Polyline: ReactLeafletModule["Polyline"];
 }) {
   const [positions, setPositions] = useState<[number, number][]>(fallbackPositions);
 
@@ -141,26 +147,83 @@ function OsrmRouteLayer({
   );
 }
 
+type MapBundle = {
+  L: LeafletModule;
+  MapContainer: ReactLeafletModule["MapContainer"];
+  TileLayer: ReactLeafletModule["TileLayer"];
+  Marker: ReactLeafletModule["Marker"];
+  Popup: ReactLeafletModule["Popup"];
+  Polyline: ReactLeafletModule["Polyline"];
+  LayerGroup: ReactLeafletModule["LayerGroup"];
+  LayersControl: ReactLeafletModule["LayersControl"];
+  useMap: ReactLeafletModule["useMap"];
+};
+
 export function SafariLeafletMap({
   waypoints,
   mapHeight,
-  bounds,
   drawRoute,
   routeLabel,
   routeMapLabel,
   stopLabel,
-  L,
 }: {
   waypoints: Waypoint[];
   mapHeight: number;
-  bounds: L.LatLngBounds;
   drawRoute: boolean;
   routeLabel?: string;
   routeMapLabel: string;
   stopLabel: (num: number) => string;
-  L: typeof import("leaflet");
 }) {
+  const [bundle, setBundle] = useState<MapBundle | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        await import("leaflet/dist/leaflet.css");
+        const [L, rl] = await Promise.all([import("leaflet"), import("react-leaflet")]);
+        if (!cancelled) {
+          setBundle({
+            L,
+            MapContainer: rl.MapContainer,
+            TileLayer: rl.TileLayer,
+            Marker: rl.Marker,
+            Popup: rl.Popup,
+            Polyline: rl.Polyline,
+            LayerGroup: rl.LayerGroup,
+            LayersControl: rl.LayersControl,
+            useMap: rl.useMap,
+          });
+        }
+      } catch {
+        /* parent handles failure state */
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const straightLine = waypoints.map((w) => [w.lat, w.lng] as [number, number]);
+
+  if (!bundle) {
+    return (
+      <div className="w-full animate-pulse bg-[#e8dfd0]" style={{ height: mapHeight }} aria-hidden />
+    );
+  }
+
+  const {
+    L,
+    MapContainer,
+    TileLayer,
+    Marker,
+    Popup,
+    Polyline,
+    LayerGroup,
+    LayersControl,
+    useMap,
+  } = bundle;
+  const bounds = buildMapBounds(L, waypoints);
 
   return (
     <>
@@ -178,14 +241,14 @@ export function SafariLeafletMap({
       )}
       <MapContainer
         bounds={bounds}
-        scrollWheelZoom
+        scrollWheelZoom={false}
         zoomControl
         style={{ height: `${mapHeight}px`, width: "100%" }}
       >
         <LayersControl position="topright">
           <LayersControl.BaseLayer checked name="Map">
             <TileLayer
-              attribution='&copy; <a href="https://www.esri.com/">Esri</a>'
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'
               url={STREET_TILES}
             />
           </LayersControl.BaseLayer>
@@ -196,10 +259,10 @@ export function SafariLeafletMap({
             </LayerGroup>
           </LayersControl.BaseLayer>
         </LayersControl>
-        <MapBoundsFitter bounds={bounds} />
-        <MapResizeHandler />
+        <MapBoundsFitter bounds={bounds} useMap={useMap} />
+        <MapResizeHandler useMap={useMap} />
         {drawRoute && straightLine.length > 1 && (
-          <OsrmRouteLayer waypoints={waypoints} fallbackPositions={straightLine} />
+          <OsrmRouteLayer waypoints={waypoints} fallbackPositions={straightLine} Polyline={Polyline} />
         )}
         {waypoints.map((d, i) => (
           <Marker

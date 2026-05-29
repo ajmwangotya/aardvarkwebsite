@@ -16,7 +16,6 @@ import { MigrationCalendar } from "@/components/sections/migration-calendar";
 import { SectionDivider } from "@/components/layout/section-divider";
 import { buildPageHead } from "@/lib/seo";
 import { preloadImage } from "@/lib/preload-image";
-import { pageTitle } from "@/lib/site-config";
 import { OptimizedImage } from "@/components/media/optimized-image";
 import { Reveal, blurIn, ParallaxSection } from "@/components/motion";
 import { Shield, Sparkles, Heart, MapPin } from "lucide-react";
@@ -29,9 +28,9 @@ import elephants from "@/assets/editorial/elephants.jpg";
 export const Route = createFileRoute("/")({
   head: () => {
     const base = buildPageHead({
-      title: pageTitle("Trekking · Safari · Beach Holidays"),
+      title: "Aardvark Safaris Tanzania | Official Site",
       description:
-        "Tailor-made northern Tanzania safaris from Arusha — Serengeti, Ngorongoro, Tarangire, Kilimanjaro, and Zanzibar. 27 years, 5.0 on TripAdvisor.",
+        "Official site of Aardvark Safaris Tanzania. Tailor-made northern Tanzania safaris from Arusha — Serengeti, Ngorongoro, Tarangire, Kilimanjaro, and Zanzibar.",
       path: "/",
     });
     return {

@@ -14,9 +14,12 @@ function WhatsAppIcon({ className }: { className?: string }) {
 export function MobileCtaBar() {
   const { t } = useTranslation();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isBlogPage = pathname === "/blog" || pathname.startsWith("/blog/");
 
   const isPackageDetail =
     pathname.startsWith("/packages/") && pathname !== "/packages" && pathname.length > "/packages/".length;
+
+  if (isBlogPage) return null;
 
   const waMessage = t("whatsapp.prefill", {
     defaultValue: "Hello Aardvark Safaris — I'd like to plan a safari. ",

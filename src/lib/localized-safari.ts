@@ -12,8 +12,6 @@ type SafariLocaleContent = Partial<
     | "days"
     | "highlights"
     | "lodges"
-    | "fromPrice"
-    | "priceNote"
     | "bestSeason"
     | "included"
     | "excluded"
@@ -65,8 +63,6 @@ export function getLocalizedSafari(slug: string, t: TFunction): Safari | undefin
     waypoints: base.waypoints,
     highlights: pickStringList(locale.highlights, base.highlights),
     lodges: pickStringList(locale.lodges, base.lodges),
-    fromPrice: pickOptionalString(locale.fromPrice, base.fromPrice),
-    priceNote: pickOptionalString(locale.priceNote, base.priceNote),
     bestSeason: pickOptionalString(locale.bestSeason, base.bestSeason),
     included: pickStringList(locale.included, base.included),
     excluded: pickStringList(locale.excluded, base.excluded),

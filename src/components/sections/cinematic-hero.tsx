@@ -18,7 +18,7 @@ export function CinematicHero({ onWatchFilm, filmOpen }: CinematicHeroProps) {
       <img
         src={heroLeopard}
         alt={t("home.heroImageAlt")}
-        className="hero-cinematic__image absolute inset-0 z-0 h-full w-full object-cover object-[70%_center] md:object-[78%_center]"
+        className="hero-cinematic__image absolute inset-0 z-0 h-full w-full object-cover object-[70%_center] md:object-[72%_30%]"
         fetchPriority="high"
         decoding="sync"
       />
@@ -28,16 +28,21 @@ export function CinematicHero({ onWatchFilm, filmOpen }: CinematicHeroProps) {
       {/* Copy */}
       <div className="relative z-10 flex min-h-[100svh] flex-col justify-end px-4 pb-[max(5.5rem,calc(4.5rem+env(safe-area-inset-bottom,0px)))] pt-[max(7rem,calc(5.5rem+env(safe-area-inset-top,0px)))] sm:px-6 md:justify-center md:px-10 md:pb-20 lg:px-14">
         <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
-          <div className="max-w-2xl text-left lg:max-w-3xl">
+          <div className="hero-cinematic__copy max-w-2xl rounded-sm border border-bone/15 bg-ink/35 p-4 text-left shadow-[0_24px_60px_-30px_rgba(0,0,0,0.75)] backdrop-blur-[2px] sm:border-bone/10 sm:bg-ink/20 lg:max-w-3xl lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none lg:backdrop-blur-0">
             <h1>
               <span className="hero-cinematic__brand block font-sans text-[clamp(3rem,13vw,7rem)] font-bold uppercase leading-[0.9] tracking-[-0.03em] text-bone">
                 {t("home.heroBrand")}
               </span>
-              <span className="mt-1 block font-sans text-[clamp(1rem,3vw,1.6rem)] font-bold uppercase leading-tight tracking-[0.06em] text-bone">
+              <span className="mt-1 block font-sans text-[clamp(1rem,3vw,1.6rem)] font-bold uppercase leading-tight tracking-[0.06em] text-bone/95">
                 {t("home.heroTaglineLine1")}
               </span>
-              <span className="mt-0.5 block font-serif text-[clamp(1.25rem,3.5vw,2.25rem)] italic leading-none text-[var(--gold-soft)]">
-                {t("home.heroTaglineLine2")}
+              <span className="mt-0.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <span className="font-serif text-[clamp(1.25rem,3.5vw,2.25rem)] italic leading-none text-[var(--gold-soft)]">
+                  {t("home.heroTaglineLine2")}
+                </span>
+                <span className="font-sans text-[clamp(0.85rem,2.2vw,1.25rem)] font-bold uppercase leading-none tracking-[0.08em] text-bone/95">
+                  {t("home.heroTaglineEastAfrica")}
+                </span>
               </span>
             </h1>
 
@@ -48,7 +53,7 @@ export function CinematicHero({ onWatchFilm, filmOpen }: CinematicHeroProps) {
             <div className="mt-7 flex flex-col gap-4 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-5">
               <Link
                 to="/packages"
-                className="btn-line btn-line-light group inline-flex w-full items-center justify-center border-[var(--gold)] text-bone sm:w-auto"
+                className="btn-line btn-line-light group inline-flex min-h-12 w-full items-center justify-center border-[var(--gold)] bg-gold/10 text-bone shadow-[0_10px_28px_-16px_rgba(0,0,0,0.7)] sm:min-h-11 sm:w-auto sm:bg-transparent sm:shadow-none"
               >
                 {t("home.heroExploreCta")}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} aria-hidden />
@@ -56,7 +61,7 @@ export function CinematicHero({ onWatchFilm, filmOpen }: CinematicHeroProps) {
               <button
                 type="button"
                 onClick={onWatchFilm}
-                className="group inline-flex min-h-11 w-full items-center justify-center gap-3 text-bone sm:w-auto sm:justify-start"
+                className="group inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-sm border border-bone/30 bg-ink/40 text-bone sm:min-h-11 sm:w-auto sm:justify-start sm:border-0 sm:bg-transparent"
                 aria-haspopup="dialog"
                 aria-expanded={filmOpen}
               >

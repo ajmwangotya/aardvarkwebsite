@@ -1066,15 +1066,34 @@ html:has(#site-mobile-nav-toggle:checked) .mobile-nav-icon-close {
   background:
     linear-gradient(
       105deg,
-      color-mix(in oklab, var(--ink) 82%, transparent) 0%,
-      color-mix(in oklab, var(--ink) 55%, transparent) 45%,
-      color-mix(in oklab, var(--ink) 20%, transparent) 100%
+      color-mix(in oklab, var(--ink) 70%, transparent) 0%,
+      color-mix(in oklab, var(--ink) 40%, transparent) 45%,
+      color-mix(in oklab, var(--ink) 12%, transparent) 100%
     ),
-    linear-gradient(to top, color-mix(in oklab, var(--ink) 75%, transparent), transparent 48%);
+    linear-gradient(to top, color-mix(in oklab, var(--ink) 58%, transparent), transparent 48%);
 }
 
 .hero-cinematic__brand {
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-cinematic__copy {
+  position: relative;
+}
+
+.hero-cinematic__copy::before {
+  content: "";
+  position: absolute;
+  left: 0.65rem;
+  top: 0.9rem;
+  bottom: 0.9rem;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--gold) 78%, white),
+    color-mix(in oklab, var(--gold) 36%, transparent)
+  );
+  opacity: 0.75;
 }
 
 .hero-cinematic .btn-line-light {
@@ -1088,8 +1107,29 @@ html:has(#site-mobile-nav-toggle:checked) .mobile-nav-icon-close {
 
 @media (max-width: 767px) {
   .hero-cinematic__image {
-    transform: scale(1.12);
-    transform-origin: 72% 38%;
+    transform: scale(1.09);
+    transform-origin: 71% 36%;
+  }
+
+  .hero-cinematic__overlay {
+    background:
+      linear-gradient(
+        160deg,
+        color-mix(in oklab, var(--ink) 74%, transparent) 0%,
+        color-mix(in oklab, var(--ink) 46%, transparent) 42%,
+        color-mix(in oklab, var(--ink) 14%, transparent) 100%
+      ),
+      linear-gradient(to top, color-mix(in oklab, var(--ink) 62%, transparent), transparent 52%);
+  }
+
+  .hero-cinematic__copy {
+    padding-left: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-cinematic__copy::before {
+    display: none;
   }
 }
 

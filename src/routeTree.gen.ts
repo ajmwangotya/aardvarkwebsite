@@ -23,7 +23,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SafarisSlugRouteImport } from './routes/safaris.$slug'
-import { Route as PackagesSlugRouteImport } from './routes/packages.$slug'
+import { Route as PackagesSlugRouteImport } from './routes/packages_.$slug'
 import { Route as DestinationsSlugRouteImport } from './routes/destinations.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ApiEnquiryRouteImport } from './routes/api/enquiry'
@@ -99,9 +99,9 @@ const SafarisSlugRoute = SafarisSlugRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const PackagesSlugRoute = PackagesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => PackagesRoute,
+  id: '/packages_/$slug',
+  path: '/packages/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const DestinationsSlugRoute = DestinationsSlugRouteImport.update({
   id: '/$slug',
@@ -129,7 +129,7 @@ export interface FileRoutesByFullPath {
   '/experiences': typeof ExperiencesRoute
   '/faq': typeof FaqRoute
   '/itineraries': typeof ItinerariesRoute
-  '/packages': typeof PackagesRouteWithChildren
+  '/packages': typeof PackagesRoute
   '/plan-trip': typeof PlanTripRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -149,7 +149,7 @@ export interface FileRoutesByTo {
   '/experiences': typeof ExperiencesRoute
   '/faq': typeof FaqRoute
   '/itineraries': typeof ItinerariesRoute
-  '/packages': typeof PackagesRouteWithChildren
+  '/packages': typeof PackagesRoute
   '/plan-trip': typeof PlanTripRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -170,14 +170,14 @@ export interface FileRoutesById {
   '/experiences': typeof ExperiencesRoute
   '/faq': typeof FaqRoute
   '/itineraries': typeof ItinerariesRoute
-  '/packages': typeof PackagesRouteWithChildren
+  '/packages': typeof PackagesRoute
   '/plan-trip': typeof PlanTripRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/api/enquiry': typeof ApiEnquiryRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/destinations/$slug': typeof DestinationsSlugRoute
-  '/packages/$slug': typeof PackagesSlugRoute
+  '/packages_/$slug': typeof PackagesSlugRoute
   '/safaris/$slug': typeof SafarisSlugRoute
 }
 export interface FileRouteTypes {
@@ -239,7 +239,7 @@ export interface FileRouteTypes {
     | '/api/enquiry'
     | '/blog/$slug'
     | '/destinations/$slug'
-    | '/packages/$slug'
+    | '/packages_/$slug'
     | '/safaris/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -253,11 +253,12 @@ export interface RootRouteChildren {
   ExperiencesRoute: typeof ExperiencesRoute
   FaqRoute: typeof FaqRoute
   ItinerariesRoute: typeof ItinerariesRoute
-  PackagesRoute: typeof PackagesRouteWithChildren
+  PackagesRoute: typeof PackagesRoute
   PlanTripRoute: typeof PlanTripRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
   ApiEnquiryRoute: typeof ApiEnquiryRoute
+  PackagesSlugRoute: typeof PackagesSlugRoute
   SafarisSlugRoute: typeof SafarisSlugRoute
 }
 
@@ -361,12 +362,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SafarisSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/packages/$slug': {
-      id: '/packages/$slug'
-      path: '/$slug'
+    '/packages_/$slug': {
+      id: '/packages_/$slug'
+      path: '/packages/$slug'
       fullPath: '/packages/$slug'
       preLoaderRoute: typeof PackagesSlugRouteImport
-      parentRoute: typeof PackagesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/destinations/$slug': {
       id: '/destinations/$slug'
@@ -414,18 +415,6 @@ const DestinationsRouteWithChildren = DestinationsRoute._addFileChildren(
   DestinationsRouteChildren,
 )
 
-interface PackagesRouteChildren {
-  PackagesSlugRoute: typeof PackagesSlugRoute
-}
-
-const PackagesRouteChildren: PackagesRouteChildren = {
-  PackagesSlugRoute: PackagesSlugRoute,
-}
-
-const PackagesRouteWithChildren = PackagesRoute._addFileChildren(
-  PackagesRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -436,11 +425,12 @@ const rootRouteChildren: RootRouteChildren = {
   ExperiencesRoute: ExperiencesRoute,
   FaqRoute: FaqRoute,
   ItinerariesRoute: ItinerariesRoute,
-  PackagesRoute: PackagesRouteWithChildren,
+  PackagesRoute: PackagesRoute,
   PlanTripRoute: PlanTripRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
   ApiEnquiryRoute: ApiEnquiryRoute,
+  PackagesSlugRoute: PackagesSlugRoute,
   SafarisSlugRoute: SafarisSlugRoute,
 }
 export const routeTree = rootRouteImport

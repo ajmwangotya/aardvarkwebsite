@@ -31,7 +31,7 @@
     "beginStory": "Commencez votre histoire",
     "ready": "Prêt pour la nature sauvage ?",
     "planSafari": "Planifiez votre safari",
-    "tagline": "Safaris sur mesure dans le nord de la Tanzanie depuis Arusha — 27 ans d'expérience depuis 1999.",
+    "tagline": "Safaris sur mesure dans le nord de la Tanzanie depuis Arusha — 19 ans d'expérience depuis 2007.",
     "explore": "Explorer",
     "journal": "Journal",
     "contact": "Contact",
@@ -53,8 +53,8 @@
   "home": {
     "scroll": "Défiler",
     "tripAdvisorShort": "{{count}} avis TripAdvisor",
-    "brandPromise": "Safaris sur mesure au nord de la Tanzanie · Arusha depuis 1999",
-    "brandPromiseProof": "27 ans · {{rating}} sur TripAdvisor · {{count}} avis",
+    "brandPromise": "Safaris sur mesure au nord de la Tanzanie · Arusha depuis 2007",
+    "brandPromiseProof": "19 ans · {{rating}} sur TripAdvisor · {{count}} avis",
     "startHere": {
       "eyebrow": "Nouveau en safari ?",
       "title": "Votre parcours en trois étapes",
@@ -75,17 +75,18 @@
     "heroBrand": "Aardvark",
     "heroTaglineLine1": "Safaris wildlife & photo",
     "heroTaglineLine2": "Safaris",
+    "heroTaglineEastAfrica": "Afrique de l'Est",
     "heroDescription": "Expéditions sur mesure à travers le Serengeti, le Ngorongoro et le cœur sauvage de la Tanzanie — guidées par des pisteurs qui connaissent chaque sentier.",
     "heroExploreCta": "Découvrir les safaris",
     "heroReviews": "{{rating}} · {{count}}+ avis",
     "heroLicensed": "Opérateur tanzanien agréé",
-    "heroEstablished": "Depuis 1999",
+    "heroEstablished": "Depuis 2007",
     "heroTrustAria": "Avis et accréditations",
     "heroBasedIn": "Basés à Arusha",
     "heroRegionsDesc": "Circuit nord, Kilimandjaro et plages de Zanzibar.",
     "heroSeeRegions": "Voir les régions",
     "heroImageAlt": "Portrait en gros plan d'un léopard en safari en Afrique",
-    "welcomeTitle": "27 ans · {{rating}} sur TripAdvisor · depuis 1999",
+    "welcomeTitle": "19 ans · {{rating}} sur TripAdvisor · depuis 2007",
     "reliable": "Nous sommes spécialisés dans les services de safari personnalisés et fiables — trekking, safari et vacances balnéaires.",
     "expertCopy": "AARDVARK SAFARIS a été fondé sur la conviction que le tourisme de nature est essentiel à la préservation et à la valorisation de la faune et du patrimoine culturel de la Tanzanie. Notre mission est d'offrir à nos visiteurs des expériences uniques, capables de transformer leur regard sur le monde. Nous vous invitons à nous rejoindre pour une aventure inoubliable, unique en son genre.",
     "letUsPlan": "Laissez-nous planifier",
@@ -114,7 +115,7 @@
     "heroEyebrow": "Spécialistes de safaris personnalisés et fiables",
     "watchFilm": "Voir le film",
     "trustJourneys": "5.0 · 21 TripAdvisor reviews",
-    "trustLocal": "Local · Arusha depuis 1999",
+    "trustLocal": "Local · Arusha depuis 2007",
     "whyChooseTitle": "Pourquoi choisir <i>Aardvark Safari</i>",
     "whyChooseDesc": "Nos services sont non seulement totalement fiables et sûrs, mais aussi personnalisés selon vos besoins et préférences. Avec nous, planifiez vos vacances en toute confiance !",
     "mapEyebrow": "Sur la carte",
@@ -1363,7 +1364,7 @@
       },
       {
         "q": "Is Tanzania / Uganda safe for travellers?",
-        "a": "Tanzania is one of Africa's most established safari destinations. Aardvark is a locally owned Arusha operator (since 1999), TATO member, with insured vehicles, radio-equipped 4WDs, first aid kits, and guides trained in guest safety and wildlife protocols. Every guest is enrolled in Flying Doctor Society evacuation cover. We monitor conditions and communicate updates before and during travel. Uganda gorilla and chimp trekking follows park authority rules with armed escorts where required."
+        "a": "Tanzania is one of Africa's most established safari destinations. Aardvark is a locally owned Arusha operator (since 2007), TATO member, with insured vehicles, radio-equipped 4WDs, first aid kits, and guides trained in guest safety and wildlife protocols. Every guest is enrolled in Flying Doctor Society evacuation cover. We monitor conditions and communicate updates before and during travel. Uganda gorilla and chimp trekking follows park authority rules with armed escorts where required."
       },
       {
         "q": "Are your safaris suitable for families with children?",
@@ -1608,8 +1609,7 @@
           "Travel insurance",
           "Tips and personal expenses",
           "Balloon safari (optional)"
-        ],
-        "pricingGuide": "From USD 8,500–12,000 per person sharing (season and camp selection affect final quote). Contact us for a detailed proposal."
+        ]
       },
       "wildlifeWondersLuxury": {
         "title": "Wildlife Wonders of Tanzania — Luxury",
@@ -1633,8 +1633,7 @@
           "Insurance",
           "Alcoholic beverages where not included",
           "Optional activities"
-        ],
-        "pricingGuide": "From USD 7,800–11,500 per person sharing. We tailor camp tier to your budget."
+        ]
       },
       "classicNorthernMid": {
         "title": "Classic Northern Circuit — Mid-Range",
@@ -1658,8 +1657,7 @@
           "Visa fees",
           "Tips",
           "Uganda extension costs"
-        ],
-        "pricingGuide": "From USD 4,200–6,500 per person sharing — excellent value for a comprehensive circuit."
+        ]
       },
       "iconicTanzaniaMid": {
         "title": "Iconic Tanzania — Mid-Range",
@@ -1682,8 +1680,7 @@
           "Flights to Arusha",
           "Insurance",
           "Meals not listed"
-        ],
-        "pricingGuide": "From USD 1,800–2,800 per person sharing."
+        ]
       },
       "serengetiZanzibarHoneymoon": {
         "title": "Serengeti & Zanzibar Honeymoon",
@@ -1707,8 +1704,7 @@
           "International flights",
           "Spa and premium beverages",
           "Optional excursions"
-        ],
-        "pricingGuide": "From USD 6,500–10,000 per couple depending on season and room category."
+        ]
       },
       "craterRomance": {
         "title": "Crater & Savannah Romance",
@@ -1730,8 +1726,7 @@
           "Flights",
           "Tips",
           "Optional balloon"
-        ],
-        "pricingGuide": "From USD 2,400–3,800 per couple."
+        ]
       },
       "familyNorthern": {
         "title": "Family Northern Circuit",
@@ -1754,8 +1749,7 @@
           "Flights",
           "Insurance",
           "Extra activities"
-        ],
-        "pricingGuide": "From USD 3,800–5,500 per adult; children discounted — ask for a family quote."
+        ]
       },
       "quickFamily": {
         "title": "Quick Family Escape",
@@ -1776,8 +1770,7 @@
         "exclusions": [
           "Meals not specified",
           "Tips"
-        ],
-        "pricingGuide": "From USD 900–1,400 per adult sharing."
+        ]
       },
       "northernMigration": {
         "title": "Northern Migration Safari",
@@ -1797,8 +1790,7 @@
           "International travel",
           "Insurance",
           "Balloon optional"
-        ],
-        "pricingGuide": "From USD 8,000–12,500 per person — peak season Jul–Oct priced higher."
+        ]
       },
       "southernCalving": {
         "title": "Southern Calving Season",
@@ -1818,8 +1810,7 @@
         "exclusions": [
           "Beach extension extras",
           "Tips"
-        ],
-        "pricingGuide": "From USD 5,500–8,500 per person Jan–Mar."
+        ]
       },
       "ugandaGorilla": {
         "title": "Uganda Gorilla & Wildlife Extension",
@@ -1842,8 +1833,7 @@
           "Gorilla permit fee (quoted separately)",
           "Flights Tanzania–Uganda",
           "Tips"
-        ],
-        "pricingGuide": "Permits ~USD 800; land package from USD 3,200 per person plus permits."
+        ]
       },
       "rwandaGorillaGolden5": {
         "title": "5-Day Rwanda Gorilla & Golden Monkey Trek",
@@ -1870,8 +1860,7 @@
           "International flights and insurance",
           "Rwanda visa",
           "Tips and personal drinks"
-        ],
-        "pricingGuide": "Private quote for two guests — permits and lodge rates vary by season. Contact us for a current proposal."
+        ]
       },
       "rwandaDoubleGorilla8": {
         "title": "8-Day Rwanda · Double Gorilla & Golden Monkeys",
@@ -1895,8 +1884,7 @@
         "exclusions": [
           "International flights and insurance",
           "Tips and alcoholic drinks"
-        ],
-        "pricingGuide": "From approximately USD 4,925 per person (2 guests, luxury hotels, private trip) — confirm with us for your travel dates."
+        ]
       },
       "rwandaNyungweGorilla10": {
         "title": "10-Day Rwanda · Nyungwe, Double Gorilla & Golden Monkeys",
@@ -1920,8 +1908,7 @@
         "exclusions": [
           "International flights, visa, insurance",
           "Tips and personal expenses"
-        ],
-        "pricingGuide": "Tailored quote based on lodge selection and permit availability — contact Aardvark for a detailed proposal."
+        ]
       },
       "rwandaGorilla": {
         "title": "5-Day Rwanda Gorilla & Golden Monkey Trek",
@@ -1940,8 +1927,7 @@
         "exclusions": [
           "International flights",
           "Tips"
-        ],
-        "pricingGuide": "Land package from USD 2,800 per person plus permit."
+        ]
       },
       "safariBeachCombo": {
         "title": "Safari & Beach Combo",
@@ -1962,8 +1948,7 @@
         "exclusions": [
           "International airfare",
           "Premium excursions"
-        ],
-        "pricingGuide": "From USD 5,800–9,500 per person sharing."
+        ]
       },
       "kiliNorthern": {
         "title": "Kilimanjaro — Northern Circuit Route",
@@ -1987,8 +1972,7 @@
           "Personal gear",
           "Tips for crew",
           "Safari extension"
-        ],
-        "pricingGuide": "From USD 3,500–5,200 per person depending on group size and hotel tier."
+        ]
       },
       "culturalNorthern": {
         "title": "Cultural Northern Circuit",
@@ -2011,8 +1995,7 @@
           "Personal purchases",
           "Flights",
           "Tips"
-        ],
-        "pricingGuide": "From USD 4,500–6,800 per person sharing."
+        ]
       },
       "maasaiHadzabe": {
         "title": "Maasai & Hadzabe Encounter",
@@ -2035,8 +2018,7 @@
           "Flights",
           "Insurance",
           "Tips"
-        ],
-        "pricingGuide": "From USD 2,000–3,200 per person sharing."
+        ]
       },
       "northernTanzaniaWildlife": {
         "title": "Northern Tanzania Wildlife Safari",
@@ -2059,8 +2041,7 @@
           "International flights",
           "Tips",
           "Optional activities"
-        ],
-        "pricingGuide": "From USD 9,067 per person (brochure rate — land safari)."
+        ]
       },
       "ugandaGorillasChimps7": {
         "title": "7-Day Gorillas & Chimps Trek",
@@ -2084,8 +2065,7 @@
           "International flights",
           "Alcohol",
           "Tips"
-        ],
-        "pricingGuide": "From USD 3,700–4,500 per person depending on gorilla trek options."
+        ]
       },
       "ugandaHoliday8": {
         "title": "8-Day Uganda Holiday — Luxury",
@@ -2109,8 +2089,7 @@
           "Flights",
           "Tips",
           "Personal items"
-        ],
-        "pricingGuide": "From USD 6,250 per person (2 travellers) · USD 7,000 solo."
+        ]
       },
       "zanzibarExtension4": {
         "title": "4-Day Zanzibar Extension",
@@ -2134,8 +2113,7 @@
           "International flights",
           "Tips",
           "Hotel beverages"
-        ],
-        "pricingGuide": "From USD 3,255 per person (brochure rate)."
+        ]
       }
     }
   },
@@ -2202,8 +2180,6 @@
         "Mara Mara Kati Kati (northern Serengeti, 3 nights)",
         "Ngorongoro Farm House"
       ],
-      "fromPrice": "Price on request",
-      "priceNote": "Contact us for a personalised quote — lodges, season, and group size affect the rate.",
       "bestSeason": "July–October for Mara River crossings; June–July for Grumeti River",
       "included": [
         "4WD safari vehicle with pop-up roof and English-speaking driver-guide",
@@ -2273,8 +2249,6 @@
         "Serengeti tented camp (5 nights)",
         "Mt. Meru Hotel (final night)"
       ],
-      "fromPrice": "Price on request",
-      "priceNote": "Personalised quote based on travel dates and lodge selection.",
       "bestSeason": "January–February (calving, south Serengeti); June–October (dry season, north Serengeti)",
       "included": [
         "4WD safari vehicle with pop-up roof and English-speaking driver-guide",
@@ -2354,8 +2328,6 @@
         "Seronera & Ndutu Kati Kati Tented Camps",
         "Ngorongoro Farm House"
       ],
-      "fromPrice": "Price on request",
-      "priceNote": "Ideal for cultural travellers, birders, and families — we tailor lodges and pacing to your group.",
       "bestSeason": "January–February (calving, south Serengeti); can extend to Uganda year-round",
       "included": [
         "4WD safari vehicle with pop-up roof and English-speaking driver-guide",
@@ -2511,8 +2483,6 @@
         "Uhuru Peak 5,895m",
         "Official summit certificate"
       ],
-      "fromPrice": "Price on request",
-      "priceNote": "Most scenic and remote Kilimanjaro route — includes Arusha Serena Lodge bookends.",
       "bestSeason": "January–February & June–October (clearest skies and best summit conditions)",
       "included": [
         "4WD airport transfers",
@@ -2748,8 +2718,6 @@
         "Sandriver Lodge, Nyerere (2 nights)",
         "Park Hyatt Zanzibar (extension)"
       ],
-      "fromPrice": "Price on request",
-      "priceNote": "Fly-in safari with internal charter flights — ideal for honeymooners and luxury travellers.",
       "bestSeason": "January–March (calving, south Serengeti + Zanzibar shoulder season)",
       "included": [
         "4WD safari vehicle with pop-up roof and English-speaking driver-guide",
@@ -2801,8 +2769,6 @@
         "Gerenuk & kudu",
         "Bush breakfast at Dindera Dam"
       ],
-      "fromPrice": "Price on request",
-      "priceNote": "Optional add-on after any northern Tanzania itinerary — ideal for guests seeking off-the-beaten-track wildlife.",
       "bestSeason": "June–October (dry season wildlife viewing)",
       "included": [
         "4WD safari vehicle with pop-up roof and English-speaking driver-guide",
@@ -2933,8 +2899,6 @@
         "Lion's Paw (Ngorongoro rim, 2 nights)",
         "Mount Meru Hotel (final night)"
       ],
-      "fromPrice": "USD 9,067",
-      "priceNote": "Per person · land safari only (excludes international flights)",
       "bestSeason": "May–October (dry); Jan–Feb for migration birthing in the south",
       "included": [
         "4WD safari vehicle with pop-up roof and English-speaking driver-guide",
@@ -2999,8 +2963,6 @@
         "Tree-climbing lions",
         "Batwa community"
       ],
-      "fromPrice": "From USD 3,700",
-      "priceNote": "USD 3,700 (birding + chimps) · USD 4,000 (1 gorilla trek) · USD 4,500 (2 gorilla treks). Single supplement +USD 300. Kigali start.",
       "included": [
         "Flights Arusha–Kigali",
         "All airport transfers and accommodation",
@@ -3059,8 +3021,6 @@
         "Mweya Safari Lodge",
         "Chimps & boat cruise"
       ],
-      "fromPrice": "USD 6,250",
-      "priceNote": "Per person (2 travellers) · super-luxury lodges, meals inclusive",
       "included": [
         "All airport transfers",
         "Mabamba shoebill birding & boat",
@@ -3111,8 +3071,6 @@
         "Jozani red colobus",
         "Mnemba snorkelling"
       ],
-      "fromPrice": "USD 3,255",
-      "priceNote": "Per person · includes domestic flight Arusha–Zanzibar",
       "included": [
         "Airport transfers and ground transport",
         "Stone Town city tour",
@@ -3170,8 +3128,6 @@
         "Heaven Boutique Hotel (Kigali, 1 night)",
         "Five Volcanoes Boutique Hotel (Volcanoes NP, 3 nights)"
       ],
-      "fromPrice": "Price on request",
-      "priceNote": "Indicative quote for two guests on a private trip — gorilla & golden monkey permits, lodges, and 4×4 transport included.",
       "bestSeason": "June–September & December–February (drier trekking)",
       "included": [
         "Airport meet-and-greet, pick-up and drop-off in Kigali",
@@ -3240,8 +3196,6 @@
         "Four Points by Sheraton Kigali (3 nights, BB)",
         "Ingagi Park View Lodge (4 nights, FB)"
       ],
-      "fromPrice": "From USD 4,925",
-      "priceNote": "Per person, private trip for two guests (luxury hotels, full board at Volcanoes) — contact us for current permit and lodge rates.",
       "bestSeason": "June–September & December–February",
       "included": [
         "All airport pick-ups and transfers",
@@ -3317,8 +3271,6 @@
         "Nyungwe Top View Hotel (2 nights, FB)",
         "Tiloreza Volcanoes Eco Lodge (4 nights)"
       ],
-      "fromPrice": "Price on request",
-      "priceNote": "Private 4×4 itinerary — chimps at Nyungwe, two gorilla treks, golden monkeys; lodges as per brochure.",
       "bestSeason": "Year-round; drier months best for trekking",
       "included": [
         "Airport pick-up and final drop-off",

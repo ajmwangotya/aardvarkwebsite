@@ -16,7 +16,7 @@ import { z } from "zod";
 
 import appCss from "../styles.css?url";
 import clientI18n from "@/lib/i18n";
-import { createI18nForLang, parseLangParam } from "@/lib/i18n-instance";
+import { parseLangParam } from "@/lib/i18n-instance";
 import { applyLanguage } from "@/lib/switch-language";
 import type { RouterContext } from "@/router";
 import { WhatsAppFloat } from "@/components/layout/whatsapp-float";
@@ -65,7 +65,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const defaultTitle = `${SITE.name} — Personalised & Reliable Safari Services`;
+const defaultTitle = `${SITE.name} | Official Site`;
 const defaultDescription =
   "Trekking, safari, and beach holidays across Tanzania and East Africa. Tailor-made journeys from our Arusha team — Serengeti, Ngorongoro, Kilimanjaro, gorillas, and Zanzibar.";
 
@@ -74,11 +74,9 @@ export const Route = createRootRouteWithContext<RouterContext>()({
   search: {
     middlewares: [retainSearchParams(["lang"])],
   },
-  beforeLoad: async ({ search, context }) => {
+  beforeLoad: ({ search, context }) => {
     const lang = parseLangParam(search.lang ?? context.lang);
-    const i18n =
-      context.i18n?.language === lang ? context.i18n : await createI18nForLang(lang);
-    return { lang, i18n };
+    return { lang };
   },
   head: () => ({
     meta: [
@@ -147,7 +145,6 @@ export const Route = createRootRouteWithContext<RouterContext>()({
             "https://www.instagram.com/aardvark_safaris/",
             "https://web.facebook.com/aardvarktanzanialtd",
             SITE.tripAdvisor,
-            "https://linkedin.com/company/aardvarktanzania",
           ],
         }),
       },

@@ -109,7 +109,7 @@ function BlogPage() {
           <div className="group block w-full text-left">
             <div className="grid gap-10 md:grid-cols-12 md:items-center">
               <div className="relative md:col-span-7">
-                <Link to="/blog/$slug" params={{ slug: featured.slug }} className="block">
+                <a href={`/blog/${featured.slug}`} className="block w-full cursor-pointer text-left">
                   <div className="relative aspect-[4/3] overflow-hidden md:aspect-[16/11]">
                     <img
                       src={featured.img}
@@ -121,7 +121,7 @@ function BlogPage() {
                       {t("blog.featured")}
                     </span>
                   </div>
-                </Link>
+                </a>
                 <motion.div
                   animate={{ rotate: [0, 6, 0] }}
                   transition={{ duration: 6, repeat: Infinity }}
@@ -138,11 +138,11 @@ function BlogPage() {
                   <span>{featured.date}</span>
                   <span className="flex items-center gap-1.5"><Clock className="h-3 w-3" /> {featured.read}</span>
                 </div>
-                <Link to="/blog/$slug" params={{ slug: featured.slug }} className="block">
+                <a href={`/blog/${featured.slug}`} className="block w-full cursor-pointer text-left">
                   <h2 className="mt-6 font-serif text-[clamp(1.75rem,5vw,3.75rem)] leading-tight group-hover:text-primary transition-colors">
                     {featured.title}
                   </h2>
-                </Link>
+                </a>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{featured.excerpt}</p>
                 <div className="mt-8 flex items-center gap-4">
                   <div className="grid h-11 w-11 place-items-center rounded-full bg-primary text-primary-foreground font-serif">
@@ -153,13 +153,25 @@ function BlogPage() {
                     <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{t("blog.headGuide")}</div>
                   </div>
                 </div>
-                <Link
-                  to="/blog/$slug"
-                  params={{ slug: featured.slug }}
-                  className="mt-10 inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary"
-                >
-                  {t("blog.readStory")} <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-                </Link>
+                <details className="mt-10 group/featuredread">
+                  <summary className="inline-flex cursor-pointer list-none items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary [&::-webkit-details-marker]:hidden">
+                    {t("blog.readStory")}
+                    <ArrowRight className="h-3 w-3 transition-transform group-open/featuredread:translate-x-1" />
+                  </summary>
+                  <div className="mt-6 space-y-4 border-t border-border pt-5">
+                    {featured.body.map((para, idx) => (
+                      <p key={`${featured.slug}-${idx}`} className="text-sm leading-relaxed text-muted-foreground">
+                        {para}
+                      </p>
+                    ))}
+                    <a
+                      href={`/blog/${featured.slug}`}
+                      className="inline-flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.26em] text-primary"
+                    >
+                      Open full article <ArrowRight className="h-3 w-3" />
+                    </a>
+                  </div>
+                </details>
               </div>
             </div>
           </div>
@@ -210,7 +222,7 @@ function BlogPage() {
                   key={p.slug}
                   className={`group transition-transform duration-300 hover:-translate-y-1.5 ${i === 0 ? "sm:col-span-2" : ""}`}
                 >
-                  <Link to="/blog/$slug" params={{ slug: p.slug }} className="block w-full text-left">
+                  <a href={`/blog/${p.slug}`} className="block w-full cursor-pointer text-left">
                     <div className={`relative overflow-hidden ${i === 0 ? "aspect-[16/9]" : "aspect-[4/3]"}`}>
                       <img
                         src={p.img}
@@ -223,26 +235,38 @@ function BlogPage() {
                         {p.category}
                       </span>
                     </div>
-                  </Link>
+                  </a>
                   <div className="mt-5">
                     <div className="flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
                       <span>{p.date}</span>
                       <span>·</span>
                       <span className="flex items-center gap-1"><Clock className="h-3 w-3" />{p.read}</span>
                     </div>
-                    <Link to="/blog/$slug" params={{ slug: p.slug }} className="block">
+                    <a href={`/blog/${p.slug}`} className="block cursor-pointer text-left">
                       <h3 className={`mt-3 font-serif transition-colors group-hover:text-primary ${i === 0 ? "text-3xl md:text-4xl" : "text-2xl"}`}>
                         {p.title}
                       </h3>
-                    </Link>
+                    </a>
                     <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground">{p.excerpt}</p>
-                    <Link
-                      to="/blog/$slug"
-                      params={{ slug: p.slug }}
-                      className="mt-4 inline-flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.3em] text-primary"
-                    >
-                      {t("blog.readMore")} <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-                    </Link>
+                    <details className="mt-4 group/readmore">
+                      <summary className="inline-flex cursor-pointer list-none items-center gap-2 text-[0.7rem] uppercase tracking-[0.3em] text-primary [&::-webkit-details-marker]:hidden">
+                        {t("blog.readMore")}
+                        <ArrowRight className="h-3 w-3 transition-transform group-open/readmore:translate-x-1" />
+                      </summary>
+                      <div className="mt-6 space-y-4 border-t border-border pt-5">
+                        {p.body.map((para, idx) => (
+                          <p key={`${p.slug}-${idx}`} className="text-sm leading-relaxed text-muted-foreground">
+                            {para}
+                          </p>
+                        ))}
+                        <a
+                          href={`/blog/${p.slug}`}
+                          className="inline-flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.26em] text-primary"
+                        >
+                          Open full article <ArrowRight className="h-3 w-3" />
+                        </a>
+                      </div>
+                    </details>
                   </div>
                 </article>
               ))}
@@ -266,14 +290,25 @@ function BlogPage() {
                   <span className="font-serif text-4xl text-primary/40 group-hover:text-primary transition-colors">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <div>
-                    <Link
-                      to="/blog/$slug"
-                      params={{ slug: tr.slug }}
-                      className="font-serif text-lg leading-snug hover:text-primary transition-colors"
-                    >
-                      {tr.title}
-                    </Link>
+                  <div className="min-w-0 flex-1">
+                    <details className="group/trending">
+                      <summary className="cursor-pointer list-none font-serif text-lg leading-snug transition-colors hover:text-primary [&::-webkit-details-marker]:hidden">
+                        {tr.title}
+                      </summary>
+                      <div className="mt-4 space-y-3 border-t border-border pt-4">
+                        {tr.body.map((para, idx) => (
+                          <p key={`${tr.slug}-${idx}`} className="text-sm leading-relaxed text-muted-foreground">
+                            {para}
+                          </p>
+                        ))}
+                        <a
+                          href={`/blog/${tr.slug}`}
+                          className="inline-flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.26em] text-primary"
+                        >
+                          Open full article <ArrowRight className="h-3 w-3" />
+                        </a>
+                      </div>
+                    </details>
                     <div className="mt-1 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
                       {tr.category} · {tr.read}
                     </div>

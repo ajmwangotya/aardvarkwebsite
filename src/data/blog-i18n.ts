@@ -6,6 +6,10 @@ export type { BlogPostCopy };
 
 const MIN_FULL_ARTICLE_PARAGRAPHS = 3;
 const MIN_PARAGRAPH_CHARS = 80;
+const MIN_PARAGRAPHS_BY_SLUG: Partial<Record<BlogSlug, number>> = {
+  // Ensure this "Read more" article always opens as a full long-form piece.
+  "first-timer-guide": 8,
+};
 
 function isParagraphSubstantial(value: unknown): value is string {
   return typeof value === "string" && value.trim().length >= MIN_PARAGRAPH_CHARS;
@@ -19,7 +23,14 @@ function hasSubstantialBody(local: unknown): local is string[] {
   );
 }
 
-function mergeBody(local: string[] | undefined, fallback: string[]): string[] {
+function hasSubstantialBodyForSlug(slug: BlogSlug, local: unknown): local is string[] {
+  if (!Array.isArray(local)) return false;
+  const minParagraphs = MIN_PARAGRAPHS_BY_SLUG[slug] ?? MIN_FULL_ARTICLE_PARAGRAPHS;
+  return local.length >= minParagraphs && local.every((paragraph) => isParagraphSubstantial(paragraph));
+}
+
+function mergeBody(slug: BlogSlug, local: string[] | undefined, fallback: string[]): string[] {
+  if (hasSubstantialBodyForSlug(slug, local)) return local;
   if (hasSubstantialBody(local)) return local;
   return Array.isArray(fallback) ? fallback : [];
 }
@@ -32,7 +43,7 @@ function mergePost(slug: BlogSlug, localized: BlogPostCopy | undefined, fallback
     read: localized.read?.trim() || fallback.read,
     category: localized.category?.trim() || fallback.category,
     excerpt: localized.excerpt?.trim() || fallback.excerpt,
-    body: mergeBody(localized.body, fallback.body),
+    body: mergeBody(slug, localized.body, fallback.body),
   };
 }
 

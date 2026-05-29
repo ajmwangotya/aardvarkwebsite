@@ -11,8 +11,6 @@ export type Safari = {
   /** Short chips for cards and hero panels */
   highlights?: string[];
   lodges?: string[];
-  fromPrice?: string;
-  priceNote?: string;
   bestSeason?: string;
   included?: string[];
   excluded?: string[];
@@ -87,8 +85,6 @@ export const safaris: Safari[] = [
     "duration": "12 Days / 11 Nights",
     "region": "Tanzania",
     "bestSeason": "July–October for Mara River crossings; June–July for Grumeti River",
-    "fromPrice": "Price on request",
-    "priceNote": "Contact us for a personalised quote — lodges, season, and group size affect the rate.",
     "lodges": [
       "Mt. Meru Hotel (Arusha)",
       "Kichuguu Camp, Tarangire (2 nights)",
@@ -146,8 +142,6 @@ export const safaris: Safari[] = [
     "duration": "11 Days / 10 Nights",
     "region": "Tanzania",
     "bestSeason": "January–February (calving, south Serengeti); June–October (dry season, north Serengeti)",
-    "fromPrice": "Price on request",
-    "priceNote": "Personalised quote based on travel dates and lodge selection.",
     "lodges": ["Mt. Meru Hotel", "Lion's Paw Camp (Ngorongoro, 3 nights)", "Serengeti tented camp (5 nights)", "Mt. Meru Hotel (final night)"],
     "highlights": [
       "Five full days Serengeti including wildebeest calving",
@@ -197,8 +191,6 @@ export const safaris: Safari[] = [
     "duration": "10 Days / 9 Nights",
     "region": "Tanzania",
     "bestSeason": "January–February (calving, south Serengeti); can extend to Uganda year-round",
-    "fromPrice": "Price on request",
-    "priceNote": "Ideal for cultural travellers, birders, and families — we tailor lodges and pacing to your group.",
     "lodges": [
       "Mount Meru Hotel (Arusha)",
       "Simba Tented Camp (Tarangire / Lake Burunge)",
@@ -333,8 +325,6 @@ export const safaris: Safari[] = [
     "duration": "10 Days / 9 Nights",
     "region": "Tanzania",
     "bestSeason": "January–February & June–October (clearest skies and best summit conditions)",
-    "fromPrice": "Price on request",
-    "priceNote": "Most scenic and remote Kilimanjaro route — includes Arusha Serena Lodge bookends.",
     "highlights": ["Lava Tower acclimatisation", "Buffalo Ridge views", "Gilman's Point sunrise", "Uhuru Peak 5,895m", "Official summit certificate"],
     "included": [
       "4WD airport transfers",
@@ -492,8 +482,6 @@ export const safaris: Safari[] = [
     "duration": "8 Days + Optional Zanzibar Extension",
     "region": "Tanzania",
     "bestSeason": "January–March (calving, south Serengeti + Zanzibar shoulder season)",
-    "fromPrice": "Price on request",
-    "priceNote": "Fly-in safari with internal charter flights — ideal for honeymooners and luxury travellers.",
     "lodges": ["Legendary Lodge (Arusha)", "Serengeti Kusini (3 nights)", "Namiri Camp (2 nights)", "Sandriver Lodge, Nyerere (2 nights)", "Park Hyatt Zanzibar (extension)"],
     "highlights": [
       "Southern Serengeti calving season",
@@ -524,8 +512,6 @@ export const safaris: Safari[] = [
     "duration": "4 Days / 3 Nights",
     "region": "Tanzania",
     "bestSeason": "June–October (dry season wildlife viewing)",
-    "fromPrice": "Price on request",
-    "priceNote": "Optional add-on after any northern Tanzania itinerary — ideal for guests seeking off-the-beaten-track wildlife.",
     "highlights": ["Rhino sanctuary visit", "Wild dog reintroduction project", "Gerenuk & kudu", "Bush breakfast at Dindera Dam"],
     "included": [...STD_INCLUDED],
     "excluded": [...STD_EXCLUDED],
@@ -563,8 +549,6 @@ export const safaris: Safari[] = [
     title: "Northern Tanzania Wildlife Safari",
     duration: "9 Days / 8 Nights",
     region: "Tanzania",
-    fromPrice: "USD 9,067",
-    priceNote: "Per person · land safari only (excludes international flights)",
     lodges: [
       "Gran Melia Hotel (Arusha)",
       "Tarangire Safari Lodge (2 nights)",
@@ -620,8 +604,6 @@ export const safaris: Safari[] = [
     title: "7-Day Uganda Gorillas & Chimps Trek",
     duration: "7 Days / 6 Nights",
     region: "Uganda",
-    fromPrice: "From USD 3,700",
-    priceNote: "USD 3,700 (birding + chimps) · USD 4,000 (1 gorilla trek) · USD 4,500 (2 gorilla treks). Single supplement +USD 300. Kigali start.",
     highlights: ["Two gorilla treks", "Chimp tracking", "Tree-climbing lions", "Batwa community"],
     included: [
       "Flights Arusha–Kigali",
@@ -673,8 +655,6 @@ export const safaris: Safari[] = [
     title: "8-Day Uganda Holiday Tour",
     duration: "8 Days / 7 Nights",
     region: "Uganda",
-    fromPrice: "USD 6,250",
-    priceNote: "Per person (2 travellers) · super-luxury lodges, meals inclusive",
     highlights: ["Shoebill at Mabamba", "Dual gorilla permits", "Mweya Safari Lodge", "Chimps & boat cruise"],
     included: [
       "All airport transfers",
@@ -736,8 +716,6 @@ export const safaris: Safari[] = [
     title: "4-Day Zanzibar Extension",
     duration: "4 Days / 3 Nights",
     region: "Zanzibar",
-    fromPrice: "USD 3,255",
-    priceNote: "Per person · includes domestic flight Arusha–Zanzibar",
     highlights: ["Stone Town UNESCO tour", "Spice farm", "Jozani red colobus", "Mnemba snorkelling"],
     included: [
       "Airport transfers and ground transport",
@@ -780,8 +758,6 @@ export const safaris: Safari[] = [
     title: "5-Day Rwanda Gorilla & Golden Monkey Trek",
     duration: "5 Days / 4 Nights",
     region: "Rwanda",
-    fromPrice: "Price on request",
-    priceNote: "Indicative quote for two guests on a private trip — gorilla & golden monkey permits, lodges, and 4×4 transport included.",
     bestSeason: "June–September & December–February (drier trekking)",
     lodges: [
       "Heaven Boutique Hotel (Kigali, 1 night)",
@@ -842,8 +818,6 @@ export const safaris: Safari[] = [
     title: "8-Day Rwanda · Double Gorilla Trek & Golden Monkeys",
     duration: "8 Days / 7 Nights",
     region: "Rwanda",
-    fromPrice: "From USD 4,925",
-    priceNote: "Per person, private trip for two guests (luxury hotels, full board at Volcanoes) — contact us for current permit and lodge rates.",
     bestSeason: "June–September & December–February",
     lodges: [
       "Four Points by Sheraton Kigali (3 nights, BB)",
@@ -914,8 +888,6 @@ export const safaris: Safari[] = [
     title: "10-Day Rwanda · Nyungwe Chimps, Double Gorilla & Golden Monkeys",
     duration: "10 Days / 9 Nights",
     region: "Rwanda",
-    fromPrice: "Price on request",
-    priceNote: "Private 4×4 itinerary — chimps at Nyungwe, two gorilla treks, golden monkeys; lodges as per brochure.",
     bestSeason: "Year-round; drier months best for trekking",
     lodges: [
       "Marriott Kigali (3 nights, BB)",

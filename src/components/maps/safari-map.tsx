@@ -1,24 +1,14 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ExternalLink } from "lucide-react";
 import { useMapHeight } from "@/lib/use-map-height";
 import { waypointsForMap } from "@/lib/safari-waypoints";
-import { getGoogleMapsApiKey, googleMapsDirectionsUrl } from "@/lib/google-maps-url";
+import { googleMapsDirectionsUrl } from "@/lib/google-maps-url";
 import { SafariRouteStops, type Waypoint } from "@/components/maps/safari-route-stops";
 
 export type { Waypoint };
 
-type LeafletBundle = {
-  SafariLeafletMap: typeof import("@/components/maps/safari-leaflet-map")["SafariLeafletMap"];
-  buildMapBounds: typeof import("@/components/maps/safari-leaflet-map")["buildMapBounds"];
-  L: typeof import("leaflet");
-};
-
-type GoogleBundle = {
-  SafariGoogleMap: typeof import("@/components/maps/safari-google-map")["SafariGoogleMap"];
-};
-
-type MapEngine = "loading" | "google" | "leaflet" | "error";
+type SafariLeafletMapComponent = typeof import("@/components/maps/safari-leaflet-map")["SafariLeafletMap"];
 
 export function SafariMap({
   waypoints,
@@ -33,94 +23,66 @@ export function SafariMap({
 }) {
   const { t } = useTranslation();
   const mapHeight = useMapHeight(height ?? 500);
-  const googleKey = getGoogleMapsApiKey();
-
-  const [engine, setEngine] = useState<MapEngine>("loading");
-  const [leaflet, setLeaflet] = useState<LeafletBundle | null>(null);
-  const [google, setGoogle] = useState<GoogleBundle | null>(null);
+  const [mounted, setMounted] = useState(false);
+  const [LeafletMap, setLeafletMap] = useState<SafariLeafletMapComponent | null>(null);
+  const [failed, setFailed] = useState(false);
 
   const mapWaypoints = useMemo(() => waypointsForMap(waypoints), [waypoints]);
   const gmapsUrl = useMemo(() => googleMapsDirectionsUrl(waypoints), [waypoints]);
 
-  const loadLeaflet = useCallback(async () => {
-    await import("leaflet/dist/leaflet.css");
-    const L = await import("leaflet");
-    const mod = await import("@/components/maps/safari-leaflet-map");
-    setLeaflet({
-      SafariLeafletMap: mod.SafariLeafletMap,
-      buildMapBounds: mod.buildMapBounds,
-      L,
-    });
-    setEngine("leaflet");
-  }, []);
-
-  const loadGoogle = useCallback(async () => {
-    const mod = await import("@/components/maps/safari-google-map");
-    setGoogle({ SafariGoogleMap: mod.SafariGoogleMap });
-    setEngine("google");
-  }, []);
-
   useEffect(() => {
+    setMounted(true);
     if (mapWaypoints.length === 0) {
-      setEngine("error");
+      setFailed(true);
       return;
     }
+
     let cancelled = false;
     (async () => {
       try {
-        if (googleKey) {
-          await loadGoogle();
-        } else {
-          await loadLeaflet();
-        }
+        const mod = await import("@/components/maps/safari-leaflet-map");
+        if (!cancelled) setLeafletMap(() => mod.SafariLeafletMap);
       } catch {
-        if (!cancelled) setEngine("error");
+        if (!cancelled) setFailed(true);
       }
     })();
+
     return () => {
       cancelled = true;
     };
-  }, [googleKey, mapWaypoints.length, loadGoogle, loadLeaflet]);
-
-  const handleGoogleError = useCallback(() => {
-    loadLeaflet().catch(() => setEngine("error"));
-  }, [loadLeaflet]);
+  }, [mapWaypoints.length]);
 
   const routeMapLabel = t("safariDetail.routeMap");
   const stopLabel = (num: number) => t("safariDetail.mapStop", { num });
 
   const mapBody =
-    engine === "google" && google ? (
-      <google.SafariGoogleMap
+    mounted && LeafletMap && mapWaypoints.length > 0 ? (
+      <LeafletMap
         waypoints={mapWaypoints}
         mapHeight={mapHeight}
-        routeLabel={routeLabel}
-        routeMapLabel={routeMapLabel}
-        stopLabel={stopLabel}
-        onError={handleGoogleError}
-      />
-    ) : engine === "leaflet" && leaflet ? (
-      <leaflet.SafariLeafletMap
-        waypoints={mapWaypoints}
-        mapHeight={mapHeight}
-        bounds={leaflet.buildMapBounds(leaflet.L, mapWaypoints)}
         drawRoute={drawRoute}
         routeLabel={routeLabel}
         routeMapLabel={routeMapLabel}
         stopLabel={stopLabel}
-        L={leaflet.L}
       />
-    ) : (
+    ) : failed ? (
       <div
         className="flex items-center justify-center bg-[#e8dfd0] px-6"
         style={{ minHeight: mapHeight }}
         role="status"
-        aria-live="polite"
       >
         <p className="text-center text-xs uppercase tracking-eyebrow text-muted-foreground">
-          {engine === "error" ? t("safariDetail.mapUnavailable") : t("safariDetail.mapLoading")}
+          {t("safariDetail.mapUnavailable")}
         </p>
       </div>
+    ) : (
+      <div
+        className="w-full animate-pulse bg-[#e8dfd0]"
+        style={{ height: mapHeight }}
+        role="status"
+        aria-live="polite"
+        aria-label={t("safariDetail.mapLoading")}
+      />
     );
 
   return (

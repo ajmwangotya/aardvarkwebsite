@@ -17,7 +17,6 @@ import dining from "@/assets/editorial/dining.jpg";
 import augustinePhoto from "@/assets/team/team-augustine.jpg";
 import waltPhoto from "@/assets/team/team-walt.jpg";
 import deborahPhoto from "@/assets/team/team-deborah.jpg";
-import { ConservationImpactSection } from "@/components/sections/conservation-impact-section";
 
 export const Route = createFileRoute("/about")({
   head: () =>
@@ -250,8 +249,6 @@ function AboutPage() {
           ))}
         </div>
       </section>
-
-      <ConservationImpactSection />
 
       <section className="bg-card">
         <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-12">

@@ -1,12 +1,11 @@
 import { createStart, createMiddleware } from "@tanstack/react-start";
 
 import { renderErrorPage } from "./lib/error-page";
-import { createI18nForLang, langFromUrl } from "./lib/i18n-instance";
+import { langFromUrl } from "./lib/i18n-instance";
 
 const localeMiddleware = createMiddleware().server(async ({ request, next }) => {
   const lang = langFromUrl(request.url);
-  const i18n = await createI18nForLang(lang);
-  return next({ context: { lang, i18n } });
+  return next({ context: { lang } });
 });
 
 const errorMiddleware = createMiddleware().server(async ({ next }) => {

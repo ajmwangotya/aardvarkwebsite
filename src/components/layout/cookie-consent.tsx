@@ -58,18 +58,18 @@ export function CookieConsent() {
       className="cookie-consent-banner fixed inset-x-0 bottom-0 z-[70] border-t border-border bg-card/98 p-3 shadow-2xl backdrop-blur-md sm:p-5 lg:pb-[max(1rem,env(safe-area-inset-bottom))]"
       style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom, 0px))" }}
     >
-      <div className="mx-auto flex max-w-[1400px] flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+      <div className="pointer-events-none mx-auto flex max-w-[1400px] flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
         <p id="cookie-consent-title" className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
           {t("cookie.message")}{" "}
-          <Link to="/privacy" className="underline hover:text-gold">
+          <Link to="/privacy" className="pointer-events-auto underline hover:text-gold">
             {t("footer.privacy")}
           </Link>
         </p>
-        <div className="flex shrink-0 flex-wrap gap-3">
-          <button type="button" onClick={decline} className="btn-line min-h-11 text-sm">
+        <div className="pointer-events-auto flex shrink-0 flex-wrap gap-3">
+          <button type="button" onClick={decline} className="btn-line min-h-11 cursor-pointer text-sm">
             {t("cookie.essential")}
           </button>
-          <button type="button" data-cookie-accept onClick={accept} className="btn-fill min-h-11 text-sm">
+          <button type="button" data-cookie-accept onClick={accept} className="btn-fill min-h-11 cursor-pointer text-sm">
             {t("cookie.accept")}
           </button>
         </div>

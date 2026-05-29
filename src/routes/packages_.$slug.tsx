@@ -17,7 +17,8 @@ import { OptimizedImage } from "@/components/media/optimized-image";
 import { SafariMap } from "@/components/maps/safari-map";
 import { tFromContext } from "@/lib/route-i18n";
 
-export const Route = createFileRoute("/packages/$slug")({
+/** Flat route at `/packages/$slug` — not nested under `/packages` (parent has no Outlet). */
+export const Route = createFileRoute("/packages_/$slug")({
   loader: ({ params, context }) => {
     const pkg = getPackage(params.slug);
     if (!pkg) throw notFound();
@@ -31,7 +32,7 @@ export const Route = createFileRoute("/packages/$slug")({
     if (!loaderData) return { meta: [{ title: pageTitle("Safari Package") }] };
     return buildPageHead({
       title: pageTitle(loaderData.seoTitle),
-      description: `${loaderData.seoDesc} Pricing guide and free quote from Aardvark Safaris Tanzania.`,
+      description: `${loaderData.seoDesc} Request a personalised quote from Aardvark Safaris Tanzania.`,
       path: `/packages/${params.slug}`,
     });
   },
@@ -52,7 +53,6 @@ function PackageDetailPage() {
     activities: string[];
     inclusions: string[];
     exclusions: string[];
-    pricingGuide: string;
   }>(t, `packagesPage.items.${key}`);
   const activities = asObjectArray<string>(detail.activities);
   const inclusions = asObjectArray<string>(detail.inclusions);
@@ -164,7 +164,7 @@ function PackageDetailPage() {
               </Reveal>
             )}
 
-            {safari && !linkedSafari?.days.length && (
+            {safari && (
               <Reveal>
                 <Link
                   to="/safaris/$slug"
@@ -211,13 +211,6 @@ function PackageDetailPage() {
                 </ul>
               </Reveal>
             </div>
-
-            <Reveal>
-              <div className="border border-border bg-card p-6 md:p-8">
-                <span className="eyebrow">{t("packagesPage.pricingLabel")}</span>
-                <p className="mt-4 leading-relaxed text-muted-foreground">{detail.pricingGuide}</p>
-              </div>
-            </Reveal>
           </div>
 
           <aside id="package-inquiry" className="lg:col-span-4 scroll-mt-24">
