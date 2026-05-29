@@ -16,7 +16,7 @@ import { FormSecurity, isSubmitBlockedByTurnstile } from "@/components/forms/for
 import { submitEnquiry } from "@/lib/submit-enquiry";
 import type { EnquiryPayload } from "@/lib/enquiry-schema";
 import { FormSlaNote } from "@/components/forms/form-sla-note";
-import { SafariMap } from "@/components/maps/safari-map";
+import { ItineraryLocationSection } from "@/components/maps/safari-location-embed";
 import { safariThumbImages } from "@/data/destination-images";
 import migration from "@/assets/editorial/migration.jpg";
 import acacia from "@/assets/editorial/acacia.jpg";
@@ -140,9 +140,15 @@ function SafariDetail() {
       </section>
 
       <section className="mx-auto max-w-[1100px] px-5 py-12 sm:px-6 sm:py-16 md:px-12 md:py-24">
+        <ItineraryLocationSection
+          waypoints={safari.waypoints}
+          routeLabel={safari.route}
+          region={safari.region}
+        />
+
         {safari.intro && (
           <Reveal>
-            <p className="font-serif text-xl leading-relaxed text-ink/80 sm:text-2xl md:text-3xl">{safari.intro}</p>
+            <p className="mt-10 font-serif text-xl leading-relaxed text-ink/80 sm:text-2xl md:text-3xl">{safari.intro}</p>
           </Reveal>
         )}
 
@@ -174,25 +180,6 @@ function SafariDetail() {
                   </ul>
                 </div>
               )}
-            </div>
-          </Reveal>
-        )}
-
-        {safari.waypoints && safari.waypoints.length > 0 && (
-          <Reveal>
-            <div className="mt-16">
-              <span className="eyebrow">{t("safariDetail.routeMap")}</span>
-              <h2 className="mt-4 font-serif text-[clamp(1.5rem,4vw,3rem)]">
-                <Trans i18nKey="safariDetail.yourJourney" components={{ i: <span className="gradient-text italic" /> }} />
-              </h2>
-              <p className="mt-4 max-w-xl text-muted-foreground">{t("safariDetail.mapDesc")}</p>
-              <div className="mt-8">
-                <SafariMap
-                  waypoints={safari.waypoints}
-                  routeLabel={safari.route}
-                  height={480}
-                />
-              </div>
             </div>
           </Reveal>
         )}

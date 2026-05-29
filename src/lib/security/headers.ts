@@ -11,7 +11,7 @@ const CSP = [
   "font-src 'self' data: https://fonts.gstatic.com",
   "connect-src 'self' https://plausible.io https://*.basemaps.cartocdn.com https://*.openstreetmap.org https://router.project-osrm.org https://server.arcgisonline.com https://maps.googleapis.com https://maps.gstatic.com",
   "media-src 'self' https: blob:",
-  "frame-src 'self' https://challenges.cloudflare.com https://www.youtube.com https://www.youtube-nocookie.com",
+  "frame-src 'self' https://challenges.cloudflare.com https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://maps.google.com https://www.openstreetmap.org",
   "worker-src 'self' blob:",
 ].join("; ");
 

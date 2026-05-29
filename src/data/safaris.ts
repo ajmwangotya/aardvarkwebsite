@@ -14,8 +14,10 @@ export type Safari = {
   bestSeason?: string;
   included?: string[];
   excluded?: string[];
-  region?: "Tanzania" | "Uganda" | "Rwanda" | "Zanzibar";
+  region?: "Tanzania" | "Uganda" | "Rwanda" | "Zanzibar" | "Southern Africa";
 };
+
+export type SafariRegion = NonNullable<Safari["region"]>;
 
 /** Standard inclusions across brochure itineraries (Terms §5.3). */
 const STD_INCLUDED = [
@@ -254,6 +256,7 @@ export const safaris: Safari[] = [
     "slug": "exploring-cape-town-victoria-falls-botswana-wildlife-safari-circuit",
     "title": "Cape Town, Victoria Falls & Botswana Wildlife Circuit",
     "duration": "12 Days / 11 Nights",
+    "region": "Southern Africa",
     "intro": "A southern Africa circuit from Cape Town through Victoria Falls into Botswana's premier wildlife areas — Chobe, Hwange, and the Okavango Delta — combining city, waterfall, and bush in one journey.",
     "route": "Victoria Falls · Chobe · Hwange · Okavango Delta",
     "highlights": [
@@ -392,6 +395,7 @@ export const safaris: Safari[] = [
     "slug": "iconic-tanzania",
     "title": "Iconic Tanzania: Quick Escape to Tarangire, Ngorongoro & Serengeti",
     "duration": "4 Days / 3 Nights",
+    "region": "Tanzania",
     "intro": "The northern part of Tanzania is renowned for its stunning landscapes and rich wildlife experiences. This region encompasses several world-famous parks and conservation areas. Here are some luxurious sample itineraries focused on the northern circuit, combining iconic destinations with high-end accommodations and exclusive experiences.",
     "route": "Tarangire · Ngorongoro · Serengeti",
     "highlights": ["Baobab woodlands of Tarangire", "Ngorongoro Crater Big Five", "Central Serengeti plains"],
@@ -421,6 +425,7 @@ export const safaris: Safari[] = [
     "slug": "crater-savannah",
     "title": "Crater Savannah",
     "duration": "2 Days / 1 Night",
+    "region": "Tanzania",
     "intro": "A focused northern Tanzania escape pairing Tarangire's baobab woodlands with the wildlife-rich floor of Ngorongoro Crater — ideal when time is short but you want iconic game viewing.",
     "route": "Ngorongoro · Serengeti",
     "highlights": ["Tarangire elephant herds", "Ngorongoro Crater rim overnight"],
@@ -442,6 +447,7 @@ export const safaris: Safari[] = [
     "slug": "quick-escape",
     "title": "Quick Escape",
     "duration": "2 Days / 1 Night",
+    "region": "Tanzania",
     "intro": "A compact overnight circuit to the Ngorongoro Crater rim and floor — maximum wildlife in minimum time, with scenic highland drives and the Big Five on the crater floor.",
     "route": "Tarangire · Ngorongoro",
     "highlights": ["Ngorongoro Crater rim views", "Crater floor Big Five game drive"],
@@ -463,6 +469,7 @@ export const safaris: Safari[] = [
     "slug": "day-tour",
     "title": "Day Tour",
     "duration": "1 Day",
+    "region": "Tanzania",
     "intro": "A full-day descent into Ngorongoro Crater from Arusha — one of Africa's most concentrated wildlife arenas in a single unforgettable day.",
     "route": "One-day descent into the Crater",
     "highlights": ["Full-day Ngorongoro Crater descent", "Rhino, lion & flamingo on the crater floor"],
@@ -529,6 +536,7 @@ export const safaris: Safari[] = [
     "slug": "uganda-extension",
     "title": "Uganda Extension — Gorillas, Chimpanzees & Shoebill",
     "duration": "6 Days / 5 Nights",
+    "region": "Uganda",
     "intro": "A natural extension to any Tanzania safari: track mountain gorillas in Bwindi, search for the prehistoric Shoebill in Mabamba's papyrus swamps, and trek chimpanzees in the primate capital of the world.",
     "route": "Entebbe · Mabamba · Mbarara · Bwindi · Queen Elizabeth NP · Kampala",
     "highlights": ["Mountain gorilla trek", "Shoebill at Mabamba", "Chimpanzees & tree-climbing lions"],

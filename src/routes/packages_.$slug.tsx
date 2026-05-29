@@ -14,7 +14,7 @@ import { buildPageHead } from "@/lib/seo";
 import { pageTitle } from "@/lib/site-config";
 import { getPackageImage } from "@/data/destination-images";
 import { OptimizedImage } from "@/components/media/optimized-image";
-import { SafariMap } from "@/components/maps/safari-map";
+import { ItineraryLocationSection } from "@/components/maps/safari-location-embed";
 import { tFromContext } from "@/lib/route-i18n";
 
 /** Flat route at `/packages/$slug` — not nested under `/packages` (parent has no Outlet). */
@@ -43,6 +43,7 @@ function PackageDetailPage() {
   const { pkg, safari } = Route.useLoaderData();
   const { t } = useTranslation();
   const linkedSafari = pkg.safariSlug ? getLocalizedSafari(pkg.safariSlug, t) : undefined;
+  const mapSafari = linkedSafari ?? safari;
   const key = pkg.i18nKey;
   const detail = i18nObject<{
     title: string;
@@ -82,6 +83,14 @@ function PackageDetailPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-[1100px] px-5 py-12 sm:px-6 sm:py-16 md:px-12 md:py-24">
+        <ItineraryLocationSection
+          waypoints={mapSafari?.waypoints}
+          routeLabel={mapSafari?.route}
+          region={mapSafari?.region}
+        />
+      </section>
+
       <section className="mx-auto max-w-[1100px] px-5 py-6 lg:hidden sm:px-6">
         <div className="border border-gold/30 bg-card p-5 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.2)]">
           <h2 className="font-serif text-xl">
@@ -110,23 +119,6 @@ function PackageDetailPage() {
               <span className="eyebrow">{t("packagesPage.itineraryLabel")}</span>
               <p className="mt-4 leading-relaxed text-muted-foreground">{detail.itinerary}</p>
             </Reveal>
-
-            {linkedSafari && linkedSafari.waypoints && linkedSafari.waypoints.length > 0 && (
-              <Reveal>
-                <span className="eyebrow">{t("safariDetail.routeMap")}</span>
-                <h2 className="mt-4 font-serif text-[clamp(1.5rem,4vw,2.5rem)]">
-                  <Trans i18nKey="safariDetail.yourJourney" components={{ i: <span className="gradient-text italic" /> }} />
-                </h2>
-                <p className="mt-4 max-w-xl text-muted-foreground">{t("safariDetail.mapDesc")}</p>
-                <div className="mt-8">
-                  <SafariMap
-                    waypoints={linkedSafari.waypoints}
-                    routeLabel={linkedSafari.route}
-                    height={440}
-                  />
-                </div>
-              </Reveal>
-            )}
 
             {linkedSafari && linkedSafari.days.length > 0 && (
               <Reveal>
